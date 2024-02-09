@@ -18,13 +18,12 @@ import { NgxGalleryModule } from 'ngx-gallery';
 import { AgmCoreModule } from '@agm/core';
 import { TextMaskModule } from 'angular2-text-mask';
 import { DatepickerPageComponent } from './pages/datepicker-page/datepicker-page.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule, } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SchoolmanagementComponent } from './Salesteam/schoolmanagement/schoolmanagement.component';
 import { StorageServiceModule } from 'angular-webstorage-service';
-import { HttpModule } from '@angular/http';
 import { ForgotpswdComponent } from './pages/forgotpswd/forgotpswd.component';
 import { ChangepaswordComponent } from './pages/changepasword/changepasword.component';
 import { ViewuserComponent } from './Users/viewuser/viewuser.component';
@@ -437,7 +436,7 @@ export class DemoMaterialModule { }
     NgxGalleryModule,
     TextMaskModule,
     BrowserAnimationsModule,
-    HttpModule, StorageServiceModule,
+    HttpClientModule, StorageServiceModule,
     // Insert your google maps api key, if you do not need google map in your project, you can remove this import
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDFTKbcSXEN22pUx3zfaabEOGyy7oOZtmI'
