@@ -1,0 +1,75 @@
+<div class="service-form col-md-12">
+
+    <div class="row">
+            <div class="header">
+                    <div  class="row">
+                      <div  class="col-12 col-md-6 mb-3">
+                        <div  class="col-md-8">
+                          <h3  class="adsc">
+                            <i class="material-icons ng-star-inserted">supervisor_account</i> &nbsp;Users List</h3>
+                          </div>
+                        </div>
+                        <div  class="col-md-6">           
+                            <button style="margin-top: 0px;" type="button" class="aduser  btn-info btn-lg pull-right" data-toggle="collapse"  data-toggle="modal" data-target="#login-modal1" (click)="add()">Add User</button>             
+                        </div>
+                      </div>
+                     
+                    </div>
+        
+        <div class="col">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="tabl" >
+                  <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                      <thead>
+                          <tr>
+                                <th>SL.No</th>
+                              <th>Name</th>
+                              <th>Designation</th>
+                              <th>Phone number</th>
+                              <th>Login</th>
+                              <!-- <th>Password</th> -->
+                              <th>Add by</th>
+                              <th>View</th>
+                              <th>Edit</th>
+                              <th>Delete</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                                  <ng-container  *ngFor="let data of datas.data; let i = index">
+                                  <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                    <td>{{i+1}}</td>  
+                                    <td>{{data.Name}}</td>
+                                      <td id="l1">{{data.Designation}}</td>
+                                      <td id="a1">{{data.Phone_number}}</td>
+                                      <td id="pc1">{{data.Email_id}}</td>
+                                      <!-- <td id="pc1">{{data.Password}}</td>     -->
+                                      <td id="pc1">{{data.Add_by}}</td>  
+                                       <td><button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view($event, data)"><i  class="m-1 icon-screen-desktop"></i></button></td>
+                                        <td><button type="button" data-toggle="modal"  data-uid="1" class=" btn  btn-sm"><i  class="m-1 icon-note" (click)="edit($event,data)"></i></button></td> 
+                                        <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm" ><i  class="m-1 icon-close" (click)="open($event,data)"></i></button></td>
+                                    </tr>
+                                    
+                                   
+                                  </ng-container>
+  
+                      </tbody>
+                  </table>
+                  <div *ngIf="loading" ><div class="loader text-center"></div></div>
+  
+                  <div class="card-footer p-0">
+                  <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                          </div>
+  
+            </div>
+            </div>
+          </div>
+          </div>
+  </div>
+  </div>
+  
+ 
+  
+  
+          <div *ngIf="deleteLoading" id="snackbar" class="show">Deleting... Pleaser Wait!</div>
+  

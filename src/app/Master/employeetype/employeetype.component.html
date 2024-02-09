@@ -1,0 +1,101 @@
+
+<!-- Adding Employee Page -->
+
+<form>
+  <!-- service-form -->
+  <div class="service-forms">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="row">
+            <div class="multistep-form-section">
+              <form name="form"  novalidate>
+                      <div class="">
+                              <div class="">
+                              <h3 style="    width: 100%;
+                              background: #d0d6db;padding: 10px;text-transform: uppercase;">Add Employee Type</h3>
+                              </div>
+                              <div class="col col-lg-2">                                        
+                              </div>
+                            </div>  
+                            <br>               
+              <div class="row">
+                      <div class="col-12 col-sm-12 form-group">
+                          <form class="frms" name="form" novalidate>
+                                                    <div class="col-md-12">
+                                                          <div class="row">
+                                                            <table style="width:100%">
+                                                              <tr>
+                                                                <th>Employee Type Name</th>
+                                                                <th>Add</th>
+                                                              </tr>
+                                                              <tr>
+                                                                <td><input type="" style="width: 100%" [(ngModel)]="employee_type.employee_type" name="items" value="" #items></td>
+                                                                <td><button class="btn-info btn-lg" style="width: 100%" *ngIf="isactive === true"  (click)="additem()" >Add Employee</button><button class="btn-info btn-lg"  style="width: 100%" *ngIf="isactive === false" (click)="update()" >Update Employee</button></td>
+                                                              </tr>
+                                                            </table>
+                                                          </div>
+                                                        </div>       
+                                                         <br>
+                                                         <br>
+                                                         <div class="container" id="component1">
+                                                         <div class="col-md-12">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <h3>Employee List</h3>
+                                                                  </div>
+                                                                  <div class="col-md-6">
+                                                                    </div>                                                              
+                                                            </div>
+                                                          </div>
+                                                          <br>
+                                                        <div class="col-md-12">
+                                                          <div class="row">
+                                                            <div class="tabl" >
+                                                            <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>SL.NO</th>
+                                                                        <th>Employee Type</th>
+                                              
+                                                                        <th>Update</th>
+                                                                      
+                                                                        <th>Delete</th>
+                                                                  </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                            <ng-container  *ngFor="let data of datas ;  let i = index">
+        
+                                                                            <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                                                                <td style="text-align: center">{{i + 1}}</td> 
+                                                                                <td>{{data.employee_type}}</td>
+                                                                              
+                                                                                <td style="text-align: center"><button class="accordion-toggle  btn mat-button-wrapper btn-sm"  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1"   style="background: transparent"  (click)="fetch($event, data)" ><i  class="m-1 icon-note"  ></i></button></td>
+                                                                                 <td style="text-align: center"><button class="accordion-toggle  btn mat-button-wrapper btn-sm"  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1"   style="background: transparent"  (click)="delete($event, data)" ><i  class="m-1 icon-close"  ></i></button></td>
+                                                                            </tr>
+
+                                                                            </ng-container>      
+                                          
+                                                                </tbody>
+                                                            </table>
+                                                            <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                                                            <div class="card-footer p-0">
+                                                            <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                                                                    </div>     
+                                                      </div>
+                                                          </div>
+                                                        </div>       
+                                                        <br>    
+                                                         </div>
+
+</form>
+</div>
+</div>
+                </form>
+            </div>
+            </div>
+          </div>
+        </div>
+
+  </div>
+</form>

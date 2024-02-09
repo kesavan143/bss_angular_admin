@@ -1,0 +1,87 @@
+<div  class="row">
+  <div  class="header">
+    <h3  class="adsc">
+      <i class="material-icons ng-star-inserted">business</i> &nbsp;EMI Recovery</h3>
+  </div>
+</div>
+
+<div class="row" style="padding-bottom: 30px;"><Br>
+  <div class=col-md-12>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="col-md-2">
+          <label style="font-weight: 700;">Month</label>
+        </div>
+        <div class="col-md-2" style="display: flex">
+          <input type="month" [(ngModel)]="date" name="month" #month>
+          <button class="btn-info btn-lg" style="margin-left: 22px;" (click)="dateChange()">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container col-lg-12" style="text-align: center">
+
+  <table class="table table-striped" id="datTabl" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+    <thead>
+      <tr>
+        <th>
+          <mfDefaultSorter by="ecode">Emp. No</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="ename">NAME</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="advance">Advance</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="loan">Loan</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="uniform">Uniform</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="mess">Mess</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="rent">Rent</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="atm">ATM Card</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="phone">Phone</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="others">Others</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="total">TOTAL</mfDefaultSorter>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of mf.data; let i = index">
+        <td> {{item.ecode}}</td>
+        <td>{{item.ename}}</td>
+        <td>{{item.advance}}</td>
+        <td>{{item.loan}}</td>
+        <td>{{item.uniform}}</td>
+        <td>{{item.mess}}</td>
+        <td> {{item.rent}}</td>
+        <td> {{item.atm}} </td>
+        <td>{{item.phone}}</td>
+        <td>{{item.others}}</td>
+        <td>{{item.total}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="11" style="text-align: center">
+          <mfBootstrapPaginator [rowsOnPageSet]="[10,25,100]"></mfBootstrapPaginator>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

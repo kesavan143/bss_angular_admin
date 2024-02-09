@@ -1,0 +1,291 @@
+
+  <button style="float:right" (click)="printComponent('component1')">Print</button>
+<div class="container" id="component1">
+<div class="row col-md-12">
+    <div class="col-md-6">
+        <div id="div-forms">
+            <!-- Begin # Login Form -->
+            <form id="login-form">
+            <div class="modal-body">
+                <div class="login-form">
+                    <div class="main-div">
+                        <div class="panel">
+                            <h3>Client Payment</h3>
+                       </div>
+                        <form id="Login">
+                            <table>
+                               
+                                    <tr>
+                                        <td>Employee Type</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.employee_type}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Basic</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.basic}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>DA</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.da}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>HRA</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.additional_hours}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Others</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.others}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Sub Total A</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.subtotala}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Leave 6%	</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.leave}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Sub Total B</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.subtotalb}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>PF + Admin. Charges @ 13.3</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.pf}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>ESI @ 4.5%</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.esi}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Gratutity @ 4.81%</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.gratuity}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Bonus @ 8.33%</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.bouns}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Sub Total C</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.subtotalc}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.total}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Weekly off	</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.weekly_off}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Agency Charges @ 10%</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.agency_charges}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Sub Total</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.subtotal}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Rounded Off	</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.rounded_off}}</td>
+                                        </ng-container>
+                                    </tr>
+                            
+                            </table>
+                        
+                        </form>
+                        </div>
+                    </div>
+          </div>
+        
+            </form>
+            <!-- End # Login Form -->
+            
+            <!-- Begin | Lost Password Form -->
+          
+            
+            
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div id="div-forms">
+            <!-- Begin # Login Form -->
+            <form id="login-form">
+            <div class="modal-body">
+                <div class="login-form">
+                    <div class="main-div">
+                        <div class="panel">
+                            <h3>Employee Payment</h3>
+                       </div>
+                        <form id="Login">
+                            <table>
+                               
+                                    <tr>
+                                        <td>Employee Type</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.employee_type}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Basic</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.ebasic}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>DA</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.eda}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>HRA</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.eadditional_hours}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Others</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.eothers}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Sub Total A</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.esubtotala}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Leave 6%	</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.eleave}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Sub Total B</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.esubtotalb}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>PF + Admin. Charges @ 13.3</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.epf}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>ESI @ 4.5%</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.eesi}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Gratutity @ 4.81%</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.egratuity}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Bonus @ 8.33%</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.ebouns}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Sub Total C</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.esubtotalc}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.etotal}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Weekly off	</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.eweekly_off}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Agency Charges @ 10%</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.eagency_charges}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Sub Total</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.esubtotal}}</td>
+                                        </ng-container>
+                                    </tr>
+                                    <tr>
+                                        <td>Rounded Off	</td>
+                                        <ng-container *ngFor="let group of datass">
+                                        <td>{{group.erounded_off}}</td>
+                                        </ng-container>
+                                    </tr>
+                             
+                            </table>
+                        
+                        </form>
+                        </div>
+                    </div>
+          </div>
+        
+            </form>
+            <!-- End # Login Form -->
+            
+            <!-- Begin | Lost Password Form -->
+          
+            
+            
+        </div>
+
+    </div>
+
+
+   </div>
+   <!-- Begin # DIV Form -->
+    
+
+
+
+  </div>

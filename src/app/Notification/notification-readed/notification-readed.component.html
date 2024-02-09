@@ -1,0 +1,62 @@
+<!-- BEGIN # BOOTSNIP INFO -->
+<div class="container">
+    <div class="row">
+        <div class="header">
+          <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+              <div class="col-md-8">
+                <h3 class="adsc">
+                  <i class="fa fa-university"></i> &nbsp;Readed Notification List</h3>
+                </div>
+              </div>
+              <div class="col-md-6">
+  
+              </div>
+            </div>
+           
+          </div>
+
+          <div class="col">
+      
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="tabl" >
+                      <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                          <thead>
+                              <tr>
+                                  <th>SL.NO</th>
+                                  <th>Client Name</th>
+                                  <th>Site Name</th>
+                                  <th>Contract Start Date</th>
+                                  <th>Contract End Date</th>
+                                  <th>Contract ID</th>
+                                  <th>Open</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                                      <ng-container  *ngFor="let data of datas ;  let i = index">
+                                      <tr>
+                                            <td>{{i+1}}</td> 
+                                            <td>{{data.client_name}}</td>
+                                            <td>{{data.site_name}}</td>
+                                            <td id="l1">{{data.contract_start_date}}</td>
+                                            <td id="a1">{{data.contract_end_date}}</td>
+                                            <td id="pc1">{{data.contract_id}}</td>
+                                            <td><button style="background: transparent" class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view(data)"><i  class="m-1 icon-screen-desktop"></i></button></td>
+                                          
+                                      </tr>
+                                      </ng-container>      
+                          </tbody>
+                      </table>
+                      <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                      <div class="card-footer p-0">
+                      <ngb-pagination   [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                      </div>     
+                </div>
+                </div>
+              </div>
+              </div>
+          
+         
+    </div>
+  </div>

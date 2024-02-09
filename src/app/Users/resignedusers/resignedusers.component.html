@@ -1,0 +1,69 @@
+<div class="service-form col-md-12">
+
+  <div class="row">
+          <div class="header">
+                  <div class="row">
+                    <div class="col-12 col-md-6 mb-3">
+                      <div class="col-md-8">
+                        <h3 class="adsc">
+                          <i class="fa fa-university"></i> &nbsp;Resigned Users List</h3>
+                        </div>
+                      </div>
+                     
+                    </div>
+                   
+                  </div>
+      
+      <div class="col">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="tabl" >
+                <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                    <thead>
+                        <tr>
+                              <th>Sl.No</th>
+                            <th>Name</th>
+                            <th>Designation</th>
+                            <th>Phone number</th>
+                            <th>Email id</th>
+                            <th>Password</th>
+                            <th>Add by</th>
+                            <th>Reuse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                <!-- <ng-container  *ngFor="let data of datas.data; let i = index"> -->
+                                <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                  <td>1</td>  
+                                  <td>tamil</td>
+                                    <td id="l1">{{data.Designation}}</td>
+                                    <td id="a1">{{data.Phone_number}}</td>
+                                    <td id="pc1">{{data.Email_id}}</td>
+                                    <td id="pc1">{{data.Password}}</td>    
+                                    <td id="pc1">{{data.Add_by}}</td>  
+                                     
+                                      <td style="text-align: center;"><button style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm" ><i  class="m-1 icon-check" (click)="open($event,data)"></i></button></td>
+                                  </tr>
+                                  
+                                 
+                                <!-- </ng-container> -->
+
+                    </tbody>
+                </table>
+                <div *ngIf="loading" ><div class="loader text-center"></div></div>
+
+                <div class="card-footer p-0">
+                <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                        </div>
+
+          </div>
+          </div>
+        </div>
+        </div>
+</div>
+</div>
+
+
+
+
+        <div *ngIf="deleteLoading" id="snackbar" class="show">Deleting... Pleaser Wait!</div>

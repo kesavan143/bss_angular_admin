@@ -1,0 +1,276 @@
+<div  class="row">
+    <div  class="header">
+      <h3  class="adsc">
+          <i class="material-icons ng-star-inserted">business</i> &nbsp;FORM No. XXVI</h3>
+      </div>
+		</div>
+    <div class="" style="padding-bottom: 30px;"><Br>
+      <div class="col-md-6">
+          <button class="btn-info btn-lg " (click)="exportAsXLSX()">Export</button>&nbsp; &nbsp; &nbsp;
+          <button class="btn-info btn-lg " (click)="print('component1')">Print</button>	
+      </div>
+      <br><br>
+      <div class="row">
+          <div class="col-md-4">
+              <div class="col-md-2">
+                  <label style="font-weight: 700;">Month</label>
+               </div>
+           <div class="col-md-2">
+             <div> <input type="month"  [(ngModel)]="date" name="month" #month> </div>
+             <div><button (click)="dateChange(month.value)">Search</button></div>
+           </div>
+          </div>
+      <div class="col-md-4">
+        <div class="col-md-2">
+            <label style="font-weight: 700;">Company</label> 
+          </div>
+          <div class="col-md-4">
+              <select  style="width: 100%;" (change)="fetchsite($event.target.value)" name="company" [(ngModel)]="company"  value=""  id="exampleFormControlSelect1">                           
+                  <ng-container  *ngFor="let data of companylist">
+                  <option  value="{{data.company_name}}">{{data.company_name}}</option>
+                </ng-container>
+                </select>    
+            </div>
+    </div>	
+    <div class="col-md-4">
+        <div class="col-md-2">
+            <label style="font-weight: 700;"> Unit Name</label>
+         </div>
+     <div class="col-md-4">
+           <select   style="width: 100%;" name="unit_name" (change)="Contract_list($event.target.value)" [(ngModel)]="unit_name"  value=""  id="exampleFormControlSelect1">                          
+               <ng-container  *ngFor="let data of site_names">
+               <option  value="{{data.title}}">{{data.title}}</option>
+               </ng-container>
+               </select> 
+     </div>
+    </div>
+      </div>
+      <br><br><br>
+<div id="component1">
+      <table>
+          <tr>
+            <th colspan="44">FORM No. XXVI</th>
+          </tr>
+          <tr>
+              <td colspan="44">[See Rule 78 (1) (d) of Tamil Nadu Contract Labour (Regulation and Abolition) Rules, 1975</td>
+            </tr>
+            <tr>
+                <td colspan="44">REGISTER OF ADVANCES DEDUCTIONS FOR DAMAGE OR LOSS AND FINES</td>
+              </tr>
+              <tr>
+                  <td colspan="9">Name and Address of the Principal Employer      : <b> {{data.site_name}} </b></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td colspan="3">Month</td>
+                  <td colspan="5"> <b>{{month1}}</b> </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                    <td colspan="9">Name and Address of the Contractor                    : <b>{{companyName}}</b></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="3">Year</td>
+                    <td colspan="5"> <b>{{year}}</b> </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="9">Name and Location of the work site                      : <b>{{siteName}}</b></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Sl.No.</td>
+                        <td rowspan="2">Name of the Workman</td>
+                        <td rowspan="2"> Sex</td>
+                        <td rowspan="2">Permanent Home Address</td>
+                        <td rowspan="2">Local Address</td>
+                        <td rowspan="2">Designation (Nature of Work)</td>
+                        <td rowspan="2">Father's / Husband's Name</td>
+                        <td rowspan="2">Date of Entry into Service</td>
+                        <td rowspan="2">Rates of Wages</td>
+                        <td colspan="31">Daily hours of Work done</td>
+                        <td rowspan="2">Number of days Worked</td>
+                        <td rowspan="2">Signature or Thumb impression of the workman</td>
+                        <td rowspan="2">Date of Termination of  Employment</td>
+                        <td rowspan="2">Signature of Contractor / Representative</td>
+                      </tr>
+                      <tr>
+                        <td colspan="31">(10)</td>
+                      </tr>
+                      <tr>
+                          <td>(1)</td>
+                          <td>(2)</td>
+                          <td>(3)</td>
+                          <td>(4)</td>
+                          <td>(5)</td>
+                          <td>(6)</td>
+                          <td>(7)</td>
+                          <td>(8)</td>
+                          <td>(9)</td>
+                          <td>(1)</td>
+                          <td>(2)</td>
+                          <td>(3)</td>
+                          <td>(4)</td>
+                          <td>(5)</td>
+                          <td>(6)</td>
+                          <td>(7)</td>
+                          <td>(8)</td>
+                          <td>(9)</td>
+                          <td>(10)</td>
+                          <td>(11)</td>
+                          <td>(12)</td>
+                          <td>(13)</td>
+                          <td>(14)</td>
+                          <td>(15)</td>
+                          <td>(16)</td>
+                          <td>(17)</td>
+                          <td>(18)</td>
+                          <td>(19)</td>
+                          <td>(20)</td>
+                          <td>(21)</td>
+                          <td>(22)</td>
+                          <td>(23)</td>
+                          <td>(24)</td>
+                          <td>(25)</td>
+                          <td>(26)</td>
+                          <td>(27)</td>
+                          <td>(28)</td>
+                          <td>(29)</td>
+                          <td>(30)</td>
+                          <td>(31)</td>
+                          <td>(11)</td>
+                          <td>(12)</td>
+                          <td>(13)</td>
+                          <td>(14)</td>
+                        </tr>
+                        <tr *ngFor="let data of datas; let i = index">
+                            <td> <b>{{i + 1}}</b></td>
+                            <td> <b> {{data.ename}} </b> </td>
+                            <td> <b> {{data.gender}} </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> {{data.etype}} </b> </td>
+                            <td> <b> {{data.f_m_name}} </b> </td>
+                            <td> <b> {{data.doj}} </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> {{data.present}} </b> </td>
+                            <td> <b> - </b> </td>
+                            <td> <b> {{data.dor}} </b> </td>
+                            <td> <b> - </b> </td>
+                          </tr>
+        </table>
+
+      </div>
+    </div>

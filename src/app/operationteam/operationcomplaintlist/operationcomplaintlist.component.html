@@ -1,0 +1,248 @@
+<!-- BEGIN # BOOTSNIP INFO -->
+
+<div class="container">
+    <div class="row">
+        <div class="header">
+          <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+              <div class="col-md-8">
+                <h3 class="adsc">
+                  <i class="fa fa-university"></i> &nbsp;Open Complaint</h3>
+                </div>
+              </div>
+              <div class="col-md-6">
+
+              </div>
+            </div>
+           
+          </div>
+          <div class=" butn col-md-12 pull-left">
+            <div class="notifications1">
+                      
+                <span class="num">{{All}}</span>
+               
+            </div>
+          <button class="butns" (click) = "addapi4()" >All</button>
+          <div class="notifications2">
+              
+                <span class="num">{{Open}}</span>
+               
+            </div>
+          <button class="butns1" (click) = "addapi1()">Open</button>
+           
+          <div class="notifications3">
+              
+                <span class="num">{{Inprogree}}</span>
+               
+            </div>
+          <button class="butns" (click) = "addapi2()" >Inprogress</button>
+              
+          <div class="notifications4">
+              
+                <span class="num">{{Complete}}</span>
+               
+            </div>
+          <button class="butns" (click) = "addapi3()" >Completed</button>
+                         
+                 </div>
+                 
+              
+        
+  
+          <div class="col">
+      
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="tabl" >
+                      <table class="table table-bordered" style="border-collapse:collapse;">
+                          <thead>
+                              <tr>
+                                  <th>SL.NO</th>
+                                  <th>Complaint ID</th>
+                                  <th>Complaint From</th>
+                                  <th>Poster ID</th>
+                                  <th>Complaint Type</th>
+                                  <th>Title</th>
+                                  <th>Description</th>
+                                  <th>Posted On</th>
+                                  <th>Status</th>
+                                  <th>View</th>
+                                  <th>Move</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                                <ng-container  *ngFor="let data of datas ;  let i = index">
+                                        <tr>
+                                            <td style="text-align: center">{{i+1}}</td> 
+                                            <td style="text-align: center">{{data.complaint_id}}</td>
+                                            <td>{{data.complaint_from}}</td>
+                                            <td style="text-align: center" id="l1">{{data.poster_id}}</td>
+                                            <td id="a1">{{data.complaint_type}}</td>
+                                            <td id="pc1">{{data.title}}</td>
+                                            <td id="pc1">{{data.description}}</td>
+                                            <td id="pc1">{{data.posted_on}}</td>
+                                            <td id="pc1">{{data.status}}</td>
+                                          <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" data-toggle="collapse"  data-toggle="modal" data-target="#login-modal2" (click)="open($event, data)"><i  class="m-1 icon-screen-desktop"></i></button></td>
+                                          <td><button type="button" data-toggle="modal"  data-uid="1" class=" btn  btn-sm" data-toggle="modal" data-target="#login-modal3" (click)="Move($event, data)" style="background: transparent;"><i  class="fa m-1 fa-send ng-star-inserted"></i></button></td> 
+                                      </tr>
+                                      </ng-container>      
+                          </tbody>
+                      </table>
+                      <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                      <div *ngIf="loading" ><div class="loader text-center"></div></div>
+                </div>
+                </div>
+              </div>
+              </div>
+          
+         
+    </div>
+  </div>
+  <!-- END # BOOTSNIP INFO -->
+  
+  
+  
+  
+      <!-- BEGIN # MODAL LOGIN -->
+  <div class="modal fade" id="login-modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog" style="max-width: 700px;margin-right: 17%;">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+           
+                
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+                    <div class="modal-body">
+              
+                        <div class="login-form">
+                            <div class="main-div">
+                                
+                                <form id="Login">
+                            
+  
+                                    <div class="form-group">
+                                        
+                                    <label>Complaint From :</label>
+                                   
+                                        <input type="text" class="form-control"  value = "{{datass.issue.complaint_from}}" id="name" disabled>
+                                  
+                                    </div>
+  
+                                    <div class="form-group">
+                            
+                                        <label>Type</label>
+                                        <input type="text" class="form-control" id="name"  value = "{{datass.issue.complaint_type}}" disabled>
+                            
+                                    </div>
+  
+  
+                                    
+  
+                                    <div class="form-group">
+                            
+                                        <label>Title</label>
+                                        <input type="email" class="form-control" id="inputEmail"  value = "{{datass.issue.title}}" disabled>
+                            
+                                    </div>
+                            
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea type="text" class="form-control"   id="inputEmail"  value = "{{datass.issue.description}}" disabled></textarea>
+                            
+                                    </div>
+                                    
+                                    
+                            
+                                </form>
+  
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                      <h5 class="card-title"></h5>
+                                      <ngx-gallery [options]="onlyThumbnailsGalleryOptions" [images]="galleryImages"></ngx-gallery>
+                                    </div>
+                                  </div>
+                                </div>
+                           
+                            </div>
+                  </div>
+                
+                    </form>
+                    <!-- End # Login Form -->
+                    
+                    <!-- Begin | Lost Password Form -->
+                  
+                    
+                    
+                </div>
+                <!-- End # DIV Form -->
+                
+      </div>
+    </div>
+  </div>
+    <!-- END # MODAL LOGIN -->
+
+
+          <!-- BEGIN # MODAL LOGIN -->
+  <div class="modal fade" id="login-modal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" style="max-width: 700px;margin-right: 17%;">
+    <div class="modal-content">
+      
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+           
+         
+              
+              <!-- Begin # DIV Form -->
+              <div id="div-forms">
+              
+                  <!-- Begin # Login Form -->
+                  <form id="login-form">
+                  <div class="modal-body">
+            
+                      <div class="login-form">
+                          <div class="main-div">
+                              <div class="panel">
+                                 
+                             </div>
+                              <form id="Login">
+                                  <div class="form-group">  
+                                  <label>Complaint_ID</label>
+                                      <input type="text" class="form-control" id="name" placeholder="Complaint_ID" value ="{{datass.issue.complaint_id}}" #complaint_id disabled>
+                                  </div>
+                                  <div class="form-group">  
+                                    <label>Enter  Your ID</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Ender your ID" value = "Name: {{name}} & User-ID: {{id}}" #your_id disabled>
+                                    </div>
+                                  <div class="form-group">
+                                      <label>Move To</label>
+                                      <select class="form-control" id="exampleFormControlSelect1" #moved_to >
+                                        <option>completed</option>
+                                        <option>Inprogress</option>
+                                      </select>                            
+                                  </div>
+                              </form>
+                              <div class="card mb-3">
+                                  <div class="card-body">
+                                    <h5 class="card-title"></h5>
+                                    <ngx-gallery [options]="onlyThumbnailsGalleryOptions" [images]="galleryImages"></ngx-gallery>
+                                  </div>
+                                </div>
+                              </div>
+                              <button class="btn btn-primary" data-dismiss="modal" style="color:#fff; background:#13477e!important;" (click) = "submit(complaint_id.value,your_id.value,moved_to.value)">Submit</button>
+                          </div>
+                </div>
+                  </form>   
+              </div>
+              <!-- End # DIV Form -->
+              
+    </div>
+  </div>
+</div>
+  <!-- END # MODAL LOGIN -->
+  
+  
+  
+  
+  

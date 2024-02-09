@@ -1,0 +1,330 @@
+<div class="row">
+  <div class="header">
+      <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+          <div class="col-md-8">
+            <h3 class="adsc">
+              <i class="fa fa-university"></i> &nbsp;UNIT/SITE WISE PAY RATE</h3>
+            </div>
+          </div>
+          <div class="col-md-6">
+              <!-- <button type="button" class="btn btn-info btn-lg pull-right" data-toggle="collapse"  data-toggle="modal" data-target="#login-modal1" (click)="send()">Add SMS</button> -->
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="col-lg-12" style="padding-top:20px" style="padding: 4px; border: 1px #6c757d solid;
+margin-bottom: 20px;">
+  <div class="row">
+    <div class="col-md-1">
+      <label>Company</label> 
+    </div>
+    <div class="col-md-1">
+        <select  style="width: 100%;" (change)="fetchsite($event.target.value)" name="company" [(ngModel)]="company"  value=""  id="exampleFormControlSelect1">                           
+            <ng-container  *ngFor="let data of companylist">
+            <option  value="{{data.company_name}}">{{data.company_name}}</option>
+          </ng-container>
+          </select>    
+      </div>
+      <div class="col-md-1">
+          <label> Unit Code </label> 
+        </div>
+        <div class="col-md-1">
+            {{unit_code}}
+          </div>
+          <div class="col-md-1">
+              <label> Option</label>
+            </div>
+            <div class="col-md-3">
+                <input type="radio" name="option"  value="Standard" [(ngModel)]="option"   (change)="option_type($event.target.value)">Standard
+                <input type="radio" name="option" value="User"  [(ngModel)]="option"  (change)="option_type($event.target.value)">User
+                <button class="btn btn-info btn-lg" type="button" data-toggle="collapse"  data-toggle="modal" data-target="#login-modal1"  >Show</button>
+              </div>
+              <div class="col-md-1">
+                 <label>  Salary Type </label>
+                 </div>
+                 <div class="col-md-3">
+                    <input type="radio" name="type"  value="Day"   (change)="salary_types($event.target.value)">Day
+                    <input type="radio" name="type"  value="Monthly"   (change)="salary_types($event.target.value)">Monthly
+                    <input type="radio" name="type"  value="Hours"   (change)="salary_types($event.target.value)">Hours
+                     <input type="text" *ngIf="hours === true" name="salary_type"  value="" (change)="salary_types($event.target.value)" [(ngModel)]="salary_type" style="float:right;width: 50px;"> 
+                     <input type="text" *ngIf="hours === false"   disabled value=""  style="float:right;width: 50px;"> 
+                </div>          
+  </div>
+</div>
+
+<div class="col-lg-12" style="padding-top:20px" style="padding: 4px;    border: 1px #6c757d solid; margin-bottom: 1em;">
+  <div class="row">
+      <div class="col-md-2">
+           <label> Unit Name</label>
+        </div>
+    <div class="col-md-4">
+          <select   style="width: 100%;" name="unit_name" (change)="Contract_list($event.target.value)" [(ngModel)]="unit_name"  value=""  id="exampleFormControlSelect1">                          
+              <ng-container  *ngFor="let data of site_names">
+              <option  value="{{data.id}}">{{data.title}}</option>
+              </ng-container>
+              </select> 
+    </div>
+    <div class="col-md-2">
+      <label> Days in Month </label>
+       </div>
+    <div class="col-md-4">
+        <input type="radio" name="type1"  value="Default"  (change)="day_types($event.target.value)"> Default
+        <input type="radio" name="type1"  value="Dynamic"  (change)="day_types($event.target.value)"> Dynamic
+        <input type="radio" name="type1"  value="Custom"  (change)="day_types($event.target.value)"> Custom
+        <input type="text" *ngIf="days === true" name="day_month"  value="" (change)="day_types($event.target.value)" [(ngModel)]="day_month" style="float:right;width: 50px;"> 
+        <input type="text" *ngIf="days === false"   disabled value=""  style="float:right;width: 50px;"> 
+    </div>
+  </div>
+  </div>
+  <div class="" style="padding-top:20px" style="padding: 4px;    border: 1px #6c757d solid;">
+  <div class="col-lg-12" >
+      <div class="row">
+        <div class="col-md-4" style="    flex: 0 0 33.33333333%;
+        max-width: 32.33333333%;
+        margin: 0px 0px 0px 10px;    border: 1px #6c757d solid;">
+            <div class="col-md-4">
+                PF RULES
+              </div>
+              
+              <div class="col-md-4">
+                  <input type="checkbox" (change)="toggleEditable($event)">PF-Cover
+                  <input type="radio" name="type2"  value="Default"  (change)="pf_type($event.target.value)"> Default<br>
+                  <input type="radio" name="type2"  value="Dynamic"  (change)="pf_type($event.target.value)"> Dynamic
+                  <input type="radio" name="type2"  value="Custom"  (change)="pf_type($event.target.value)"> Custom
+                  <input type="text" *ngIf="pf_rules === true" name="pf_amount"  value="" (change)="pf_type($event.target.value)" [(ngModel)]="pf_amount" style="float:right;width: 105px;"> 
+                  <input type="text" *ngIf="pf_rules === false"   disabled value=""  style="float:right;width: 105px;"> 
+                </div>
+        </div>
+        <div class="col-md-4" style="    flex: 0 0 33.33333333%;
+        max-width: 32.33333333%;
+        margin: 0px 0px 0px 10px;    border: 1px #6c757d solid;">
+            <div class="col-md-4">
+                ESI Rules
+              </div>
+              <div class="col-md-4">
+                  <input type="checkbox" (change)="toggleEditable1($event)">ESI-Cover
+                  <input type="radio" name="type3"  value="Normal"  (change)="esi_type($event.target.value)"> Normal<br>
+                  <input type="radio" name="type3"  value="Variant"  (change)="esi_type($event.target.value)"> Variant %<br>
+                </div>
+        </div>
+        <div class="col-md-4" style=" flex: 0 0 33.33333333%;
+              max-width: 32.33333333%;
+              margin: 0px 0px 0px 10px;    border: 1px #6c757d solid;">
+            <div class="col-md-4">
+                 <label> ESI</label>
+              </div>
+              <div class="col-md-4" style=""> 
+                  <label>ESI CODE</label>
+                  <input type="text" name="esi_code"  disabled value="" [(ngModel)]="esi_code">
+                    <label>ESI District</label>
+                    <select style="width: 155px;" name="esi_district"  [(ngModel)]="esi_district" disabled value=""   id="exampleFormControlSelect1">
+                        <option value="CHENNAI">CHENNAI</option>
+                        <option value="BANGALORE">BANGALORE</option>
+                        <option value="COIMBATORE">COIMBATORE</option>
+                        <option value="KERALA">KERALA</option>
+                        <option value="SATHANUR">SATHANUR</option>
+                        <option value="THRUPPUR">THRUPPUR</option>
+                        <option value="THIRUKOVILUR">THIRUKOVILUR</option>
+                        <option value="MMSPL">MMSPL</option>
+                        <option value="BSSPL">BSSPL</option>
+                        <option value="BSSPA">BSSPA</option>
+                      </select>
+                      <label>PrTax</label>
+                      <select style="width: 155px;" name="esi_protax"  disabled  [(ngModel)]="esi_protax" >
+                        <option value="CHENNAI">CHENNAI</option>
+                        <option value="BANGALORE">BANGALORE</option>
+                        <option value="COIMATORE">COIMATORE</option>
+                        <option value="KERALA">KERALA</option>
+                        <option value="SATHANUR">SATHANUR</option>
+                        <option value="THRUPPUR">THRUPPUR</option>
+                        <option value="THIRUKOVILUR">THIRUKOVILUR</option>
+                        <option value="MMSPL">MMSPL</option>
+                        <option value="BSSPL">BSSPL</option>
+                        <option value="BSSPA">BSSPA</option>
+                        </select>
+                </div>
+        </div>
+      </div>
+      </div>
+    </div>
+            <div class="col-lg-12" style="padding-top:20px ;">
+              <button class="btn btn-info btn-lg" (click)="submit()" *ngIf='submitbtton === true'>Submit</button>
+              <button class="btn btn-info btn-lg" (click)="update()" *ngIf='updatebtton === true'>Update</button>
+            </div>
+
+     
+    
+      <div class="col-lg-12" style="padding-top:20px" style="padding: 4px;">
+          
+              <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                  <thead>
+                      <tr >
+                          <th style="text-align: left">RANK</th>
+                          <th>Basic</th>
+                          <th>D.A</th>  
+                          <th>H.R.A</th>  
+                          <th>Trv.EXP</th>
+                          <th>Others</th>
+                          <th>Medical</th>
+                          <th>Other1</th>
+                          <th>Other2</th>
+                          <th>Other3</th>
+                          <th>Other4</th>
+                          <th>Total Pay</th>
+                          <th>PF</th>
+                          <th>ESI</th>
+                          <th>DeC</th>
+                          <th>Total</th>
+                          <th>Delete</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                        <ng-container  *ngFor="let data of datas ;  let i = index">
+                                <tr>
+                                    <td style="width: 100%;">{{data.rank}}</td> 
+                                    <td style="width: 100%;">{{data.basic}}</td> 
+                                    <td style="width: 100%;">{{data.da}}</td> 
+                                    <td style="width: 100%;">{{data.hra}}</td> 
+                                    <td style="width: 100%;">{{data.trv_exp}}</td> 
+                                    <td style="width: 100%;">{{data.others}}</td> 
+                                    <td style="width: 100%;">{{data.medical}}</td> 
+                                    <td style="width: 100%;">{{data.others1}}</td> 
+                                    <td style="width: 100%;">{{data.others2}}</td> 
+                                    <td style="width: 100%;">{{data.others3}}</td> 
+                                    <td style="width: 100%;">{{data.others4}}</td> 
+                                    <td style="width: 100%;">{{data.total_pay}}</td> 
+                                    <td style="width: 100%;">{{data.pf}}</td> 
+                                    <td style="width: 100%;">{{data.esi}}</td> 
+                                    <td style="width: 100%;">{{data.dec}}</td> 
+                                    <td style="width: 100%;">{{data.total}}</td> 
+                                    <td style="width: 100%;"><button class="btn btn-info btn-lg" (click)="delete(data)">Delete</button></td>
+                              </tr>
+                              </ng-container>      
+                  </tbody>
+              </table>    
+        
+        </div>
+   
+      
+            <div class="col-md-12">
+                <div class="row">
+                  <label>Add Payment Details</label> 
+                </div>
+            </div>
+            <div class="col-lg-12" style="padding-top:20px">
+                <div class="tabl" >
+                    <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th style="text-align: left">RANK</th>
+                                <th>Basic Pay</th>
+                                <th>D.A</th>  
+                                <th>H.R.A</th>  
+                                <th>Trv.EXP</th>
+                                <th>Others</th>
+                                <th>Medical</th>
+                                <th>Other1</th>
+                                <th>Other2</th>
+                                <th>Other3</th>
+                                <th>Other4</th>
+                                <th>Total Pay</th>
+                                <th>Add</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                      <tr>
+                                          <td>
+                                            <select class="selects" name="rank"  value="" [(ngModel)]="rank"  id="exampleFormControlSelect1">     
+                                                <ng-container  *ngFor="let data of employee_type">
+                                                <option  value="{{data.employee_type}}">{{data.employee_type}}</option>
+                                              </ng-container>
+                                              </select> 
+                                          </td> 
+                                          <td><input class="selects" type="number"   name="basic"  value="" [(ngModel)]="basic" (change)="calculate($event.target.value)"></td> 
+                                          <td><input class="selects"  type="number"  name="da"  value="" [(ngModel)]="da" (change)="calculate($event.target.value)"></td> 
+                                          <td><input class="selects"  type="number"  name="hra"  value="" [(ngModel)]="hra" (change)="calculate($event.target.value)"></td> 
+                                          <td><input class="selects"  type="number"  name="trv_exp"  value="" [(ngModel)]="trv_exp" (change)="calculate($event.target.value)"></td> 
+                                          <td><input class="selects"  type="number"  name="others"  value="" [(ngModel)]="others" (change)="calculate($event.target.value)"></td> 
+                                          <td><input class="selects"  type="number"  name="medical"  value="" [(ngModel)]="medical" (change)="calculate($event.target.value)"></td> 
+                                          <td><input class="selects"  type="number"  name="others1"  value="" [(ngModel)]="others1" (change)="calculate($event.target.value)"></td> 
+                                          <td><input class="selects"  type="number"  name="others2"  value="" [(ngModel)]="others2" (change)="calculate($event.target.value)"></td> 
+                                          <td><input class="selects"  type="number"  name="others3"  value="" [(ngModel)]="others3" (change)="calculate($event.target.value)"></td> 
+                                          <td><input class="selects"  type="number"  name="others4"  value="" [(ngModel)]="others4" (change)="calculate($event.target.value)"></td> 
+                                          <td><input class="selects"  type="number"  name="total_pay"  value="" [(ngModel)]="total_pay"></td> 
+                                          <td><button class="btn btn-info btn-lg"  style="width: 100%;" (click)="addpayment()" >Add</button></td>
+                                    </tr>    
+                        </tbody>
+                    </table>    
+              </div>
+              </div>
+        
+
+
+
+
+
+<!-- BEGIN # MODAL LOGIN -->
+<div class="modal fade" id="login-modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-dialogs" style="max-width: 500px;">
+  <div class="modal-content">
+    
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+       
+            
+            <!-- Begin # DIV Form -->
+            <div id="div-forms">
+            
+                <!-- Begin # Login Form -->
+                <form id="login-form">
+                <div class="modal-body">
+          
+                    <div class="login-form">
+                        <div class="main-div">
+                            <div class="panel">
+                                <h3>Options User</h3>
+                           </div>
+                            <form id="Login">
+                                <div class="form-group">  
+                                <label>PF</label>
+                                <input type="checkbox">BASIC 
+                                <input type="checkbox">DA
+                                <input type="checkbox">HRA
+                                <input type="checkbox">TRV.Exp
+                                </div>
+                                <div class="form-group">  
+                                  <label>ESI</label>
+                                  <input type="checkbox">BASIC 
+                                  <input type="checkbox">DA
+                                  <input type="checkbox">HRA
+                                  <input type="checkbox">TRV.Exp
+                                  </div>
+                                  <div class="form-group">  
+                                    <label>PRO-Tax</label>
+                                    <input type="checkbox">BASIC 
+                                    <input type="checkbox">DA
+                                    <input type="checkbox">HRA
+                                    <input type="checkbox">TRV.Exp
+                                    </div>
+                            </form>
+                            </div>
+                            <button class="btn btn-primary" data-dismiss="modal" style="color:#fff; background:#13477e!important;" (click)="assign(quest.value,ans.value)">Submit</button>
+                        </div>
+              </div>
+            
+                </form>
+                <!-- End # Login Form -->
+                
+                <!-- Begin | Lost Password Form -->
+              
+                
+                
+            </div>
+            <!-- End # DIV Form -->
+            
+  </div>
+</div>
+</div>
+<!-- END # MODAL LOGIN -->

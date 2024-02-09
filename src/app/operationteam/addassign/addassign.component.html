@@ -1,0 +1,211 @@
+<form>
+    <!-- service-form -->
+    <div class="service-forms">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="multistep-form-section">
+                <form name="form"  novalidate>
+                        <div class="">
+                                <div class="">
+                                <h3 style="width: 100%;
+                                border: 2px #ddd solid;padding: 10px;text-transform: uppercase;">Assign Employee</h3>
+                                </div>
+                              </div>            
+                <div class="row">
+                    <div class="container"  id="component2">
+                        <div class="col-12 col-sm-12 form-group">
+                            <form class="frms" name="form" novalidate>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="form-group service-form-group col-md-4">
+                                            <div class="row">
+                                              <div class="col-md-5">
+                                                <label >Client</label>
+                                              </div>
+                                              <div class="col-md-7">
+                                                <div class="form-group service-form-group">                             
+                                                  <select class="form-control"   name="employees" (change)="Clientfetch($event.target.value)" value="" #employees id="exampleFormControlSelect1">
+                                                      <option>Select Client</option>
+                                                      <ng-container  *ngFor="let data of Client_data">
+                                                      <option  value="{{data.id}}">Client-ID :{{data.id}} & Name :{{data.company_name}}</option>
+                                                    </ng-container>
+                                                    </select> 
+                                              </div>  
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="form-group service-form-group col-md-4">
+                                              <div class="row">
+                                                <div class="col-md-5">
+                                                  <label >Site</label>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <div class="form-group service-form-group">                             
+                                                        <select class="form-control"   name="employees" (change)="Sitefetch($event.target.value)" value="" #employees id="exampleFormControlSelect1">
+                                                            <option>Select Site</option>
+                                                            <ng-container  *ngFor="let data of site_data">
+                                                              <option  value="{{data.id}}">Site-ID :{{data.id}} & Name :{{data.title}}</option>                                                          </ng-container>
+                                                          </select> 
+                                                    </div>                                         
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="form-group service-form-group col-md-4">
+                                                <div class="row">
+                                                  <div class="col-md-5">
+                                                    <label >Contract</label>
+                                                  </div>
+                                                  <div class="col-md-7">
+                                                      <div class="form-group service-form-group">                             
+                                                          <select class="form-control"   name="employees" (change)="contract($event.target.value)" value="" #employees id="exampleFormControlSelect1">
+                                                              <option>Select Contract</option>
+                                                              <ng-container  *ngFor="let data of contract_data">
+                                                              <option  value="{{data.id}}">Contract-ID :{{data.id}} & Start {{data.contract_start_date}} To {{data.contract_end_date}}</option>
+                                                            </ng-container>
+                                                            </select> 
+                                                      </div>                                         
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="form-group service-form-group col-md-4">
+                                                <div class="row">
+                                                  <div class="col-md-5">
+                                                    <label >Employee Type</label>
+                                                  </div>
+                                                  <div class="col-md-7">
+                                                      <div class="form-group service-form-group">                             
+                                                          <select class="form-control"   name="employees" (change)="type_detail($event.target.value)" value="" #employees id="exampleFormControlSelect1">
+                                                              <option>Select Type</option>
+                                                              <ng-container  *ngFor="let data of employee_type">
+                                                              <option  value="{{data.id}}">{{data.employee_type}}</option>
+                                                            </ng-container>
+                                                            </select> 
+                                                      </div>                                         
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="form-group service-form-group col-md-4">
+                                                <div class="row">
+                                                  <div class="col-md-5">
+                                                    <label >From Date</label>
+                                                  </div>
+                                                  <div class="col-md-7">
+                                                      <div class="form-group service-form-group">                             
+                                                        <input type="date" class="form-control" value="{{start_date}}" (change)="startdate($event.target.value)" >
+                                                      </div>                                         
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="form-group service-form-group col-md-4">
+                                                <div class="row">
+                                                  <div class="col-md-5">
+                                                    <label >To Date</label>
+                                                  </div>
+                                                  <div class="col-md-7">
+                                                      <div class="form-group service-form-group">                             
+                                                          <input type="date" class="form-control" value="{{End_date}}"  (change)="enddate($event.target.value)">
+                                                      </div>                                         
+                                                  </div>
+                                                </div>
+                                              </div>
+                                             
+                                    </div>
+                                  </div>
+                            <div class="row">
+                            <div class="col-md-12 col-sm-5 form-group">
+                            <!-- <button class="btnupds" (click)="fetchdata(employees.value)">Assign</button> -->
+                            </div>
+                        </div>
+                     </form>
+                  </div>
+                </div>
+                    </div>
+                  </form>
+              </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </form>
+  <div class="row">
+      <div class="col-md-4">
+        No of {{emp_type}} Required : {{employee_count}}
+      </div>
+      <div class="col-md-4">
+         Contract Start Date : {{contract_start_date}}
+        </div>
+        <div class="col-md-4">
+            Contract End Date : {{contract_end_date}}
+          </div>
+  </div>
+<div class="row" style="padding-top: 20px">
+      <div class="col-md-12"><button class="btn btn-primary" (click)='search()'>Search Avaliable Employees</button></div>
+</div>
+
+
+
+<!-- BEGIN # BOOTSNIP INFO -->
+
+
+
+<div class="container"  id="component1">
+  <div class="row">
+      <div class="header">
+        <div class="row">
+          <div class="col-12 col-md-6 mb-3">
+            <div class="col-md-8">
+              <h3 class="adsc">
+                <i class="fa fa-university"></i> &nbsp;Assign Employee List</h3>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <button type="button" class="btn btn-info btn-lg pull-right" data-toggle="collapse" (click)="addassign()">Assign Employee</button>
+            </div>
+          </div>
+         
+        </div>
+
+        <div class="col qrc">
+    
+            <div class="col-md-12">
+              <div class="row">
+                <div class="tabl  " >
+                    <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Employee Type</th>
+                                <th>Mobile Number</th>
+                                <th>Email-ID</th>
+                                <th>Date of Joining</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <ng-container  *ngFor="let data of employees_list;  let i = index">
+                                        <tr>
+                                        <td><input type="checkbox"  value="option1" (change)="onChange(data, $event.target.checked)"></td>  
+                                        <td>{{data.Empid}}</td>
+                                        <td>{{data.Name}}</td>
+                                        <td id="l1">{{data.employee_type}}</td>
+                                        <td id="a1">{{data.Mobile_No}}</td>
+                                        <td id="a1">{{data.Email_ID}}</td>
+                                        <td id="pc1">{{data.date_joining}}</td>
+                                    </tr>
+                                    </ng-container>      
+                        </tbody>
+                    </table>
+                    <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                    <div class="card-footer p-0">
+                    <ngb-pagination   [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                    </div>     
+              </div>
+              </div>
+            </div>
+            </div>
+  </div>
+</div>
+
+

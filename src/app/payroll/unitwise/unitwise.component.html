@@ -1,0 +1,77 @@
+<div class="service-form col-md-12">
+    <div class="row">
+      <div class="header">
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-3">
+                        <h3 class="adsc"> <i class="fa fa-university"></i>  &nbsp; Unit Wise</h3></div>
+                        <div class="col-md-6">
+                            <button class="btn-info clntr btn-lg pull-right" (click)="printComponent('component1')">Print</button>
+                        </div>
+              </div>  
+        <br></div><br>
+        <div class="container" id="component1">
+    <table style="font-size: 10px;color: black">
+            <tr>
+                    <th>S.NO</th>
+                    <th>UNAME</th>
+                    <th>PRE</th>
+                    <th>Basic</th>
+                    <th>Da</th>
+                    <th>HRA</th>
+                    <th>Trv</th>
+                    <th>Others</th>
+                    <th>addl.amt</th>
+                    <th>E.day</th>
+                    <th>E.AMT</th>
+                    <th>Gross</th>
+                    <th>Advance</th>
+                    <th>Loan</th>
+                    <th>Uniform</th>
+                    <th>Mess</th>
+                    <th>Rent</th>
+                    <th>ATM</th>
+                    <th>Phone</th>
+                    <th>PF</th>
+                    <th>ESI</th>
+                    <th>Pro-Tax</th>
+                    <th>Total-Dec</th>
+                    <th>Net-Pay</th>
+                </tr>
+     
+
+                        <ng-container  *ngFor="let data of datass ;  let i = index">
+                                <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                    <td>{{i + 1}}</td> 
+                                    <td style="min-width: 10px;">{{data.unit_name}}</td>
+                                    <td style="min-width: 10px;">{{data.present}}</td>
+                                    <td style="min-width: 10px;" id="l1">{{data.basic}}</td>
+                                    <td style="min-width: 10px;text-align: center;" id="a1">{{data.da}}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.hra}}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.trv_ex}}</td>
+                                    <td style="min-width: 10px;" id="l1">{{data.others | number}}</td>
+                                    <td style="min-width: 10px;" id="l1">{{data.add_amount | number}}</td>
+                                    <td style="min-width: 10px;" id="a1">{{data.ewdays}}</td>
+                                    <td style="min-width: 10px;" id="a1">{{data.ewamount | number}}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.gross| number}}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.advance | number}}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.loan | number}}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.uniform | number}}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.mess | number}}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.rent | number}}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.atm | number}}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.phone | number}}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.pf | number}}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.esi }}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.pr_tax}}</td>
+                                    <td style="min-width: 10px;" id="pc1">{{data.total_dec}}</td> 
+                                    <td style="min-width: 10px;" id="pc1">{{data.net_pay}}</td>                                 
+                                </ng-container>  
+    </table>
+        </div>
+  </div>
+  </div>  
+  
+  
+  
+  
+  

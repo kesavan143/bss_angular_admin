@@ -1,0 +1,309 @@
+<!-- BEGIN # BOOTSNIP INFO -->
+
+
+<div class="container">
+  <div class="row">
+      <div class="header">
+        <div class="row">
+          <div class="col-12 col-md-6 mb-3">
+            <div class="col-md-8">
+              <h3 class="adsc">
+                <i class="fa fa-university"></i> &nbsp;Inprogress Complaints</h3>
+              </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+          </div>
+        </div>
+        <div class=" butn col-md-12 pull-left">
+            <div class="notifications1">
+                      
+                <span class="num">{{All}}</span>
+               
+            </div>
+          <button class="butns" (click) = "addapi4()" >All</button>
+          <div class="notifications2">
+              
+                <span class="num">{{Open}}</span>
+               
+            </div>
+          <button class="butns" (click) = "addapi1()">Open</button>
+           
+          <div class="notifications3">
+              
+                <span class="num">{{Inprogree}}</span>
+               
+            </div>
+          <button class="butns1" (click) = "addapi2()" >Inprogress</button>
+              
+          <div class="notifications4">
+              
+                <span class="num">{{Complete}}</span>
+               
+            </div>
+          <button class="butns" (click) = "addapi3()" >Completed</button>
+                         
+                 </div>
+                 <br>
+                 <br>
+                 <br>
+        
+
+        <div class="col">
+    
+            <div class="col-md-12">
+              <div class="row">
+                <div class="tabl" >
+                    <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th>SL.NO</th>
+                                <th>Complaint ID</th>
+                                <th>Complaint From</th>
+                                <th>Poster ID</th>
+                                <th>Complaint Type</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Posted On</th>
+                                <th>Status</th>
+                                <th>View</th>
+                                <th>Report</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <ng-container  *ngFor="let data of datas ;  let i = index">
+                                        <tr>
+                                        <td style="text-align: center">{{i+1}}</td> 
+                                        <td style="text-align: center">{{data.complaint_id}}</td>
+                                        <td>{{data.complaint_from}}</td>
+                                        <td style="text-align: center" id="l1">{{data.poster_id}}</td>
+                                        <td id="a1">{{data.complaint_type}}</td>
+                                        <td id="pc1">{{data.title}}</td>
+                                        <td id="pc1">{{data.description}}</td>
+                                        <td id="pc1">{{data.posted_on}}</td>
+                                        <td id="pc1">{{data.status}}</td>
+                                        <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" data-toggle="collapse"  data-toggle="modal" data-target="#login-modal2" (click)="open($event, data)"><i  class="m-1 icon-screen-desktop"></i></button></td>
+                                        <td><button type="button" data-toggle="modal"  data-uid="1" class=" btn  btn-sm" data-toggle="modal" data-target="#login-modal"><i  class="m-1 icon-note" (click)="assign3($event,data)"></i></button></td> 
+                                    </tr>
+                                    </ng-container>      
+                        </tbody>
+                    </table>
+                    <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                    <div class="card-footer p-0">
+                    <ngb-pagination   [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                    </div>     
+              </div>
+              </div>
+            </div>
+            </div>
+        
+       
+  </div>
+</div>
+<!-- END # BOOTSNIP INFO -->
+
+<!-- BEGIN # MODAL LOGIN -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog modal-dialogs">
+      <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+       
+                
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+                    <div class="modal-body">
+              
+                        <div class="login-form">
+                            <div class="main-div">
+                                <div class="panel">
+                             <h3>Report</h3>
+                              
+                               </div>
+                                <form id="Login">
+                                    <div class="form-group">                       
+                                    <label>Complaint ID</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Complaint ID" value="{{datass.issue.complaint_id}}" #complaint_ids disabled>                           
+                                    </div>
+                                    <div class="form-group">                           
+                                        <label>Complaint Title</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Ender Title" #title>                          
+                                    </div>
+
+                                    <div class="form-group">
+                                            <label>Complaint Description</label>
+                                        <textarea type="text" class="form-control"  placeholder="Ender discription" #description></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                            <label>Done By</label>
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="taken_by ID"  value = "" #take_by >
+                                    </div>
+                                </form>
+                                <div>
+                                    <img *ngFor="let url of urls" [src]="url" class="rounded mb-3" width="180">
+                                  </div>
+                                  <input type="file" (change)="onfileselected($event)"/>
+                                </div>
+                                <button class="btn btn-primary" data-dismiss="modal" style="color:#fff; background:#13477e!important;" (click) = "attach(complaint_ids.value,title.value,description.value,take_by.value)">Submit</button>
+                            </div>
+                  </div>
+                
+                    </form>
+                    <!-- End # Login Form -->
+                    
+                    <!-- Begin | Lost Password Form -->
+                  
+                    
+                    
+                </div>
+                <!-- End # DIV Form -->
+                
+      </div>
+    </div>
+  </div>
+    <!-- END # MODAL LOGIN -->
+
+
+
+    <!-- BEGIN # MODAL LOGIN -->
+<div class="modal fade" id="login-modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialogs" style="max-width: 700px;">
+    <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+     
+              
+              <!-- Begin # DIV Form -->
+              <div id="div-forms">
+              
+                  <!-- Begin # Login Form -->
+                  <form id="login-form">
+                  <div class="modal-body">
+            
+                      <div class="login-form">
+                          <div class="main-div">
+                              <div class="panel">
+                                  <h3>View Compliant</h3>
+                            
+                             </div>
+                              <form id="Login">
+                          
+
+                                  <div class="form-group">
+                          
+                                  <label>Complaint From</label>
+                                      <input type="text" class="form-control" id="name" value="{{datass.issue.complaint_from}}" disabled>
+                          
+                                  </div>
+
+                                  <div class="form-group">
+                          
+                                      <label>Type</label>
+                                      <input type="text" class="form-control" id="name" value="{{datass.issue.complaint_type}}" disabled>
+                          
+                                  </div>
+
+
+                                  
+
+                                  <div class="form-group">
+                          
+                                      <label>Title</label>
+                                      <input type="email" class="form-control" id="inputEmail"  value="{{datass.issue.title}}" disabled>
+                          
+                                  </div>
+                          
+                                  <div class="form-group">
+                                      <label>Description</label>
+                                      <textarea type="text" class="form-control"  value="{{datass.issue.description}}" disabled></textarea>
+                          
+                                  </div>
+                                  
+                                  
+                          
+                              </form>
+
+                              <div class="card mb-3">
+                                  <div class="card-body">
+                                    <h5 class="card-title"></h5>
+                                    <ngx-gallery [options]="onlyThumbnailsGalleryOptions" [images]="galleryImages"></ngx-gallery>
+                                  </div>
+                                </div>
+                              </div>
+                         
+                          </div>
+                </div>
+              
+                  </form>
+                  <!-- End # Login Form -->
+                  
+                  <!-- Begin | Lost Password Form -->
+                
+                  
+                  
+              </div>
+              <!-- End # DIV Form -->
+              
+    </div>
+  </div>
+</div>
+  <!-- END # MODAL LOGIN -->
+
+
+        <!-- BEGIN # MODAL LOGIN -->
+<div class="modal fade" id="login-modal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-dialogs" style="max-width: 700px;">
+  <div class="modal-content">
+
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+   
+            
+            <!-- Begin # DIV Form -->
+            <div id="div-forms">
+            
+                <!-- Begin # Login Form -->
+                <form id="login-form">
+                <div class="modal-body">
+          
+                    <div class="login-form">
+                        <div class="main-div">
+                            <div class="panel">
+                                <h3>Complaint Taken By</h3>
+                          
+                           </div>
+                            <form id="Login">
+                                <div class="form-group">
+                        
+                                    <label>Enter the Complaint ID</label>
+                                        <input type="text" class="form-control" id="name" value="{{datass.issue.complaint_id}}" #complaint_id disabled>
+                                    </div>
+
+                                <div class="form-group">
+                        
+                                <label>Enter the Employee ID</label>
+                                    <input type="text" class="form-control" id="name" value="" #taken_by>
+                                </div>  
+                            </form>
+                            </div>
+                            <button class="btn btn-primary" data-dismiss="modal" style="color:#fff; background:#13477e!important;" (click) = "assign(taken_by.value,complaint_id.value)">Submit</button>
+                        </div>
+              </div>
+                </form>
+                <!-- End # Login Form -->
+                
+                <!-- Begin | Lost Password Form -->
+              
+                
+                
+            </div>
+            <!-- End # DIV Form -->
+            
+  </div>
+</div>
+</div>
+<!-- END # MODAL LOGIN -->
+
+
+

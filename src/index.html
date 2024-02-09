@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BSS</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src='https://use.fontawesome.com/2188c74ac9.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"></script>
+   
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.8/angular-sanitize.min.js"></script>
+
+
+    <script src="/bower_components/angular-read-more/readmore.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.6.4/angular-sanitize.min.js"></script> -->
+
+
+
+    <script type="text/javascript"  src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript"  src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript"  src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script type="text/javascript"  src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
+
+
+
+
+</head>
+<body>
+
+<app-root class="loading"></app-root>
+
+<style>
+  .loading ~ .loader-wrap {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .loader-wrap {
+    position: absolute;
+    z-index: 3000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  }
+
+  .loader-wrap .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 160px;
+  }
+
+  .loader-wrap .loader div {
+    position: relative;
+    float: left;
+    width: 10px;
+    height: 10%;
+    margin-right: 8px;
+    background-color: #13477e;
+  }
+  .loader-wrap .loader div:nth-child(1) {
+    animation: load 2s ease;
+    animation-iteration-count: infinite;
+  }
+  .loader-wrap .loader div:nth-child(2) {
+    animation: load 2s ease 0.1s;
+    animation-iteration-count: infinite;
+  }
+  .loader-wrap .loader div:nth-child(3) {
+    animation: load 2s ease 0.2s;
+    animation-iteration-count: infinite;
+  }
+  .loader-wrap .loader div:nth-child(4) {
+    animation: load 2s ease 0.3s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes load {
+    0% {
+      height: 10%;
+      top: 0;
+    }
+    5% {
+      height: 15%;
+      top: -5%;
+    }
+    8% {
+      height: 20%;
+      top: -15%;
+    }
+    23% {
+      height: 10%;
+      top: -20%;
+    }
+    33% {
+      height: 10%;
+      top: -20%;
+    }
+
+    38% {
+      height: 15%;
+      top: -25%;
+    }
+    41% {
+      height: 20%;
+      top: -35%;
+    }
+    56% {
+      height: 10%;
+      top: -40%;
+    }
+    66% {
+      height: 10%;
+      top: -40%;
+    }
+    80% {
+      height: 40%;
+      top: -30%;
+    }
+
+    90% {
+      height: 10%;
+      top: 0;
+    }
+    100% {
+      height: 10%;
+      top: 0;
+    }
+  }
+</style>
+<!--END Pre loader style-->
+<!--Pre loader html-->
+<div class="loader-wrap">
+  <div class="loader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<!--END Pre loader html-->
+<!-- <script>
+$(document).ready(function() {
+$('.example').DataTable( {
+    dom: 'Bfrtip',
+    buttons: [
+        'copyHtml5',
+        'excelHtml5',
+        'csvHtml5',
+        'pdfHtml5',
+    ]
+} );
+} );
+</script> -->
+</body>
+</html>
+<script>
+    function myFunction() {
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    </script>
+
+<script>
+  $(document).ready(function () {
+    //Initialize tooltips
+    // $('.nav-tabs > li a[title]').tooltip();
+    
+    //Wizard
+    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+
+        var $target = $(e.target);
+    
+        if ($target.parent().hasClass('disabled')) {
+            return false;
+        }
+    });
+
+    $(".next-step").click(function (e) {
+
+        var $active = $('.wizard .nav-tabs li.active');
+        $active.next().removeClass('disabled');
+        nextTab($active);
+
+    });
+    $(".prev-step").click(function (e) {
+
+        var $active = $('.wizard .nav-tabs li.active');
+        prevTab($active);
+
+    });
+});
+
+function nextTab(elem) {
+    $(elem).next().find('a[data-toggle="tab"]').click();
+}
+function prevTab(elem) {
+    $(elem).prev().find('a[data-toggle="tab"]').click();
+}
+
+
+//according menu
+
+$(document).ready(function()
+{
+    //Add Inactive Class To All Accordion Headers
+    $('.accordion-header').toggleClass('inactive-header');
+	
+	//Set The Accordion Content Width
+	var contentwidth = $('.accordion-header').width();
+	$('.accordion-content').css({});
+	
+	//Open The First Accordion Section When Page Loads
+	$('.accordion-header').first().toggleClass('active-header').toggleClass('inactive-header');
+	$('.accordion-content').first().slideDown().toggleClass('open-content');
+	
+	// The Accordion Effect
+	$('.accordion-header').click(function () {
+		if($(this).is('.inactive-header')) {
+			$('.active-header').toggleClass('active-header').toggleClass('inactive-header').next().slideToggle().toggleClass('open-content');
+			$(this).toggleClass('active-header').toggleClass('inactive-header');
+			$(this).next().slideToggle().toggleClass('open-content');
+		}
+		
+		else {
+			$(this).toggleClass('active-header').toggleClass('inactive-header');
+			$(this).next().slideToggle().toggleClass('open-content');
+		}
+	});
+	
+	return false;
+});
+</script>
+
+
+<script>
+   /* #####################################################################
+   #
+   #   Project       : Modal Login with jQuery Effects
+   #   Author        : Rodrigo Amarante (rodrigockamarante)
+   #   Version       : 1.0
+   #   Created       : 07/29/2015
+   #   Last Change   : 08/04/2015
+   #
+   ##################################################################### */
+   
+$(function() {
+    
+    var $formLogin = $('#login-form');
+    var $formLost = $('#lost-form');
+    var $formRegister = $('#register-form');
+    var $divForms = $('#div-forms');
+    var $modalAnimateTime = 300;
+    var $msgAnimateTime = 150;
+    var $msgShowTime = 2000;
+
+    $("form").submit(function () {
+        switch(this.id) {
+            case "login-form":
+                var $lg_username=$('#login_username').val();
+                var $lg_password=$('#login_password').val();
+                if ($lg_username == "ERROR") {
+                    msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
+                } else {
+                    msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
+                }
+                return false;
+                break;
+            case "lost-form":
+                var $ls_email=$('#lost_email').val();
+                if ($ls_email == "ERROR") {
+                    msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "error", "glyphicon-remove", "Send error");
+                } else {
+                    msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "success", "glyphicon-ok", "Send OK");
+                }
+                return false;
+                break;
+            case "register-form":
+                var $rg_username=$('#register_username').val();
+                var $rg_email=$('#register_email').val();
+                var $rg_password=$('#register_password').val();
+                if ($rg_username == "ERROR") {
+                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Register error");
+                } else {
+                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Register OK");
+                }
+                return false;
+                break;
+            default:
+                return false;
+        }
+        return false;
+    });
+    
+    $('#login_register_btn').click( function () { modalAnimate($formLogin, $formRegister) });
+    $('#register_login_btn').click( function () { modalAnimate($formRegister, $formLogin); });
+    $('#login_lost_btn').click( function () { modalAnimate($formLogin, $formLost); });
+    $('#lost_login_btn').click( function () { modalAnimate($formLost, $formLogin); });
+    $('#lost_register_btn').click( function () { modalAnimate($formLost, $formRegister); });
+    $('#register_lost_btn').click( function () { modalAnimate($formRegister, $formLost); });
+    
+    function modalAnimate ($oldForm, $newForm) {
+        var $oldH = $oldForm.height();
+        var $newH = $newForm.height();
+        $divForms.css("height",$oldH);
+        $oldForm.fadeToggle($modalAnimateTime, function(){
+            $divForms.animate({height: $newH}, $modalAnimateTime, function(){
+                $newForm.fadeToggle($modalAnimateTime);
+            });
+        });
+    }
+    
+    function msgFade ($msgId, $msgText) {
+        $msgId.fadeOut($msgAnimateTime, function() {
+            $(this).text($msgText).fadeIn($msgAnimateTime);
+        });
+    }
+    
+    function msgChange($divTag, $iconTag, $textTag, $divClass, $iconClass, $msgText) {
+        var $msgOld = $divTag.text();
+        msgFade($textTag, $msgText);
+        $divTag.addClass($divClass);
+        $iconTag.removeClass("glyphicon-chevron-right");
+        $iconTag.addClass($iconClass + " " + $divClass);
+        setTimeout(function() {
+            msgFade($textTag, $msgOld);
+            $divTag.removeClass($divClass);
+            $iconTag.addClass("glyphicon-chevron-right");
+            $iconTag.removeClass($iconClass + " " + $divClass);
+  		}, $msgShowTime);
+    }
+});
+</script>
+
+
+
+
+  
+

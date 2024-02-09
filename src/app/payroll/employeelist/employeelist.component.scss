@@ -1,0 +1,48 @@
+table {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  
+  th.mat-header-cell {
+    text-align: left;
+    max-width: 300px!important;
+  }
+  
+  .add-user {
+    float: right;
+  }
+  .table.mat-table {
+    border-spacing: 0;
+    
+}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+  padding: 1px 6px 0px 26px !important;
+  line-height: 1.428571;
+  vertical-align: top;
+  border: 1px solid #ddd;
+}
+  .mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 220px!important;
+  }
+  i.searchs{
+    position: absolute;
+    padding: 0px 0px 0px 0px;
+  }
+  .search {
+    margin-bottom: 15px;
+  }
+  .btn-info {
+    color: #fff;
+    background-color: #084280;
+    border-color: #084280;
+    box-shadow: none;
+    padding: 5px 11px 6px 10px !important;
+    margin: 0px 6px 8px 0px;
+  }
+  .table-responsive{
+    display: block!important;
+  }

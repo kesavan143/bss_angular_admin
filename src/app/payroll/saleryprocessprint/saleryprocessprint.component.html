@@ -1,0 +1,67 @@
+
+<div class="container" id="component1">
+<h3>{{reports[0].site_name}}</h3>
+<table>
+  <tr>
+    <td>Unit Name</td>
+    <td>Name</td>
+    <td>A/C</td>
+    <td>IFSC No</td>
+    <td>DP</td>
+    <td>Basic</td>
+    <td>DA</td>
+    <td>HRA</td>
+    <td>Others</td>
+    <td>Bouns</td>
+    <td>Leave</td>
+    <td>Gross</td>
+    <td>PF</td>
+    <td>ESI</td>
+    <td>Adv.</td>
+    <td>Uniform</td>
+    <td>Mess</td>
+    <td>Rent</td>
+    <td>ATM</td>
+    <td>Loan</td>
+    <td>Others</td>
+    <td>pr.Tax</td>
+    <td>T.Ded</td>
+    <td>NET</td>
+
+  </tr>
+  <tr>
+    <td>{{reports[0].site_name}}</td>
+    <td>{{reports[0].employee_name}}</td>
+    <td>{{reports[0].account_number}}</td>
+    <td>{{reports[0].ifscnumber}}</td>
+    <td>{{reports[0].noofdays}}</td>
+    <td>{{reports[0].basic| number}}</td>
+    <td>{{reports[0].da| number}}</td>
+    <td>{{reports[0].hra| number}}</td>
+    <td>{{reports[0].others| number}}</td>
+    <td>{{reports[0].bouns| number}}</td>
+    <td>{{reports[0].leave| number}}</td>
+    <td>{{reports[0].gross| number}}</td>
+    <td>{{reports[0].pf| number}}</td>
+    <td>{{reports[0].esi| number}}</td>
+    <td>{{reports[0].adv| number}}</td>
+    <td>{{reports[0].uniform| number}}</td>
+    <td>{{reports[0].mess| number}}</td>
+    <td>{{reports[0].rent| number}}</td>
+    <td>{{reports[0].atm | number}}</td>
+    <td>{{reports[0].loan | number}}</td>
+    <td>{{reports[0].otherss | number}}</td>
+    <td>{{reports[0].prtax | number}}</td>
+    <td>{{reports[0].totaldedcation | number}}</td>
+    <td>{{reports[0].netamount | number}}</td>
+ 
+
+  </tr>
+
+</table>
+</div>
+<div class="row" style="padding-top: 10px;">
+  <div class="col-md-12">
+    <button class="btn btn-info btn-lg" style="width: 200px;float: right;" (click)="printComponent('component1')">print</button>
+  </div>
+</div>

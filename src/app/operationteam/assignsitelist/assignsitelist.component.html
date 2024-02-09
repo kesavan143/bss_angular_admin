@@ -1,0 +1,68 @@
+
+<!-- Client Management -->
+
+<div class="service-form col-md-12">
+
+    <div class="row">
+      <div class="header">
+  
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-3">
+                        <h3 class="adsc"> <i class="fa fa-university"></i>  &nbsp;Site List</h3></div>
+                        <div class="col-md-6">
+  
+                        </div>
+              </div>
+  
+              
+  
+        <br></div><br>
+  
+        <div class="col">
+  
+          <div class="col-md-12">
+            <div class="row">
+              <div class="tabl" >
+                  <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                      <thead>
+                          <tr>
+                              <th>SL.NO</th>
+                              <th>Site Id</th>
+                              <th>Site Name</th>
+                              <th>Contact Person</th>
+                              <th>Contact Email</th>
+                              <th>Contact Number</th>
+                              <th>Address</th>
+                              <th>View</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                                  <ng-container  *ngFor="let data of datas ;  let i = index">
+                                  <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                      <td>{{i + 1}}</td> 
+                                      <td>{{data.title}}</td>
+                                      <td id="l1">{{data.description}}</td>
+                                      <td id="a1">{{data.address}}</td>
+                                      <td id="pc1">{{data.contactperson1}}</td>
+                                      <td id="pc1">{{data.contactnumber1}}</td>
+                                      <td id="pc1">{{data.address}}</td>
+                                      <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" data-toggle="collapse"  (click)="view($event, data)"><i  class="m-1 icon-screen-desktop"></i></button></td>                                </tr>
+                                  
+                                  </ng-container>      
+                      </tbody>
+                  </table>
+                  <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                  <div class="card-footer p-0">
+                  <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                          </div>     
+            </div>
+            </div>
+          </div>
+          </div>
+  </div>
+  </div>  
+          <div *ngIf="deleteLoading" id="snackbar" class="show">Deleting... Pleaser Wait!</div>
+  
+  
+  
+  

@@ -1,0 +1,140 @@
+
+<!-- Adding Employee Page -->
+
+<form>
+  <!-- service-form -->
+  <div class="service-forms">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="row">
+            <div class="multistep-form-section">
+              <form>
+                      <div class="">
+                              <div class="">
+                              <h3 style="    width: 100%;
+                              background: #d0d6db;padding: 10px;text-transform: uppercase;">Add Requirement</h3>
+                              </div>
+                              <div class="col col-lg-2">                                        
+                              </div>
+                            </div>  
+                            <br>                        
+              <div class="row">
+                      <div class="col-12 col-sm-12 form-group">
+                          <form>
+                                                    <div class="col-md-12">
+                                                          <div class="row">
+                                                            <table style="width:100%">
+                                                              <tr>
+                                                                <th>Employee type</th>
+                                                                <th>Amount</th> 
+                                                                <th>HRS</th>
+                                                                <th>No of Employee</th>
+                                                                <th>Total Amount</th>
+                                                                <th>Add</th>
+                                                              </tr>
+                                                              <tr>
+                                                                <td>
+                                                                  
+                                                                  <select style="width: 100%" [(ngModel)]="addrequired.employee_type" name="employee_type" value="" #employee_type id="exampleFormControlSelect1">
+                                                                    <option disabled>Select Employee</option>
+                                                                      <ng-container  *ngFor="let data of datass">
+                                                                      <option  value="{{data.employee_type}}">{{data.employee_type}}</option>
+                                                                    </ng-container>
+                                                                    </select> 
+                                                                </td>
+                                                                <td><input type="number" style="width: 100%"[(ngModel)]="addrequired.amount" name="amount" (change)="add()" value="" #amount></td>
+                                                                <td> <select style="width: 100%" [(ngModel)]="addrequired.hrs" name="hrs" value="" #hrs id="exampleFormControlSelect1">
+                                                                  
+                                                                      
+                                                                  <option>8 hrs</option>
+                                                                  <option>12 hrs</option>
+                                                                  <option>16 hrs</option>
+                                                               
+                                                                </select> </td>
+                                                                <td><input type="number" style="width: 100%"[(ngModel)]="addrequired.no_of_employee" name="no_of_employee" (change)="add()" value="" #no_of_employee></td>
+                                                                <td><input type="number" style="width: 100%"[(ngModel)]="addrequired.total_amount" name="total_amount" value="" #total_amount disabled></td>
+                                                                <td><button class="btn-info btn-lg" style="width: 100%" *ngIf="isactive === true"  (click)="addrequireds()" >Add Employee</button><button style="width: 100%" *ngIf="isactive === false" (click)="update()" >Update Employee</button></td>
+
+                                                              </tr>
+                                                              
+                                                            </table>
+                                                          </div>
+                                                        </div>       
+                                                         <br>
+                                                         <br>
+                                                         <div class="col-md-12">
+                                                            <div class="row">
+                                                              <h3>Required List</h3>
+                                                            </div>
+                                                          </div>
+
+                                                          <br>
+
+                                                        <div class="col-md-12">
+                                                          <div class="row">
+                                                            <div class="tabl" >
+                                                            <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>SL.NO</th>
+                                                                        <th>Employee Type</th>
+                                                                        <th>Amount</th>
+                                                                        <th>HRS</th>
+                                                                        <th>No of Employee</th>
+                                                                        <th>Total Amount</th>
+                                                                        <th>Update</th>
+                                                                        <th>Delete</th>
+                                                                  </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                            <ng-container  *ngFor="let data of datas ;  let i = index">
+        
+                                                                            <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                                                                <td style="text-align: center">{{i + 1}}</td> 
+                                                                                <td>{{data.employee_type}}</td>
+                                                                                <td style="text-align: right" id="l1">{{data.amount}}</td>
+                                                                                <td id="a1">{{data.hrs}}</td>
+                                                                                <td id="a1">{{data.no_of_employee}}</td>
+                                                                                <td style="text-align: right" id="a1">{{data.total_amount}}</td>
+                                                                                <td style="text-align: center"><button  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="fetch($event, data)" ><i  class="m-1 icon-note"  ></i></button></td>
+                                                                                <td style="text-align: center"><button  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="delete($event, data)" ><i  class="m-1 icon-close"  ></i></button></td>
+                                                                            </tr>
+
+                                                                            </ng-container>      
+                                                                            <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                                                                <td></td> 
+                                                                                <td></td> 
+                                                                                <td></td> 
+                                                                                <td></td> 
+                                                                                <td style="text-align: right;"><b>Total</b></td>
+                                                                                <td style="text-align: right">{{total}}</td>
+                                                                                <td id="a1"></td>
+                                                                                
+                                                                            </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                                                            <div class="card-footer p-0">
+                                                            <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                                                                    </div>     
+                                                      </div>
+                                                          </div>
+                                                        </div>       
+                                                        <br>    
+ <div class="row">
+<div class="col-md-12 col-sm-5 form-group">
+<!-- <button class="input1" (click) = "addapi()">Next</button> -->
+</div>
+</div>
+</form>
+</div>
+</div>
+                </form>
+            </div>
+            </div>
+          </div>
+        </div>
+
+  </div>
+</form>

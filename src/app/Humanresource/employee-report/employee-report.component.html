@@ -1,0 +1,184 @@
+<!-- BEGIN # BOOTSNIP INFO -->
+
+
+<div class="container">
+  <div class="row">
+      <div class="header">
+        <div class="">
+          <div class="row">
+            <div class="col-md-7">
+              <h3 class="adsc">
+                <i class="fa fa-university"></i> &nbsp;Employee Report</h3>
+               
+              </div>
+              <div class="col-md-3">
+                <input *ngIf='dailybutton === true'  [max]="maxDate" (change)="dateChange2($event.target.value)" type="date"  data-date-format="DD MMMM YYYY" class="form-control date col-md-12"   name="Date_of_birth" value="" #Date_of_birth>
+                <input *ngIf='weeklybutton === true' [max]="maxDate" (change)="dateChange3($event.target.value)" type="date"  data-date-format="DD MMMM YYYY" class="form-control date col-md-12"   name="Date_of_birth" value="" #Date_of_birth>
+                <input *ngIf='monthlybutton === true' [max]="maxDate" (change)="dateChange4($event.target.value)" type="month"  data-date-format="DD MMMM YYYY" class="form-control date col-md-12"   name="Date_of_birth" value="" #Date_of_birth>
+                <input *ngIf='yearlybutton === true' [max]="maxDate" (change)="dateChange5($event.target.value)" type="date"  data-date-format="DD MMMM YYYY" class="form-control date col-md-12"   name="Date_of_birth" value="" #Date_of_birth>
+              </div>
+              <div class="col-md-2"> <button class="btn-info pull-right"  (click)="printComponent('component1')" style="float:right">Print</button></div>
+           
+            </div>
+           
+          </div>
+         
+        </div>
+        <br>
+        <div class="col-md-12 pull-left">
+
+        <button *ngIf='allbutton === true' class="butns1" (click) = "addapi1()" >All</button>
+        <button *ngIf='allbutton === false' class="butns" (click) = "addapi1()" >All</button>
+
+        <button *ngIf='dailybutton === true' class="butns1" (click) = "addapi2()">Daily</button>
+        <button *ngIf='dailybutton === false' class="butns" (click) = "addapi2()">Daily</button>
+
+        <button  *ngIf='weeklybutton === true' class="butns1" (click) = "addapi3()" >Weekly</button>
+        <button  *ngIf='weeklybutton === false' class="butns" (click) = "addapi3()" >Weekly</button>
+
+        <button *ngIf='monthlybutton === true' class="butns1" (click) = "addapi4()">Monthly</button>
+        <button *ngIf='monthlybutton === false' class="butns" (click) = "addapi4()">Monthly</button>
+
+        <button *ngIf='yearlybutton === true' class="butns1" (click) = "addapi5()" >Yearly</button>      
+        <button *ngIf='yearlybutton === false' class="butns" (click) = "addapi5()" >Yearly</button>      
+
+    
+               </div>
+               <br>
+               <br>
+               <div class="container" id="component1">
+               <div class="col-md-12">
+                 <h3>Employee List</h3>
+                  <div class="row">
+                    <div class="tabl" >
+                    <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th>SL.NO</th>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Mobile No</th>
+                                <th>Date of Joining</th>
+                                <th>Email ID</th>
+                                <th>Address</th>
+                                <th>View</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                                    <ng-container  *ngFor="let data of employeelist ;  let i = index">
+
+                                    <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                        <td>{{i+1}}</td>  
+                        <td>{{data.Empid}}</td>
+                        <td>{{data.Name}}</td>
+                        <td>{{data.gender}}</td>
+                        <td id="l1">{{data.Mobile_No}}</td>
+                        <td id="a1">{{data.date_joining | date: 'dd-MM-yyyy'}}</td>
+                        <td style="word-break: break-word;" id="pc1">{{data.Email_ID}}</td>
+                        <td  id="pc1">{{data.Address}}</td>
+                        <td><button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view($event, data)"><i  class="m-1 icon-printer ng-star-inserted"></i></button></td>
+                                    </tr>
+
+                                    </ng-container>      
+                                    
+                        </tbody>
+                    </table>
+                        
+              </div>
+                  </div>
+                </div>     
+                
+                <div class="col-md-12">
+                    <h3>Resigned Employee List</h3>
+                     <div class="row">
+                       <div class="tabl" >
+                       <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                           <thead>
+                               <tr>
+                                   <th>SL.NO</th>
+                                   <th>Employee ID</th>
+                                   <th>Name</th>
+                                   <th>Gender</th>
+                                   <th>Mobile No</th>
+                                   <th>Date of Joining</th>
+                                   <th>Email ID</th>
+                                   <th>Address</th>
+                                   <th>View</th>
+                             </tr>
+                           </thead>
+                           <tbody>
+                                       <ng-container  *ngFor="let data of resignemployeelist ;  let i = index">
+   
+                                       <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                           <td>{{i+1}}</td>  
+                           <td>{{data.Empid}}</td>
+                           <td>{{data.Name}}</td>
+                           <td>{{data.gender}}</td>
+                           <td id="l1">{{data.Mobile_No}}</td>
+                           <td id="a1">{{data.date_joining | date: 'dd-MM-yyyy'}}</td>
+                           <td style="word-break: break-word;" id="pc1">{{data.Email_ID}}</td>
+                           <td  id="pc1">{{data.Address}}</td>
+                           <td><button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view($event, data)"><i class="m-1 icon-screen-desktop"></i></button></td>
+                                       </tr>
+   
+                                       </ng-container>      
+                                      
+                           </tbody>
+                       </table>
+                        
+                 </div>
+                     </div>
+                   </div> 
+
+                   <div class="col-md-12">
+                      <h3>Left Employee List</h3>
+                       <div class="row">
+                         <div class="tabl" >
+                         <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                             <thead>
+                                 <tr>
+                                     <th>SL.NO</th>
+                                     <th>Employee ID</th>
+                                     <th>Name</th>
+                                     <th>Gender</th>
+                                     <th>Mobile No</th>
+                                     <th>Date of Joining</th>
+                                     <th>Email ID</th>
+                                     <th>Address</th>
+                                     <th>View</th>
+                               </tr>
+                             </thead>
+                             <tbody>
+                                         <ng-container  *ngFor="let data of letfemployeelist ;  let i = index">
+     
+                                         <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                             <td>{{i+1}}</td>  
+                             <td>{{data.Empid}}</td>
+                             <td>{{data.Name}}</td>
+                             <td>{{data.gender}}</td>
+                             <td id="l1">{{data.Mobile_No}}</td>
+                             <td id="a1">{{data.date_joining | date: 'dd-MM-yyyy'}}</td>
+                             <td style="word-break: break-word;" id="pc1">{{data.Email_ID}}</td>
+                             <td  id="pc1">{{data.Address}}</td>
+                             <td><button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view($event, data)"><i class="m-1 icon-screen-desktop"></i></button></td>
+                                         </tr>
+     
+                                         </ng-container>      
+                                        
+                             </tbody>
+                         </table>
+                             
+                   </div>
+                       </div>
+                     </div> 
+                     </div>
+
+
+
+      
+          
+     
+         
+  </div>
+</div>

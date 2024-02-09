@@ -1,0 +1,203 @@
+<!-- BEGIN # BOOTSNIP INFO -->
+<div class="container">
+  <div class="row">
+      <div class="header">
+        <div class="row">
+          <div class="col-12 col-md-6 mb-3">
+            <div class="col-md-8">
+              <h3 class="adsc">
+                <i class="fa fa-university"></i> &nbsp;Point Tracking</h3>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <button type="button" class="btn btn-info btn-lg pull-right" style="color: #fff;" data-toggle="collapse"  data-toggle="modal" data-target="#login-modal1" (click)="send()">Add Map Points</button>
+            </div>
+          </div>
+        </div>
+        
+        
+
+        <div class="col pointrck">
+    
+            <div class="col-md-12">
+              <div class="row">
+                <div class="tabl" >
+                    <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th>SL.NO</th>
+                                <th>Assigned Employee</th>
+                                <th>Map Title</th>
+                                <th>Description</th>
+                                <th>Created Date</th>
+                                <th>Updated Date</th>
+                                <!-- <th>Status</th> -->
+                                <th>Assign</th>
+                                <th>History</th>
+                                <th>Spots</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <ng-container  *ngFor="let data of datas ;  let i = index">
+                                        <tr>
+                                        <td>{{i+1}}</td> 
+                                        <td style="width: 150px">{{data.Employee_Name}}</td> 
+                                        <td style="width: 150px;">{{data.title}}</td>
+                                        <td style="width: 150px;">{{data.description}}</td>
+                                        <td id="l1" style="width: 120px">{{data.createdtime}}</td>
+                                        <td id="a1" style="width: 120px">{{data.updatedtime}}</td>
+                                        <!-- <td id="pc1">{{data.status}}</td> -->
+                                        <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" data-toggle="collapse"   (click)="view($event, data)"><i  class="fa m-1 fa-pencil ng-star-inserted"></i></button></td>
+                                        <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" data-toggle="collapse"   (click)="history($event, data)"><i  class="fa m-1 fa-file-text-o ng-star-inserted"></i></button></td>
+                                        <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" data-toggle="collapse"   (click)="spot($event, data)"><i  class="fa m-1 fa-map-marker ng-star-inserted"></i></button></td>
+                                        <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" data-toggle="collapse"  data-toggle="modal" data-target="#login-modal2" (click)="edit($event, data)"><i  class="m-1 icon-note"></i></button></td>
+                                        <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" data-toggle="collapse"   (click)="delete($event, data)"><i  class="m-1 icon-close"></i></button></td>
+
+                                    </tr>
+                                    </ng-container>      
+                        </tbody>
+                    </table>
+                    <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                    <div class="card-footer p-0">
+                    <ngb-pagination   [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                    </div>     
+              </div>
+              </div>
+            </div>
+            </div>
+        
+       
+  </div>
+</div>
+<!-- END # BOOTSNIP INFO -->
+
+
+
+
+        <!-- BEGIN # MODAL LOGIN -->
+<div class="modal fade" id="login-modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-dialogs" style="max-width: 700px;margin-right: 17%;">
+  <div class="modal-content">
+
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+   
+            
+            <!-- Begin # DIV Form -->
+            <div id="div-forms">
+            
+                <!-- Begin # Login Form -->
+                <form id="login-form">
+                <div class="modal-body">
+          
+                    <div class="login-form">
+                        <div class="main-div">
+                            <div class="panel">
+                                <h3>Add Map points</h3>
+                          
+                           </div>
+                            <form id="Login">
+
+                                <div class="form-group">
+                                    <label>Select Employee</label>
+                                       <select class="form-control"   name="professional_type" value="" #employees id="exampleFormControlSelect1">
+                                        <option>Select Employee</option>
+                                        <ng-container  *ngFor="let data of Employee_data">
+                                        <option  value="{{data.id}}">{{data.Name}}</option>
+                                      </ng-container>
+                                      </select>                                     
+                                    </div>
+                                <div class="form-group">
+                        
+                                    <label>Title</label>
+                                        <input type="text" class="form-control" id="name" value="" #titles>
+                                    </div>
+
+                                <div class="form-group">
+                        
+                                <label>Description</label>
+                                    <input type="text" class="form-control" id="name" value="" #Descriptions>
+                                </div>  
+                            </form>
+                            </div>
+                            <button class="btn btn-primary" data-dismiss="modal" style="color:#fff; background:#13477e!important;" (click) = "assign(employees.value,titles.value,Descriptions.value)">Submit</button>
+                        </div>
+              </div>
+                </form>
+                <!-- End # Login Form -->
+                
+                <!-- Begin | Lost Password Form -->
+              
+                
+                
+            </div>
+            <!-- End # DIV Form -->
+            
+  </div>
+</div>
+</div>
+<!-- END # MODAL LOGIN -->
+
+
+
+<div class="modal fade" id="login-modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" style="max-width: 700px;margin-right: 17%;">
+    <div class="modal-content">
+  
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+     
+              
+              <!-- Begin # DIV Form -->
+              <div id="div-forms">
+              
+                  <!-- Begin # Login Form -->
+                  <form id="login-form">
+                  <div class="modal-body">
+            
+                      <div class="login-form">
+                          <div class="main-div">
+                              <div class="panel">
+                                  <!-- <h3>Update Map points</h3> -->
+                            
+                             </div>
+                              <form id="Login">
+
+                                  <div class="form-group">
+                                      <label>Employee Name</label>
+                                          <input type="text" class="form-control" id="name" value="{{Points.Employee_Name}}" #employee disabled>
+                                      </div>
+                                      <div class="form-group">
+                                          <label>Title</label>
+                                              <input type="text" class="form-control" id="name" value="{{Points.title}}" #title>
+                                          </div>
+                                          <div class="form-group">
+                                              <label>Description</label>
+                                                  <input type="text" class="form-control" id="name" value="{{Points.description}}" #Description>
+                                              </div>
+                                  <!-- <div class="form-group">
+                                      <label>Status</label>
+                                          <input type="text" class="form-control" id="name" value="{{Points.status}}" #status>
+                                      </div> -->
+                              </form>
+                              </div>
+                              <button class="btn btn-primary" data-dismiss="modal" style="color:#fff; background:#13477e!important;" (click) = "assign1(employee.value,title.value,Description.value,status.value)">Submit</button>
+                          </div>
+                </div>
+                  </form>
+                  <!-- End # Login Form -->
+                  
+                  <!-- Begin | Lost Password Form -->
+                
+                  
+                  
+              </div>
+              <!-- End # DIV Form -->
+              
+    </div>
+  </div>
+  </div>
+  <!-- END # MODAL LOGIN -->
+
+
+

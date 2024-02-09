@@ -1,0 +1,213 @@
+<div  class="row">
+    <div  class="header">
+      <h3  class="adsc">
+          <i class="material-icons ng-star-inserted">business</i> &nbsp;Unit Master</h3>
+      </div>
+		</div>
+		<!-- <div class="" style="padding-bottom: 30px;"><Br>
+			<div class="headers">
+					<div class="">
+				<div class="row">		
+					<div class="col-md-9">
+				
+					</div>
+					<div class="col-md-3">
+							<button class="btn-info btn-lg " (click)="exportAsXLSX()">Export</button>
+							<button class="btn-info btn-lg " (click)="print('component1')">Print</button>		
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="row">
+         
+      <div class="col-md-6">
+        <div class="col-md-2">
+            <label style="font-weight: 700;">Company</label> 
+          </div>
+          <div class="col-md-4">
+              <select  style="width: 100%;" (change)="fetchsite($event.target.value)" name="company" [(ngModel)]="company"  value=""  id="exampleFormControlSelect1">                           
+                  <ng-container  *ngFor="let data of companylist">
+                  <option  value="{{data.company_name}}">{{data.company_name}}</option>
+                </ng-container>
+                </select>    
+            </div>
+    </div>	
+    <div class="col-md-6">
+        <div class="col-md-2">
+            <label style="font-weight: 700;"> Unit Name</label>
+         </div>
+     <div class="col-md-4">
+				<ng-multiselect-dropdown
+        [placeholder]="'custom placeholder'"
+        [data]="dropdownList"
+        [(ngModel)]="selectedItems"
+        [settings]="dropdownSettings"
+        (onSelect)="onItemSelect($event)"
+        (onSelectAll)="onSelectAll($event)"
+      >
+      </ng-multiselect-dropdown>
+     </div>
+		</div>
+		<div class="col-md-3">
+        <button class="btn-info btn-lg " (click)="getResult()">Submit</button>
+    </div>
+      </div>
+      <br><br><br>
+<div id="component1">
+  <table mat-table [dataSource]="dataSource" matSort class="table table-responsive table-bordered" style="font-size: 10px;font-weight: 600;" >
+
+		 <ng-container matColumnDef="sno">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white; ">SNO</th>
+			<td style="min-width: 100px;" mat-cell *matCellDef="let i = index"> {{i + 1}} </td>
+		 </ng-container>
+		<ng-container matColumnDef="Ucode">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">UCODE</th>
+					<td mat-cell *matCellDef="let element"> {{element.ucode}} </td>
+				</ng-container>
+			<ng-container matColumnDef="company">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">COMPANY</th>
+				<td mat-cell *matCellDef="let element"> {{element.ccode}} </td>
+			</ng-container>
+		
+			<ng-container matColumnDef="unitName">
+				<th mat-header-cell *matHeaderCellDef mat-sort-heade  style="height: 10px;color:white;" >UNIT NAME</th>
+				<td style="min-width: 200px;" mat-cell *matCellDef="let element"> {{element.unit_name}} </td>
+			</ng-container>
+		
+			<ng-container matColumnDef="rank">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">RANK</th>
+					<td mat-cell *matCellDef="let element"> {{element.dcode}} </td>
+				</ng-container>
+			
+				<ng-container matColumnDef="basic">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> BASIC </th>
+					<td  style="min-width: 200px;" mat-cell *matCellDef="let element"> {{element.basic}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="da">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> DA </th>
+						<td mat-cell *matCellDef="let element"> {{element.da}} </td>
+					</ng-container>
+	
+				<ng-container matColumnDef="hra">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> HRA </th>
+						<td mat-cell *matCellDef="let element"> {{element.hra}} </td>
+					</ng-container>
+				
+					<ng-container matColumnDef="trvexp">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white;"> TRV. EXP </th>
+						<td  style="width: 301px;" mat-cell *matCellDef="let element"> {{element.trv_exp}} </td>
+					</ng-container>
+          <ng-container matColumnDef="medical">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> MEDICAL </th>
+              <td mat-cell *matCellDef="let element"> {{element.others}} </td>
+            </ng-container>
+            <ng-container matColumnDef="leavewages">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> LEAVE WAGES </th>
+                <td mat-cell *matCellDef="let element"> {{element.medical}} </td>
+              </ng-container>
+              <ng-container matColumnDef="bonus">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> BONUS </th>
+                  <td mat-cell *matCellDef="let element"> {{element.others1}} </td>
+                </ng-container>
+                <ng-container matColumnDef="nfh">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> NFH </th>
+                    <td mat-cell *matCellDef="let element"> {{element.others2}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="add1">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> ADD.1 </th>
+                      <td mat-cell *matCellDef="let element"> {{element.others3}} </td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="gross">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> GROSS </th>
+                        <td mat-cell *matCellDef="let element"> {{element.total_pay}} </td>
+                      </ng-container>
+	
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+		</table>
+	</div>
+		</div> -->
+		
+    <div class="container col-lg-12" style="text-align: center">
+
+      <table class="table table-striped" id="datTabl" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+        <thead>
+        <tr>
+            <th>
+                <mfDefaultSorter by="id">ID</mfDefaultSorter>
+            </th>
+            <th>
+                <mfDefaultSorter by="ucode">UCODE</mfDefaultSorter>
+            </th>
+            <th>
+                <mfDefaultSorter by="company_name">COMPANY</mfDefaultSorter>
+            </th>
+            <th>
+                <mfDefaultSorter by="unit_name">UNIT NAME</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="rank">RANK</mfDefaultSorter>
+          </th>
+          <th>
+              <mfDefaultSorter by="basic">BASIC </mfDefaultSorter>
+          </th>
+          <th>
+              <mfDefaultSorter by="da">DA</mfDefaultSorter>
+          </th>
+          <th>
+              <mfDefaultSorter by="hra">HRA</mfDefaultSorter>
+					</th>
+					<th>
+						<mfDefaultSorter by="trv_exp">TRV. EXP </mfDefaultSorter>
+				</th>
+				<th>
+						<mfDefaultSorter by="medical">MEDICAL</mfDefaultSorter>
+				</th>
+				<th>
+						<mfDefaultSorter by="others">LEAVE WAGES </mfDefaultSorter>
+				</th>
+				<th>
+					<mfDefaultSorter by="others1">BONUS</mfDefaultSorter>
+			</th>
+			<th>
+					<mfDefaultSorter by="others2">NFH </mfDefaultSorter>
+			</th>
+			<th>
+					<mfDefaultSorter by="others3">ADD.1</mfDefaultSorter>
+			</th>
+			<th>
+					<mfDefaultSorter by="total_pay">GROSS</mfDefaultSorter>
+			</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of mf.data; let i = index">
+            <td>{{item.id}}</td>
+            <td >{{item.ucode}}</td>
+            <td>{{item.company_name}}</td>
+            <td >{{item.unit_name}}</td>
+            <td> {{item.rank}}</td>
+            <td >{{item.basic}}</td>
+            <td> {{item.da}} </td>
+						<td >{{item.hra}}</td>
+						<td >{{item.trv_exp}}</td>
+            <td>{{item.medical}}</td>
+            <td >{{item.others}}</td>
+            <td> {{item.others1}}</td>
+            <td >{{item.others2}}</td>
+            <td> {{item.others3}}</td>
+            <td >{{item.total_pay}}</td>
+        </tr>
+        </tbody>
+        <tfoot >
+        <tr>
+            <td colspan="15" style="text-align: center">
+                <mfBootstrapPaginator [rowsOnPageSet]="[10,25,100]"></mfBootstrapPaginator>
+            </td>
+        </tr>
+        </tfoot>
+      </table>
+      </div>
+

@@ -1,0 +1,112 @@
+<!-- <h2>Employee Tracking</h2>
+
+<agm-map 
+[latitude]="lats"
+[longitude]="lngs"
+[zoom]= 16
+[disableDefaultUI]="ture"
+[zoomControl]="ture">
+
+
+
+<agm-marker 
+    
+    [latitude]="lats"
+    [longitude]="lngs"
+    [label]="label"
+    [markerDraggable]="hellow">
+    
+  <agm-info-window>
+    <strong>{{Name}}-({{time}})</strong>
+  </agm-info-window>
+  
+</agm-marker>
+
+<agm-circle [latitude]="lats" [longitude]="lngs" 
+    [radius]="10"
+    [fillColor]="'red'"
+    [circleDraggable]="false"
+    [editable]="true">
+</agm-circle>
+
+</agm-map>
+  <div class="cols"style="margin-top:10px ;">
+  
+      <div class="col-md-12">
+        <div class="row">
+          <div class="tabl" >
+              <table class="table table-bordered" style="border-collapse:collapse;">
+                  <thead>
+                      <tr>
+                        <th>Sl.No</th>
+                          <th>Employee Id</th>
+                          <th>Name</th>
+                          <th>Date</th>
+                          <th>Find</th>
+                          <th>Delete</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                              <ng-container  *ngFor="let data of datas | orderBy: 'updated_at';let i = index ">
+                              <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                <td>{{i+1}}</td>
+                                  <td>{{data.Employee_id}}</td>
+                                  <td id="l1">{{data.Name}}</td>
+                                  <td id="pc1">{{data.updated_at}}</td>
+                                  <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view($event, data)"><i  class="m-1 icon-screen-desktop"></i></button></td>
+                                  <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="delete($event, data)"><i  class="m-1 icon-trash"></i></button></td>
+
+                                </tr>
+                              </ng-container>
+                  </tbody>
+              </table>
+        </div>
+        </div>
+      </div>
+      </div> -->
+
+
+
+
+<div class="header">
+  <div class="row">
+    <div class="col-12 col-md-6 mb-3">
+      <div class="col-md-8">
+        <h3 class="adsc">
+         
+         &nbsp;Employee Tracking</h3>
+        </div></div><div class="col-md-6">
+          
+        </div></div></div>
+  <div class="cols"style="margin-top:10px ;">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="tabl" >
+              <table class="table table-bordered" style="border-collapse:collapse;">
+                  <thead>
+                      <tr>
+                          <th>SL.No</th>
+                          <th>Employee Id</th>
+                          <th>Name</th>
+                          <th>View</th>
+                          <th>Delete</th>
+                         
+                      </tr>
+                  </thead>
+                  <tbody>
+                                  <ng-container  *ngFor="let data of datas | orderBy: 'updated_at';let i = index ">
+                                  <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                  <td>{{i+1}}</td>
+                                  <td style="text-align: center">{{data.id}}</td>
+                                  <td id="l1">{{data.Name}}</td>
+                                  <td style="text-align: center"> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view(data)"><i  class="m-1 icon-screen-desktop"></i></button></td>
+                                  <td style="text-align: center"> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="delete(data)"><i  class="m-1 icon-trash"></i></button></td>
+                                </tr>
+                              </ng-container>
+                  </tbody>
+              </table>
+        </div>
+        </div>
+      </div>
+      </div> 
+

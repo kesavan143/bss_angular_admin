@@ -1,0 +1,1026 @@
+<!-- Adding Employee Page -->
+<div class="row">
+  <div class="header">
+    <div class="row">
+      <div class="col-md-9">
+        <h3 class="adsc" style="width: 100%; text-transform: uppercase;"><i 
+            class="material-icons ng-star-inserted">assignment</i> &nbsp;&nbsp;Employee Registation</h3>
+      </div>
+      <div class="col-md-3">
+        <div class="row">
+          <div class="col-md-6">
+            <label>ECODE</label>
+          </div>
+          <!-- <div class="col-md-3">
+                <input type="text" name="ecodetext" value="" [(ngModel)]="ecodetext" class="form-control col-md-12" >
+            </div> -->
+          <div class="col-md-6">
+            <input type="number" name="ecodenumber" value="" [(ngModel)]="ecodenumber" class="form-control col-md-12">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<form>
+  <!-- service-form -->
+  <div class="service-forms">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class=" multistep-form-section">
+            <div class="container" id="component1">
+              <form name="form" novalidate>
+                <div class="row">
+                  <div class="col-12 col-sm-12 form-group">
+                    <form class="frms" name="form" novalidate>
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Mobile No</label>
+                              </div>
+                              <div class="col-md-8">
+                                <div class="form-group service-form-group">
+                                  <input type="text" #Mobile_No [(ngModel)]="adduser.Mobile_No" placeholder="Mobile No"
+                                    class="form-control col-md-12" name="Mobile_No" value="" #Mobile_No>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Password</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input type="password" [(ngModel)]="adduser.Password" placeholder="Password"
+                                  class="form-control col-md-12" name="Password" value="" #Password>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Company Name</label>
+                              </div>
+                              <div class="col-md-8">
+
+                                <select class="form-control" (change)="fetchsite($event.target.value)"
+                                  name="company_name" [(ngModel)]="adduser.company_name" value="Company Name"
+                                  #company_name id="exampleFormControlSelect1">
+
+                                  <ng-container *ngFor="let data of companylist">
+                                    <option value="{{data.company_name}}">{{data.company_name}}</option>
+                                  </ng-container>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Site Name</label>
+                              </div>
+                              <div class="col-md-8">
+
+                                <select class="form-control" name="site_name" [(ngModel)]="adduser.site_name" value=""
+                                  #site_name id="exampleFormControlSelect1">
+
+                                  <ng-container *ngFor="let data of site_names">
+                                    <option value="{{data.title}}">{{data.title}}</option>
+                                  </ng-container>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Employee Type</label>
+                              </div>
+                              <div class="col-md-8">
+
+                                <select class="form-control" name="employee_type" [(ngModel)]="adduser.employee_type"
+                                  value="" #employee_type id="exampleFormControlSelect1">
+
+                                  <ng-container *ngFor="let data of datass">
+                                    <option value="{{data.employee_type}}">{{data.employee_type}}</option>
+                                  </ng-container>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >ECODE</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input disabled type="text" placeholder="ID Type" class="form-control"
+                                  pattern="^[a-zA-Z ]*$" id="idtype" name="idtype"
+                                  [(ngModel)]=" ecodetext + ecodenumber" ngModel #idtype="ngModel">
+                                <div *ngIf="idtype.errors &&(idtype.touched || idtype.dirty)" class="aler alert-danger">
+                                  <div [hidden]="!idtype.errors?.pattern">
+                                    ENTER ONLY TEXT
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Name</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input type="text" placeholder="Name" class="form-control" pattern="^[a-zA-Z ]*$"
+                                  id="Name" name="Name" [(ngModel)]="adduser.Name" ngModel #Name="ngModel">
+                                <div *ngIf="Name.errors &&(Name.touched || Name.dirty)" class="aler alert-danger">
+                                  <div [hidden]="!Name.errors?.pattern">
+                                    ENTER ONLY TEXT
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Father Name</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input type="text" placeholder="Father Name" class="form-control" pattern="^[a-zA-Z ]*$"
+                                  id="father_name" name="father_name" [(ngModel)]="adduser.father_name" ngModel
+                                  #father_name="ngModel">
+                                <div *ngIf="father_name.errors &&(father_name.touched || father_name.dirty)"
+                                  class="aler alert-danger">
+                                  <div [hidden]="!father_name.errors?.pattern">
+                                    ENTER ONLY TEXT
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Date Of Birth</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input placeholder="Date Of Birth" [max]="maxDate" type="date"
+                                  (change)="dateChange($event.target.value)" [(ngModel)]="adduser.Date_of_birth"
+                                  class="form-control col-md-12" name="Date_of_birth" value="" #Date_of_birth>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Gender</label>
+                              </div>
+                              <div class="col-md-8">
+                                <select class="form-control" [(ngModel)]="adduser.gender" name="gender" value="" #gender
+                                  id="exampleFormControlSelect1">
+                                  <option>Male</option>
+                                  <option>Female</option>
+                                  <option>Transgender</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Marital Status</label>
+                              </div>
+                              <div class="col-md-8">
+                                <select class="form-control" [(ngModel)]="adduser.material_status"
+                                  name="material_status" value="" #material_status id="exampleFormControlSelect1">
+                                  <option>Single</option>
+                                  <option>Married</option>
+                                  <option>Widower</option>
+                                  <option>Widow</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Education</label>
+                              </div>
+                              <div class="col-md-8">
+                                <select class="form-control" [(ngModel)]="adduser.Edq" name="Edq" value="" #Edq
+                                  id="exampleFormControlSelect1">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                  <option>6</option>
+                                  <option>7</option>
+                                  <option>8</option>
+                                  <option>9</option>
+                                  <option>10</option>
+                                  <option>11</option>
+                                  <option>12</option>
+                                  <option>Diploma</option>
+                                  <option>Undergraduate</option>
+                                  <option>Postgraduate</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-12">
+                            <div class="form-group service-form-group col-md-6">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <h3>Family Details</h3>
+                                </div>
+                                <div class="col-md-3">
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-12">
+                            <table class="table table-bordered table-responsive">
+                              <tr>
+                                <th>Name</th>
+                                <th>Sex</th>
+                                <th>Relationship</th>
+                                <th>Date of Birth</th>
+                                <th>Age</th>
+                                <th>Occupation</th>
+                                <th>Aadhar Card</th>
+                                <th>Contact Number</th>
+                              </tr>
+                              <tr>
+                                <td><input type="" [(ngModel)]="adduser.fname1" name="fname1" value="" #fname1></td>
+                                <td>
+                                  <select [(ngModel)]="adduser.fsex1" name="fsex1" value="" #fsex1
+                                    id="exampleFormControlSelect1">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Transgender</option>
+                                  </select>
+                                </td>
+                                <td><input type="" [(ngModel)]="adduser.frelationship1" name="frelationship1" value=""
+                                    #frelationship1></td>
+                                <td><input type="date" [(ngModel)]="adduser.fdateofbirth1" name="fdateofbirth1" value=""
+                                    #fdateofbirth1 (change)="dateChange1($event.target.value)"></td>
+                                <td><input type="" [(ngModel)]="adduser.fage1" name="fage1" value="" #fage1></td>
+                                <td><input type="" [(ngModel)]="adduser.foccupation1" name="foccupation1" value=""
+                                    #foccupation1></td>
+                                <td><input type="" [(ngModel)]="adduser.faadharcard1" name="faadharcard1" value=""
+                                    #faadharcard1></td>
+                                <td><input type="" [(ngModel)]="adduser.fcontact1" name="fcontact1" value="" #fcontact1>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="" [(ngModel)]="adduser.fname2" name="fname2" value="" #fname2></td>
+                                <td>
+                                  <select [(ngModel)]="adduser.fsex2" name="fsex2" value="" #fsex2
+                                    id="exampleFormControlSelect1">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Transgender</option>
+                                  </select>
+                                </td>
+                                <td><input type="" [(ngModel)]="adduser.frelationship2" name="frelationship2" value=""
+                                    #frelationship2></td>
+                                <td><input type="date" [(ngModel)]="adduser.fdateofbirth2" name="fdateofbirth2" value=""
+                                    #fdateofbirth2 (change)="dateChange2($event.target.value)"></td>
+                                <td><input type="" [(ngModel)]="adduser.fage2" name="fage2" value="" #fage2></td>
+                                <td><input type="" [(ngModel)]="adduser.foccupation2" name="foccupation2" value=""
+                                    #foccupation2></td>
+                                <td><input type="" [(ngModel)]="adduser.faadharcard2" name="faadharcard2" value=""
+                                    #faadharcard2></td>
+                                <td><input type="" [(ngModel)]="adduser.fcontact2" name="fcontact2" value="" #fcontact2>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="" [(ngModel)]="adduser.fname3" name="fname3" value="" #fname3></td>
+                                <td>
+                                  <select [(ngModel)]="adduser.fsex3" name="fsex3" value="" #fsex3
+                                    id="exampleFormControlSelect1">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Transgender</option>
+                                  </select>
+                                </td>
+                                <td><input type="" [(ngModel)]="adduser.frelationship3" name="frelationship3" value=""
+                                    #frelationship3></td>
+                                <td><input type="date" [(ngModel)]="adduser.fdateofbirth3" name="fdateofbirth3" value=""
+                                    #fdateofbirth3 (change)="dateChange3($event.target.value)"></td>
+                                <td><input type="" [(ngModel)]="adduser.fage3" name="fage3" value="" #fage3></td>
+                                <td><input type="" [(ngModel)]="adduser.foccupation3" name="foccupation3" value=""
+                                    #foccupation3></td>
+                                <td><input type="" [(ngModel)]="adduser.faadharcard3" name="faadharcard3" value=""
+                                    #faadharcard3></td>
+                                <td><input type="" [(ngModel)]="adduser.fcontact3" name="fcontact3" value="" #fcontact3>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="" [(ngModel)]="adduser.fname4" name="fname4" value="" #fname4></td>
+                                <td>
+                                  <select [(ngModel)]="adduser.fsex4" name="fsex4" value="" #fsex4
+                                    id="exampleFormControlSelect1">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Transgender</option>
+                                  </select>
+                                </td>
+                                <td><input type="" [(ngModel)]="adduser.frelationship4" name="frelationship4" value=""
+                                    #frelationship4></td>
+                                <td><input type="date" [(ngModel)]="adduser.fdateofbirth4" name="fdateofbirth4" value=""
+                                    #fdateofbirth4 (change)="dateChange4($event.target.value)"></td>
+                                <td><input type="" [(ngModel)]="adduser.fage4" name="fage4" value="" #fage4></td>
+                                <td><input type="" [(ngModel)]="adduser.foccupation4" name="foccupation4" value=""
+                                    #foccupation4></td>
+                                <td><input type="" [(ngModel)]="adduser.faadharcard4" name="faadharcard4" value=""
+                                    #faadharcard4></td>
+                                <td><input type="" [(ngModel)]="adduser.fcontact4" name="fcontact4" value="" #fcontact4>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="" [(ngModel)]="adduser.fname5" name="fname5" value="" #fname5></td>
+                                <td>
+                                  <select [(ngModel)]="adduser.fsex5" name="fsex5" value="" #fsex5
+                                    id="exampleFormControlSelect1">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Transgender</option>
+                                  </select>
+                                </td>
+                                <td><input type="" [(ngModel)]="adduser.frelationship5" name="frelationship5" value=""
+                                    #frelationship5></td>
+                                <td><input type="date" [(ngModel)]="adduser.fdateofbirth5" name="fdateofbirth5" value=""
+                                    #fdateofbirth5 (change)="dateChange5($event.target.value)"></td>
+                                <td><input type="" [(ngModel)]="adduser.fage5" name="fage5" value="" #fage5></td>
+                                <td><input type="" [(ngModel)]="adduser.foccupation5" name="foccupation5" value=""
+                                    #foccupation5></td>
+                                <td><input type="" [(ngModel)]="adduser.faadharcard5" name="faadharcard5" value=""
+                                    #faadharcard5></td>
+                                <td><input type="" [(ngModel)]="adduser.fcontact5" name="fcontact5" value="" #fcontact5>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+
+
+                      <div>
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-12">
+                            <div class="form-group service-form-group col-md-6">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <h3>Next of Kin with Contact Details</h3>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                      <div>
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-12">
+                            <table class="table table-bordered table-responsive">
+                              <tr>
+                                <th>Name</th>
+                                <th>Sex</th>
+                                <th>Relationship</th>
+                                <th>Date of Birth</th>
+                                <th>Age</th>
+                                <th>Occupation</th>
+                                <th>Aadhar Card</th>
+                                <th>Contact Number</th>
+                              </tr>
+                              <tr>
+                                <td><input type="" [(ngModel)]="adduser.fname1" name="fname1" value="" #fname1>
+                                </td>
+                                <td>
+                                  <select [(ngModel)]="adduser.fsex1" name="fsex1" value="" #fsex1
+                                    id="exampleFormControlSelect1">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Transgender</option>
+                                  </select>
+                                </td>
+                                <td><input type="" [(ngModel)]="adduser.frelationship1" name="frelationship1" value=""
+                                    #frelationship1></td>
+                                <td>
+                                  <input type="date" [(ngModel)]="adduser.fdateofbirth1" name="fdateofbirth1" value=""
+                                    #fdateofbirth1 (change)="dateChange6($event.target.value)">
+                                </td>
+
+                                <td><input type="" [(ngModel)]="adduser.fage1" name="fage1" value="" #fage1></td>
+                                <td><input type="" [(ngModel)]="adduser.foccupation1" name="foccupation1" value=""
+                                    #foccupation1></td>
+                                <td><input type="" [(ngModel)]="adduser.faadharcard1" name="faadharcard1" value=""
+                                    #faadharcard1></td>
+                                <td><input type="" [(ngModel)]="adduser.fcontact1" name="fcontact1" value="" #fcontact1>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      <!-- <div class="col-md-12">
+                                                                <div class="row">
+                                                                  <div class="form-group service-form-group col-md-6">
+                                                                    <div class="row">
+                                                                      <div class="col-md-4">
+                                                                          
+                                                                        <label >Mother Tongue</label>
+                                                                      </div>
+                                                                      <div class="col-md-8">
+                                                                          <select class="form-control"  [(ngModel)]="adduser.mother_tongue" name="mother_tongue" value="" #mother_tongue id="exampleFormControlSelect1">
+                                                                              <option>Tamil</option>
+                                                                              <option>English</option>
+                                                                              <option>Hindi</option>
+                                                                              <option>Others</option>
+                                                                            </select>       
+      
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="form-group service-form-group col-md-6">
+                                                                    <div class="row">
+                                                                      <div class="col-md-4">
+                                                                        <label >Site Name</label>
+                                                                      </div>
+                                                                      <div class="col-md-8">
+                                                                        <select class="form-control"   name="site_name" [(ngModel)]="adduser.site_name"  value="" #site_name id="exampleFormControlSelect1">
+                                                        
+                                                                          <ng-container  *ngFor="let data of site_names">
+                                                                          <option  value="{{data.title}}">{{data.title}}</option>
+                                                                        </ng-container>
+                                                                        </select>  
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>  -->
+
+
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Present Address</label>
+                              </div>
+                              <div class="col-md-8">
+
+                                <textarea placeholder="Present Address" [(ngModel)]="adduser.Address"
+                                  class="form-control col-md-12" name="Address" value="" #Address></textarea>
+
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Permanent Address </label><br>
+                              </div>
+                              <div class="col-md-8">
+                                <textarea type="textarea" placeholder="Permanent Address"
+                                  [(ngModel)]="adduser.permentaddress" class="form-control col-md-12"
+                                  name="permentaddress" value="" #permentaddress></textarea>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Area </label><br>
+                              </div>
+                              <div class="col-md-8">
+                                <input type="test" placeholder="Area" [(ngModel)]="adduser.area"
+                                  class="form-control col-md-12" name="area" value="" #area />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Email Id</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input type="text" class="form-control" placeholder="Email Id"
+                                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" name="email"
+                                  [(ngModel)]="adduser.Email_ID" ngModel #emailref="ngModel">
+                                <div *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)"
+                                  class="aler alert-danger">
+                                  <div [hidden]="!emailref.errors?.pattern">
+                                    Invalid pattern
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Driving Licence</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="name" type="text" placeholder="Driving Licence"
+                                  [(ngModel)]="adduser.driving_licence" class="form-control col-md-12" required=""
+                                  name="driving_licence" value="" #driving_licence>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Nationality</label>
+                              </div>
+                              <div class="col-md-8">
+                                <select class="form-control" [(ngModel)]="adduser.nationality" name="nationality"
+                                  value="" #nationality id="exampleFormControlSelect1">
+                                  <option>Indian</option>
+                                  <option>Nepali</option>
+                                </select>
+                                <!-- <input type="text" placeholder="Nationality" [(ngModel)]="adduser.nationality"
+                                  class="form-control col-md-12" name="nationality" value="" #nationality /> -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Experience</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input type="text" placeholder="Experience" [(ngModel)]="adduser.work_exp"
+                                  class="form-control col-md-12" name="work_exp" value="" #work_exp />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Aadhar Card No</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input type="text" placeholder="Aadhar Card No" [(ngModel)]="adduser.aadhar_card"
+                                  class="form-control col-md-12" required="" name="aadhar_card" value="" #aadhar_card>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Date Of Joining</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input [max]="maxDate" type="date" [(ngModel)]="adduser.date_joining"
+                                  class="form-control col-md-12" required="" name="date_joining" value="" #date_joining>
+
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Voter ID</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="voter_id" type="text" placeholder="Voter ID" [(ngModel)]="adduser.voter_id"
+                                  class="form-control col-md-12" required="" name="voter_id" value="" #voter_id>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >1. Prominent Person</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="voter_id" type="text" placeholder="Prominent Person Name"
+                                  [(ngModel)]="adduser.prom_in" class="form-control col-md-12" required=""
+                                  name="prom_in" value="" #prom_in>
+
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >1. Prominent Person Mobile Number</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="voter_id" type="text" placeholder="Prominent Person Mobile Number"
+                                  [(ngModel)]="adduser.prom_in_mobile_no" class="form-control col-md-12" required=""
+                                  name="prom_in_mobile_no" value="" #prom_in_mobile_no>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >2. Prominent Person</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="voter_id" type="text" placeholder="Prominent Person Name"
+                                  [(ngModel)]="adduser.prom_in1" class="form-control col-md-12" required=""
+                                  name="prom_in1" value="" #prom_in1>
+
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >2. Prominent Person Mobile Number</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="voter_id" type="text" placeholder="Prominent Person Mobile Number"
+                                  [(ngModel)]="adduser.prom_in_mobile_no1" class="form-control col-md-12" required=""
+                                  name="prom_in_mobile_no1" value="" #prom_in_mobile_no1>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label > Height</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="name" type="text" placeholder="Height in Cm's" [(ngModel)]="adduser.height"
+                                  class="form-control col-md-12" required="" name="height" value="" #height>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label > Weight</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="voter_id" type="text" placeholder="Weight in Kg's"
+                                  [(ngModel)]="adduser.weight" class="form-control col-md-12" required="" name="weight"
+                                  value="" #weight>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label > CHEST</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="name" type="text" placeholder="Chest in Inches's" [(ngModel)]="adduser.chest"
+                                  class="form-control col-md-12" required="" name="chest" value="" #chest>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label > PAN</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="name" type="text" placeholder="PAN" [(ngModel)]="adduser.pan"
+                                  class="form-control col-md-12" required="" name="pan" value="" #pan>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="row">
+
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Contact Number</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="name" type="text" placeholder="Contact Number"
+                                  [(ngModel)]="adduser.Mobile_No" class="form-control col-md-12" required=""
+                                  name="Mobile_No" value="" #Mobile_No>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Account Number</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="voter_id" type="text" placeholder="Account Number"
+                                  [(ngModel)]="adduser.account" class="form-control col-md-12" required=""
+                                  name="account" value="" #account>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Bank Name</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="name" type="text" placeholder="Bank Name" [(ngModel)]="adduser.bankname"
+                                  class="form-control col-md-12" required="" name="bankname" value="" #bankname>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Branch Name</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="voter_id" type="text" placeholder="Branch Name" [(ngModel)]="adduser.a_c"
+                                  class="form-control col-md-12" required="" name="a_c" value="" #a_c>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >IFSC</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input id="name" type="text" placeholder="IFSC" [(ngModel)]="adduser.ifsc"
+                                  class="form-control col-md-12" required="" name="ifsc" value="" #ifsc>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >PF Number 1</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input type="text" placeholder="PF Number 1" [(ngModel)]="adduser.pf1"
+                                  class="form-control col-md-12" name="pf1" value="" #pf1 />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="row">
+                            <div class="form-group service-form-group col-md-6">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <label >PF Number 2</label>
+                                </div>
+                                <div class="col-md-8">
+                                  <input type="text" placeholder="PF Number 2" [(ngModel)]="adduser.pf2"
+                                    class="form-control col-md-12" required="" name="pf2" value="" #pf2>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group service-form-group col-md-6">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <label >PF Number 3</label>
+                                </div>
+                                <div class="col-md-8">
+                                  <input type="text" placeholder="PF Number 3" [(ngModel)]="adduser.pf3"
+                                    class="form-control col-md-12" name="pf3" value="" #pf3 />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="row">
+                            <div class="form-group service-form-group col-md-6">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <label >UAN Number</label>
+                                </div>
+                                <div class="col-md-8">
+                                  <input type="text" placeholder="UAN Number" [(ngModel)]="adduser.uan"
+                                    class="form-control col-md-12" name="uan" value="" #uan />
+                                </div>
+                              </div>
+                            </div>
+                            <!-- <div class="form-group service-form-group col-md-6">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <label >Mother Tongue</label>
+                                </div>
+                                <div class="col-md-8">
+                                  <select class="form-control" [(ngModel)]="adduser.mother_tongue" name="mother_tongue"
+                                    value="" #mother_tongue id="exampleFormControlSelect1">
+                                    <option>English</option>
+                                    <option>English And Tamil</option>
+                                    <option>English , Tamil , Hindi</option>
+                                    <option>Tamil And Hindi</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div> -->
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="row">
+                            <div class="form-group service-form-group col-md-6">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <label >PF</label>
+                                </div>
+                                <div class="col-md-8">
+                                  <input type="checkbox" name="pf_action" value="true" [(ngModel)]="adduser.pf_action"
+                                    #pf_action id="exampleFormControlSelect1">
+                                  <!-- <select class="form-control"  [(ngModel)]="adduser.pf_action" name="pf_action" value="" #pf_action id="exampleFormControlSelect1">
+                                                                                                    <option value="true">Yes</option>
+                                                                                                    <option value="false">No</option>
+                                                                                                  </select> -->
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group service-form-group col-md-6">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <label >ESI</label>
+                                </div>
+                                <div class="col-md-8 ">
+                                  <input type="checkbox" name="esi_action" value="true" [(ngModel)]="adduser.esi_action"
+                                    #esi_action id="exampleFormControlSelect1">
+                                  <!-- <select class="form-control"  [(ngModel)]="adduser.esi_action" name="esi_action" value="" #esi_action id="exampleFormControlSelect1">
+                                                                                                    <option value="true">Yes</option>
+                                                                                                    <option value="false">No</option>
+                                                                                                  </select> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="row">
+                            <div class="form-group service-form-group col-md-6">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <label >Professional tax</label>
+                                </div>
+                                <div class="col-md-8 ">
+                                  <input type="checkbox" name="prof_action" value="true"
+                                    [(ngModel)]="adduser.prof_action" #prof_action id="exampleFormControlSelect1">
+                                  <!-- <select class="form-control"  [(ngModel)]="adduser.esi_action" name="esi_action" value="" #esi_action id="exampleFormControlSelect1">
+                                                                                                      <option value="true">Yes</option>
+                                                                                                      <option value="false">No</option>
+                                                                                                    </select> -->
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group service-form-group col-md-6">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <label >Working status</label>
+                                </div>
+                                <div class="col-md-8 ">
+                                  <input type="checkbox" name="work_status_action" value="true"
+                                    [(ngModel)]="adduser.work_status_action" #work_status_action
+                                    id="exampleFormControlSelect1">
+                                  <!-- <select class="form-control"  [(ngModel)]="adduser.esi_action" name="esi_action" value="" #esi_action id="exampleFormControlSelect1">
+                                                                                                        <option value="true">Yes</option>
+                                                                                                        <option value="false">No</option>
+                                                                                                      </select> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-group service-form-group col-md-6">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label >Attach Photo</label>
+                              </div>
+                              <div class="col-md-8">
+                                <input type="file" (change)="onfileselected($event)" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <br>
+                      <div class="col-md-12 col-sm-5 form-group">
+                        <button class="btn-info btn-lg" (click)="addapi(Mobile_No.value,Password.value)">Next</button>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</form>

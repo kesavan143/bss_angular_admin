@@ -1,0 +1,37 @@
+<h3>Point Track Record List</h3>
+
+
+  <div class="col">
+  
+      <div class="col-md-12">
+        <div class="row">
+          <div class="tabl" >
+              <table class="table table-bordered" style="border-collapse:collapse;">
+                  <thead>
+                      <tr>
+                          <th>SL.No</th>
+                          <th>Point Track Maprefid</th>
+                          <th>Title</th>
+                          <th>Description</th>
+                          <th>Create Date</th>
+                          <th>Select</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                              <ng-container  *ngFor="let data of datas;   let i = index">
+                              <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                  <td>{{i+1}}</td>
+                                <td>{{data.PointTrackMaprefid}}</td>
+                                  <td id="l1">{{data.title}}</td>
+                                  <td id="a1">{{data.description}}</td>
+                                  <td id="a1">{{data.updatedtime}}</td>
+                                  <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view($event, data)"><i  class="m-1 icon-screen-desktop"></i></button></td>
+                                </tr>
+                              </ng-container>
+
+                  </tbody>
+              </table>
+        </div>
+        </div>
+      </div>
+      </div>

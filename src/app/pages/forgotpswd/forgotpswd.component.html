@@ -1,0 +1,23 @@
+<div class="forgots">
+<div class="card mx-auto forgot">
+  <div class="card-body">
+
+    <h2 class="card-title text-center mb-5">  <img src="assets/images/23.jpg" ></h2>
+    <form>
+      
+      <div class="form-group ">
+        <label for="Email">Enter Your Login ID</label>
+        <input #uname  type="Email" class="form-control" id="email" #email>
+      </div>
+      <div class="mt-5 text-center">
+        <button type="submit" class="btn form-control btn btn-primary px-gdn-btn mb-3 mr-3"  (click)="sub(email.value)">
+            Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div> 
+
+<div class="text-nowrap footer">
+  2018 <a routerLink="/">BSS</a> all rights reserved
+</div>

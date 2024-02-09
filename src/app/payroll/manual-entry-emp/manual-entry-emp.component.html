@@ -1,0 +1,639 @@
+<div class="row">
+  <div class="header">
+      <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+          <div class="col-md-8">
+            <h3 class="adsc">
+              <i class="fa fa-university"></i> &nbsp;Employee Payment Entrys</h3>
+            </div>
+          </div>
+          <div class="col-md-6">
+              <input type="month"  class="pull-right" name="date" (change)="dates($event.target.value)" [(ngModel)]="date">
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="row">
+<div class="row" style="border: 1px #6c757d solid;padding: 4px;" > 
+<div class="col-md-12"  style="border: 1px #6c757d solid; padding: 4px;">
+  <div class="row" *ngIf="lock === true">
+      <div class="col-md-1">
+       <label style="text-align:left">Company Name</label>
+      </div>
+      <div class="col-md-1">
+        <select  style="width: 100%;" (change)="fetchsite($event.target.value)" name="company" [(ngModel)]="company_name"  value=""  id="exampleFormControlSelect1" disabled>                           
+          <ng-container>
+              <option  value="" disabled>Select Company Name</option>
+          <option  *ngFor="let data of companylist"  value="{{data.company_name}}">{{data.company_name}}</option>
+        </ng-container>
+        </select>  
+      </div>
+      <div class="col-md-1">
+          <label style="text-align:left">UNIT NAME</label> 
+         </div>
+         <div class="col-md-5">
+          <select   style="width: 100%;" name="unit_name" (change)="Contract_list($event.target.value)" [(ngModel)]="unit_name"  value=""  id="exampleFormControlSelect1" disabled>                          
+            <ng-container>
+                <option  value="" disabled>Select UNIT NAME</option>
+            <option  *ngFor="let data of site_names"  value="{{data.id}}">{{data.title}}</option>
+            </ng-container>
+            </select> 
+         </div>
+      <div class="col-md-2">
+          <label>{{date}}</label> 
+         </div>
+         <div class="col-md-2">
+            <label>No of Days : {{date_count}}</label>
+           </div>
+  </div>
+  <div class="row" *ngIf="lock === false">
+    <div class="col-md-1">
+     <label style="text-align:left">Company Name</label>
+    </div>
+    <div class="col-md-1">
+      <select  style="width: 100%;" (change)="fetchsite($event.target.value)" name="company" [(ngModel)]="company_name"  value=""  id="exampleFormControlSelect1">                           
+        <ng-container>
+            <option  value="" disabled>Select Company Name</option>
+        <option  *ngFor="let data of companylist"  value="{{data.company_name}}">{{data.company_name}}</option>
+      </ng-container>
+      </select>  
+    </div>
+    <div class="col-md-1">
+        <label style="text-align:left">UNIT NAME</label> 
+       </div>
+       <div class="col-md-5">
+        <select   style="width: 100%;" name="unit_name" (change)="Contract_list($event.target.value)" [(ngModel)]="unit_name"  value=""  id="exampleFormControlSelect1">                          
+          <ng-container>
+              <option  value="" disabled>Select UNIT NAME</option>
+          <option  *ngFor="let data of site_names"  value="{{data.id}}">{{data.title}}</option>
+          </ng-container>
+          </select> 
+       </div>
+    <div class="col-md-2">
+        <label>{{date}}</label> 
+       </div>
+       <div class="col-md-2">
+          <label>No of Days : {{date_count}}</label>
+         </div>
+</div>
+</div>
+
+<div class="col-md-12"  style="    border: 1px #6c757d solid; padding: 4px;">
+  <div class="row">
+    <div class="col-md-1">
+        <label>CODE</label>  
+       </div>
+       <div class="col-md-3">
+          <input type="text" name="employee_id" value="" [(ngModel)]="ecode"  #employee_id>
+          <button style="margin: 0px 0px 0px 3px;" (click)="search(employee_id.value)" class="btn btn-info btn-lg">Search</button>
+         </div>
+         <div class="col-md-1">
+             <label>NAME</label> 
+           </div>
+           <div class="col-md-2">
+               <label style="text-align: left;">{{ename}}</label>
+             </div>
+             <div class="col-md-1">
+               <label> AC. NO </label>
+               </div>
+               <div class="col-md-2">
+                   <label style="text-align: left;">{{eac}}</label>
+                 </div>
+                 <div class="col-md-2">
+                    <select class="selects" name="lock" value="" [(ngModel)]="lock" (change)="lockunlock($event.target.value)"   id="exampleFormControlSelect1">     
+                        <ng-container>
+                            <option  value="true">Lock</option>
+                            <option  value="false">Unlock</option>
+                      </ng-container>
+                      </select> 
+                    <!-- <input type="radio" value="true"  [(ngModel)]="lock">LOCK
+                    <input type="radio" value="false"  [(ngModel)]="unlock">UNLOCK -->
+                    </div>
+                  </div>
+</div>
+</div>
+<div class="row col-md-12" style="padding-top:20px" style="    border: 1px #6c757d solid; padding: 4px;">
+
+
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-3" style="padding-top:20px" style="    border: 1px #6c757d solid; padding: 4px;">
+      <div class="row">
+        <div class="col-md-6">
+            <label>Designation</label> 
+        </div>
+        <div class="col-md-6">
+          <select class="selects" name="designation"  style="width: 100%" value="" [(ngModel)]="designation" (change)="onRanks($event.target.value)"   id="exampleFormControlSelect1">     
+            <ng-container>
+                <option  value="" disabled active>Select Designation</option>
+            <option   *ngFor="let data of datas" value="{{data.rank}}">{{data.rank}}</option>
+          </ng-container>
+          </select> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+           
+        </div>
+        <div class="col-md-6" style="font-size: 10px;font-weight: 700;">
+           *No of day Present {{entry_pre_count}}
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+              <label>NO.of Days Present</label> 
+          </div>
+          <div class="col-md-6">
+              <input type="number" style="width: 50%;margin-top: 10px;" name="present" [(ngModel)]="present"   #presentss value="" >
+              <button class="btn btn-info btn-lg" style="width:47%" (click)="presents(presentss.value)">Add</button>
+          </div>
+        </div>
+      
+        <div class="row">
+            <div class="col-md-6" >
+                <label>Duty off.Wages</label> 
+            </div>
+            <div class="col-md-6">
+                <input type="number" name="dutyoff" [(ngModel)]="dutyoff" style="width: 100%">
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <label>Addl.Duties</label> 
+              </div>
+              <div class="col-md-6">
+                  <input type="number"style="width: 50%;margin-top: 10px;" name="add_duties" [(ngModel)]="add_duties" value="">
+                  <button class="btn btn-info btn-lg" style="width:47%" (click)="add_dutiess()">Add</button>
+              </div>
+            </div>
+         
+    </div>
+
+    <div class="col-md-3" style="padding-top:20px" style="    border: 1px #6c757d solid; padding: 4px;">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Payment Type</label> 
+            </div>
+            <div class="col-md-6">
+              <input type="radio" name="payment_type" [(ngModel)]="payment_type" value="Full Cash"> Full Cash <br>
+              <input type="radio" name="payment_type" [(ngModel)]="payment_type" value="Cash"> Cash <br>
+              <input type="radio" name="payment_type" [(ngModel)]="payment_type" value="Bank"> Bank  <br>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <label>Paymode</label> 
+              </div>
+              <div class="col-md-6">
+                  <input type="radio" name="paymode" [(ngModel)]="paymode" value="Process"> Process <br>
+                  <input type="radio" name="paymode" [(ngModel)]="paymode" value="Paid"> Paid <br>
+                  <input type="radio" name="paymode" [(ngModel)]="paymode" value="Stop"> Stop <br>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12" style="text-align: center;font-size: 35px;">
+                  {{fixed_rank}}
+              </div>   
+              </div>
+              <div class="row">
+                  <div class="col-md-6">
+                      <label>Total Duties</label> 
+                  </div>
+                  <div class="col-md-6">
+                      <input disabled type="number" style="width: 100%" name="total_duties" [(ngModel)]="total_duties" value="" >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                      <label>Addl Amount</label> 
+                  </div>
+                  <div class="col-md-6">
+                      <input type="number"  (change)="add_amnt($event.target.value)" style="width: 100%" name="add_amount" [(ngModel)]="add_amount" value="" >
+                  </div>
+                </div>
+      </div>
+      <div class="col-md-3" style="padding-top:20px" style="    border: 1px #6c757d solid; padding: 4px;">
+          <div class="row">
+              <div class="col-md-6">
+                <label>BASIC</label>
+              </div>
+              <div class="col-md-6">
+                  <input disabled type="number" style="width: 100%" name="basic" [(ngModel)]="basic" value="" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                  <label>D.A</label>
+                </div>
+                <div class="col-md-6">
+                    <input  disabled type="text" style="width: 100%" name="da" [(ngModel)]="da" value="" >
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6">
+                    <label>H.R.A</label>
+                  </div>
+                  <div class="col-md-6">
+                      <input disabled type="text" style="width: 100%" name="hra" [(ngModel)]="hra" value="" >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                      <label>Trv.Ex</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input disabled type="text" style="width: 100%" name="trv_ex" [(ngModel)]="trv_ex" value="" >
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                        <label>Others</label>
+                      </div>
+                      <div class="col-md-6">
+                          <input disabled type="text" style="width: 100%" name="others" [(ngModel)]="others" value="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <label>Medical</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input disabled type="text" style="width: 100%" name="medical" [(ngModel)]="medical" value="">
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                            <label>Other1</label>
+                          </div>
+                          <div class="col-md-6">
+                              <input disabled type="text" style="width: 100%" name="others1" [(ngModel)]="others1" value="" >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                              <label>Other2</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input disabled type="text" style="width: 100%" name="others2" [(ngModel)]="others2" value="" >
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <label>Other3</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <input disabled type="text" style="width: 100%" name="others3" [(ngModel)]="others3" value="" >
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <label>Other4</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input disabled type="text" style="width: 100%" name="others4" [(ngModel)]="others4" value="" >
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                    <label>WA(ESI)</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <input disabled type="text" style="width: 100%" name="waesi" [(ngModel)]="waesi" value="" >
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                      <label>EW Days</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input disabled type="text" style="width: 100%" name="ewdays" [(ngModel)]="ewdays" value="" >
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                        <label>EW AMOUNT</label>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <input disabled type="text" style="width: 100%"  name="ewamount" [(ngModel)]="ewamount" value="">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                          <label>GROOS PAY</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input disabled type="text" style="width: 100%"  name="gross" [(ngModel)]="gross" value="">
+                                          </div>
+                                      </div>
+        </div>
+        <div class="col-md-3" style="padding-top:20px" style="    border: 1px #6c757d solid; padding: 4px;">
+            <div class="row">
+                <div class="col-md-3">
+                  <label>Advance</label>
+                </div>
+                <div class="col-md-9">
+                  <div class="row">
+                    <div class="col-md-6">
+                        <input type="number" name="advance" [(ngModel)]="advance" value="" style="width: 100%"  (change)="changes($event.target.value,'advancce')" >
+                    </div>
+                    <div class="col-md-6">
+                        <input disabled type="number"  name="advance1" [(ngModel)]="advance1" value="" style="width: 100%" >
+                    </div>
+                  </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-3">
+                    <label>Loan</label>
+                  </div>
+                  <div class="col-md-9">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <input type="number" name="loan" [(ngModel)]="loan" value="" style="width: 100%"  (change)="changes1($event.target.value,'Loan')">
+                          </div>
+                          <div class="col-md-6">
+                              <input  disabled type="number"  name="loan1" [(ngModel)]="loan1" value="" style="width: 100%" >
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                      <label>Uniform</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="number" name="uniform" [(ngModel)]="uniform" value="" style="width: 100%" (change)="changes($event.target.value)" >
+                            </div>
+                            <div class="col-md-6">
+                                <input disabled type="number" name="uniform1" [(ngModel)]="uniform1" style="width: 100%" >
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3">
+                        <label>Mess</label>
+                      </div>
+                      <div class="col-md-9">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <input type="number" name="mess" [(ngModel)]="mess" value="" style="width: 100%" (change)="changes($event.target.value)" >
+                              </div>
+                              <div class="col-md-6">
+                                  <input disabled type="number" name="mess1" [(ngModel)]="mess1" value=""  style="width: 100%" >
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                          <label>Rent</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input disabled type="number" name="rent" [(ngModel)]="rent" value="" style="width: 100%" (change)="changes($event.target.value)">
+                                </div>
+                                <div class="col-md-6">
+                                    <input disabled type="number" name="rent1" [(ngModel)]="rent1" value=""  style="width: 100%" >
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-3">
+                            <label>ATM</label>
+                          </div>
+                          <div class="col-md-9">
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <input disabled type="number" name="atm" [(ngModel)]="atm" value="" style="width: 100%" (change)="changes($event.target.value)">
+                                  </div>
+                                  <div class="col-md-6">
+                                      <input disabled type="number" name="atm1" [(ngModel)]="atm1" value=""  style="width: 100%" >
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                          <div class="row">
+                              <div class="col-md-3">
+                                <label>Phone</label>
+                              </div>
+                              <div class="col-md-9">
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <input type="number" name="phone" [(ngModel)]="phone" value="" style="width: 100%" (change)="changes($event.target.value)">
+                                      </div>
+                                      <div class="col-md-6">
+                                          <input disabled type="number" name="phone1" [(ngModel)]="phone1" value="" style="width: 100%">
+                                      </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="col-md-3">
+                                  <label>Others</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="number" name="otherss" [(ngModel)]="otherss" value="" style="width: 100%" (change)="changes($event.target.value)">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input disabled type="number" name="otherss1" [(ngModel)]="otherss1" value="" style="width: 100%">
+                                        </div>
+                                      </div>
+                                  </div>
+                              </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <label>P.F</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="number" disabled  style="width: 100%" name="pf" [(ngModel)]="pf">
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                    <label>E.S.I</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <input type="text" disabled style="width: 100%" name="esi" [(ngModel)]="esi">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                      <label>PR.Tax</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text"  disabled style="width: 100%" name="pr_tax" [(ngModel)]="pr_tax">
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                        <label style="text-align:left">Staff Wellfare</label>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <input type="text" style="width: 100%" name="staff_wellfare" [(ngModel)]="staff_wellfare">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                          <label>Total Deduction</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" disabled style="width: 100%" name="total_dec" [(ngModel)]="total_dec">
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-6">
+                                            <label>NET PAY</label>
+                                          </div>
+                                          <div class="col-md-6">
+                                              <input type="number" disabled style="width: 100%" name="ner_pay" [(ngModel)]="ner_pay">
+                                            </div>
+                                        </div>
+          </div>
+  </div>
+</div>
+</div>
+<div class="row">
+<button *ngIf="buttonState" style="margin: 5px 6px 0px 0px;" class="btn btn-info btn-lg" (click)="onUpdate()">UPDATE</button>  
+<button *ngIf="!buttonState" style="margin: 5px 6px 0px 0px;" class="btn btn-info btn-lg" (click)="save()">SAVE</button>  
+<button style="margin: 5px 6px 0px 0px;" class="btn btn-info btn-lg" (click)="cancel()">Cancel</button> 
+<button style="margin: 5px 6px 0px 0px;" class="btn btn-info btn-lg" data-toggle="collapse"  data-toggle="modal" data-target="#login-modal1" (click)="view()" >View</button>
+</div>
+
+</div>
+
+
+<!-- BEGIN # MODAL LOGIN -->
+<div class="modal fade" id="login-modal1" tabindex="-1" role="dialog" style="padding-right: 415px;" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-dialogs" style="max-width: 750px!important;">
+  <div class="modal-content">
+    
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+       
+            
+            <!-- Begin # DIV Form -->
+            <div id="div-forms">
+            
+                <!-- Begin # Login Form -->
+                <form id="login-form">
+                <div class="modal-body">
+          
+                    <div class="login-form">
+                        <div class="main-div">
+                            <div class="panel">
+                                <h3>View & Grand Total</h3>
+                           </div>
+                           <div class="row">
+                            <div class="tabl" >
+                                <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                                    <thead>
+                                        <tr>
+                                            <th>SL.NO</th>
+                                            <th>ECode</th>
+                                            <th>DSG</th>
+                                            <th>NDY</th>
+                                            <th>OT</th> 
+                                            <th>EDT</th>      
+                                            <th>TDT</th>  
+                                            <th>NAME</th>
+                                            <th>Delete</th>  
+                                            <th>Edit</th>  
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                          <ng-container  *ngFor="let data of datatables1 ;  let i = index">
+                                                  <tr>
+                                                      <td>{{i+1}}</td> 
+                                                      <td>{{data.ecode}}</td> 
+                                                      <td>{{data.designation}}</td> 
+                                                      <td>{{data.present}}</td> 
+                                                      <td>{{data.add_duties}}</td> 
+                                                      <td></td> 
+                                                      <td>{{data.total_duties}}</td> 
+                                                      <td>{{data.ename}}</td>
+                                                      <td><button class="button" (click)="delete(data.id)"><i class="fa fa-trash"></i></button></td>  
+                                                      <td><button class="button" data-dismiss="modal" (click)="edit(data)"><i class="fa fa-edit"></i></button></td>    
+                                                </tr>
+                                                </ng-container>      
+                                    </tbody>
+                                </table>    
+                          </div>
+                          </div>
+
+
+                          <div class="row">
+                            <div class="tabl" >
+                                <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                                    <thead>
+                                        <tr>
+                                            <th>SL.NO</th>
+                                            <th>Desig Code</th>
+                                            <th>Strength</th>
+                                            <th>No.of.days</th>
+                                            <th>H.wages</th> 
+                                            <th>O.T</th>      
+                                            <th>Extra Dt</th>  
+                                            <th>Total Dt</th>   
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                          <ng-container  *ngFor="let data of datatables2 ;  let i = index">
+                                                  <tr>
+                                                      <td>{{i+1}}</td> 
+                                                      <td>{{data.designation}}</td> 
+                                                      <td>{{data.strength}}</td> 
+                                                      <td>{{data.present}}</td> 
+                                                      <td></td> 
+                                                      <td>{{data.add_duties}}</td> 
+                                                      <td></td> 
+                                                      <td>{{data.total_duties}}</td> 
+                                                      
+                                                </tr>
+                                                </ng-container>    
+                                                <tr>
+                                                  <td></td> 
+                                                  <td>GTOTAL</td> 
+                                                  <td>{{gstrength}}</td> 
+                                                  <td>{{gnoofday}}</td> 
+                                                  <td></td> 
+                                                  <td>{{got}}</td> 
+                                                  <td></td> 
+                                                  <td>{{gtotal}}</td> 
+                                                  
+                                            </tr>  
+                                    </tbody>
+                                </table>    
+                          </div>
+                          </div>
+    
+
+
+
+                            
+                            </div>
+                            <button class="btn btn-primary" data-dismiss="modal" style="color:#fff; background:#13477e!important;" >EXIT</button>
+                        </div>
+              </div>
+            
+                </form>
+                <!-- End # Login Form -->
+                
+                <!-- Begin | Lost Password Form -->
+              
+                
+                
+            </div>
+            <!-- End # DIV Form -->
+            
+  </div>
+</div>
+</div>

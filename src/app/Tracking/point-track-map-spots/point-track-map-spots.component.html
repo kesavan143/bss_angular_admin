@@ -1,0 +1,84 @@
+<h3>Point Track Spot List</h3>
+
+<agm-map 
+[latitude]="lats"
+[longitude]="lngs"
+[zoom]= 16
+[disableDefaultUI]="ture"
+[zoomControl]="ture">
+
+
+
+<agm-marker 
+    
+    [latitude]="lats"
+    [longitude]="lngs"
+    [label]="label"
+    [markerDraggable]="hellow">
+    
+  <agm-info-window>
+    <strong>{{Name}}</strong>
+  </agm-info-window>
+  
+</agm-marker>
+
+<agm-circle [latitude]="lats" [longitude]="lngs" 
+    [radius]="10"
+    [fillColor]="'red'"
+    [circleDraggable]="false"
+    [editable]="true">
+</agm-circle>
+
+</agm-map>
+<br>
+  <div class="cols">
+  
+      <div class="col-md-12">
+        <div class="row">
+          <div class="tabl" >
+              <table class="table table-responsive table-bordered" style="border-collapse:collapse;">
+                  <thead>
+                      <tr>
+                          <th>SL.No</th>
+                          <th>Title</th> 
+                          <th>Description</th> 
+                          <!-- <th>startlat</th>
+                          <th>startlon</th>
+                          <th>endlat</th>
+                          <th>endlon</th> -->
+                          <!-- <th>Created by</th>
+                          x
+                          <th>Marked time</th>
+                        
+                          <th>Marked lat</th>
+                          <th>Marked lon</th>
+                          <th>Is Marked</th> -->
+                          <th>Marked by</th>
+                          <th>Marked lat</th>
+                          <th>Marked lon</th>
+
+                          <th>Created time</th>
+                         
+                          <th>Find</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                              <ng-container  *ngFor="let data of datas;   let i = index">
+                              <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                  <td>{{i+1}}</td>
+                                <td id="l1">{{data.title}}</td> 
+                                <td id="a1">{{data.description}}</td> 
+                                <td>{{data.marked_by}}</td>
+                                <td id="a1">{{data.lat}}</td>
+                                <td id="pc1">{{data.lon}}</td>
+                                <td id="a1">{{data.createdtime}}</td>
+                                  <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view($event, data)"><i  class="m-1 icon-screen-desktop"></i></button></td>
+                                </tr>
+                              </ng-container>
+
+                  </tbody>
+              </table>
+        </div>
+        </div>
+      </div>
+      </div>

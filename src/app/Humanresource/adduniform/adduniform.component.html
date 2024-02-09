@@ -1,0 +1,120 @@
+  <div  class="row">
+      <div  class="col-12 col-md-12 mb-3">
+        <h3 style="border: 2px #ddd solid;padding: 10px;"  class="adsc">
+            <i class="material-icons ng-star-inserted">business</i> &nbsp;Uniform Manangement</h3>
+        </div>
+      </div>
+      <div class="card" style="padding-bottom: 30px;"><Br>
+        <!-- <div *ngIf="deleteLoading" id="snackbar" class="show"> {{loadingmsg}}</div> -->
+        <div class="headers">
+            <div class="">
+          <div class="row">		
+            <div class="col-md-3">
+              <div class="search input-group" style="border: 1px solid black;padding: 4px;">
+                  <mat-form-field>
+                      <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="">
+                    </mat-form-field>
+                  <!-- <input class="form-control"  style="border:none;" type="text" placeholder="Search" name="search" [(ngModel)]="filter">       -->
+                <!-- <input type="text" class="form-control pr-2 py-0"  [(ngModel)]="filter" placeholder="Search"> -->
+                <div class="input-group-append">
+                  <i class="material-icons searchs pr-2">search</i>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+            <!-- (click)='accbulup()' -->
+            </div>
+          </div>
+          </div>
+        </div>
+        <div>
+
+          <ng-container  *ngFor="let data of datasss ">
+            <button  class="btn-info btn-lg pull-left" (click)="find(data.company_name)">{{data.company_name}} </button>
+              </ng-container>
+        </div>
+        <!-- <table mat-table [dataSource]="dataSource" matSort class="table table-bordered" style="font-size: 10px;font-weight: 600;" >
+
+          <button  class="btn-info btn-lg pull-left" (click)="find('BSS')">BSS </button>
+          <button  class="btn-info btn-lg pull-left" (click)="find('BSSB')">BSSB</button>
+          <button  class="btn-info btn-lg pull-left"(click)="find('BSSC')">BSSC</button>
+          <button  class="btn-info btn-lg pull-left" (click)="find('BSSK')">BSSK</button>
+          <button  class="btn-info btn-lg pull-left" (click)="find('BSSPA')">BSSPA</button>
+          <button  class="btn-info btn-lg pull-left" (click)="find('BSSPL')">BSSPL</button>
+          <button  class="btn-info btn-lg pull-left" (click)="find('BSSR')">BSSR</button>
+          <button  class="btn-info btn-lg pull-left" (click)="find('BSST')">BSST</button>
+          <button  class="btn-info btn-lg pull-left" (click)="find('BSTR')">BSTR</button>
+          <button  class="btn-info btn-lg pull-left"(click)="find('MMSPL')">MMSPL</button>
+           </table> -->
+        <table mat-table [dataSource]="dataSource" matSort class="table table-responsive table-bordered" style="font-size: 10px;font-weight: 600;">
+
+        <ng-container matColumnDef="Empid">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px; color:white"    >E.ID</th>
+          <td mat-cell *matCellDef="let element"> {{element.Empid}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Company">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">Company</th>
+            <td mat-cell *matCellDef="let element"> {{element.company_name}} </td>
+          </ng-container>
+      
+        <ng-container matColumnDef="employee_type">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">E.Type</th>
+          <td mat-cell *matCellDef="let element"> {{element.employee_type}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-heade  style="height: 10px;color:white"r>    Name  </th>
+          <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">    Gender </th>
+            <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="Mobile_No">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">  Contact No </th>
+            <td mat-cell *matCellDef="let element"> {{element.Mobile_No}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="date_joining">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> Date of Joining </th>
+              <td mat-cell *matCellDef="let element"> {{element.date_joining}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Email_ID">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> Email-ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.Email_ID}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="Address">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> Address </th>
+                <td mat-cell *matCellDef="let element"> {{element.Address}} </td>
+              </ng-container>
+                <ng-container matColumnDef="view">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> View </th>
+                    <td mat-cell *matCellDef="let element"> <button style="background: transparent" class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view($event, element.id)"><i  class="m-1 icon-screen-desktop"></i></button> </td>
+                  </ng-container>
+                
+                    <!-- <ng-container matColumnDef="delete">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
+                        <td mat-cell *matCellDef="let element"><button style="background: transparent" class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="open($event, item)"><i  class="m-1 icon-book-open"></i></button></td>
+                      </ng-container> -->
+    
+    
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 30]">
+      </mat-paginator>
+      
+      </div>
+  
+  
+  
+  
+
+
+  

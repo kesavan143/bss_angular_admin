@@ -1,0 +1,171 @@
+<div  class="row">
+    <div  class="header">
+      <h3  class="adsc">
+          <i class="material-icons ng-star-inserted">business</i> &nbsp;FORM No. XXVIII</h3>
+      </div>
+		</div>
+		<div class="" style="padding-bottom: 30px;"><Br>
+      <div class="col-md-6">
+          <button class="btn-info btn-lg " (click)="exportAsXLSX()">Export</button>
+          <button class="btn-info btn-lg " (click)="print('component1')">Print</button>	
+      </div>
+<br>
+<div class="row">
+    <div class="col-md-4">
+        <div class="col-md-2">
+            <label style="font-weight: 700;">Month</label>
+         </div>
+     <div class="col-md-2">
+       <div> <input type="month"  [(ngModel)]="date" name="month" #month> </div>
+       <div><button (click)="dateChange(month.value)">Search</button></div>
+     </div>
+    </div>
+<div class="col-md-4">
+  <div class="col-md-2">
+      <label style="font-weight: 700;">Company</label> 
+    </div>
+    <div class="col-md-4">
+        <select  style="width: 100%;" (change)="fetchsite($event.target.value)" name="company" [(ngModel)]="company"  value=""  id="exampleFormControlSelect1">                           
+            <ng-container  *ngFor="let data of companylist">
+            <option  value="{{data.company_name}}">{{data.company_name}}</option>
+          </ng-container>
+          </select>    
+      </div>
+</div>	
+<div class="col-md-4">
+  <div class="col-md-2">
+      <label style="font-weight: 700;"> Unit Name</label>
+   </div>
+<div class="col-md-4">
+     <select   style="width: 100%;" name="unit_name" (change)="Contract_list($event.target.value)" [(ngModel)]="unit_name"  value=""  id="exampleFormControlSelect1">                          
+         <ng-container  *ngFor="let data of site_names">
+         <option  value="{{data.title}}">{{data.title}}</option>
+         </ng-container>
+         </select> 
+</div>
+</div>
+</div>
+<br><br>
+<div id="component1">
+<table *ngFor="let data of datas">
+    <tr>
+      <th colspan="8">FORM No. XXVIII</th>
+    </tr>
+    <tr>
+        <td colspan="8">(See Rule 78 (1) (b) of Tamil Nadu Contract Labour (Regulation and Abolition) Rules, 1975)</td>
+      </tr>
+      <tr>
+          <th colspan="8">WAGE SLIP</th>
+        </tr>
+        <tr>
+            <td colspan="8">1. Name and Address of the Establishment : <b>{{data.company_name}}</b></td>
+          </tr>
+          <tr>
+              <td colspan="8">Plot No. 29, VGP Rajesh Nagar, 1st Main Road, Narayanapuram, Pallikaranai, CH-100</td>
+            </tr>
+            <tr>
+                <td colspan="8">2. Name of the Workman: <b>{{data.ename}}</b></td>
+              </tr>
+              <tr>
+                  <td colspan="3">3. Father’s / Husband’s Name :  <b>{{data.f_m_name}}</b></td>
+                  <td colspan="5">4. Designation: <b>{{data.etype}}</b> </td>
+                </tr>
+                <tr>
+                    <td colspan="3">5. Date of Entry into Service : <b>{{data.doj}}</b> </td>
+                    <td colspan="3">6. Wage Period : From</td>
+                    <td colspan="2">To</td>
+                  </tr>
+                  <tr>
+                      <td>7. Wages Earned  :</td>
+                      <td>Rs.</td>
+                      <td>P.</td>
+                      <td colspan="2" rowspan="2">(g) Gross Wages  : 	<b>{{data.gross}}</b> </td>
+                      <td>Rs. </td>
+                      <td>P.</td>
+                    </tr>
+                    <tr>
+                        <td>(a) BASIC  : <b>{{data.basic}}</b> </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                          <td>(b) D.A.   : <b>{{data.da}}</b></td>
+                          <td></td>
+                          <td></td>
+                          <td>Deductions  :</td>
+                          <td>Rs. <b>{{data.total_dec}}</b> </td>
+                          <td>P.</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                            <td>(c) HRA : <b>{{data.hra}}</b> </td>
+                            <td></td>
+                            <td></td>
+                            <td>(i)  E.P.F.  :  <b>{{data.pf}}</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                              <td>(d) O.T. Wages: <b>{{data.add_amount}}</b> </td>
+                              <td></td>
+                              <td></td>
+                              <td>(ii) E.S.I.   :  <b>{{data.esi}}</b> </td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                                <td>(e) Leave Wages:</td>
+                                <td></td>
+                                <td></td>
+                                <td>(iii) OTHERS : <b>{{data.others}}</b> </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                  <td>(f) Other Allowances: <b>{{data.others + data.others1 + data.others2 + data.others3 + data.others4 }}</b> </td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                    <td>(g) Gross Wages  : <b>{{data.gross}}</b> </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td colspan="2">TOTAL Deductions  :   <b>{{data.total_dec}}</b></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td colspan="3">Net amount Paid : <b>{{data.net_pay}}</b>  </td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">Signature of the Employer / Manager
+                                            or any other Authorised person</td>
+                                        <td colspan="5">Signature or Thumb              
+                                            Impression of the Workman</td>
+                                      </tr>
+                                      <br><br><br>
+  </table>
+</div>
+		</div>

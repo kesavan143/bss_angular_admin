@@ -1,0 +1,148 @@
+<form>
+    <!-- service-form -->
+    <div class="service-forms">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-sm-12 multistep-form-section">
+                <form name="form"  novalidate>
+                        <div class="col-md-12 justify-content-md-center">
+                                <div class="">
+                                <h3 style="    width: 100%;
+                                background: #f1f4f7;padding: 10px;text-transform: uppercase;">Create QR List</h3>
+                                </div>
+                                <div class="col col-lg-2">                                        
+                                </div>
+                              </div>            
+                <div class="row">
+                    <div class="container"  id="component2">
+                        <div class="col-12 col-sm-12 form-group">
+                            <form class="frms" name="form" novalidate>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="form-group service-form-group col-md-4">
+                                            <div class="row">
+                                              <div class="col-md-5">
+                                                <label >Select Employee</label>
+                                              </div>
+                                              <div class="col-md-7">
+                                                  <div class="form-group service-form-group">                             
+                                                      <select class="form-control"   name="employees" (change)="dateChange1($event.target.value)" value="" #employees id="exampleFormControlSelect1">
+                                                          <option>Select Employee</option>
+                                                          <ng-container  *ngFor="let data of Employee_data">
+                                                          <option  value="{{data.id}}">{{data.Name}}</option>
+                                                        </ng-container>
+                                                        </select> 
+                                                  </div>                                         
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="form-group service-form-group col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                  <label >QR  Code</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <ngx-qrcode 
+                                                    [qrc-value] = "details"
+                                                    qrc-class = "aclass"
+                                                    qrc-errorCorrectionLevel = "L">
+                                                    </ngx-qrcode>
+                                                </div>
+                                              </div>
+                                          </div>
+                                    </div>
+                                  </div>
+                            <div class="row">
+                            <div class="col-md-12 col-sm-5 form-group">
+                            <button class="btnupds" (click)="fetchdata(employees.value)">Create QR</button> <button class="btnupds" (click)="printComponent2('component2')">Print</button>
+                            </div>
+                        </div>
+                     </form>
+                  </div>
+                </div>
+                    </div>
+                  </form>
+              </div>
+              </div>
+            </div>
+          </div>
+  
+    </div>
+  </form>
+  
+
+
+<!-- BEGIN # BOOTSNIP INFO -->
+
+
+
+<div class="container"  id="component1">
+  <div class="row">
+      <div class="header">
+        <div class="row">
+          <div class="col-12 col-md-6 mb-3">
+            <div class="col-md-8">
+              <h3 class="adsc">
+                <i class="fa fa-university"></i> &nbsp;Employee List</h3>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <button type="button" class="btn clr btn-info btn-lg pull-right" data-toggle="collapse" (click)="clear()">ClearAll</button>
+                <button type="button" class="btn prnt btn-info btn-lg pull-right" data-toggle="collapse" (click)="printComponent1('component1')">Print</button>
+            </div>
+          </div>
+         
+        </div>
+
+        <div class="col qrc">
+    
+            <div class="col-md-12">
+              <div class="row">
+                <div class="tabl  " >
+                    <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th>SL.NO</th>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Email-ID</th>
+                                <th>Mobile</th>
+                                <th>created</th>
+                                <th>QR Codes</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <ng-container  *ngFor="let data of QRdata;  let i = index">
+                                        <tr>
+                                        <td>{{i+1}}</td>  
+                                        <td>{{data.Empolyee_id}}</td>
+                                        <td>{{data.Name}}</td>
+                                        <td id="l1">{{data.Email_ID}}</td>
+                                        <td id="a1">{{data.Mobile_No}}</td>
+                                        <td id="pc1">{{data.created}}</td>
+                                        <td id="pc1">
+                                            <ngx-qrcode 
+                                            [qrc-value] = "data.qrdata"
+                                            qrc-class = "aclass"
+                                            qrc-errorCorrectionLevel = "S">
+                                            </ngx-qrcode>
+                                        </td>
+                                        <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm" ><i  class="m-1 icon-check" (click)="delete($event,data)"></i></button></td>
+                                    </tr>
+                                    </ng-container>      
+                        </tbody>
+                    </table>
+                    <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                    <div class="card-footer p-0">
+                    <ngb-pagination   [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                    </div>     
+              </div>
+              </div>
+            </div>
+            </div>
+  </div>
+</div>
+
+

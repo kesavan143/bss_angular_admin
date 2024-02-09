@@ -1,0 +1,233 @@
+<div  class="row">
+  <div  class="header">
+    <h3  class="adsc">
+      <i class="material-icons ng-star-inserted">business</i> &nbsp;PAYSLIP</h3>
+  </div>
+</div>
+
+<div class="row" style="padding-bottom: 30px;"><Br>
+
+  <div class=row>
+    <div class="col-md-4">
+      <div class="col-md-2">
+        <label style="font-weight: 700;">Month</label>
+      </div>
+      <div class="col-md-2" style="display: flex">
+        <input type="month" [(ngModel)]="date" name="month" #month>
+        <button class="btn-info btn-lg" style="margin-left: 22px;" (click)="dateChange()">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container col-lg-12" style="text-align: center;margin-bottom: 50px;" *ngFor="let item of data">
+  <table>
+    <thead>
+      <tr>
+        <th colspan="8">BHARATHEEYAM SECURITY SERVICES PVT LTD.</th>
+      </tr>
+      <tr>
+        <th colspan="8">Payslip for the month of {{item.date}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Ecode</th>
+        <td>{{item.ecode}}</td>
+        <th>Name</th>
+        <td>{{item.ename}}</td>
+        <th>Designation</th>
+        <td>{{item.designation}}</td>
+        <th>UName</th>
+        <td>{{item.unit_name}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="col-md-3" style="padding-right: 0px;padding-left: 0px;">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">Bank Details</th>
+          </tr>
+        </thead>
+        <tbody class="bank">
+          <tr>
+            <td>Days Present :</td>
+            <td>{{item.present}}</td>
+          </tr>
+          <tr>
+            <td>Bank Name : </td>
+            <td>{{item.ebankname}}</td>
+          </tr>
+          <tr>
+            <td>A/C No :</td>
+            <td>{{item.eifsc}}</td>
+          </tr>
+          <tr>
+            <td>PFNo :</td>
+            <td>6437</td>
+          </tr>
+          <tr>
+            <td>UanNo :</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>ESINo :</td>
+            <td>5117007312</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-3" style="padding-right: 0px;padding-left: 0px;">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">EARNINGS</th>
+          </tr>
+        </thead>
+        <tbody class="earning">
+          <tr>
+            <td>Basic</td>
+            <td> {{item.basic}}</td>
+          </tr>
+          <tr>
+            <td>D.A.</td>
+            <td>{{item.da}}</td>
+          </tr>
+          <tr>
+            <td>H.R.A</td>
+            <td>{{item.hra}}</td>
+          </tr>
+          <tr>
+            <td>Trv. Exp.</td>
+            <td>{{item.trv_ex}}</td>
+          </tr>
+          <tr>
+            <td>Others</td>
+            <td>{{item.others}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-3" style="padding-right: 0px;padding-left: 0px;">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="6">DEDUCTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PF :</td>
+            <td>{{item.pf}}</td>
+          </tr>
+          <tr>
+            <td>ESI :</td>
+            <td>{{item.esi}}</td>
+          </tr>
+          <tr>
+            <td>Ptax :</td>
+            <td>{{item.pr_tax}}</td>
+          </tr>
+          <tr>
+            <td>Advance:</td>
+            <td>{{item.advance}}</td>
+          </tr>
+          <tr>
+            <td>Loan:</td>
+            <td>{{item.loan}}</td>
+          </tr>
+          <tr>
+            <td>Uniform:</td>
+            <td>{{item.uniform}}</td>
+          </tr>
+          <tr>
+            <td>Mess:</td>
+            <td>{{item.mess}}</td>
+          </tr>
+          <tr>
+            <td>Rent:</td>
+            <td>{{item.rent}}</td>
+          </tr>
+          <tr>
+            <td>ATM Card:</td>
+            <td>{{item.atm}}</td>
+          </tr>
+          <tr>
+            <td>Others:</td>
+            <td>{{item.others}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-3" style="padding-right: 0px;padding-left: 0px;">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">Pay</th>
+          </tr>
+        </thead>
+        <tbody class="pay">
+          <tr>
+            <td>Gross:</td>
+            <td> {{item.gross}}</td>
+          </tr>
+          <tr>
+            <td>Deductions: </td>
+            <td>{{item.total_dec}}</td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+          </tr>
+          <tr>
+            <th>Netpay : </th>
+            <th>{{item.net_pay}}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>
+
+<br> <br>
+
+<!-- <div class="container col-lg-12" style="text-align: center">
+
+  <table class="table table-striped" id="datTabl" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+    <thead>
+      <tr>
+        <th>
+          <mfDefaultSorter by="company_name">COMPANY NAME</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="unit_name">UNIT NAME</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="etype">DCODE</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="designation">DESIGNATION</mfDefaultSorter>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of mf.data; let i = index">
+        <td>{{item.company_name}}</td>
+        <td>{{item.unit_name}}</td>
+        <td>{{item.etype}}</td>
+        <td>{{item.designation}}</td>
+
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4" style="text-align: center">
+          <mfBootstrapPaginator [rowsOnPageSet]="[10,25,100]"></mfBootstrapPaginator>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div> -->

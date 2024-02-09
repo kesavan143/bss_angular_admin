@@ -1,0 +1,69 @@
+<!-- BEGIN # BOOTSNIP INFO -->
+<div class="container">
+    <div class="row">
+        <div class="header">
+          <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+              <div class="col-md-8">
+                <h3 class="adsc">
+                  <i class="fa fa-university"></i> &nbsp;Left Employee List</h3>
+                </div>
+              </div>
+              <div class="col-md-6">
+  
+  
+                 
+              </div>
+            </div>
+           
+          </div>
+  
+          <div class="col">
+      
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="tabl" >
+                      <table class="table table-bordered table-responsive " style="border-collapse:collapse;">
+                          <thead>
+                              <tr>
+                                  <th style="width: 5%;">SL.NO</th>
+                                  <th style="width: 5%;">Employee ID</th>
+                                  <th  style="width: 13%;">Name</th>
+                                  <th>Gender</th>
+                                  <th>Contact No</th>
+                                  <th style="width: 8%;">Date of Joining</th>
+                                  <th>Email ID</th>
+                                  <th>Address</th>
+                                 
+                                  <th>View</th>
+                              </tr>
+                          </thead>
+                          <tbody style="font-size: 11px;">
+                                  <ng-container  *ngFor="let data of datass;  let i = index">
+                                          <tr>
+                                          <td>{{i+1}}</td>  
+                                          <td>{{data.Empid}}</td>
+                                          <td>{{data.Name}}</td>
+                                          <td>{{data.gender}}</td>
+                                          <td id="l1">{{data.Mobile_No}}</td>
+                                          <td id="a1">{{data.date_joining}}</td>
+                                          <td style="word-break: break-word;" id="pc1">{{data.Email_ID}}</td>
+                                          <td  id="pc1">{{data.Address}}</td>
+                                          <td><button style="background: transparent" class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view($event, data)"><i  class="m-1 icon-screen-desktop"></i></button></td>
+                                      </tr>
+                                      </ng-container>      
+                          </tbody>
+                      </table>
+                      <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                      <div class="card-footer p-0">
+                      <ngb-pagination   [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                      </div>     
+                </div>
+                </div>
+              </div>
+              </div>
+          
+         
+    </div>
+  </div>
+  

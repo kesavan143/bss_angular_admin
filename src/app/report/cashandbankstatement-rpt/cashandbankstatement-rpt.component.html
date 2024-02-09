@@ -1,0 +1,110 @@
+<div  class="row">
+    <div  class="header">
+        <h3  class="adsc">
+            <i class="material-icons ng-star-inserted">business</i> &nbsp;CASH & BANK STATEMENT</h3>
+    </div>
+</div>
+
+<div class="row" style="padding-bottom: 30px;"><Br>
+    <div class=col-md-12>
+        <ng-container *ngFor="let data of companylist ">
+            <button class="btn-info btn-lg pull-left" (click)="find(data.company_name)">{{data.company_name}} </button>
+        </ng-container>
+    </div>
+
+    <div class=row>
+        <div class="col-md-4">
+            <div class="col-md-2">
+                <label style="font-weight: 700;">Paymode</label>
+            </div>
+            <div class=col-md-2>
+                <select class="selects" name="lock" value="" [(ngModel)]="paymode" id="exampleFormControlSelect1"
+                    style="display: flex">
+                    <ng-container>
+                        <option value="Process">Process</option>
+                        <option value="Stop">Stop</option>
+                    </ng-container>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="col-md-2">
+                <label style="font-weight: 700;">Month</label>
+            </div>
+            <div class="col-md-2" style="display: flex">
+                <input type="month" [(ngModel)]="date" name="month" #month>
+                <button class="btn-info btn-lg" style="margin-left: 22px;"
+                    (click)="dateChange(month.value)">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container col-lg-12" style="text-align: center">
+
+    <table class="table table-striped" id="datTabl" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+        <thead>
+            <tr>
+                <th>
+                    <mfDefaultSorter by="ecode">Company Name</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="unit_name">Site</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="ecode">Emp. Code</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="ename">Emp Name</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="date">Date</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="eac">Account No</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="eifsc"> IFSC CODE </mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="ebankname">BANK NAME</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="ebankbranch">Bank Branch</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="net_pay">Amount</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="paymode">Pay Mode</mfDefaultSorter>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of mf.data; let i = index">
+                <td>{{item.ecode}}</td>
+                <td>{{item.unit_name}}</td>
+                <td>{{item.ecode}}</td>
+                <td>{{item.ename}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.eac}}</td>
+                <td>{{item.eifsc}}</td>
+                <td>{{item.ebankname}}</td>
+                <td>{{item.ebankbranch}}</td>
+                <td>{{item.net_pay}}</td>
+                <td>{{item.paymode}}</td>
+            </tr>
+        </tbody>
+        <!-- <tr>
+            <td colspan="9" by="total">Total</td>
+            <td>{{getTotalCost()}}</td>
+        </tr> -->
+        <tfoot>
+            <tr>
+                <td colspan="11" style="text-align: center">
+                    <mfBootstrapPaginator [rowsOnPageSet]="[10,25,100]"></mfBootstrapPaginator>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

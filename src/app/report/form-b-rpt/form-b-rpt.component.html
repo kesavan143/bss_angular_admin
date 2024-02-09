@@ -1,0 +1,176 @@
+<div  class="row">
+  <div  class="header">
+    <h3  class="adsc">
+      <i class="material-icons ng-star-inserted">business</i> &nbsp;Form - 36 B</h3>
+  </div>
+</div>
+<div class="row" style="padding-bottom: 30px;"><Br>
+  <div class=col-md-12>
+    <ng-container *ngFor="let data of companylist ">
+      <button class="btn-info btn-lg pull-left" (click)="find(data.company_name)">{{data.company_name}} </button>
+    </ng-container>
+  </div>
+  <div class=col-md-12>
+    <div class="col-md-4">
+      <div class="col-md-2">
+        <label style="font-weight: 700;">Month</label>
+      </div>
+      <div class="col-md-2" style="display: flex">
+        <input type="month" [(ngModel)]="date" name="month" #month>
+        <button class="btn-info btn-lg" style="margin-left: 22px;" (click)="dateChange(month.value)">Search</button>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="row">
+          <div class="col-md-4">
+              <div class="col-md-2">
+                  <label style="font-weight: 700;">Month</label>
+               </div>
+           <div class="col-md-2">
+             <div> <input type="month"  [(ngModel)]="date" name="month" #month> </div>
+             <div><button (click)="dateChange(month.value)">Search</button></div>
+           </div>
+          </div>
+      <div class="col-md-4">
+        <div class="col-md-2">
+            <label style="font-weight: 700;">Company</label> 
+          </div>
+          <div class="col-md-4">
+              <select  style="width: 100%;" (change)="fetchsite($event.target.value)" name="company" [(ngModel)]="company"  value=""  id="exampleFormControlSelect1">                           
+                  <ng-container  *ngFor="let data of companylist">
+                  <option  value="{{data.company_name}}">{{data.company_name}}</option>
+                </ng-container>
+                </select>    
+            </div>
+    </div>	
+    <div class="col-md-4">
+        <div class="col-md-2">
+            <label style="font-weight: 700;"> Unit Name</label>
+         </div>
+     <div class="col-md-4">
+           <select   style="width: 100%;" name="unit_name" (change)="Contract_list($event.target.value)" [(ngModel)]="unit_name"  value=""  id="exampleFormControlSelect1">                          
+               <ng-container  *ngFor="let data of site_names">
+               <option  value="{{data.title}}">{{data.title}}</option>
+               </ng-container>
+               </select> 
+     </div>
+    </div>
+      </div> -->
+  <!-- <div id="component1">
+      <div>
+        <label>FORM - 36 B</label> <br>
+        <label>PROFORMA STATEMENT TO BE OBTAINED FROM THE CONTRACTOR</label> <br>
+        <label><p>NAME & ADDRESS OF THE PRINCIPAL EMPLOYER:</p> HAPAG LLOYD GLOBAL SERVICES PVT LTD,PERUNGUDI, CH-97</label> <br>  
+        <label><p>NAME & ADDRESS OF THE CONTRACTOR :</p> BHARATHEEYAM SECURITY SERVICES PVT LTD, PALLIKARANAI, CH-100</label> <br>  
+        <label>TN/MAS/85084     <p>MONTH:</p> NOV-2017</label>
+      </div>
+  <table mat-table [dataSource]="dataSource" matSort class="table table-responsive table-bordered" style="font-size: 10px;font-weight: 600;" >
+
+		 <ng-container matColumnDef="slno">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white; ">Sl.No</th>
+			<td style="min-width: 100px;" mat-cell *matCellDef="let i = index"> {{i + 1}} </td>
+		 </ng-container>
+		<ng-container matColumnDef="nameoftheemployee">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">Name of the Employee</th>
+					<td mat-cell *matCellDef="let element"> {{element.EName}} </td>
+				</ng-container>
+			<ng-container matColumnDef="fathername">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">Father's Name</th>
+				<td mat-cell *matCellDef="let element"> {{element.FName}} </td>
+			</ng-container>
+		
+			<ng-container matColumnDef="boj">
+				<th mat-header-cell *matHeaderCellDef mat-sort-heade  style="height: 10px;color:white;" >Date of Joining
+            DD/MM/YYYY</th>
+				<td style="min-width: 200px;" mat-cell *matCellDef="let element"> {{element.DOJ | date: 'dd/MM/yyyy'}} </td>
+			</ng-container>
+		
+			<ng-container matColumnDef="pfacno">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">PF A/c No</th>
+					<td mat-cell *matCellDef="let element"> {{element.PFNO}} </td>
+				</ng-container>
+			
+				<ng-container matColumnDef="noofdaysworked">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> No. of days Worked  </th>
+					<td  style="min-width: 200px;" mat-cell *matCellDef="let element"> {{element.Total_duties}} </td>
+				</ng-container>
+  
+        <ng-container matColumnDef="totalwagespaid">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> Total Wages Paid(GROSS)  </th>
+            <td  style="min-width: 200px;" mat-cell *matCellDef="let element"> {{element.Gross}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="wagesforpf">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> Wages for PF(BASIC + DA) </th>
+              <td  style="min-width: 200px;" mat-cell *matCellDef="let element"> {{element.PF_Wages}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="contribution">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> Contribution  </th>
+                <td  style="min-width: 200px;" mat-cell *matCellDef="let element"> {{element.Contribution}} </td>
+              </ng-container>
+			
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+		</table>
+    <div>
+        <p>I/We hereby certify that all the above employees who were actually deployed in your establishment during ________, have all been covered under EPF & MP Act, 1952 and the contributions in respect of them for the month of ______ have been remitted by me/us under Code No. <b>TN/MAS/85084</b> maintained at <b>ROYAPETTAH</b> RO/SRO on ___________________________.</p> <br>
+        <label>DATE:</label> <br>
+        <label>SIGNATURE OF THE CONTRACTOR</label>
+      </div>
+	</div> -->
+</div>
+
+<div class="container col-lg-12" style="text-align: center">
+
+  <table class="table table-striped" id="datTabl" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+    <thead>
+      <tr>
+        <th>
+          <mfDefaultSorter by="EName">Name of the Employee</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="FName">Father's Name</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="DOJ">Date of Joining
+            DD/MM/YYYY</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="PFNO">PF A/c No</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="Total_duties">No. of days Worked </mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="Gross">Total Wages Paid(GROSS)</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="PF_Wages">Wages for PF(BASIC + DA)</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="Contribution">Contribution</mfDefaultSorter>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of mf.data; let i = index">
+        <td>{{item.EName}}</td>
+        <td>{{item.FName}}</td>
+        <td>{{item.DOJ | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.PFNO}}</td>
+        <td>{{item.Total_duties}}</td>
+        <td>{{item.Gross}}</td>
+        <td>{{item.PF_Wages}}</td>
+        <td>{{item.Contribution}}</td>
+      </tr>
+    </tbody>
+    <!-- <tfoot >
+              <tr>
+                  <td colspan="7" style="text-align: center">
+                      <mfBootstrapPaginator [rowsOnPageSet]="[10,25,100]"></mfBootstrapPaginator>
+                  </td>
+              </tr>
+              </tfoot> -->
+  </table>
+</div>

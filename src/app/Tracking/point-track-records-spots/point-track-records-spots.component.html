@@ -1,0 +1,119 @@
+
+<div class="col-md-12">
+        <h2> Point Track Records Spot list</h2>
+<div class="row">
+<div class="col-md-6">
+    <h3>Assign Spot </h3>
+    <agm-map 
+    [latitude]="lats"
+    [longitude]="lngs"
+    [zoom]= 60
+    [disableDefaultUI]="ture"
+    [zoomControl]="ture">
+    
+    <agm-marker 
+        
+        [latitude]="lats"
+        [longitude]="lngs"
+        [label]="label"
+        [markerDraggable]="hellow">
+        
+      <agm-info-window>
+        <strong>{{Name}}</strong>
+      </agm-info-window>
+      
+    </agm-marker>
+    
+    <agm-circle [latitude]="lats" [longitude]="lngs" 
+        [radius]="10"
+        [fillColor]="'red'"
+        [circleDraggable]="false"
+        [editable]="true">
+    </agm-circle>
+    </agm-map>
+    
+</div>
+
+<div class="col-md-6">
+        <h3> Marked Spot</h3>
+    <agm-map 
+[latitude]="lats1"
+[longitude]="lngs1"
+[zoom]= 60
+[disableDefaultUI]="ture"
+[zoomControl]="ture">
+
+<agm-marker 
+    
+    [latitude]="lats1"
+    [longitude]="lngs1"
+    [label]="label"
+    [markerDraggable]="hellow">
+    
+  <agm-info-window>
+    <strong>{{Name}}</strong>
+  </agm-info-window>
+  
+</agm-marker>
+
+<agm-circle [latitude]="lats" [longitude]="lngs" 
+    [radius]="10"
+    [fillColor]="'green'"
+    [circleDraggable]="false"
+    [editable]="true">
+</agm-circle>
+</agm-map>
+
+</div>
+</div>
+</div>
+
+<div class="col">
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered" style="border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th>Sl.No</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Marked By</th>
+                        <th>lat</th>
+                        <th>lon</th>
+                        <th>Is Marked</th>
+                        <th>Marked Time</th>
+                        <th>Find</th>
+                    </tr>
+                </thead>
+                <tbody>
+                            <ng-container  *ngFor="let data of datas;   let i = index">
+                            <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                             <td>{{i+1}}</td>
+                             <td>{{data.title}}</td>
+                             <td>{{data.description}}</td>
+                              <td>{{data.marked_by}}</td>
+                              <td>{{data.marked_lat}}</td>
+                              <td>{{data.marked_lon}}</td>
+                               <td id="pc1">{{data.is_marked}}</td>
+                               <td id="pc1">{{data.marked_time}}</td>
+                                <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view($event, data)"><i  class="m-1 icon-screen-desktop"></i></button></td>
+                              </tr>
+           
+                            </ng-container>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+ </div>   
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="tabl" >
+           
+      </div>
+      </div>
+    </div>
+    </div>

@@ -1,0 +1,163 @@
+<div  class="row">
+    <div  class="header">
+        <h3  class="adsc">
+            <i class="material-icons ng-star-inserted">business</i> &nbsp;Employee List</h3>
+    </div>
+</div>
+
+<div class="container col-lg-12" style="text-align: center">
+
+    <div class=col-md-12>
+        <ng-container *ngFor="let data of companylist ">
+            <button class="btn-info btn-lg pull-left" (click)="find(data.company_name)">{{data.company_name}} </button>
+        </ng-container>
+    </div>
+    <br>
+    <br>
+
+    <table class="table table-striped" id="datTabl" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+        <thead>
+            <tr>
+                <th>
+                    <mfDefaultSorter by="company_name">COMPANY NAME</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="site_name">SITE NAME</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="ecode">EMP. CODE</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="Name">NAME</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="gender">GENDER</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="employee_type">RANK</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="Date_of_birth">DOB</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="date_joining">DOJ</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="dor"> DOR </mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="pf1">BSS PF NO1</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="pf2">BSSPL PF NO2</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="pf3">MMSPL PF NO3</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="uan">UAN</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="esic_no">ESINO</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="workstatus">WORK STATUS</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="material_status">MARITAL STATUS</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="dispensary"> ESI DISPENSARY</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="father_name">FATHER NAME</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="sponname">SPOUSE NAME</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="bankname">BANK NAME</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="bankbranchname">BANK BRANCH NAME</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="a_c">BANK A/C NO</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="ifsc">IFSC CODE</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="site_name">SITE NAME</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="ucode">UCODE</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="Mobile_No">MOBILE NUMBER</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="aadhar_card">AADHAR NO</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="pan">PAN NO</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="voter_id">VOTER ID</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="driving_licence">DRIV. LIC</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="permentaddress">PERMANENT ADDRESS</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="Address">PRESENT ADDRESS</mfDefaultSorter>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of mf.data; let i = index">
+                <td>{{item.company_name}}</td>
+                <td>{{item.site_name}}</td>
+                <td>{{item.ecode}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.gender}}</td>
+                <td>{{item.employee_type}}</td>
+                <td>{{item.Date_of_birth | date: 'dd/MM/yyyy'}}</td>
+                <td>{{item.date_joining | date: 'dd/MM/yyyy'}}</td>
+                <td>{{item.dor | date: 'dd/MM/yyyy'}}</td>
+                <td>{{item.pf1}}</td>
+                <td>{{item.pf2}}</td>
+                <td>{{item.pf3}}</td>
+                <td>{{item.uan}}</td>
+                <td>{{item.esic_no}}</td>
+                <td>{{item.workstatus}}</td>
+                <td>{{item.material_status}}</td>
+                <td>{{item.dispensary}}</td>
+                <td>{{item.father_name}}</td>
+                <td>{{item.sponname}}</td>
+                <td>{{item.bankname}}</td>
+                <td>{{item.bankbranchname}}</td>
+                <td>{{item.a_c}}</td>
+                <td>{{item.ifsc}}</td>
+                <td>{{item.site_name}}</td>
+                <td>{{item.ucode}}</td>
+                <td>{{item.Mobile_No}}</td>
+                <td>{{item.aadhar_card}}</td>
+                <td>{{item.pan}}</td>
+                <td>{{item.voter_id}}</td>
+                <td>{{item.driving_licence}}</td>
+                <td>{{item.permentaddress}}</td>
+                <td>{{item.Address}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="32" style="text-align: center">
+                    <mfBootstrapPaginator [rowsOnPageSet]="[10,25,100]"></mfBootstrapPaginator>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

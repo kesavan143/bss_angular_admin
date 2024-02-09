@@ -1,0 +1,257 @@
+<!-- BEGIN # BOOTSNIP INFO -->
+<div class="container">
+  <div class="row">
+      <div class="header">
+        <div class="row">
+          <div class="col-12 col-md-6 mb-3">
+            <div class="col-md-8">
+              <h3 class="adsc">
+                <i class="fa fa-university"></i> &nbsp;Feedback Management</h3>
+              </div>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+          </div>
+         
+        </div>
+        <div class="col-md-12 pull-left">
+
+            <div class="notifications1">
+                      
+                <span class="num">100</span>
+               
+            </div>
+          <button class="input1" (click) = "addapi4()" >All</button>
+          <div class="notifications2">
+              
+                <span class="num">67</span>
+               
+            </div>
+          <button class="input1" (click) = "addapi1()">Open</button>
+           
+          <div class="notifications3">
+              
+                <span class="num">6</span>
+               
+            </div>
+          <button class="input1" (click) = "addapi2()" >Inprogress</button>
+              
+          <div class="notifications4">
+              
+                <span class="num">89</span>
+               
+            </div>
+          <button class="input1" (click) = "addapi3()" >Closed</button>
+                         
+                       
+               </div>
+               <br>
+               <br>
+      
+
+        <div class="col">
+    
+            <div class="col-md-12">
+              <div class="row">
+                <div class="tabl" >
+                    <table class="table table-bordered " style="border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th>SL.NO</th>
+                                <th>Feedback ID</th>
+                                <th>Feedback From</th>
+                                <th>Poster ID</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Posted On</th>
+                                <th>Status</th>
+                                <th>View</th>
+                                <th>Move</th>
+                                <th>Disable</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <ng-container  *ngFor="let data of datas ;  let i = index">
+
+                                        <tr>
+                                          <td style="text-align: center">{{data.id}}</td> 
+                                          <td>COM2</td>
+                                          <td>Security</td>
+                                          <td id="l1">Sec34</td>
+                                       
+                                          <td id="pc1">Door Repair</td>
+                                          <td id="pc1">Gate No 6 Repair</td>
+                                          <td id="pc1">22/03/2018</td>
+                                          <td id="pc1">Open</td>
+                                        <td> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" data-toggle="collapse"  data-toggle="modal" data-target="#login-modal2"><i  class="m-1 icon-screen-desktop"></i></button></td>
+                                        <td><button type="button" data-toggle="modal"  data-uid="1" class=" btn  btn-sm" data-toggle="modal" data-target="#login-modal3"><i  class="m-1 icon-note"></i></button></td> 
+                                        <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  (click)="open($event, data)" ><i  class="m-1 icon-close"  ></i></button></td>
+                                    </tr>
+                                    </ng-container>      
+                        </tbody>
+                    </table>
+                    <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                    <div class="card-footer p-0">
+                    <ngb-pagination   [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                    </div>     
+              </div>
+              </div>
+            </div>
+            </div>
+        
+       
+  </div>
+</div>
+<!-- END # BOOTSNIP INFO -->
+
+
+
+
+    <!-- BEGIN # MODAL LOGIN -->
+<div class="modal fade" id="login-modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" style="max-width: 700px;margin-right: 17%;">
+    <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+     
+              
+              <!-- Begin # DIV Form -->
+              <div id="div-forms">
+              
+                  <!-- Begin # Login Form -->
+                  <form id="login-form">
+                  <div class="modal-body">
+            
+                      <div class="login-form">
+                          <div class="main-div">
+                              <div class="panel">
+                                  <h3>View Feedback</h3>
+                            
+                             </div>
+                              <form id="Login">
+                          
+
+                                  <div class="form-group">
+                          
+                                  <label>Feedback From</label>
+                                      <input type="text" class="form-control" id="name" placeholder="Ender c" Value = "Security" disabled>
+                          
+                                  </div>
+
+                                
+
+
+                                  
+
+                                  <div class="form-group">
+                          
+                                      <label>Title</label>
+                                      <input type="email" class="form-control" id="inputEmail"  placeholder="Email Address" Value = "Door Repair" disabled>
+                          
+                                  </div>
+                          
+                                  <div class="form-group">
+                                      <label>Description</label>
+                                      <textarea type="text" class="form-control"   id="inputEmail" placeholder="Ender discription" Value = "Gate No 6 Door Repair" disabled></textarea>
+                          
+                                  </div>
+                                  
+                                  
+                          
+                              </form>
+
+                              <div class="card mb-3">
+                                  <div class="card-body">
+                                    <h5 class="card-title"></h5>
+                                    <ngx-gallery [options]="onlyThumbnailsGalleryOptions" [images]="galleryImages"></ngx-gallery>
+                                  </div>
+                                </div>
+                              </div>
+                         
+                          </div>
+                </div>
+              
+                  </form>
+                  <!-- End # Login Form -->
+                  
+                  <!-- Begin | Lost Password Form -->
+                
+                  
+                  
+              </div>
+              <!-- End # DIV Form -->
+              
+    </div>
+  </div>
+</div>
+  <!-- END # MODAL LOGIN -->
+
+
+        <!-- BEGIN # MODAL LOGIN -->
+<div class="modal fade" id="login-modal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" style="max-width: 700px;margin-right: 17%;">
+  <div class="modal-content">
+
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+   
+            
+            <!-- Begin # DIV Form -->
+            <div id="div-forms">
+            
+                <!-- Begin # Login Form -->
+                <form id="login-form">
+                <div class="modal-body">
+          
+                    <div class="login-form">
+                        <div class="main-div">
+                            <div class="panel">
+                                <h3>Move Feedback</h3>
+                          
+                           </div>
+                            <form id="Login">
+                      
+                                <div class="form-group">  
+                                <label>Your ID</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Ender your ID" Value = "EMP-10" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label>Move To</label>
+                                    <select class="form-control" id="exampleFormControlSelect1" >
+                                      <option>Operation Level 1</option>
+                                      <option>Operation Level 2</option>
+                                      <option>Operation Level 3</option>
+                                      <option>Operation Level 4</option>
+                                    </select>                            
+                                </div>
+                            </form>
+
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                  <h5 class="card-title"></h5>
+                                  <ngx-gallery [options]="onlyThumbnailsGalleryOptions" [images]="galleryImages"></ngx-gallery>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="btn btn-primary" data-dismiss="modal" style="color:#fff; background:#13477e!important;">Submit</button>
+                        </div>
+              </div>
+            
+                </form>
+                <!-- End # Login Form -->
+                
+                <!-- Begin | Lost Password Form -->
+              
+                
+                
+            </div>
+            <!-- End # DIV Form -->
+            
+  </div>
+</div>
+</div>
+<!-- END # MODAL LOGIN -->
+
+
+
+

@@ -1,0 +1,200 @@
+
+<div class="main-content" style="width: 250%;">
+
+
+
+<div class="service-form col-md-12">
+    <div class="row">
+      <div class="header">
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-3">
+                        <h3 class="adsc"> <i class="fa fa-university"></i>  &nbsp;All Payment</h3></div>
+
+                        <div class="col-md-6">
+                            <button class="btn-info clntr btn-lg pull-right" (click)="printComponent('component1')">Print</button>
+
+                      
+              </div>  
+        <br></div><br>
+         <div  style="width:100%" id="component1"> 
+        <table class="table table-bordered table-responsive">
+            <tr>
+                <th>SL.NO</th>
+                <th>Unit Name</th>
+                <th>E Code</th>
+                <th>E Name</th>
+                <th>Type</th>
+                <th>Present</th>
+                <th>Dutyoff</th>
+                <th>Ad Duties</th>
+                <th>Add-Dut-amount</th>
+                <th>Basic</th>
+                <th>D.A</th>
+                <th>H.R.A</th>
+                <th>trv</th>
+                <th>Others</th>
+                <th>addl.amt</th>
+                <th>Gross</th>
+                <th>PF</th>
+                <th>ESI</th>
+                <th>Pr.Tax</th>
+                <th>Adv</th>
+                <th>Loan</th>
+                <th>Uniform</th>
+                <th>Mess</th>
+                <th>Rent</th>
+                <th>ATM</th>
+                <th>Phone</th>
+                <th>T.Dec</th>
+                <th>Netpay</th>
+                <th>Sign</th>
+            </tr>
+            <ng-container  *ngFor="let data of datass ;  let i = index">
+                <tr>
+                    <td>{{i + 1}}</td> 
+                    <td style="min-width: 30px;">{{data.unit_name}}</td>
+                    <td style="min-width: 10px;text-align: center;" id="a1">{{data.ecode}}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.ename}}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.designation}}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.present}}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.dutyoff}}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.add_duties}}</td>
+
+                    <td style="min-width: 10px;" id="pc1">{{data.ewamount | number}}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.basic | number}}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.da | number}}</td>
+                    <td style="min-width: 10px;" id="l1">{{data.hra | number}}</td>
+                    <td style="min-width: 10px;" id="a1">{{data.trv_ex | number}}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.others| number}}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.add_amount| number}}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.gross | number}}</td>
+
+                    <!-- <td style="min-width: 10px; text-align: center;" id="pc1">{{data.basic | number}}</td>
+                    <td style="min-width: 10px; text-align: center;" id="pc1">{{data.da | number}}</td>
+                    <td style="min-width: 10px; text-align: center;" id="l1">{{data.hra | number}}</td>
+                    <td style="min-width: 10px; text-align: center;" id="a1">{{data.trv_ex | number}}</td>
+                    <td style="min-width: 10px; text-align: center;" id="pc1">{{data.others| number}}</td>
+                    <td style="min-width: 10px; text-align: center;" id="pc1">{{data.gross | number}}</td> -->
+
+                    <td style="min-width: 10px;" id="pc1">{{data.pf}}</td> 
+                    <td style="min-width: 10px;" id="pc1">{{data.esi}}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.pr_tax}}</td>  
+                    <td style="min-width: 10px; text-align: center;" id="pc1">{{data.advance | number}}</td>
+                    <td style="min-width: 10px; text-align: center;" id="pc1">{{data.loan | number}}</td>
+                    <td style="min-width: 10px; text-align: center;" id="pc1">{{data.uniform | number}}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.mess }}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.rent}}</td>
+                    <td style="min-width: 10px;" id="pc1">{{data.atm}}</td>   
+                    <td style="min-width: 10px; text-align: center;" id="pc1">{{data.phone}}</td>                               
+                    <td style="min-width: 10px;" id="pc1">{{data.total_dec}}</td>  
+                    <td style="min-width: 10px;" id="pc1">{{data.net_pay}}</td>  
+                    <td style="min-width: 10px;" id="pc1">{{data.eifsc}}/{{data.eac}}/{{data.ebankname}}</td>  
+
+                    </tr>
+                </ng-container>   
+          </table>
+
+         </div>
+
+
+
+        <!-- <div class="tabl" style="width:100%" id="component1">
+        <div class="col">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="tabl" >
+                  <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                      <thead>
+                          <tr>
+                              <th>SL.NO</th>
+                              <th>Company</th>
+                              <th>Unit Name</th>
+                              <th>Date</th>
+                              <th>ECode</th>
+                              <th>E Name</th>
+                              <th>Type</th>
+                              <th>A/C</th>
+                              <th>Bank</th>
+                              <th>IFSC</th>
+                              <th>DES</th>
+                              <th>Present</th>
+                              <th>Dutyoff</th>
+                              <th>Ad Duties</th>
+                              <th>Payment Type</th>
+                              <th>Basic</th>
+                              <th>D.A</th>
+                              <th>H.R.A</th>
+                              <th>trv</th>
+                              <th>others</th>
+                              <th>Ad-days</th>
+                              <th>AD-salary</th>
+                              <th>Gross</th>
+                              <th>advance</th>
+                              <th>loan</th>
+                              <th>uniform</th>
+                              <th>mess</th>
+                              <th>rent</th>
+                              <th>atm</th>
+                              <th>phone</th>
+                              <th>pf</th>
+                              <th>esi</th>
+                              <th>pr_tax</th>
+                              <th>total-dec</th>
+                              <th>Net-pay</th>
+
+
+                              
+                          </tr>
+                      </thead>
+                      <tbody>
+                                  <ng-container  *ngFor="let data of datass ;  let i = index">
+                                  <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                      <td>{{i + 1}}</td> 
+                                      <td style="min-width: 10px;">{{data.company_name}}</td>
+                                      <td style="min-width: 30px;">{{data.unit_name}}</td>
+                                      <td style="min-width: 10px;" id="l1">{{data.date}}</td>
+                                      <td style="min-width: 10px;text-align: center;" id="a1">{{data.ecode}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.ename}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.designation}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.eac}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.ebankname}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.eifsc}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.designation}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.present}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.dutyoff}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.add_duties}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.payment_type}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.basic | number}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.da | number}}</td>
+                                      <td style="min-width: 10px;" id="l1">{{data.hra | number}}</td>
+                                      <td style="min-width: 10px;" id="a1">{{data.trv_ex | number}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.others| number}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.ewdays | number}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.ewamount | number}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.gross | number}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.advance | number}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.loan | number}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.uniform | number}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.mess }}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.rent}}</td>
+                                      <td style="min-width: 10px;" id="pc1">{{data.atm}}</td>   
+                                      <td style="min-width: 10px;" id="pc1">{{data.phone}}</td>                               
+                                      <td style="min-width: 10px;" id="pc1">{{data.pf}}</td>  
+                                      <td style="min-width: 10px;" id="pc1">{{data.esi}}</td>  
+                                      <td style="min-width: 10px;" id="pc1">{{data.pr_tax}}</td>  
+                                      <td style="min-width: 10px;" id="pc1">{{data.total_dec}}</td>  
+                                      <td style="min-width: 10px;" id="pc1">{{data.net_pay}}</td>  
+                                  </ng-container>      
+                      </tbody>
+                  </table>    
+            </div>
+            </div>
+          </div>
+          </div>
+          </div> -->
+  </div>
+  </div>  
+  
+  
+  
+  

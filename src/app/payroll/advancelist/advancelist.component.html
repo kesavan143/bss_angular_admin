@@ -1,0 +1,386 @@
+<!-- Adding Employee Page -->
+
+<form>
+  <!-- service-form -->
+  <div class="service-forms">
+  <div class="row">
+  <div class="col-md-12">
+  <div class="row">
+  
+  <div class="header">
+  <h3 class="adsc pull-left"> EMI VOUCHERS</h3>
+  <h4 class="pull-right">Loan No : {{loan_number}}</h4>
+  </div>
+  
+  <div class=" multistep-form-section">
+  <div class="container" id="component1">
+  <form name="form" novalidate>
+  <div class="">
+  <!-- <div class="">
+  <h3 style="    width: 100%;
+  background: #d0d6db;padding: 10px;text-transform: uppercase;">EMI VOUCHERS <span style="float: right;font-size: 15px;font-weight: 900;">Loan No : {{loan_number}}</span></h3>
+  </div> -->
+  
+  </div>
+  <div class="row">
+  <div class="form-group" style="width: 100%;">
+  <input type="file" (change)="onfileselected($event)">
+  <button class="btn-info btn-lg " (click)="attach()">Upload</button>
+  <button class="btn-info btn-lg " style="float:right;" (click)="update()">Update</button>
+  <button class="btn-info btn-lg " style="float:right;" (click)="newclear()">New</button>
+  <button class="btn-info btn-lg " style="float:right;" (click)="check()">Add</button>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-12 col-sm-12 form-group">
+  <form class="frms" name="form" novalidate>
+  <div class="col-md-12">
+  <div class="row">
+  <div class="form-group service-form-group col-md-6">
+  <div class="row">
+  <div class="col-md-4">
+  <label >Advance</label>
+  </div>
+  <div class="col-md-8">
+  
+  <div class="form-group service-form-group">
+  <select class="form-control" name="advance_type" [(ngModel)]="adduser.advance_type" value="" #advance_type id="exampleFormControlSelect1">
+  <option>Advance</option>
+  <option>Loan</option>
+  <option>Uniform</option>
+  <option>Mess</option>
+  <option>Rent</option>
+  <option>ATM Card</option>
+  <option>Others</option>
+  <option>Phone</option>
+  </select>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="form-group service-form-group col-md-6">
+  <div class="row">
+  <div class="col-md-4">
+  <label >Company</label>
+  </div>
+  <div class="col-md-8">
+      <input type="text" class="form-control" name="company_name" [(ngModel)]="adduser.company_name" #company_name disabled>
+</div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  
+  <div class="col-md-12">
+  <div class="row">
+  <div class="form-group service-form-group col-md-6">
+  <div class="row">
+  <div class="col-md-4">
+  <label >Employee ID</label>
+  </div>
+  <div class="col-md-6">
+  <input type="text" class="form-control" name="employee_id" [(ngModel)]="adduser.employee_id" #employee_id>
+  
+  </div>
+  <div class="col-md-2">
+  <button class="btn-info btn-lg " style="margin: 10px 6px 8px 0px !important " (click)="click()">Search</button>
+  </div>
+  </div>
+  </div>
+  <div class="form-group service-form-group col-md-6">
+  <div class="row">
+  <div class="col-md-4">
+  <label >Employee Name</label>
+  </div>
+  <div class="col-md-8">
+  <input type="text" class="form-control" name="employee_name" [(ngModel)]="adduser.employee_name" #employee_name disabled>
+  
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  <div class="col-md-12">
+  <div class="row">
+  <div class="form-group service-form-group col-md-6">
+  <div class="row">
+  <div class="col-md-4">
+  <label >Bank A/C No</label>
+  </div>
+  <div class="col-md-8">
+  <input type="text" class="form-control" name="bank" [(ngModel)]="adduser.bank" #bank disabled>
+  
+  </div>
+  </div>
+  </div>
+  <div class="form-group service-form-group col-md-6">
+  <div class="row">
+  <div class="col-md-4">
+  <label >Site Name</label>
+  </div>
+  <div class="col-md-8">
+  <input type="text" class="form-control" name="site" [(ngModel)]="adduser.site" #site disabled>
+  
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="col-md-12">
+  <div class="row">
+  <div class="form-group service-form-group col-md-6">
+  <div class="row">
+  <div class="col-md-4">
+  <label >Amount</label>
+  </div>
+  <div class="col-md-8">
+  <input type="number" class="form-control" name="pamount" [(ngModel)]="adduser.pamount" #pamount>
+  </div>
+  </div>
+  </div>
+  <div class="form-group service-form-group col-md-6">
+  <div class="row">
+  <div class="col-md-4">
+  <label >Balance Amount</label>
+  </div>
+  <div class="col-md-8">
+  <input type="number" class="form-control" name="pbalanceamount" [(ngModel)]="adduser.pbalanceamount" #pbalanceamount disabled>
+  
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="col-md-12">
+  <div class="row">
+  <div class="form-group service-form-group col-md-6">
+  <div class="row">
+  <div class="col-md-4">
+  <label >Installment</label>
+  </div>
+  <div class="col-md-8">
+  <input type="number" class="form-control" name="pinstalment" [(ngModel)]="adduser.pinstalment" #pinstalment>
+  </div>
+  </div>
+  </div>
+  <div class="form-group service-form-group col-md-6">
+  <div class="row">
+  <div class="col-md-4">
+  <label >Pending Installment</label>
+  </div>
+  <div class="col-md-8">
+  <input type="number" class="form-control" name="ppendinginstalment" [(ngModel)]="adduser.ppendinginstalment" #ppendinginstalment disabled>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  <div class="col-md-12">
+  <div class="row">
+  <div class="col-md-4" style="font-size: 16px;color: black;">
+  
+  <input type="checkbox" name="dfullcash" value="true" [(ngModel)]="adduser.dfullcash" name="dfullcash" #dfullcash ><span>Full Cash</span> <br>
+  </div>
+  <div class="col-md-4" style="font-size: 16px;color: black;">
+  
+  <span>Payment Type</span>
+  <input type="radio" value="Cash" checked [(ngModel)]="adduser.dpaytype" name="dpaytype" #dpaytype> <span>Cash</span>
+  <input type="radio" value="Bank" checked [(ngModel)]="adduser.dpaytype" name="dpaytype" #dpaytype> <span>Bank</span>
+  
+  
+  </div>
+  
+  <div class="col-md-4" style="font-size: 16px;color: black;">
+  <span>Narration :</span> <input type="text" [(ngModel)]="adduser.dnaration" name="dnaration" #dnaration>
+  </div>
+  
+  
+  </div>
+  </div>
+  
+  
+  <div class="col-md-12" style="padding-top: 20px;padding-bottom: 30px;">
+  <div class="row">
+  <div class="col-md-4" style="font-size: 16px;color: black;">
+  <span>Date    :</span><input  (change)="date($event.target.value)" type="date" style="margin-left: 10px;" [(ngModel)]="mdate" name="ddate" #ddate>
+  </div>
+  <div class="col-md-4" style="font-size: 16px;color: black;">
+  <span>Amount :</span> <input type="text" style="margin-left: 10px;" [(ngModel)]="adduser.damount" name="damount" #damount>
+  </div>
+  
+  <div class="col-md-4" style="font-size: 16px;color: black;">
+  <span>Addistional Installment :</span><input type="text" style="margin-left: 10px;" [(ngModel)]="adduser.daddi" name="daddi" #daddi>
+  </div>
+  </div>
+  </div>
+  <div class="col-md-12">
+  <div class="row">
+  <div class="form-group service-form-group col-md-12">
+  <table style="width:100%">
+  <thead>
+  <tr>
+  <th>SL.NO</th>
+  <th>Loan No</th>
+  <th>Employee  ID</th>
+  <th>Payment Type</th>
+  <th>Amount</th>
+  <th>Date</th>
+  <th>Update</th>
+  <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody style="font-size: 11px;">
+  <ng-container  *ngFor="let data of lists | orderBy:'loan_number';  let i = index">
+  <tr>
+  <td>{{i+1}}</td>
+  <td>{{data.loan_number}}</td>
+  <td>{{data.employee_id}}</td>
+  <td id="l1">{{data.dpaytype}}</td>
+  <td style="word-break: break-word;" id="pc1">{{data.pamount}}</td>
+  <td  id="pc1">{{data.ddate}}</td>
+  <td><button style="background: transparent" class="accordion-toggle  btn mat-button-wrapper btn-sm" data-toggle="collapse" data-toggle="modal" data-target="#login-modal1" (click)="item(data)"><i  class="m-1 fa-refresh "></i></button></td>
+  <td><button style="background: transparent" class="accordion-toggle  btn mat-button-wrapper btn-sm" data-toggle="collapse" data-toggle="modal" data-target="#login-modal2" (click)="deleteinstalment(data)"><i  class="m-1 icon-close"></i></button></td>
+  </tr>
+  </ng-container>
+  </tbody>
+  </table>
+  </div>
+  </div>
+  </div>
+  <br>
+  <div class="row">
+  <div class="col-md-12 col-sm-5 form-group">
+  </div>
+  </div>
+  </form>
+  </div>
+  </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  </div>
+  </form>
+  
+  
+  <!-- BEGIN # MODAL LOGIN -->
+  <div class="modal fade" id="login-modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-dialogs" >
+  <div class="modal-content">
+  <button type="button" class="close" data-dismiss="modal">&times;</button>
+  
+  <!-- Begin # DIV Form -->
+  <div id="div-forms">
+  
+  <!-- Begin # Login Form -->
+  <form id="login-form">
+  <div class="modal-body">
+  
+  <div class="login-form">
+  <div class="main-div">
+  <div class="panel">
+  
+  </div>
+  <form id="Login">
+  <div class="form-group">
+  <label style="float: left;"> Date </label>
+  <input type="date" class="form-control" name="udate" value="" [(ngModel)]="udate" >
+  </div>
+  <div class="form-group">
+  <label style="float: left;"> Amount </label>
+  <input type="text" class="form-control" name="uamount" value="" [(ngModel)]="uamount" >
+  </div>
+  <div class="form-group">
+  <div class="row">
+  <div class="col-md-4">
+  <label style="float: left;"> Payment Type </label>
+  
+  </div>
+  <div class="col-md-4">
+  <input type="radio" value="Cash" checked  [(ngModel)]="upayment" name="upayment" #dpaytype> Cash
+  
+  </div>
+  <div class="col-md-4">
+  <input type="radio" value="Bank" checked   [(ngModel)]="upayment" name="upayment" #dpaytype> Bank
+  
+  </div>
+  
+  </div>
+  </div>
+  <div class="form-group">
+  <div class="row">
+  <div class="col-md-4">
+  <label style="float: left;">Status</label>
+  
+  </div>
+  <div class="col-md-4">
+  <input type="radio" value="Paid" checked  [(ngModel)]="ustatus" name="ustatus"> Paid
+  
+  </div>
+  <div class="col-md-4">
+  <input type="radio" value="Pending" checked   [(ngModel)]="ustatus" name="ustatus"> Pending
+  </div>
+  
+  </div>
+  </div>
+  
+  
+  <div class="form-group">
+  <button (click)="updateone()" class="btn btn-primary" data-dismiss="modal" style="color:#fff; background:#13477e!important;">Update this Installment</button>
+  <button (click)="updateall()" style="float: right;" class="btn btn-primary" data-dismiss="modal" style="color:#fff; background:#13477e!important;">Update All Installment</button>
+  </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  </form>
+  <!-- End # Login Form -->
+  <!-- Begin | Lost Password Form -->
+  </div>
+  <!-- End # DIV Form -->
+  </div>
+  </div>
+  </div>
+  <!-- END # MODAL LOGIN -->
+  <!-- BEGIN # MODAL LOGIN -->
+  <div class="modal fade" id="login-modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-dialogs" >
+  <div class="modal-content">
+  <button type="button" class="close" data-dismiss="modal">&times;</button>
+  <!-- Begin # DIV Form -->
+  <div id="div-forms">
+  <!-- Begin # Login Form -->
+  <form id="login-form">
+  <div class="modal-body">
+  <div class="login-form">
+  <div class="main-div">
+  <div class="panel">
+  <h3>Delete Installment</h3>
+  </div>
+  <form id="Login">
+  <div class="form-group">
+  <button (click)="deleteone()" class="btn btn-primary" data-dismiss="modal" style="color:#fff; background:#13477e!important;">Delete This Installment</button>
+  </div>
+  <div class="form-group">
+  <button (click)="deleteall()" class="btn btn-primary" data-dismiss="modal" style="color:#fff; background:#13477e!important;">Delete All Installment</button>
+  </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  </form>
+  <!-- End # Login Form -->
+  <!-- Begin | Lost Password Form -->
+  </div>
+  <!-- End # DIV Form -->
+  </div>
+  </div>
+  </div>
+  <!-- END # MODAL LOGIN -->
+  

@@ -1,0 +1,70 @@
+<!-- <h1>Employee Tracking</h1>
+<p>                                 </p>
+<agm-map [latitude]="currentPos.lat" [longitude]="currentPos.lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false"
+ (mapClick)="mapClicked($event)">
+	<agm-marker [iconUrl]="'https://img.icons8.com/material/24/000000/marker.png'" style="height: 2px;width:2px;" *ngFor="let point of points" [latitude]="point.lat" [longitude]="point.lng"></agm-marker>
+	<agm-polyline strokeColor="blue">
+		<agm-polyline-point *ngFor="let point of points" [latitude]="point.lat" [longitude]="point.lng"></agm-polyline-point>
+	</agm-polyline>
+</agm-map> -->
+<div  class="row">
+<div  class="header">
+	
+		<div  class="col-12 col-md-6 mb-3">
+			<div  class="col-md-8">
+				<h3 class="adsc"> EMPLOYEE TRACKING HISTORY</h3>
+			</div>
+		</div>
+		
+		
+	</div>
+</div>
+<div class="row" style="padding-top:10px">
+	<div class="col-md-4">
+		<div class="row">
+				<div class="col-md-3">
+						<label style="float: right;">Start Date</label>
+						 </div> 
+						 <div class="col-md-9">
+								 <input [max]="maxDate" (change)="dateChange1($event.target.value)" type="date"  data-date-format="DD MMMM YYYY" class="form-control date col-md-12"   name="Date_of_birth" value="" #Date_of_birth>
+						</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+			<div class="row">
+					<div class="col-md-3">
+					<label style="float: right;">End Date</label>
+					</div> 
+					<div class="col-md-9">
+					<input [max]="maxDate" (change)="dateChange2($event.target.value)" type="date"  data-date-format="DD MMMM YYYY" class="form-control date col-md-12"   name="Date_of_birth" value="" #Date_of_birth>
+					</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+				<button class="btn btn-info btn-lg" (click)="search()">Search</button>
+	   </div>
+</div>
+<div class="row" style="padding: 10px;background: #eee;">
+	<div class="col-md-4"><label style="float: left;">Employee-ID : {{employee_details.id}}</label></div>
+	<div class="col-md-4"><label>Employee Name : {{employee_details.Name}}</label></div>
+	<div class="col-md-4"><label>Last Update Date : {{updatedate}}</label></div>
+</div>
+
+
+<h3>Employee Tracking</h3>
+<agm-map [latitude]="currentPos.lat" style="height:500px" [longitude]="currentPos.lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false"
+ (mapClick)="mapClicked($event)">
+    <agm-marker [iconUrl]="'https://img.icons8.com/color/48/000000/place-marker.png'" style="height: 2px;width:2px;"  [latitude]="lati" [longitude]="long"><agm-info-window><strong>{{updatedate}}</strong></agm-info-window></agm-marker>
+	
+	<agm-marker [iconUrl]="'https://img.icons8.com/material/24/000000/marker.png'" style="height: 2px;width:2px;" *ngFor="let point of points" [latitude]="point.lat" [longitude]="point.lng"><agm-info-window><strong>{{point.date}}</strong></agm-info-window></agm-marker>
+	<agm-polyline strokeColor="blue">
+		<agm-polyline-point *ngFor="let point of points" [latitude]="point.lat" [longitude]="point.lng"></agm-polyline-point>
+	</agm-polyline>
+</agm-map>
+
+
+	
+	
+	
+	
+	

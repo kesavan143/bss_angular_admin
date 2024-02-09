@@ -1,0 +1,188 @@
+
+
+<form>
+  <!-- service-form -->
+  <div class="service-forms">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class=" multistep-form-section">
+                <div class="container"  id="component1">
+              <form name="form"  novalidate>
+                  <div class="">
+                      <div class="">
+                        <h3 style="width: 100%;
+                            border: 2px #ddd solid; padding: 10px;text-transform: uppercase;">Contract</h3>
+                              </div>                          
+                            </div>  
+                            <br>                        
+                              <div class="row">
+                                <div class="col-12 col-sm-12 form-group">
+                                    <form class="frms" name="form" novalidate>                              
+                                        <div class="col-md-12">
+                                          <div class="row">
+                                            <div class="form-group service-form-group col-md-6">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label >Select Company</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <select class="form-control"   name="employee_type" value="" (change)="site($event.target.value)" #employee_type >
+                                                        <option value="0">Select Company</option>
+                                                      <ng-container  *ngFor="let data of companylist">
+                                                          <option  value="{{data.company_name}}">{{data.company_name}}</option>
+                                                      </ng-container>
+                                                      </select> 
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="form-group service-form-group col-md-6">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label >Select Site</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                  <select class="form-control"   name="employee_type"  (change)="site_details($event.target.value)" value="" #employee_type >
+                                                    <option value="0">Select Site</option>
+                                                    <ng-container  *ngFor="let data of datas">
+                                                    <option  value="{{data.id}}">Site Name : {{data.title}}</option>
+                                                  </ng-container>
+                                                  </select>  
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+ <br>
+
+
+
+    <div class="card"><Br>
+        <div class="headers">
+           
+          <div class="row">
+            <!-- <div class="col-md-3">
+                <div class="search input-group" style="border: 1px solid black;padding: 4px;">
+                  <mat-form-field>
+                  <input type="text"  name="search" [(ngModel)]="filter" placeholder="Search.." name="search">
+                  </mat-form-field>
+                  <div class="input-group-append">
+                      <i class="material-icons searchs pr-2">search</i>
+                  </div>
+              </div>
+            </div> -->
+
+            <div class="col-md-3">
+                <div class="search input-group" style="border: 1px solid black;padding: 4px;">
+                    <mat-form-field>
+                        <input matInput type="text"  name="search" [(ngModel)]="filter"  name="search">
+                    </mat-form-field>
+                    <!-- <input class="form-control"  style="border:none;" type="text" placeholder="Search" name="search" [(ngModel)]="filter">       -->
+                  <!-- <input type="text" class="form-control pr-2 py-0"  [(ngModel)]="filter" placeholder="Search"> -->
+                  <div class="input-group-append">
+                    <i class="material-icons searchs pr-2">search</i>
+                  </div>
+                </div>
+              </div>
+           
+            <div class="col-md-9">
+                <div class="">
+                  <button class="btn-info btn-lg pull-right" (click)="addcontract()">Add Contract</button>
+                </div>
+              </div>         
+          </div>
+        </div>
+        <br>
+
+
+    <form>
+        <table class="table table-bordered table-responsive" style="border-collapse:collapse;" [mfData]="contract_list" #mf="mfDataTable" [mfRowsOnPage]="10">
+            <thead>
+            <tr>
+                <th >
+                SL.NO
+                </th>
+                
+                <th >
+                    Contract Type <mfDefaultSorter by="contract_type"> <i class="fa fa-sort" style="color:#fff!important;"></i></mfDefaultSorter>
+                </th>
+                <th >
+                    Invoice Type <mfDefaultSorter by="invoice_cycle"> <i class="fa fa-sort" style="color:#fff!important;"></i></mfDefaultSorter>
+                </th>
+                <th >
+                    Contract Start Date	 <mfDefaultSorter by="contract_start_date"><i class="fa fa-sort" style="color:#fff!important;"></i></mfDefaultSorter>
+                </th>
+                <th >
+                    Contract End Date	<mfDefaultSorter by="contract_end_date"><i class="fa fa-sort" style="color:#fff!important;"></i></mfDefaultSorter>
+                </th>
+                <th >
+                    Status		<mfDefaultSorter by="status"><i class="fa fa-sort" style="color:#fff!important;"></i></mfDefaultSorter>
+                </th>
+                <th >
+                    Last Revision Date		<mfDefaultSorter by="last_revision_date"><i class="fa fa-sort" style="color:#fff!important;"></i></mfDefaultSorter>
+                </th>
+                <th>Man Power</th>
+                <th>Payment</th>
+                <th>Documents</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <ng-container *ngFor="let item of mf.data | filter:filter ;  let i = index">
+                <tr>
+                  <td>{{i+1}}</td>  
+                  <td style="min-width: 121px;">{{item.contract_type}}</td>
+                  <td style="min-width: 121px;">{{item.invoice_cycle}}</td>
+                  <td style="min-width: 159px;" id="l1">{{item.contract_start_date}}</td>
+                  <td style="min-width: 149px;" id="a1">{{item.contract_end_date}}</td>
+                  <td style="min-width: 121px;word-break: break-word;" id="pc1">{{item.status}}</td>
+                  <td style="min-width: 149px;"  id="pc1">{{item.last_revision_date}}</td>
+                  <td style="min-width: 121px; text-align: center"><button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="requiredment($event, item)"><i  class="m-1 icon-user-follow"></i></button></td>
+                  <td><button  style="background: transparent" type="button"  data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="payment($event, item)" ><i  class="m-1 icon-credit-card"  ></i></button></td>
+                  <td><button  style="background: transparent" type="button" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="attachment($event, item)" ><i  class="m-1 icon-folder-alt"  ></i></button></td>
+                  <td><button style="background: transparent" class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="viewcontract($event, item)"><i  class="m-1 icon-screen-desktop"></i></button></td>
+                  <td><button style="background: transparent"type="button" data-toggle="modal"  data-uid="1" class=" btn  btn-sm"><i  class="m-1 icon-note" (click)="edit($event,item)"></i></button></td> 
+                  <td><button style="background: transparent" type="button" class=" btn  btn-sm" ><i  class="m-1 icon-close ng-star-inserted" (click)="open($event,item)"></i></button></td>
+            </tr>
+            </ng-container>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="13">
+                    <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+              </form>     
+              </div>        
+      
+             
+
+
+                  
+
+
+
+
+
+ 
+                                                                                             
+                                                                                  
+                                                                                  
+
+
+</form>
+</div>
+</div>
+                </form>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+  </div>
+</form>

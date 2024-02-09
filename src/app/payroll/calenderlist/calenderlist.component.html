@@ -1,0 +1,107 @@
+<!-- Client Management -->
+<div class="service-form col-md-12">
+  <div class="row">
+    <div class="header">
+              <div class="row">
+                  <div class="col-12 col-md-6 mb-3">
+                      <h3 class="adsc"> <i class="fa fa-university"></i>  &nbsp;Payment Details</h3></div>
+                      <div class="col-md-6">
+                          <button class="btn-info clntr btn-lg pull-right" (click)="view()">Payments</button>
+                          <input type="month" class=" pull-right" (change)="month($event.target.value)">
+                      </div>
+            </div>  
+            <!-- <div class="row">
+                <div class="col-md-12">
+                <div class="col-md-2">
+                  Emp ID:
+                </div>
+                <div class="col-md-2">
+                 P-102
+                  </div>
+                  <div class="col-md-2">
+                      Emp Name :
+                    </div>
+                    <div class="col-md-2">
+                      Mohammed Imthiyas
+                      </div>
+                      <div class="col-md-2">
+                      Employee Type :
+                        </div>
+                <div class="col-md-2">
+                         SG
+                  </div>
+                </div>
+              </div> -->
+      <br></div><br>
+      <div class="col">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="tabl" >
+                <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                    <thead>
+                        <tr>
+                            <th>SL.NO</th>
+                            <th>Date</th>
+                            <th>Employee ID</th>
+                            <th>Employee Name</th>
+                            <th>Type</th>
+                            <th>Site Name</th>
+                            <th>Contract Type</th>
+                            <th>Basic</th>
+                            <th>DA</th>
+                            <th>HRA</th>
+                            <th>Others</th>
+                            <th>Leave 6%</th>
+                            <th>Bouns</th>
+                            <th>Weekly off</th>
+                            <th>Gross</th>
+                            <th>Epf 12</th>
+                            <th>Esi 1.75</th>
+                            <th>Net Amount</th>
+                            <th>Time In</th>
+                            <th>Time Out</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                <ng-container  *ngFor="let data of datas ;  let i = index">
+                                <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                    <td>{{i + 1}}</td> 
+                                    <td style="min-width: 92px;">{{data.date}}</td>
+                                    <td style="min-width: 92px;">{{data.employee_id}}</td>
+                                    <td style="min-width: 150px;" id="l1">{{data.employee_name}}</td>
+                                    <td style="min-width: 92px;text-align: center;" id="a1">{{data.employee_type}}</td>
+                                    <td style="min-width: 150px;" id="pc1">{{data.site_name}}</td>
+                                    <td style="min-width: 92px;" id="pc1">{{data.contract_id}}</td>
+                                    <td style="min-width: 92px;" id="l1">{{data.basic | number}}</td>
+                                    <td style="min-width: 92px;" id="a1">{{data.da | number}}</td>
+                                    <td style="min-width: 92px;" id="pc1">{{data.addhours| number}}</td>
+                                    <td style="min-width: 92px;" id="pc1">{{data.other | number}}</td>
+                                    <td style="min-width: 92px;" id="pc1">{{data.leave | number}}</td>
+                                    <td style="min-width: 92px;" id="pc1">{{data.bouns | number}}</td>
+                                    <td style="min-width: 92px;" id="pc1">{{data.weekly | number}}</td>
+                                    <td style="min-width: 92px;" id="pc1">{{data.gross | number}}</td>
+                                    <td style="min-width: 92px;" id="pc1">{{data.epf | number}}</td>
+                                    <td style="min-width: 92px;" id="pc1">{{data.esi | number}}</td>
+                                    <td style="min-width: 92px;" id="pc1">{{data.net | number}}</td>
+                                    <td style="min-width: 92px;" id="pc1">{{data.timein }}</td>
+                                    <td style="min-width: 92px;" id="pc1">{{data.timeout}}</td>
+                                    <td style="min-width: 92px;" id="pc1">{{data.duration}}</td>                                
+                                </ng-container>      
+                    </tbody>
+                </table>
+                <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                <div class="card-footer p-0">
+                <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                        </div>     
+          </div>
+          </div>
+        </div>
+        </div>
+</div>
+</div>  
+        <div *ngIf="deleteLoading" id="snackbar" class="show">Deleting... Pleaser Wait!</div>
+
+
+
+

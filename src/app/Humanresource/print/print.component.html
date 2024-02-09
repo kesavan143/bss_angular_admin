@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col-md-6">
+</div>
+
+<div class="col-md-6 pull-right">
+
+    <button  style="float:right" (click)="printComponent('component1')">Print</button>
+  </div>
+
+
+</div>
+
+<div class="container" id="component1">
+<div class="row">
+    <div class="col-md-6">
+
+<h3>Employee Details</h3>
+</div>
+
+<div class="col-md-6 pull-right">
+
+  </div>
+
+
+</div>
+
+<table>
+
+  <tr>
+    <td>Employee ID</td>
+    <td>{{adduser.Empid}}</td>
+  </tr>
+  <tr>
+    <td>Employee Name</td>
+    <td>{{adduser.Name}}</td>  </tr>
+  <tr>
+    <td>Employee Address</td>
+    <td>{{adduser.Address}}</td>  </tr>
+  <tr>
+    <td>Employee Number</td>
+    <td>{{adduser.Mobile_No}}</td>  </tr>
+  <tr>
+    <td>Employee Emails</td>
+    <td>{{adduser.Email_ID}}</td>  </tr>
+</table>
+
+<br>
+<br>
+
+<form>
+        <!-- service-form -->
+        <div class="service-forms">
+            <div class="row">
+      
+                                                 
+                                                               <div class="col-md-12">
+                                                                  <div class="row">
+                                                                    <h3>Item List</h3>
+                                                                  </div>
+                                                                </div>
+      
+                                                                <br>
+      
+                                                              <div class="col-md-12">
+                                                                <div class="row">
+
+        
+                                                                    <div class="tabl" >
+                                                                        <table class="table table-bordered table-responsive " style="border-collapse:collapse;">
+                                                                      <thead>
+                                                                          <tr>
+                                                                              <th>SL.NO</th>
+                                                                              <th>Items</th>
+                                                                              <th>A/U</th>
+                                                                              <th>Rate</th>
+                                                                              <th>Remarks</th>
+                                                                              <th>Total Amount</th>
+                                                                        </tr>
+                                                                      </thead>
+                                                                      <tbody>
+                                                                                  <ng-container  *ngFor="let data of items ;  let i = index">
+              
+                                                                                  <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                                                                      <td>{{i + 1}}</td> 
+                                                                                      <td>{{data.item}}</td>
+                                                                                      <td id="l1">{{data.au}}</td>
+                                                                                      <td id="a1">{{data.rate}}</td>
+                                                                                      <td id="a1">{{data.remarks}}</td>
+                                                                                      <td id="a1">{{data.total_amount}}</td>
+                                                                                  </tr>
+      
+                                                                                  </ng-container>      
+                                                                                  <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                                                                      <td></td> 
+                                                                                      <td></td> 
+                                                                                      <td></td> 
+                                                                                      <td></td> 
+                                                                                       
+                                                                                      <td style="text-align: right;"><b>Total</b></td>
+                                                                                      <td>{{total}}</td>   
+                                                                                                                                                                      
+                                                                                  </tr>
+                                                                      </tbody>
+                                                                  </table>
+                                                                   
+                                                            </div>
+                                                                </div>
+                                                              </div>       
+                                                              <br>    
+                  
+                  
+              </div>
+      
+        </div>
+      </form>
+
+
+    </div>

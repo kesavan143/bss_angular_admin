@@ -1,0 +1,150 @@
+
+<!-- Adding Employee Page -->
+
+<form>
+    <!-- service-form -->
+    <div class="service-forms">
+        <div class="row">
+  
+          <div class="col-md-12">
+            <div class="row">
+              <div class="multistep-form-section">
+                <form name="form"  novalidate>
+                        <div class="">
+                                <div class="">
+                                <h3 style="    width: 100%;
+                                background: #d0d6db;padding: 10px;text-transform: uppercase;">Add Uniform Item</h3>
+                                </div>
+                                <div class="">
+                                    <b style="    width: 100%;
+                                    background: #d0d6db;padding: 10px;text-transform: uppercase;">Name: {{emp_name}} & ID: {{emp_id}} </b>
+                                    </div>
+                                <!-- <div class=""> 
+                                 <label>Name:</label><b>{{name}}</b> <br>
+                                 <label>ID:</label><b>{{id}}</b>
+                                </div> -->
+                              </div>  
+                            
+                                                  
+                <div class="row">
+                        <div class="col-12 col-sm-12 form-group">
+
+                            <form class="frms" name="form" novalidate>
+                                                      <div class="col-md-12">
+                                                            <div class="row">
+                                                              <table style="width:100%">
+                                                                <tr>
+                                                                  <th>Items</th>
+                                                                  <th>A/U</th> 
+                                                                  <th>Rate</th>
+                                                                  <th>Remarks</th>
+                                                                  <th>Total Amount</th>
+                                                                  <th>Add</th>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td>
+                                                                      <select  style="width: 100%;"  name="item" (change)="dateChange1($event.target.value)" value="" [(ngModel)]="adduniform.item"  #employees id="exampleFormControlSelect1">
+                                                                          <ng-container  *ngFor="let data of items">
+                                                                          <option  value="{{data.id}}">{{data.items}}</option>
+                                                                        </ng-container>
+                                                                        </select> 
+                                                                  </td>
+                                                                  <td><input type="" style="width: 100%" (change)="cal()"  [(ngModel)]="adduniform.au" name="au" value="" #au></td>
+                                                                  <td><input type="" disabled style="width: 100%"[(ngModel)]="adduniform.rate" name="rate" value="" #rate></td>
+                                                                  <td><input type="" style="width: 100%"[(ngModel)]="adduniform.remarks" name="remarks"  value="" #remarks></td>
+                                                                  <td><input type="" disabled style="width: 100%"[(ngModel)]="adduniform.total_amount" name="total_amount"  value="" #total_amount></td>
+                                                                  <td><button style="width: 100%" (click)="adduniforms()">Add Uniform</button></td>
+                                                                </tr>
+                                                              </table>
+                                                            </div>
+                                                          </div>       
+                                                           <br>
+                                                           <br>
+
+                                                           <div class="container" id="component1">
+
+                                                           <div class="col-md-12">
+                                                              <div class="row">
+                                                                  <div class="col-md-6">
+                                                                      <h3>Item List</h3>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <button class="row pull-right" (click)="print()">Print</button>   
+
+                                                                      </div>
+
+
+
+                                                                
+                                                              </div>
+                                                              
+                                                            </div>
+  
+                                                            <br>
+  
+                                                          <div class="col-md-12">
+                                                            <div class="row">
+                                                              <div class="tabl" >
+                                                              <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                                                                  <thead>
+                                                                      <tr>
+                                                                          <th>SL.NO</th>
+                                                                          <th>Items</th>
+                                                                          <th>A/U</th>
+                                                                          <th>Rate</th>
+                                                                          <th>Remarks</th>
+                                                                          <th>Total Amount</th>
+                                                                          <th>Delete</th>
+                                                                    </tr>
+                                                                  </thead>
+                                                                  <tbody>
+                                                                              <ng-container  *ngFor="let data of datas ;  let i = index">
+          
+                                                                              <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                                                                  <td>{{i + 1}}</td> 
+                                                                                  <td>{{data.item}}</td>
+                                                                                  <td id="l1">{{data.au}}</td>
+                                                                                  <td id="a1">{{data.rate}}</td>
+                                                                                  <td id="a1">{{data.remarks}}</td>
+                                                                                  <td id="a1">{{data.total_amount}}</td>
+                                                                                   <td><button  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="delete($event, data)" ><i  class="m-1 icon-close"  ></i></button></td>
+                                                                              </tr>
+  
+                                                                              </ng-container>      
+                                                                              <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                                                                  <td></td> 
+                                                                                  <td></td> 
+                                                                                  <td></td> 
+                                                                                  <td></td> 
+                                                                                  
+                                                                                  <td style="text-align: right;"><b>Total</b></td>
+                                                                                  <td>{{total}}</td>
+                                                                              </tr>
+                                                                  </tbody>
+                                                              </table>
+                                                              <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                                                              <div class="card-footer p-0">
+                                                              <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                                                                      </div>     
+                                                        </div>
+                                                            </div>
+                                                          </div>       
+                                                          <br>    
+                                                           </div>
+   <div class="row">
+  <div class="col-md-12 col-sm-5 form-group">
+  <button class="input1" (click) = "addapi()">Add</button>
+  </div>
+  </div>
+  </form>
+  </div>
+  </div>
+                  </form>
+              </div>
+              </div>
+            </div>
+          </div>
+  
+    </div>
+  </form>
+  

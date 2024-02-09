@@ -1,0 +1,133 @@
+
+<form>
+    <!-- service-form -->
+    <div class="service-forms">
+
+       
+        <div class="row">
+  
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-sm-12 multistep-form-section">
+  
+                <form name="form"  novalidate>
+
+                        <div class="col-md-12 justify-content-md-center">
+                                <div class="">
+                                <h3 style="    width: 100%;
+                                background: #f1f4f7;padding: 10px;text-transform: uppercase;">Update User</h3>
+                                </div>
+                                <div class="col col-lg-2">                                        
+                                </div>
+                              </div>            
+                <div class="row">
+                        <div class="col-12 col-sm-12 form-group">
+                            <form class="frms" name="form" novalidate>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="form-group service-form-group col-md-6">
+                                            <div class="row">
+                                              <div class="col-md-3">
+                                                <label >Name</label>
+                                              </div>
+                                              <div class="col-md-9">
+                                                  <input type="text" [(ngModel)]="model.Name" placeholder="Name" class="form-control col-md-12"    pattern="^[a-zA-Z0-9_-\s]{2,150}$" name="Name" value="" #Name>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="form-group service-form-group col-md-6">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label >Designation</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <select class="form-control"  [(ngModel)]="model.Designation" name="Designation" value="" #Designation id="exampleFormControlSelect1">
+                                                        <option>Sales Team </option>
+                                                        <option>Operation Team</option>
+                                                        <option>Finance Team</option>
+                                                        <option>Human Resource</option>
+                                                        <option>Payroll Management</option>
+                                                        <option>User Management</option> 
+                                                        <option>Admin</option> 
+                                                        <option>Uniform</option> 
+                                                      </select>                                             
+                                                </div>
+                                              </div>
+                                            </div>
+                                    </div>
+                                  </div>
+
+
+                                  <div class="col-md-12">
+                                      <div class="row">
+                                        <div class="form-group service-form-group col-md-6">
+                                          <div class="row">
+                                            <div class="col-md-3">
+                                              <label >Level</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <select class="form-control"  [(ngModel)]="model.Level" name="Level" value="" #Level id="exampleFormControlSelect1">
+                                                    <option>Senior Team</option>
+                                                    <option>Junior Team</option>
+                                                  </select>  
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="form-group service-form-group col-md-6">
+                                            <div class="row">
+                                              <div class="col-md-3">
+                                                <label >Phone Number</label>
+                                              </div>
+                                              <div class="col-md-9">
+                                                  <input type="text" placeholder="Phone_number" [(ngModel)]="model.Phone_number" class="form-control col-md-12"    pattern="^[a-zA-Z0-9_-\s]{2,150}$"name="Phone_number" value="" #Phone_number>                                          
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                          <div class="form-group service-form-group col-md-6">
+                                            <div class="row">
+                                              <div class="col-md-3">
+                                                <label >Login_id</label>
+                                              </div>
+                                              <div class="col-md-9">
+                                                  <input type="text" placeholder="Login_id" [(ngModel)]="model.Email_id" class="form-control col-md-12"  pattern="^[a-zA-Z0-9_-\s]{2,150}$" name="Email_id" value="" #Email_id>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="form-group service-form-group col-md-6">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label >Password</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input type="text" placeholder="Password" [(ngModel)]="model.Password" class="form-control col-md-12"  pattern="^[a-zA-Z0-9_-\s]{2,150}$" name="Password" value="" #Password>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                            <div class="row">
+                            <div class="col-md-12 col-sm-5 form-group">
+                            <button class="btnupd" (click) = "addapi()">Update User</button>
+                            </div>
+                        </div>
+                     </form>
+                  </div>
+                    </div>
+                  </form>
+              </div>
+              </div>
+            </div>
+          </div>
+  
+    </div>
+  </form>
+  

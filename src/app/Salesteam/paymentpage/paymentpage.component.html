@@ -1,0 +1,207 @@
+
+<!-- Client Management -->
+
+
+
+
+<div class="service-form col-md-12">
+
+  <div class="row">
+    <div class="header">
+              <div class="row">
+                       <div class="col-12 col-md-6 mb-3">
+                      <h3 class="adsc"> <i class="fa fa-university"></i>  &nbsp;Payment List</h3></div>
+                      <div class="col-md-6">
+                              <button class="btn-info btn-lg pull-right "  (click)="print()">Print</button>
+                      </div>
+            </div>
+      <br></div><br>
+
+      <div class="col">
+
+        <div class="col-md-12">
+          <div class="row">
+            <div class="tabl" >
+                <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                    <thead>
+                        <tr>
+                            <th>SL.NO</th>
+                            <th>Components</th>
+                            <th>Basic</th>
+                            <th>DA</th>
+                            <th>HRA</th>
+                            <th>Others</th>
+                            <th>Sub Total A</th>
+                            <th>Leave 6%</th>
+                            <th>Sub Total B</th>
+                            <th>PF + Admin Charges @ 13.3</th>
+                            <th>Esi @ 4.75%</th>
+                            <th>Gratutity</th>
+                            <th>Bonus @8.33%</th>
+                            <th>Sub Total C</th>
+                            <th>Total</th>
+                            <th>Weekly off</th>
+                            <th>Agency Charges @ 10%</th>
+                            <th>Sub Total</th>
+                            <th>Rounded off</th>
+                            <th style="text-align: center">View</th>
+                            <th style="text-align: center">Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                <ng-container  *ngFor="let data of datas;  let i = index">
+                                    
+                                <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                    <td>{{i + 1}}</td> 
+                                    <td>{{data.employee_type}}</td>
+                                    <td id="l1">{{data.basic}}</td>
+                                    <td id="a1">{{data.da}}</td>
+                                    <td id="pc1">{{data.additional_hours}}</td>
+                                    <td id="pc1">{{data.others}}</td>
+                                    <td style="min-width: 100px;" id="pc1">{{data.subtotala}}</td>
+                                    <td style="min-width: 100px;"  id="pc1">{{data.leave}}</td>
+                                    <td style="min-width: 100px;"  id="pc1">{{data.subtotalb}}</td>
+                                    <td style="min-width: 215px;"  id="pc1">{{data.pf}}</td>
+                                    <td style="min-width: 106px;"  id="pc1">{{data.esi}}</td>
+                                    <td style="min-width: 100px;" id="pc1">{{data.gratuity}}</td>
+                                    <td style="min-width: 124px;" id="pc1">{{data.bouns}}</td>
+                                    <td style="min-width: 100px;" id="pc1">{{data.subtotalc}}</td>
+                                    <td style="min-width: 100px;" id="pc1">{{data.total}}</td>
+                                    <td style="min-width: 105px;" id="pc1">{{data.weekly_off}}</td>
+                                    <td style="min-width: 183px;" id="pc1">{{data.agency_charges}}</td>
+                                    <td style="min-width: 100px;" id="pc1">{{data.subtotal}}</td>
+                                    <td style="min-width: 116px;" id="pc1">{{data.rounded_off}}</td>
+                                    <td> <button style="background: transparent!important;" class="accordion-toggle  btn mat-button-wrapper btn-sm" data-toggle="collapse" data-toggle="collapse"  data-toggle="modal" data-target="#login-modal1" (click)="view($event, data)"><i  class="m-1 icon-screen-desktop"></i></button></td>
+                                    <td><button  style="background: transparent!important;border: none!important;" type="button" data-toggle="modal"  data-uid="1" class=" btn btn-primary btn-sm"(click)="edit($event, data)" ><i  class="m-1 icon-note"></i></button></td> 
+                                </tr>
+                                </ng-container>      
+                    </tbody>
+                </table>
+                <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                <div class="card-footer p-0">
+                <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                        </div>     
+          </div>
+          </div>
+        </div>
+        </div>
+</div>
+</div>  
+        <div *ngIf="deleteLoading" id="snackbar" class="show">Deleting... Pleaser Wait!</div>
+
+
+
+<!-- BEGIN # MODAL LOGIN -->
+<div class="modal fade" id="login-modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialogs" style="max-width: 700px;">
+    <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+     
+              
+              <!-- Begin # DIV Form -->
+              <div id="div-forms">
+              
+                  <!-- Begin # Login Form -->
+                  <form id="login-form">
+                  <div class="modal-body">
+            
+                      <div class="login-form">
+                          <div class="main-div">
+                              <div class="panel">
+                                  <h3>View Payment</h3>
+
+                             </div>
+                              <form id="Login">
+                                    <table>
+                                            <tr>
+                                              <th>Components</th>
+                                              <th>{{datass.employee_type}}</th>
+                                            </tr>
+                                            <tr>
+                                                    <td>Basic</td>
+                                                    <td>{{datass.basic}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>DA</td>
+                                                    <td>{{datass.da}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>Additional hours</td>
+                                                    <td>{{datass.additional_hours}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>Others</td>
+                                                    <td>{{datass.others}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td><B>Sub Total A</B></td>
+                                                    <td>{{datass.subtotala}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>Leave 6%</td>
+                                                    <td>{{datass.leave}}</td>
+                                            </tr> 
+                                            <tr>
+                                                    <td><b>Sub Total B</b></td>
+                                                    <td>{{datass.subtotalb}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>PF + Admin. Charges @ 13.3</td>
+                                                    <td>{{datass.pf}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>ESI @ 4.5%</td>
+                                                    <td>{{datass.esi}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>Gratutity @ 4.81%</td>
+                                                    <td>{{datass.gratuity}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>Bonus @ 8.33%</td>
+                                                    <td>{{datass.bouns}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td><b>Sub Total C</b></td>
+                                                    <td>{{datass.subtotalc}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td><b>Total</b></td>
+                                                    <td>{{datass.total}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>Weekly off</td>
+                                                    <td>{{datass.weekly_off}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>Agency Charges @ 10%</td>
+                                                    <td>{{datass.agency_charges}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td> <b>Sub Total</b> </td>
+                                                    <td>{{datass.subtotal}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <td><b>Rounded Off</b></td>
+                                                    <td>{{datass.rounded_off}}</td>
+                                            </tr>
+                                          </table>
+                              </form>
+                              </div>
+                          </div>
+                </div>
+              
+                  </form>
+                  <!-- End # Login Form -->
+                  
+                  <!-- Begin | Lost Password Form -->
+                
+                  
+                  
+              </div>
+              <!-- End # DIV Form -->
+              
+    </div>
+    </div>
+    </div>
+    <!-- END # MODAL LOGIN -->

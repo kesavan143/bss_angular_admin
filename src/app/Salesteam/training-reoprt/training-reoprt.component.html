@@ -1,0 +1,163 @@
+
+
+  <div  class="row">
+    <div  class="col-12 col-md-12 mb-3">
+      <h3  class="adsc">
+          <i class="material-icons ng-star-inserted">business</i> &nbsp;Training Report List</h3>
+      </div>
+  
+    </div>
+      <div class="card"><Br>
+          <!-- <div *ngIf="deleteLoading" id="snackbar" class="show"> {{loadingmsg}}</div> -->
+          <div class="headers">
+              <div class="col-md-12">
+            <div class="row col-md-12">
+            
+             
+        
+              <div class="col-md-5">
+                <div class="search input-group">
+                    <input class="form-control"  style="border:none;" type="text" placeholder="Search" name="search" [(ngModel)]="filter">      
+                  <!-- <input type="text" class="form-control pr-2 py-0"  [(ngModel)]="filter" placeholder="Search"> -->
+                  <div class="input-group-append">
+                    <i class="material-icons pr-2">search</i>
+                  </div>
+                </div>
+              </div>
+             
+                  
+              <div class="col-md-6">
+              
+              <!-- (click)='accbulup()' -->
+              </div>
+            </div>
+            </div>
+          </div>
+  
+  
+      <form>
+          <table class="table table-bordered table-responsive" style="border-collapse:collapse;" [mfData]="datas" #mf="mfDataTable" [mfRowsOnPage]="10">
+              <thead>
+              <tr>
+                  <th >
+                      Sl.no
+                  </th>
+                  <th >
+                      Unit <mfDefaultSorter by="unit"> <i class="fa fa-sort" style="color:#fff!important;"></i></mfDefaultSorter>
+                  </th>
+                  <th >
+                       Date<mfDefaultSorter by="date"><i class="fa fa-sort" style="color:#fff!important;"></i></mfDefaultSorter>
+                  </th>
+                  <th >
+                      Trainer<mfDefaultSorter by="trainer"><i class="fa fa-sort" style="color:#fff!important;"></i></mfDefaultSorter>
+                  </th>
+                  <th >
+                      Subject<mfDefaultSorter by="subject"><i class="fa fa-sort" style="color:#fff!important;"></i></mfDefaultSorter>
+                  </th>
+                  <th >
+                      Start Time<mfDefaultSorter by="time_duration_form"><i class="fa fa-sort" style="color:#fff!important;"></i></mfDefaultSorter>
+                  </th>
+                  <th >
+                      End Time<mfDefaultSorter by="time_duration_to"><i class="fa fa-sort" style="color:#fff!important;"></i></mfDefaultSorter>
+                  </th>
+                  <th >
+                     view
+                  </th>
+                 
+              </tr>
+              </thead>
+              <tbody>
+              <ng-container *ngFor="let item of mf.data | filter:filter ;  let i = index">
+                  <tr>
+                  <td>{{i+1}}</td>
+                  <td>{{item.unit | uppercase}}</td>
+                  <td>{{item.date}}</td>
+                  <td>{{item.trainer}}</td>
+                  <td>{{item.subject}}</td>
+                  <td>{{item.time_duration_form}}</td>
+                  <td>{{item.time_duration_to}}</td>
+                  <td>  <button class="updea"> <i class="m-1 icon-screen-desktop" (click)='view($event, item)'></i></button></td>
+              </tr>
+              </ng-container>
+              </tbody>
+              <tfoot>
+              <tr>
+                  <td colspan="11">
+                      <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                  </td>
+              </tr>
+              </tfoot>
+          </table>
+                </form>     
+                </div>        
+        
+                <div id="delete" class="modal modal3 fade" role="dialog">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                                  <h4 class="modal-title">Delete Data</h4>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                  
+                          </div>
+                          <div class="modal-body">
+                            <strong>Are you sure you want to remove these data </strong>
+                  
+                          </div>
+                          <div class="modal-footer">
+                              <button style="background-color: #eee!important;border: 1px #c3c1c1 solid;" type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                              <button style="background-color: #eee!important;border: 1px #c3c1c1 solid;" type="button" id="del" class="btn btn-danger" data-dismiss="modal" (click)="deletelist()">Yes</button>
+                  
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+  
+                    <div id="disable" class="modal modal4 fade" role="dialog">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                      <h4 class="modal-title">Disbale Data</h4>
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                      
+                              </div>
+                              <div class="modal-body">
+                                <strong>Are you sure you want to Disbale these Data </strong>
+                      
+                              </div>
+                              <div class="modal-footer">
+                                  <button style="background-color: #eee!important;border: 1px #c3c1c1 solid;" type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                  <button style="background-color: #eee!important;border: 1px #c3c1c1 solid;" type="button" id="del" class="btn btn-danger" data-dismiss="modal" (click)="disablelist()">Yes</button>
+                      
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+  
+  
+                        <div id="disable1" class="modal modal4 fade" role="dialog">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                        <h4 class="modal-title">Enable Data</h4>
+                                  <button type="button" class="close" data-dismiss="modal">×</button>
+                        
+                                </div>
+                                <div class="modal-body">
+                                  <strong>Are you sure you want to Enable thiese Data </strong>
+                        
+                                </div>
+                                <div class="modal-footer">
+                                    <button  style="background-color: #eee!important;border: 1px #c3c1c1 solid;" type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                    <button  style="background-color: #eee!important;border: 1px #c3c1c1 solid;" type="button" id="del" class="btn btn-danger" data-dismiss="modal" (click)="Enablelist()">Yes</button>
+                        
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+ 
+  
+                    
+  
+  
+  

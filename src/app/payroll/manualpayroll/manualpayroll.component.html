@@ -1,0 +1,121 @@
+<div class="container">
+  <div class="row">
+<div class="header">
+  <h3  class="adsc pull-left">Manual Payroll Entry</h3>
+</div>
+</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="form-group service-form-group col-md-12">
+          <div class="row">
+          <div class="col-md-1">
+            <label >Select Company</label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" (change)="fetchsite($event.target.value)" name="company_name" [(ngModel)]="adduser.company_name"  value="" #company_name id="exampleFormControlSelect1">                           
+              <ng-container  *ngFor="let data of companylist">
+              <option  value="{{data.company_name}}">{{data.company_name}}</option>
+            </ng-container>
+            </select>                                  
+          </div>
+
+          <div class="col-md-1">
+            <label >Select Unit</label>
+            </div>
+            <div class="col-md-3">
+              <select class="form-control"   name="site_name" (change)="Contract_list($event.target.value)"   value="" #site_name id="exampleFormControlSelect1">                          
+              <ng-container  *ngFor="let data of site_names">
+              <option  value="{{data.id}}">{{data.title}}</option>
+              </ng-container>
+              </select> 
+            </div>
+
+            <div class="col-md-1">
+              <label >Contracts</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text"  placeholder="Contracts" class="form-control col-md-12"  [(ngModel)]="contract_title"  name="contract_title" value="" >                                        
+            </div>
+          </div>
+        </div>
+
+
+        <div  class="form-group service-form-group col-md-12">
+          <div  class="row">
+
+            <div  class="col-md-1">
+              <label>Emp.ID</label>
+            </div>
+            <div  class="col-md-2">
+              <input type="text"  placeholder="Emp.ID"   class="form-control col-md-12"  name="employee_id" value=""  #employee_id>
+            </div>
+            <div  class="col-md-1">
+              <button (click)="search(employee_id.value)" style="height: 75%;width: 100%;">search</button>
+              <button class="btn-info btn-lg "click)="search(employee_id.value)">search</button>
+              </div>
+
+
+            <div  class="col-md-1">
+              <label>Type</label>
+              </div>
+              <div  class="col-md-3">
+                  <select class="form-control"   name="employee_type"  [(ngModel)]="adduser.employee_type" value="" #employee_type id="exampleFormControlSelect1">                          
+                      <ng-container  *ngFor="let data of datass">
+                      <option  value="{{data.employee_type}}">{{data.employee_type}}</option>
+                      </ng-container>
+                      </select>
+              </div>
+
+            <div  class="col-md-1">
+              <label>Name</label>
+              </div>
+              <div  class="col-md-3">
+                <input type="text"  placeholder="Name" class="form-control col-md-12"  [(ngModel)]="employee_name"  pattern="^[a-zA-Z0-9_-\s]{2,150}$" name="Name" value="" >
+              </div> 
+          </div>
+          </div>
+          <div  class="form-group service-form-group col-md-12">
+            <div  class="row">
+            <div  class="col-md-1">
+              <label>Account Number</label>
+            </div>
+            <div  class="col-md-3">
+              <input type="text"  placeholder="Account Number" class="form-control col-md-12" [(ngModel)]="a_c"     pattern="^[a-zA-Z0-9_-\s]{2,150}$" name="a_c" value="" >
+            </div>
+            <div  class="col-md-1">
+              <label>Bank Name</label>
+              </div>
+              <div  class="col-md-3">
+                <input type="text"  placeholder="Bank Name" class="form-control col-md-12"   [(ngModel)]="bank"    pattern="^[a-zA-Z0-9_-\s]{2,150}$" name="bank" value="">
+              </div>
+  
+              <div  class="col-md-1">
+                <label>No of Dutys</label>
+              </div>
+              <div  class="col-md-3">
+                <input type="number"  placeholder="Unit Name" class="form-control col-md-12"  [(ngModel)]="no_of_duty"      pattern="^[a-zA-Z0-9_-\s]{2,150}$" name="no_of_duty" value="" >
+              </div>
+            </div>
+          </div>
+          <div  class="form-group service-form-group col-md-12">
+            <div  class="row">
+              <div  class="col-md-1">
+              <label>Month</label>
+              </div>
+              <div  class="col-md-3">
+                <input type="month"  placeholder="Month" class="form-control col-md-12"  [(ngModel)]="date"    pattern="^[a-zA-Z0-9_-\s]{2,150}$" name="date" value="" >
+              </div>
+            </div>
+            </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <button (click)="submit()">SUBMIT</button>
+  </div>
+</div>
+
+  

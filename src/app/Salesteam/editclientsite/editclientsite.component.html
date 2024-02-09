@@ -1,0 +1,166 @@
+<!-- Adding Employee Page -->
+
+<form>
+    <!-- service-form -->
+    <div class="service-forms">
+        <div class="row">
+  
+          <div class="col-md-12">
+            <div class="row">
+              <div class="multistep-form-section">
+                <form name="form"  novalidate>
+                        <div class="">
+                                <div class="">
+                                <h3 style="    width: 100%;
+                                background: #d0d6db;padding: 10px;text-transform: uppercase;">Add Client Site</h3>
+                                </div>
+                                <div class="col col-lg-2">                                        
+                                </div>
+                              </div>  
+                              <br>                        
+                <div class="row">
+                        <div class="col-12 col-sm-12 form-group">
+                            <form class="frms" name="form" novalidate>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="form-group service-form-group col-md-6">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label >Login ID</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                
+                                                    <div class="form-group service-form-group">                             
+                                                          <input type="text" #sitelogin [(ngModel)]="addsite.sitelogin" placeholder="Login ID" class="form-control col-md-12"    name="sitelogin" value="" #sitelogin>
+                                                    </div>                                            
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="form-group service-form-group col-md-6">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label >Password</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                      <input type="text" [(ngModel)]="addsite.sitepassword" placeholder="Password" class="form-control col-md-12"     name="sitepassword" value="" #sitepassword>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                            <div class="row">
+                                                <div class="form-group service-form-group col-md-6">
+                                                    <div class="row">
+                                                      <div class="col-md-3">
+                                                        <label >Company Name</label>
+                                                      </div>
+                                                      <div class="col-md-9">
+    
+                                                        <select class="form-control"   name="company_name" [(ngModel)]="addsite.company_name"  value="" #company_name id="exampleFormControlSelect1">
+                                                          
+                                                            <ng-container  *ngFor="let data of companylist">
+                                                            <option  value="{{data.company_name}}">{{data.company_name}}</option>
+                                                          </ng-container>
+                                                          </select> 
+                                                    </div>
+                                                    </div>
+                                                  </div>
+                                              <div class="form-group service-form-group col-md-6">
+                                                <div class="row">
+                                                  <div class="col-md-3">
+                                                    <label >Site Name</label>
+                                                  </div>
+                                                  <div class="col-md-9">
+                                                  
+                                                      <div class="form-group service-form-group">                             
+                                                            <input type="text" #User_name [(ngModel)]="addsite.title" placeholder="Site Name" class="form-control col-md-12"    name="title" value="" #title>
+                                                      </div>                                            
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              
+                                             
+                                            </div>
+                                          </div>
+                                              <div class="col-md-12">
+                                                    <div class="row">
+                                                      <div class="form-group service-form-group col-md-6">
+                                                        <div class="row">
+                                                          <div class="col-md-3">
+                                                            <label >Address</label>
+                                                          </div>
+                                                          <div class="col-md-9">
+                                                          
+                                                                <input type="text" placeholder="Address" [(ngModel)]="addsite.address" class="form-control col-md-12"   name="address" value="" #address>                                         
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div class="form-group service-form-group col-md-6">
+                                                          <div class="row">
+                                                            <div class="col-md-3">
+                                                              <label >Billing Address</label>
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                  <input type="text" placeholder="Billing Address" [(ngModel)]="addsite.billing_address" class="form-control col-md-12"   name="billing_address" value="" #billing_address>                                         
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                     
+                                                    </div>
+                                                  </div>
+  
+                                                  
+  
+                                                  
+  
+                                                      <div class="col-md-12">
+                                                            <div class="row">
+                                                                <div class="col-md-2">
+                                                                  Contact Infromation
+                                                                </div>
+                                                                <div class="col-md-10">
+                                                                    <table style="width:100%">
+                                                                        <tr>
+                                                                          <th>Contact Person</th>
+                                                                          <th>Contact Number</th> 
+                                                                          <th>Contact Email-id</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td><input type="" style="width: 100%" [(ngModel)]="addsite.contactperson1" name="contactperson1" value="" #contactperson1></td>
+                                                                          <td><input type="" style=    "width: 100%"[(ngModel)]="addsite.contactnumber1" name="contactnumber1" value="" #contactnumber1></td>
+                                                                          <td><input type="" style=    "width: 100%"[(ngModel)]="addsite.contactemail1" name="contactemail1" value="" #contactemail1></td>
+                                                                          
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td><input type="" style=    "width: 100%"[(ngModel)]="addsite.contactperson2" name="contactperson2" value="" #contactperson2></td>
+                                                                          <td><input type=""  style=    "width: 100%"[(ngModel)]="addsite.contactnumber2" name="contactnumber2" value="" #contactnumber2></td>
+                                                                          <td><input type=""  style=    "width: 100%"[(ngModel)]="addsite.contactemail2" name="contactemail2" value="" #contactemail2></td>
+                                                                       
+                                                                          </tr>
+                                                                          <tr>
+                                                                            <td><input type="" style=    "width: 100%"[(ngModel)]="addsite.contactperson3" name="contactperson3" value="" #contactperson3></td>
+                                                                            <td><input type="" style=    "width: 100%"[(ngModel)]="addsite.contactnumber3" name="contactnumber3" value="" #contactnumber3></td>
+                                                                            <td><input type="" style=    "width: 100%"[(ngModel)]="addsite.contactemail3" name="contactemail3" value="" #contactemail3></td>
+                                                                        
+                                                                            </tr>
+                                                                      </table>
+                                                                  </div>
+                                                            </div>
+                                                          </div>       
+                                                          <br>                                                        
+   <div class="row">
+  <div class="col-md-12 col-sm-5 form-group">
+  <button class="btn-info btn-lg "  (click) = "addapi()">Update</button>
+  </div>
+  </div>
+  </form>
+  </div>
+  </div>
+                  </form>
+              </div>
+              </div>
+            </div>
+          </div>
+  
+    </div>
+  </form>
+  

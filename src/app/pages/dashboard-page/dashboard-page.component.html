@@ -1,0 +1,208 @@
+<div *ngIf="dashboard === false">
+  <div class="row">
+    <img src="/assets/images/Screen Shot 2019-02-15 at 12.21.07 PM.png" style="height: 340px;
+  width: 400px;
+  margin-left: 330px;
+  margin-top: 70px;
+  ">
+  </div>
+  <div class="row">
+    <img src="/assets/images/Screen Shot 2019-02-15 at 12.31.16 PM.png" style="padding-left: 90px;">
+  </div>
+</div>
+
+
+
+
+
+
+
+<div *ngIf="dashboard === true">
+  <div class="text-center">
+  </div>
+  <div class="row">
+
+    <div class="col-12 col-lg-6 mb-3">
+      <div class="card crdss">
+        <div class="card-body">
+          <div class="left card-title">
+            <b>Employee Management</b>
+          </div>
+          <div class="media">
+            <div class="col-6 col-lg-6 mb-3">
+              <div class="card">
+                <div class="crds">
+
+                  <div style="padding: 20px;" class="grey lighten-3 col-xs-5 waves-effect" (click)="employee1()">
+                    <i class="indigo-text8 text-lighten-1 large material-icons">assignment_ind</i>
+                    <span class="indigo-text text-lighten-1">
+                      <h5>View Employees</h5>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-6 mb-3">
+              <div class="card crdss">
+                <div class="crds">
+
+                  <div style="padding: 20px;" class="grey lighten-3 col-xs-5 waves-effect" (click)="employee2()">
+                    <i class="indigo-text7 text-lighten-1 large material-icons">person_add</i>
+                    <span class="indigo-text text-lighten-1">
+                      <h5>Add employees</h5>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-6 mb-3">
+      <div class="card crdss">
+
+        <div class="card-body">
+          <div class="left card-title">
+            <b>SALES TEAM</b>
+          </div>
+          <div class="media">
+            <div class="col-6 col-lg-6 mb-3">
+              <div class="card">
+                <div class="crds">
+
+                  <div style="padding: 20px;" class="grey lighten-3 col-xs-5 waves-effect" (click)="client1()">
+                    <i class="indigo-text6 text-lighten-1 large material-icons">location_city</i>
+                    <span class="indigo-text text-lighten-1">
+                      <h5>VIEW SITES</h5>
+                    </span>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-6 mb-3">
+              <div class="card crdss">
+                <div class="crds">
+
+                  <div style="padding: 20px;" class="grey lighten-3 col-xs-5 waves-effect" (click)="client2()">
+                    <i class="indigo-text5 text-lighten-1 large material-icons">person_add</i>
+                    <span class="indigo-text text-lighten-1">
+                      <h5>Add SITE</h5>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-12 col-lg-6 mb-3">
+      <div class="card crdss">
+
+        <div class="card-body">
+          <div class="left card-title">
+            <b>Attendance Management</b>
+          </div>
+          <div class="media">
+            <div class="col-6 col-lg-6 mb-3">
+              <div class="card">
+                <div class="crds">
+
+                  <div style="padding: 20px;" class="grey lighten-3 col-xs-5 waves-effect" (click)="attendance1()">
+                    <i class="indigo-text4 text-lighten-1 large material-icons">offline_pin</i>
+                    <span class="indigo-text text-lighten-1">
+                      <h5>Employees Attendance</h5>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-6 col-lg-6 mb-3">
+              <div class="card crdss">
+                <div class="crds">
+
+                  <div style="padding: 20px;" class="grey lighten-3 col-xs-5 waves-effect" (click)="attendance2()">
+                    <i class="indigo-text3 text-lighten-1 large material-icons">list</i>
+                    <span class="indigo-text text-lighten-1">
+                      <h5> Details </h5>
+                    </span>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-12 col-lg-6 mb-3">
+      <div class="card crdss">
+
+        <div class="card-body">
+          <div class="left card-title">
+            <b>Payroll Management</b>
+          </div>
+          <div class="media">
+            <div class="col-6 col-lg-6 mb-3">
+              <div class="card">
+                <div class="crds">
+
+                  <div style="padding: 20px;" class="grey lighten-3 col-xs-5 waves-effect" (click)="assign1()">
+                    <!-- <i class="fa fa-money" aria-hidden="true"></i> -->
+                    <i class="indigo-text4 text-lighten-1 large fa fa-money"></i>
+                    <span class="indigo-text text-lighten-1">
+                      <h5>Advance
+
+                      </h5>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-6 mb-3">
+              <div class="card">
+                <div class="crdss">
+
+                  <div style="padding: 20px;" class="grey lighten-3 col-xs-5 waves-effect" (click)="assign2()">
+                    <i class="indigo-text3 text-lighten-1 large fa fa-university"></i>
+                    <span class="indigo-text text-lighten-1">
+                      <h5> Manual Salary Entry </h5>
+                    </span>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

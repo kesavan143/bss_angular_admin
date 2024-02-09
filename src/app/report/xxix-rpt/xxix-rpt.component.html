@@ -1,0 +1,119 @@
+<div  class="row">
+    <div  class="header">
+      <h3  class="adsc">
+          <i class="material-icons ng-star-inserted">business</i> &nbsp;FORM No. XXIX</h3>
+      </div>
+		</div>
+    <div class="" style="padding-bottom: 30px;"><Br>
+      <div class="col-md-6">
+          <button class="btn-info btn-lg " (click)="exportAsXLSX()">Export</button>
+          <button class="btn-info btn-lg " (click)="print('component1')">Print</button>	
+      </div><Br><Br><Br>
+      <div class="row">
+          <div class="col-md-4">
+              <div class="col-md-2">
+                  <label style="font-weight: 700;">Month</label>
+               </div>
+           <div class="col-md-2">
+             <div> <input type="month"  [(ngModel)]="date" name="month" #month> </div>
+             <div><button (click)="dateChange(month.value)">Search</button></div>
+           </div>
+          </div>
+      <div class="col-md-4">
+        <div class="col-md-2">
+            <label style="font-weight: 700;">Company</label> 
+          </div>
+          <div class="col-md-4">
+              <select  style="width: 100%;" (change)="fetchsite($event.target.value)" name="company" [(ngModel)]="company"  value=""  id="exampleFormControlSelect1">                           
+                  <ng-container  *ngFor="let data of companylist">
+                  <option  value="{{data.company_name}}">{{data.company_name}}</option>
+                </ng-container>
+                </select>    
+            </div>
+    </div>	
+    <div class="col-md-4">
+        <div class="col-md-2">
+            <label style="font-weight: 700;"> Unit Name</label>
+         </div>
+     <div class="col-md-4">
+           <select   style="width: 100%;" name="unit_name" (change)="Contract_list($event.target.value)" [(ngModel)]="unit_name"  value=""  id="exampleFormControlSelect1">                          
+               <ng-container  *ngFor="let data of site_names">
+               <option  value="{{data.title}}">{{data.title}}</option>
+               </ng-container>
+               </select> 
+     </div>
+    </div>
+      </div>
+      <br><br><br>
+<div id="component1">
+      <table >
+          <tr>
+            <th colspan="20">FORM No. XXIX</th>
+          </tr>
+          <tr>
+              <td colspan="20">[See Rule 78 (1) (d) of Tamil Nadu Contract Labour (Regulation and Abolition) Rules, 1975</td>
+            </tr>
+            <tr>
+                <td colspan="20">REGISTER OF ADVANCES DEDUCTIONS FOR DAMAGE OR LOSS AND FINES</td>
+              </tr>
+              <tr>
+                  <td colspan="3">Name and address of the Establishment :    </td>
+                  <td colspan="6"> <b> {{companyName}} </b> </td>
+                  <td>Month :</td>
+                  <td colspan="3"> <b> {{month1}} </b> </td>
+                  <td >Year :</td>
+                  <td colspan="6"> <b> {{year}} </b> </td>
+                </tr>
+                <tr>
+                  <td rowspan="2">Sl.No</td>
+                  <td rowspan="2">Name of the Workman</td>
+                  <td rowspan="2">Father's / Husband's Name</td>
+                  <td rowspan="2">Employee Number</td>
+                  <td rowspan="2">Designation</td>
+                  <td colspan="4">Advance Paid</td>
+                  <td colspan="5">Deduction for Damage/ Loss</td>
+                  <td colspan="4">Fines</td>
+                  <td rowspan="2">Signature or Thump impressionof the workman</td>
+                  <td rowspan="2">Remarks</td>
+                </tr>
+               <tr>
+                 <td >Date of Payment</td>
+                 <td >Amount Paid</td>
+                 <td >No. of Instalments to be recovered</td>
+                 <td >Date on which Recovery Completed</td>
+                 <td >Damage / Loss caused</td>
+                 <td >Date of Show Cause Notice</td>
+                 <td >Total Amount of Deduction imposed</td>
+                 <td >No. of Instalments to be Recovered</td>
+                 <td >Date of Which Deduction Completed</td>
+                 <td >Act or Ommission</td>
+                 <td >Date of Show Cause Notice</td>
+                 <td >Amount of fine imposed</td>
+                 <td >Date on which fine recovery Completed</td>
+               </tr>
+               <tr *ngFor="let data of datas; let i = index">
+                  <td > <b> {{i + 1}} </b> </td>
+                  <td > <b> {{data.ename}} </b> </td>
+                  <td > <b> {{data.f_m_name}} </b></td>
+                  <td > <b> {{data.ecode}} </b></td>
+                  <td > <b> {{data.etype}} </b></td>
+                  <td > </td>
+                  <td > </td>
+                  <td > </td>
+                  <td > </td>
+                  <td > </td>
+                  <td > </td>
+                  <td > </td>
+                  <td > </td>
+                  <td > </td>
+                  <td > </td>
+                  <td > </td>
+                  <td > </td>
+                  <td > </td>
+                  <td > </td>
+                  <td > </td>
+                </tr>
+               <br><br><br>
+        </table>
+      </div>
+    </div>

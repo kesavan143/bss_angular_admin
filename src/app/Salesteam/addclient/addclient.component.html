@@ -1,0 +1,121 @@
+<!-- Adding Employee Page -->
+<div class="row">
+  <div class="header">
+  <h3 class="adsc" style="width: 100%;text-transform: uppercase;">  <i  class="material-icons  ng-star-inserted">note_add</i>  Add Client</h3>
+  </div>
+  <div class="col col-lg-2">                                        
+  </div>
+</div>
+
+
+<form>
+    <!-- service-form -->
+    <div class="service-forms">
+        <div class="row">
+  
+          <div class="col-md-12">
+            <div class="row">
+              <div class="multistep-form-section">
+                <form name="form"  novalidate>                                                                      
+                <div class="row">
+                        <div class="col-12 col-sm-12 form-group">
+                            <form class="frms" name="form" novalidate>
+                                    <div class="col-md-12">
+                                            <div class="row">
+                                              <div class="form-group service-form-group col-md-6">
+                                                <div class="row">
+                                                  <div class="col-md-3">
+                                                    <label >Login ID</label>
+                                                  </div>
+                                                  <div class="col-md-9">
+                                                  
+                                                      <div class="form-group service-form-group">                             
+                                                            <input type="text" #login [(ngModel)]="addclient.login" placeholder="Login ID" class="form-control col-md-12"    name="login" value="" #login>
+                                                      </div>                                            
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="form-group service-form-group col-md-6">
+                                                <div class="row">
+                                                  <div class="col-md-3">
+                                                    <label >Login Password</label>
+                                                  </div>
+                                                  <div class="col-md-9">
+                                                        <input type="Password" [(ngModel)]="addclient.password" placeholder="password" class="form-control col-md-12"     name="password" value="" #password>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                              <div class="col-md-12">
+                                                    <div class="row">
+                                                      <div class="form-group service-form-group col-md-6">
+                                                        <div class="row">
+                                                          <div class="col-md-3">
+                                                            <label >Company Name</label>
+                                                          </div>
+                                                          <div class="col-md-9">
+                                                          
+                                                                <input type="text" placeholder="Company Name" [(ngModel)]="addclient.company_name" class="form-control col-md-12"   name="company_name" value="" #company_name>                                         
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div class="form-group service-form-group col-md-6">
+                                                        <div class="row">
+                                                          <div class="col-md-3">
+                                                            <label >Company Type</label>
+                                                          </div>
+                                                          <div class="col-md-9">
+                                                                <input type="text" placeholder="Company Type" [(ngModel)]="addclient.company_type" class="form-control col-md-12"   name="company_type" value="" #company_type>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+
+
+
+
+
+
+                                                  <div class="col-md-12">
+                                                        <div class="row">
+                                                          <div class="form-group service-form-group col-md-6">
+                                                            <div class="row">
+                                                              <div class="col-md-3">
+                                                                <label >Address</label>
+                                                              </div>
+                                                              <div class="col-md-9">
+                                                                  <input type="text" placeholder="Address" [(ngModel)]="addclient.address" class="form-control col-md-12"   name="address" value="" #address>
+                                                                </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="form-group service-form-group col-md-6">
+                                                            <div class="row">
+                                                              <div class="col-md-3">
+                                                                <label >Billing Address</label>
+                                                              </div>
+                                                              <div class="col-md-9">
+                                                                    <input type="text" placeholder="Billing Address" [(ngModel)]="addclient.billing_address" class="form-control col-md-12"   name="billing_address" value="" #billing_address>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div> 
+<div class="row">
+  <div class="col-md-12 col-sm-5 form-group">
+  <button class="btn-info btn-lg " (click) = "addapi()">Submit</button>
+  </div>
+  </div>
+  </form>
+ </div>
+</div>
+              </form>
+              </div>
+              </div>
+            </div>
+          </div>
+  
+    </div>
+  </form>
+  

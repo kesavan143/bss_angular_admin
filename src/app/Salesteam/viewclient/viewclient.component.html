@@ -1,0 +1,313 @@
+<!-- Adding Employee Page -->
+
+  <div class="row">
+    <div class="header">
+    <h3 style="width: 100%;text-transform: uppercase;"> <i  class="material-icons ng-star-inserted">description</i> &nbsp;&nbsp;Client Details</h3>
+    </div>
+        <button class=" btn-info btn-lg pull-right" style="margin-bottom: 1em;" (click)="printComponent('component1')">Print</button>                                      
+  </div> 
+
+
+  <div class="container" id="component1">
+  <!-- service-form -->
+  <div class="service-forms">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="row">
+            <div class="multistep-form-section">
+                      
+                            <br>                        
+              <div class="row">
+                      <div class="form-group" style="width: 100%;">
+
+
+                              <table>
+                                  <tr>
+                                    <td>Login</td>
+                                    <td>{{client_detail.login}}</td>
+                                  
+                                  </tr>
+                                   <tr>
+                                    <td>Password</td>
+                                    <td>{{client_detail.password}}</td>
+                                  </tr>
+                                   <tr>
+                                    <td>Company Name</td>
+                                    <td>{{client_detail.company_name}}</td>
+                                  </tr>
+                                   <tr>
+                                    <td>Company Type </td>
+                                    <td>{{client_detail.company_type}}</td>
+                                  
+                                  </tr>
+                                   <tr>
+                                    <td>Address</td>
+                                    <td>{{client_detail.address}}</td>
+                                  
+                                  </tr>
+                                   <tr>
+                                    <td>Billing Address</td>
+                                    <td>{{client_detail.billing_address}}</td>
+                                  </tr>
+                                </table>
+</div>
+
+
+
+<!-- site details -->
+
+
+<br>
+<br>
+
+<div  style="margin-top: 40px;width: 100%;"  class="form-group">
+    <div class="">
+        <h4 style="width: 100%;
+        background: #d0d6db;padding: 10px;text-transform: uppercase;">Sites Details</h4>
+        </div>
+</div>
+
+<ng-container  *ngFor="let data of site_details ;let i = index">
+<div style="padding-top: 30px"  class="col-12 col-sm-12 form-group">
+        <table>
+            <tr>
+                <td>
+                    <div  style = ""  class="col-12 col-sm-12 form-group">
+                        <div class="">
+                            <h4 style="width: 100%;
+                            background: #d0d6db;padding: 10px;text-transform: uppercase;">Sites Detail - {{i+1}}</h4>
+                            </div>
+                    </div>
+                </td>
+           </tr>
+            <tr>
+              <td>Title</td>
+              <td>{{data.title}}</td>
+            
+            </tr>
+             <tr>
+              <td>Description</td>
+              <td>{{data.description}}</td>
+            </tr>
+             <tr>
+              <td>Address</td>
+              <td>{{data.address}}</td>
+            </tr>
+             <tr>
+              <td>Contact Person</td>
+              <td>{{data.contactperson1}}</td>
+            
+            </tr>
+             <tr>
+              <td>Contact Number</td>
+              <td>{{data.contactnumber1}}</td>
+            
+            </tr>
+             <tr>
+              <td>Contact Email-id</td>
+              <td>{{data.contactemail1}}</td>
+            </tr>
+            <tr>
+                    <td>Status</td>
+                    <td>{{data.status}}</td>
+                  </tr>
+          </table>
+</div>
+
+<div  style = "margin-top: 40px;"  class="col-12 col-sm-12 form-group">
+    <div class="">
+        <h4 style="width: 100%;
+        background: #d0d6db;padding: 10px;text-transform: uppercase;">Required Employee Details & Payment </h4>
+        </div>
+</div>
+
+<ng-container  *ngFor="let data1 of data.requirement ;let i = index">
+  <div class="col-12 col-sm-12 form-group">
+    
+    <table>
+  
+      <tr>
+        <td>Employee Type</td>
+        <td>{{data1.employee_type}}</td>
+      
+      </tr>
+       <tr>
+        <td>HRS</td>
+        <td>{{data1.hrs}}</td>
+      </tr>
+       <tr>
+        <td>Amount</td>
+        <td>{{data1.amount}}</td>
+      </tr>
+       <tr>
+        <td>No Of Employee</td>
+        <td>{{data1.no_of_employee}}</td>
+      </tr>
+       <tr>
+        <td>Total Amount</td>
+        <td>{{data1.total_amount}}</td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  
+  </ng-container>
+
+  <div  style = "margin-top: 40px;"  class="col-12 col-sm-12 form-group">
+      <div class="">
+          <h4 style="width: 100%;
+          background: #d0d6db;padding: 10px;text-transform: uppercase;">Payment Structure </h4>
+          </div>
+  </div>
+
+  <ng-container  *ngFor="let data2 of data.payment ;let i = index">
+    <div class="col-12 col-sm-12 form-group">
+      <table>
+        <tr>
+        <td style="font-size: 15px;color:black"> No - {{i+1}}</td>
+        <td></td>
+                  </tr>
+        <tr>
+          <td>Employee Type</td>
+          <td>{{data2.employee_type}}</td>
+        
+        </tr>
+         <tr>
+          <td>Basic</td>
+          <td>{{data2.basic}}</td>
+        </tr>
+         <tr>
+          <td>Da</td>
+          <td>{{data2.da}}</td>
+        </tr>
+         <tr>
+          <td>Additional Hours</td>
+          <td>{{data2.contactperson1}}</td>
+        
+        </tr>
+         <tr>
+          <td>Others</td>
+          <td>{{data2.others}}</td>
+        
+        </tr>
+         <tr>
+          <td>Sub-Total</td>
+          <td>{{data2.subtotala}}</td>
+        </tr>
+        <tr>
+                <td>Leave</td>
+                <td>{{data2.leave}}</td>
+              </tr>
+
+
+              <tr>
+                    <td>Sub-Total</td>
+                    <td>{{data2.subtotalb}}</td>
+                  </tr>
+
+
+                  <tr>
+                        <td>PF</td>
+                        <td>{{data2.pf}}</td>
+                      </tr>
+
+
+                      <tr>
+                            <td>ESI</td>
+                            <td>{{data2.esi}}</td>
+                          </tr>
+
+
+                          <tr>
+                                <td>Gratuity</td>
+                                <td>{{data2.gratuity}}</td>
+                              </tr>
+
+
+                              <tr>
+                                    <td>Bouns</td>
+                                    <td>{{data2.bouns}}</td>
+                                  </tr>
+
+
+                                  <tr>
+                                        <td>Sub-total</td>
+                                        <td>{{data2.subtotalc}}</td>
+                                      </tr>
+
+
+                                      <tr>
+                                            <td>Total</td>
+                                            <td>{{data2.leave}}</td>
+                                          </tr>
+
+
+                                          <tr>
+                                                <td>Weekly - Off</td>
+                                                <td>{{data2.leave}}</td>
+                                              </tr>
+
+
+                                              <tr>
+                                                    <td>Agency-Charges</td>
+                                                    <td>{{data2.leave}}</td>
+                                                  </tr>
+
+                                                  <tr>
+                                                        <td>Sub-Total</td>
+                                                        <td>{{data2.leave}}</td>
+                                                      </tr>
+
+                                                      <tr>
+                                                            <td>leave</td>
+                                                            <td>{{data2.leave}}</td>
+                                                          </tr>   
+                                                          <tr>
+                                                            <td>Rounded-OFF</td>
+                                                            <td>{{data2.rounded_off}}</td>
+                                                          </tr>                                   
+      </table>
+        </div>
+    
+    </ng-container>
+
+    <div  style = "margin-top: 40px;"  class="col-12 col-sm-12 form-group">
+        <div class="">
+            <h4 style="width: 100%;
+            background: #d0d6db;padding: 10px;text-transform: uppercase;">Submitted Document details</h4>
+            </div>
+    </div>
+
+      <ng-container  *ngFor="let data of data.documents;  let i = index">
+        <div class="col-12 col-sm-12 form-group">
+        
+                <table>
+                    <tr>
+                    <td style="font-size: 15px;color:black"> No - {{i+1}}</td>
+                    <td></td>
+                    
+                              </tr>
+                    <tr>
+                      <td>Title</td>
+                      <td>{{data.title}}</td>
+                    
+                    </tr>
+                     <tr>
+                      <td>path</td>
+                      <td>{{data.path}}</td>
+                    </tr>
+                  </table>
+        </div>
+        </ng-container>
+
+
+
+      
+
+<br>
+<br>
+
+</ng-container>
+
+

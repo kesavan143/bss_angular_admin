@@ -1,0 +1,109 @@
+
+       <div  class="row">
+        <div  class="header">
+          <h3  class="adsc pull-left">
+              <i class="material-icons ng-star-inserted">business</i> &nbsp;Site List</h3>
+              <button  class="btn-info btn-lg pull-right" style="margin-top: 0px;" (click)="addclients()" >Add Site</button>
+          </div>
+        </div>       
+          <!-- <div *ngIf="deleteLoading" id="snackbar" class="show"> {{loadingmsg}}</div> -->
+          <div class="headers">
+              <div class="">
+                <div class="row">
+                    <input type="file" (change)="onfileselected($event)">
+                    <button class="btn-info btn-lg " (click)="attach()">Upload</button>
+                </div><br>
+            <div class="row">		
+              <div class="col-md-3">
+                <div class="search input-group" style="border: 1px solid black;padding: 4px;">
+                    <mat-form-field>
+                        <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="">
+                    </mat-form-field>
+                    <!-- <input class="form-control"  style="border:none;" type="text" placeholder="Search" name="search" [(ngModel)]="filter">       -->
+                  <!-- <input type="text" class="form-control pr-2 py-0"  [(ngModel)]="filter" placeholder="Search"> -->
+                  <div class="input-group-append">
+                    <i class="material-icons searchs pr-2">search</i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div>
+            <ng-container  *ngFor="let data of datasss ">
+              <button  class="btn-info btn-lg pull-left" (click)="find(data.company_name)">{{data.company_name}} </button>
+                </ng-container>
+            </div>
+    
+      <table mat-table [dataSource]="dataSource" matSort class="table table-bordered" style="font-size: 10px;font-weight: 600;" >
+          <ng-container matColumnDef="Company_Name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px; color:white">Company Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.company_name}} </td>
+          </ng-container>
+          <ng-container matColumnDef="Site_Name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">Site Name</th>
+              <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+            </ng-container>    
+          <ng-container matColumnDef="Address">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">Address</th>
+            <td style="width: 301px;" mat-cell *matCellDef="let element"> {{element.address}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="Billing_Name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-heade  style="height: 10px;color:white"r>Billing Name</th>
+            <td style="width: 301px;" mat-cell *matCellDef="let element"> {{element.site_billing_name}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="Contact_Number">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">Contact Number</th>
+              <td mat-cell *matCellDef="let element"> {{element.contactnumber1}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="Area_Name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">Area Name</th>
+              <td mat-cell *matCellDef="let element"> {{element.area_name}} </td>
+            </ng-container>
+      
+            <ng-container matColumnDef="UState">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">UState</th>
+                <td mat-cell *matCellDef="let element"> {{element.ustate}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="UDistrict">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">UDistrict</th>
+                <td mat-cell *matCellDef="let element"> {{element.udistrict}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="Duty_type">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">Duty Type</th>
+                  <td mat-cell *matCellDef="let element"> {{element.duty_type}} </td>
+                </ng-container>
+      
+                <ng-container matColumnDef="View">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> View </th>
+                    <td mat-cell *matCellDef="let element"> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view($event, element)"> <i  class="m-1 icon-screen-desktop"></i></button> </td>
+                  </ng-container>
+      
+                  <ng-container matColumnDef="Edit">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> Edit </th>
+                      <td mat-cell *matCellDef="let element"> <button style="background: transparent" class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="edit($event, element)"><i  class="m-1 icon-note"></i></button> </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Detele">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> Delete </th>
+                        <td mat-cell *matCellDef="let element"> <button style="background: transparent"type="button" data-toggle="modal"  data-uid="1" class=" btn  btn-sm"><i  class="m-1 icon-close" (click)="delete($event, element)"></i></button> </td>
+                      </ng-container>
+                      <!-- <ng-container matColumnDef="delete">ng
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
+                          <td mat-cell *matCellDef="let element"><button style="background: transparent" class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="open($event, item)"><i  class="m-1 icon-book-open"></i></button></td>
+                        </ng-container> -->
+      
+      
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        
+        <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 30]">
+        </mat-paginator>
+       
+        

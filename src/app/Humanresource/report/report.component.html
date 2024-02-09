@@ -1,0 +1,1302 @@
+<button class="btn-info btn-lg " (click)="printComponent('component1')" style="float:right">Print</button>
+
+<div class="container" id="component1">
+    <div class="row col-md-12">
+        <div class="container" id="component1">
+            <div class="row">
+
+                <div class="col-lg-12 col-md-12 col-sm-12" style="color:black;width: 100%;">
+
+                    <div style="text-align: center;
+						  padding-bottom: 35px;
+						  padding-top: 0px;"><img src="/assets/images/Screen Shot 2019-02-15 at 12.21.07 PM.png" style="height: 66px"> <strong style="font-size: 35px;">  BHARATHEEYAM SECURITY SERVICES PVT. LTD.,</strong>
+
+                        <div style="font-size: 25px;">No,29 VGP Rajesh Nagar, 1st Main Road, Narayanapuram,</div>
+
+                        <div style="font-size: 25px;">Pallikaranai, Chennai - 600 100.</div>
+
+                        <B style="font-size: 25px;"> BIO - DATA</B>
+                    </div>
+                </div>
+            </div>
+            <table style="width: 100%;
+					height:1250px; font-size: 20px;">
+                <tr>
+                    <td style="width: 400px;">Emp No : <b>{{adduser.ecode}}</b></td>
+                    <td>Rank : <b>{{adduser.employee_type}}</b></td>
+                    <td> Photo</td>
+                </tr>
+                <tr>
+                    <td>Name :</td>
+                    <td><b>{{adduser.Name | uppercase}}</b></td>
+                    <td rowspan="3" style="background: #eee;width:200px;"><img src="{{photo}}" style="height: 200px;
+							margin-left: -1px;
+							margin-bottom: -120px;
+							margin-right: -50px;
+							margin-top: -150px;
+							width: 170px;"></td>
+                </tr>
+                <tr>
+                    <td>Father Name / Husband Name :</td>
+                    <td>{{adduser.father_name | uppercase}}</td>
+
+
+
+                </tr>
+                <tr>
+                    <td>Date Of Birth :</td>
+                    <td>{{adduser.Date_of_birth | date: 'dd/MM/yyyy'}}</td>
+
+
+
+                </tr>
+                <tr>
+                    <td>Marital Status ( If Married Give Name Of Spouse ) :</td>
+                    <td colspan="2">{{adduser.material_status}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>Next Of Kin with Contact Details :</td>
+                    <td colspan="2">{{adduser.nname1 | uppercase}} & {{adduser.fcontact1}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>Educational Qualification :</td>
+                    <td colspan="2">{{adduser.Edq}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>Nationality :</td>
+                    <td colspan="2">{{adduser.nationality}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>Permanent Address :</td>
+                    <td colspan="2">{{adduser.permentaddress}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>Local Address :</td>
+                    <td colspan="2">{{adduser.Address}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>Contact No :</td>
+                    <td colspan="2">{{adduser.Mobile_No}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>Language Known :</td>
+                    <td colspan="2">{{adduser.language1}} , {{adduser.language2}} , {{adduser.language3}} , {{adduser.language4}} , {{adduser.language5}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>Work Experience :</td>
+                    <td colspan="2">{{adduser.work_exp}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>EPF No. ( If any ) : <br>{{adduser.epf_no}}</td>
+                    <td>ESIC No : <br>{{adduser.esic_no}} </td>
+                    <td>Aadhar Card No : <br>{{adduser.aadhar_card}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row col-md-12 ">
+                            <strong>Signature of the Manager : </strong>
+                        </div>
+                    </td>
+
+                    <td colspan="2">
+                        <div class="row col-md-12 ">
+                            <strong>Signature of the Applicant : </strong>
+                        </div>
+                    </td>
+
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="row col-ld-12" style="padding-top:20px; padding-bottom:80px">
+        <div class="container" id="component1">
+            <div class="row">
+
+                <div class="col-lg-12 col-md-12 col-sm-12" style="color:black;width: 100%;">
+
+                    <div style="text-align: center;
+						  padding-bottom: 30px;
+						  padding-top: 0px;">
+                        <div class="header-img">
+                            <img src="/assets/images/Screen Shot 2019-02-15 at 12.21.07 PM.png" style="height: 35px"> <strong style="font-size: 35px;">  BHARATHEEYAM SECURITY SERVICES PVT. LTD.</strong>
+                        </div>
+                        <div class="" style="font-size: 18px">No,29 VGP Rajesh Nagar, 1st Main Road, Narayanapuram,</div>
+
+                        <div class="" style="font-size: 18px">Pallikaranai, Chennai - 600 100.</div>
+
+                        <div class="" style="font-size: 20px">
+                            <B>APPLICATION FOR EMPLOYMENT</B>
+                        </div>
+
+                        <div class="" style="font-size: 15px">To be filled by the Applicant in his own Handwriting. आवेदक द्वारा अपनी स्वयं की लिखावट में भरा जाना।</div>
+                    </div>
+                </div>
+            </div>
+            <table style="width: 100%;height:70px;font-size: 20px">
+                <tr>
+                    <td style="width:400px">Name ( Block letters )<br> नाम
+                    </td>
+                    <td>{{adduser.Name | uppercase}}</td>
+                    <td rowspan="3" style="background: #eee;width:200px;"><img src="{{photo}}" style="height: 200px;
+							margin-left: -1px;
+							margin-bottom: -120px;
+							margin-right: -50px;
+							margin-top: -110px;;
+							width: 170px;"></td>
+                </tr>
+                <tr>
+                    <td>Father Name / Husband Name :</td>
+                    <td>{{adduser.father_name | uppercase}}</td>
+
+
+
+                </tr>
+                <tr>
+                    <td>Date Of Birth :<br> जन्म की तारीख :</td>
+                    <td>{{adduser.Date_of_birth | date: 'dd/MM/yyyy'}}</td>
+
+
+
+                </tr>
+                <tr>
+                    <td>Nationality :<br> राष्ट्रीयता :</td>
+                    <td colspan="2">{{adduser.nationality}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>Present Address :<br> वर्तमान पता :</td>
+                    <td colspan="2">{{adduser.Address}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>Permanent Address & Telephone No:<br> स्थायी पता और टेलीफोन नं। :</td>
+                    <td colspan="2">{{adduser.permentaddress}} & {{adduser.Mobile_No}}</td>
+
+
+                </tr>
+
+                <tr>
+                    <td>Father's Name /Ocupation and Address : <br> पिता का नाम / व्यवसाय और पता : </td>
+                    <td colspan="2">{{adduser.father_name | uppercase}} / {{adduser.permentaddress}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>Next Of Kin Name Relationship & Address : <br> परिजनों का नाम संबंध और पता :</td>
+                    <td colspan="2">{{adduser.nname1 | uppercase}} / {{adduser.nrelationship1}} & {{adduser.permentaddress}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>Next Of Kin with Contact Details : <br> संपर्क विवरण के साथ परिजनों के आगे :</td>
+                    <td colspan="2">{{adduser.nname1 | uppercase}} & {{adduser.fcontact1}}</td>
+
+
+                </tr>
+                <tr>
+                    <td>Marital Status (put tick ) : <br> वैवाहिक स्थिति :</td>
+                    <td colspan="2">{{adduser.material_status}}</td>
+
+
+                </tr>
+
+            </table>
+            <table style="width:100%;height:10px;font-size: 20px ">
+                <tr>
+                    <td rowspan="3" style="width:400px">Physical Standard : <br> शारीरिक मानक </td>
+                    <td>Height(CM)</td>
+                    <td>Weight(CM)</td>
+                    <td>Chest (CM)</td>
+                </tr>
+                <tr>
+                    <td>{{adduser.height}}</td>
+                    <td>{{adduser.weight}}</td>
+                    <td>{{adduser.chest}}</td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="4">Family Particulars :</td>
+                </tr>
+            </table>
+            <table class="table1" style="width:100%;height:10px;font-size: 20px">
+                <tr class="tr1">
+                    <td style="text-align:center">S.No</td>
+                    <td style="text-align:center">Name</td>
+                    <td style="text-align:center">Sex</td>
+                    <td style="text-align:center">Age</td>
+                    <td style="text-align:center">Relationship</td>
+                    <td style="text-align:center">Date of Birth / Age</td>
+                    <td style="text-align:center">Occupation</td>
+                    <td style="text-align:center">Aadhar card</td>
+                    <td style="text-align:center">Contact number</td>
+
+
+                </tr>
+                <tr>
+                    <td>1 .</td>
+                    <td>{{adduser.nname1 | uppercase}}</td>
+                    <td>{{adduser.nsex1}}</td>
+                    <td>{{adduser.nage1}}</td>
+                    <td>{{adduser.nomierelation1}}</td>
+                    <td>{{adduser.ndateofbirth1 | date: 'dd/MM/yyyy'}} / {{adduser.nage1}}</td>
+                    <td>{{adduser.noccupation1}}</td>
+                    <td>{{adduser.naadharcard1}}</td>
+                    <td>{{adduser.fcontact1}}</td>
+                </tr>
+                <tr>
+                    <td>2 .</td>
+                    <td>{{adduser.nname2 | uppercase}}</td>
+                    <td>{{adduser.nsex2}}</td>
+                    <td>{{adduser.nage2}}</td>
+                    <td>{{adduser.nomierelation2}}</td>
+                    <td>{{adduser.ndateofbirth2 | date: 'dd/MM/yyyy'}} / {{adduser.nage2}}</td>
+                    <td>{{adduser.noccupation2}}</td>
+                    <td>{{adduser.naadharcard2}}</td>
+                    <td>{{adduser.fcontact2}}</td>
+                </tr>
+                <tr>
+                    <td>3 .</td>
+                    <td>{{adduser.nname3 | uppercase}}</td>
+                    <td>{{adduser.nsex3}}</td>
+                    <td>{{adduser.nage3}}</td>
+                    <td>{{adduser.nomierelation3}}</td>
+                    <td>{{adduser.ndateofbirth3 | date: 'dd/MM/yyyy'}} / {{adduser.nage3}}</td>
+                    <td>{{adduser.noccupation3}}</td>
+                    <td>{{adduser.naadharcard3}}</td>
+                    <td>{{adduser.fcontact3}}</td>
+                </tr>
+                <tr>
+                    <td>4 .</td>
+                    <td>{{adduser.nname4 | uppercase}}</td>
+                    <td>{{adduser.nsex4}}</td>
+                    <td>{{adduser.nage4}}</td>
+                    <td>{{adduser.nomierelation4}}</td>
+                    <td>{{adduser.ndateofbirth4 | date: 'dd/MM/yyyy'}} / {{adduser.nage4}}</td>
+                    <td>{{adduser.noccupation4}}</td>
+                    <td>{{adduser.naadharcard4}}</td>
+                    <td>{{adduser.fcontact4}}</td>
+                </tr>
+                <tr>
+                    <td>5 .</td>
+                    <td>{{adduser.nname5 | uppercase}}</td>
+                    <td>{{adduser.nsex5}}</td>
+                    <td>{{adduser.nage5}}</td>
+                    <td>{{adduser.nomierelation5}}</td>
+                    <td>{{adduser.ndateofbirth5 | date: 'dd/MM/yyyy'}} / {{adduser.nage5}}</td>
+                    <td>{{adduser.noccupation5}}</td>
+                    <td>{{adduser.naadharcard5}}</td>
+                    <td>{{adduser.fcontact5}}</td>
+                </tr>
+            </table>
+            <table style="width:100%;height:10px;font-size: 20px">
+                <tr>
+                    <td>
+                        10.Do you wear spectacles ? <br> if so, indicate the power / <br> क्या आप चश्मा पहनते हैं?<br> यदि हां, तो शक्ति का संकेत दें
+                    </td>
+                    <td>
+                        {{adduser.Spectacles}}
+                    </td>
+                    <td>
+                        Right <br> {{adduser.RightEyePower}}
+                    </td>
+                    <td>
+                        Left <br> {{adduser.LeftEyePower}}
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <div class="row col-md-12" style="padding-top:140px">
+        <div class="container" id="component1">
+            <table style="width: 100%;height:300px;">
+                <tr>
+                    <td>11 Personal Marks of identification / पहचान के व्यक्तिगत निशान :</td>
+                    <td>&nbsp;&nbsp; 1. &nbsp;&nbsp;&nbsp;&nbsp;{{adduser.personmark}}<br> <br> <br> &nbsp;&nbsp; 2. &nbsp;&nbsp;&nbsp;&nbsp;{{adduser.personmark1}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>12. Educational Qualification / शैक्षिक योग्यता</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{adduser.Edq}} </td>
+                </tr>
+            </table>
+            <table style="width: 100%;height:250px;">
+                <tr>
+                    <td>Higher Class Studied /<br> हायर क्लास स्टडी की</td>
+                    <td>
+                        Year / साल
+                    </td>
+                    <td>
+                        Result / परिणाम
+                    </td>
+                    <td>
+                        Name & Address of the school / College स्कूल / कॉलेज का नाम और पता
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>{{adduser.HigherClassStudied}}</td>
+                    <td>{{adduser.StudiedYear}}</td>
+                    <td>{{adduser.StudiedResultStatus}}</td>
+                    <td>{{adduser.School_CollegeName}} & {{adduser.School_CollegeAddress}}</td>
+                </tr>
+
+            </table>
+            <table style="width: 100%;height:70px;">
+                <tr>
+                    <td>13. Certificates Produced / उत्पादित प्रमाण पत्र</td>
+                    <td>&nbsp;&nbsp; TC NO. {{adduser.TC_No}}&nbsp;&nbsp;&nbsp; Class &nbsp;&nbsp; {{adduser.TC_Type}} <br> &nbsp;&nbsp; Marks Sheet Of. {{adduser.MarkSheet_of}}&nbsp;&nbsp;&nbsp; Class &nbsp;&nbsp; {{adduser.MarkSheet_of_Type}} </td>
+                </tr>
+            </table>
+            <table style="width: 100%;height:250px;">
+                <tr>
+                    <td>S. No</td>
+                    <td>Name of Organisation</td>
+                    <td>Position Held</td>
+                    <td>Services From</td>
+                    <td>Services To</td>
+                    <td>Last Salary Drawn</td>
+                    <td>Reason for Leaving</td>
+                </tr>
+                <tr>
+                    <td> 1</td>
+                    <td>{{adduser.nameorg}}</td>
+                    <td>{{adduser.position}}</td>
+                    <td>{{adduser.servicef | date: 'dd/MM/yyyy'}} </td>
+                    <td>{{adduser.servicet | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{adduser.lastsalary}}</td>
+                    <td>{{adduser.reasonlev}}</td>
+
+                </tr>
+            </table>
+            <table style="width: 100%;height:250px;">
+                <tr>
+                    <td>15. Additional Qualification if any, for any job
+                    </td>
+                    <td>16. TA/NCC/Scout/Home Guards<br><br> Rank held ......................Certificated obtained .......<br><br> Served From ....................... To ......................
+                    </td>
+                </tr>
+                <tr>
+                    <td>17. Games & Hobbies</td>
+                    <td>{{adduser.Games}} & {{adduser.Hobbies}} </td>
+                </tr>
+            </table>
+            <div class="row col-md-12" style="padding-bottom: 100px; padding-top:30px;color:black">
+                <div class="col-md-12" style="text-align:center;">FINGER PRINTS</div>
+                <div class="col-md-6">LEFT HAND</div>
+                <div class="col-md-6" style="padding-left: 300px">RIGHT HAND</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row col-md-12" style="padding-top:240px">
+        <div class="container" id="component1">
+            <table style="width:100%;height:1500px">
+                <tr>
+                    <td>18. Languages Known / ज्ञात भाषाएँ</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1. Mother Tongue</td>
+                    <td>{{adduser.mother_tongue}}</td>
+                </tr>
+                <tr>
+                    <td>2. {{adduser.language1}}</td>
+                    <td>{{adduser.lanstate1}}</td>
+                </tr>
+                <tr>
+                    <td>3. {{adduser.language2}}</td>
+                    <td>{{adduser.lanstate2}}</td>
+                </tr>
+                <tr>
+                    <td>4. {{adduser.language3}}</td>
+                    <td>{{adduser.lanstate3}}</td>
+                </tr>
+                <tr>
+                    <td>5. {{adduser.language4}}</td>
+                    <td>{{adduser.lanstate4}}</td>
+                </tr>
+
+                <tr style="height:250px;">
+                    <td>19.Give Name & Address of two prominent persions.<br> Other that relatives who know you well<br> / दो प्रमुख धारियों का नाम और पता दें। अन्य वो रिश्तेदार जो आपको <br>अच्छी तरह से जानते हैं </td>
+                    <td>1. &nbsp;{{adduser.prom_in | uppercase}} & {{adduser.prom_in_mobile_no}}<br><br> 2. &nbsp;{{adduser.prom_in1 | uppercase}} & {{adduser.prom_in_mobile_no1}}</td>
+                </tr>
+                <tr style="height:250px;">
+                    <td colspan="2">20. Certified that / प्रमाणित किया है कि <br><br> (a) I have no illness or disability which would hinder my training or service/ <br><br> (b) The Particulars furnished by me in this application are entirely true and correct /<br><br>
+                        <p style="float: right">(Signature of the Applicant)</p>
+                    </td>
+                </tr>
+                <!-- <tr>
+								<td></td>
+								<td><br><br>(Signature of the Applicant)</td>
+							</tr> -->
+                <tr style="padding-top: 54px">
+                    <td colspan="2" style="text-align:center">
+                        <B>DECLARATION / घोषणा</B>
+                        <br><br>
+                        <p> I {{ adduser.Name | uppercase }} hereby solemnly declare that I will serve in the Bharatheeyam Security Services Pvt. Ltd., for the minimum period of six months from the date of appointment and in the event of my leaving the job
+                            earlier to Six months service, I Undertake to pay the Bharatheeyam Security Service Pvt. Ltd., a compensation of Rs. 1,500/- (Rupees one thousand and five hundred only ) towards the expenditure on my recruitment & training.
+                            Alternatively , I hereby give my concent to deduct Rs.1,000/- from my settlements dues.</p>
+
+                        <p> मैं {{ adduser.Name | uppercase }} Bharatheeyam Security Services Pvt में सेवा देंगे। लिमिटेड, नियुक्ति की तारीख से छह महीने की न्यूनतम अवधि के लिए और छह महीने की सेवा से पहले मेरी नौकरी छोड़ने की स्थिति में, मैं भारतियम् सुरक्षा
+                            सेवा प्रा। लिमिटेड, रुपये का मुआवजा। 1,500 / - (एक हजार और पांच सौ रुपये)</p>
+
+                        <p style="float: right;margin-top: 120px;">(Signature of the Applicant)</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row col-md-12" style="padding-top:300px">
+        <div class="container" id="component1">
+
+            <table style="width:100%;height:700px">
+                <tr>
+                    <td colspan="3" style="text-align:center">FOR OFFICIAL USE ONLY</td>
+
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align:center">Sponsors Recommendation</td>
+
+                </tr>
+                <tr>
+                    <td>Sponsored By No :</td>
+                    <td colspan="2">{{adduser.sponsored_by}}</td>
+                </tr>
+                <tr>
+                    <td>Rank :</td>
+                    <td colspan="2">{{adduser.rank}}</td>
+                </tr>
+                <tr>
+                    <td>Name :</td>
+                    <td colspan="2">{{adduser.sponname | uppercase}}</td>
+                </tr>
+                <tr>
+                    <td>Region :</td>
+                    <td colspan="2">{{adduser.Sponregion}}</td>
+                </tr>
+                <tr>
+                    <td>Remarks :</td>
+                    <td colspan="2">{{adduser.remarks}}</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align:center">RECORD OF INTERVIEW</td>
+                </tr>
+                <tr>
+                    <td>Written Work :</td>
+                    <td colspan="2"> {{adduser.RecOfIntWrittenWork}}</td>
+                </tr>
+                <tr>
+                    <td>Appearance :</td>
+                    <td colspan="2"> {{adduser.RecOfIntAppearance}}</td>
+                </tr>
+                <tr>
+                    <td>First Imperssion :</td>
+                    <td colspan="2"> {{adduser.RecOfIntFirstImperssion}}</td>
+                </tr>
+                <tr>
+                    <td>RESULT</td>
+                    <td>{{adduser.RecOfIntResult}}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Designation : </td>
+                    <td colspan="2">Entry: {{adduser.RecOfIntDesignationEntry}}</td>
+
+                </tr>
+                <tr>
+                    <td>To be posted to : </td>
+                    <td colspan="2">{{adduser.RecOfIntToBePostedTo}}</td>
+
+                </tr>
+                <tr>
+                    <td colspan="3">Remarks : {{adduser.RecOfIntRemarks}}</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align:right">Authorised Signatory</td>
+                </tr>
+            </table>
+            <table style="width:100%">
+                <tr>
+                    <td colspan="15" style="text-align:center"> Amount Collected</td>
+                </tr>
+                <tr>
+                    <td colspan="5">TRAINESS EXPENSE ACCOUNT </td>
+                    <td colspan="5" style="text-align:center">UNIFORM DEPOSIT </td>
+                    <td colspan="5" style="text-align:right">CERTIFICATE DEPOSIT AMOUNT</td>
+                </tr>
+                <tr>
+                    <td>Receipt No.<br>& Date</td>
+                    <td>Amount</td>
+                    <td>Med</td>
+                    <td>Shoes</td>
+                    <td>I / Card</td>
+                    <td>N / Tab</td>
+                    <td>Receipt <br>No. & Date</td>
+                    <td>Date</td>
+                    <td>Amount</td>
+                    <td>Dues</td>
+                    <td>Receipt No.<br>Date</td>
+                    <td>Date</td>
+                    <td>Amount</td>
+                    <td>Trainees<br>Expenses</td>
+                    <td>Dues</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+
+                </tr>
+                <tr>
+                    <td colspan="15" style="text-align:center">Medical Examination Report</td>
+                </tr>
+                <tr>
+                    <td colspan="5">1. Blood Presure</td>
+                    <td colspan="10"> : ..................................................................</td>
+                </tr>
+                <tr>
+                    <td colspan="5">2. Cholesterol level</td>
+                    <td colspan="10"> : ..................................................................</td>
+                </tr>
+                <tr>
+                    <td colspan="5">3. Blood sugar</td>
+                    <td colspan="10"> : ..................................................................</td>
+                </tr>
+                <tr>
+                    <td colspan="5">4. Throat</td>
+                    <td colspan="10"> : ..................................................................</td>
+                </tr>
+                <tr>
+                    <td colspan="5">5. Ear</td>
+                    <td colspan="10"> : ..................................................................</td>
+                </tr>
+                <tr>
+                    <td colspan="5">6. Ear</td>
+                    <td colspan="10"> : ..................................................................</td>
+                </tr>
+                <tr>
+                    <td colspan="5">REMARKS OF MEDICAL OFFICER : FIT / UNFIT </td>
+                    <td colspan="10"> : ..................................................................</td>
+                </tr>
+                <tr>
+                    <td colspan="15" style="text-align:right"><br><br>Medical Officer</td>
+                </tr>
+                <tr>
+                    <td colspan="4">T.NO .................... </td>
+                    <td colspan="4">BATCH NO ....................... </td>
+                    <td colspan="4" style="text-align:center">IC NO ......................... </td>
+                    <td colspan="3" style="text-align:right">DATE PF APPT .............................</td>
+                </tr>
+                <tr>
+                    <td colspan="15">PAY SCALE </td>
+                </tr>
+                <tr>
+                    <td colspan="2">BASIC <br></td>
+                    <td colspan="2">HRA <br></td>
+                    <td colspan="2">WA <br></td>
+                    <td colspan="2">CCA <br></td>
+                    <td colspan="2">SPL.ALLCE <br></td>
+                    <td colspan="2">CON.ALLCE <br></td>
+                    <td colspan="3">TOTAL <br></td>
+
+                </tr>
+                <tr>
+                    <td colspan="2"> <br></td>
+                    <td colspan="2"> <br></td>
+                    <td colspan="2"> <br></td>
+                    <td colspan="2"> <br></td>
+                    <td colspan="2"> <br></td>
+                    <td colspan="2"> <br></td>
+                    <td colspan="3"> <br></td>
+
+                </tr>
+                <tr>
+                    <td colspan="15" style="text-align:right;"><br>Authorised Signatory</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <div class="row col-md-12">
+        <div class="container" id="component1">
+            <div class="row">
+
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                    <div style="text-align: center;
+							  padding-bottom: 35px;
+							  padding-top: 30px;color:black">
+                        <div class="header-img">
+                            <img src="/assets/images/Screen Shot 2019-02-15 at 12.21.07 PM.png" style="height: 35px"> <strong style="font-size: 35px;">BHARATHEEYAM SECURITY SERVICES PVT. LTD.,</strong>
+
+                        </div>
+
+                        <div style="font-size: 25px;"> No,29 VGP Rajesh Nagar, 1st Main Road, Narayanapuram, Pallikaranai, Chennai - 600 100.</div>
+
+                    </div>
+                </div>
+                <div class="col-md-12" style="color:black">
+                    <div style="font-size: 35px;
+							   text-align: center;
+							   padding-bottom: 25px;">AGREEMENT</div>
+                    <div style="text-align: left;
+							   font-size: 20px; ">THIS AGREEMENT made this day of &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{adduser.date_joining | date: 'dd/MM/yyyy'}}&nbsp;&nbsp;<br><br> Between M/s Bharatheeyam Security Services Pvt. Ltd., Plot No. 29, VGP Rajesh Nage, !st
+                        MainRoad, Narayanapuram, Pallikaranai, Chennai - 600 100. FIRST PARTY
+                    </div>
+                    <div style="text-align: center;
+							   padding-bottom: 30px;
+							   padding-top: 30px;font-size: 20px;">AND</div>
+                    <div style="font-size: 20px;">Name &nbsp;&nbsp;&nbsp;&nbsp;{{adduser.Name | uppercase}}&nbsp;&nbsp;&nbsp;&nbsp;aged about &nbsp;&nbsp;&nbsp;&nbsp;{{adduser.age}}&nbsp;&nbsp;&nbsp;&nbsp;yrs. S/o., D/o &nbsp;&nbsp;&nbsp;&nbsp;{{adduser.father_name | uppercase}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        residing at &nbsp;&nbsp;&nbsp;&nbsp;{{adduser.Address}}&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br> (Full Address) Hereinafter called - the SECOND PARTY.
+                    </div>
+
+                    <div style="text-align:left;font-size: 20px;padding-top: 70px;">
+                        <p></p> Whereas the First Party as a manpower security provider, depute personnel on temporary contract basis as security staff for performing contract duties for a period of one year or till the cessation of contract or removal of
+                        the Second party due to administrative reasons. The Second Party has agreed to abide the contract with the following terms and conditions.
+                        <p></p> 1.The Second party’s contract with the project is till the continuation of the referred contract or one year or removal whichever is earlier.
+                        <p></p> 2.The Second party will not be on Employment of any other employer on the date of commencement of this agreement.
+                        <p></p> 3.The Contract work will be on shift basis as per contract terms of particular project.
+                        <p></p> 4.The first party shall pass on the Second party monthly contract wages inclusive of statutory benefits / liabilities, as per the rate approved by the Manager, and will be paid on within 3 days of receipt of cheque from the
+                        user / after 7 days of closure of attendance for which the wage is due.
+                        <p></p> 5.The Second party SHALL NOT be absent without the consent of first party or his authorized representatives where he is on contract duties.
+                        <p></p> 6.The work is purely of contract nature and on “No work No pay basis.
+                        <p></p> 7.Wages and such deduction shall be proportionate to the absence.
+                        <p></p> 8.The Second Party shall be eligible for the wages as per Government of TN, and actually received from the contract work.
+                        <p></p> 9.The Second Party shall devote his / her whole time attention, energy and abilities during business hour to the business of the contracted place of the First Party.
+                        <p></p> 10.The Second Party shall not be employed or engaged in any other business or occupation while on contract through the First Party.
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="row col-md-12" style="padding-top:10px;color:black">
+        <div class="container" id="component1">
+            <div class="row">
+
+                <div class="col-md-12">
+
+
+
+
+                    <div style="text-align:left;font-size: 20px;color:black"><br> 11.The Second Party during his / her contract under this agreement, except as authorized by the First Party / User at work will not divulge or make known any information relating to the First Party / User or any other information
+                        which may come to his / her knowledge in the course of his contract work in any way, to any unauthorized person.<br> 12.The contract is under this agreement for a period of one year. On conclusion / termination of the contract
+                        with the project or abolition of the contracted post or the individual unauthorized absenting for more than seven days continuously, it shall be deemed that this agreement has reached cessation.<br> 13.This contract can be terminated
+                        by either party by giving one week notice in writing or if on such notice is given, then by giving / deduction of one week’s contract wages.<br> 14.If the Second Party is found unwanted by the contract project officials due to
+                        lack of Punctuality,non-co-operation, dereliction, negligence of his / her duties, then the contract will be terminated by the First Party without notice or payment in lieu.<br> 15.
+                        <span>THE FIRST PARTY </span>may re-contract the Second Party for any other Projects.<br> 16.On expiry of his contract / relieving the Second Party shall hand over all Books, Register, Documents / Stores Materials or any other
+                        thing belonging to<span class="ft21">THE FIRST PARTY </span>or the contract project to the successor / <span class="ft21">THE FIRST PARTY.</span><br> 17.The Second Party will be always be properly, smartly dressed in M/s. Bharatheeyam
+                        Security Services Pvt. Ltd., Uniform, while on duty. It is agreed that he / she will not be found drunk / smoking in place of work. For these violations, he / she will be removed on the spot without assigning reason or time.<br>                        18.For the matters other than the ones mentioned above, the contract Rules of M/s. Bharatheeyam Security Services Pvt. Ltd., shall be clarified by the SECOND PARTY before signing this agreement and he / she is deemed to have understood
+                        the terms and conditions of the contract conditions of M/s. Bharatheeyam Security Services Pvt. Ltd., in the light of Contract Agency and not an Employer / Principal Employer and THE SECOND PARTY will not have any claim of employment
+                        related matters with M/s. Bharatheeyam Security Services / Pvt. Ltd.,<br>
+                    </div>
+
+
+
+
+                </div>
+                <div class="col-md-12">
+                    <div class="row" style="padding-top: 60px;color:black">
+                        <div class="col-md-6" style="padding-top: 35px;
+							padding: 18px;
+							font-size: 20px;">
+                            WITNESSES :
+                        </div>
+                        <div class="col-md-6" style="padding-top: 35px;
+							padding: 18px;
+							font-size: 20px; float:right;">
+                            READ, AGREED & UNDERSTOOD
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6" style="padding-top: 35px;
+								padding: 18px;
+								font-size: 20px;color:black">
+                            1.
+                            <br>
+                            <br>
+                        </div>
+                        <div class="col-md-6" style="padding-top: 35px;
+								padding: 18px;
+								font-size: 20px;color:black">
+                            1. M/s. Bharatheeyam Security Services Pvt. Ltd.,
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6" style="padding-top: 35px;
+									padding: 18px;
+									font-size: 20px;color:black">
+
+                        </div>
+                        <div class="col-md-6" style="padding-top: 35px;
+									padding: 18px;
+									font-size: 20px;color:black">
+                            <br> ............................................
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6" style="padding-top: 35px;
+										padding: 18px;
+										font-size: 20px;color:black">
+                            2.
+                        </div>
+                        <div class="col-md-6" style="padding-top: 35px;
+										padding: 18px;
+										font-size: 20px;color:black">
+                            2. Contract Employee's Signature
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6" style="padding-top: 35px;
+											padding: 18px;
+											font-size: 20px;color:black">
+
+                        </div>
+                        <div class="col-md-6" style="padding-top: 35px;
+											padding: 18px;
+											font-size: 20px;color:black">
+                            <br> Date : {{currentdate | date: 'dd/MM/yyyy'}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" style="padding-top: 35px;
+										   padding: 18px;
+										   font-size: 20px;color:black">
+                    Place :
+                </div>
+                <div class="col-md-12" style="padding-top: 35px;
+											   padding: 18px;
+											   font-size: 20px;color:black">
+                    Date : {{currentdate | date: 'dd/MM/yyyy'}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row col-md-12" style="padding-top:10px">
+        <div class="container" id="component1">
+            <div class="row">
+                <div class="col-md-8" style="text-align:center;color:black">
+                </div>
+                <div class="col-md-4" style="font-size: 10px; text-align: center;color:black">
+                    <strong> New Form No.-11 - Declaration Form </strong><br> (To be retained by the employer for future reference)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="text-align:center;color:black">
+                    Employee' PROVIDENT FUND ORGANISATION
+                </div>
+                <div class="col-md-12" style="font-size: 10px; text-align: center;color:black">
+                    EMPLOYEE' PROVIDENT FUNDS SCHEME, 1952 (Paragraph 34 & 57) &<br> Employees' Pension Schemem, 1995 (Paragraph 24)<br> (Declaration by a person taking up employement in any establishment on which EPF scheme. 1952 and /or EPS, 1995 is
+                    applicable)
+                </div>
+
+                <table style="width:100% ; font-size: 10px;color:black">
+                    <tr>
+                        <td>Name of the member</td>
+                        <td>{{adduser.Name | uppercase}}</td>
+                    </tr>
+                    <tr>
+                        <td>Father's Name / Spouse's Name <br> (Please tick whichever is applicable)
+                        </td>
+                        <td>{{adduser.father_name | uppercase}}</td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth : (DD/MM/YYY)</td>
+                        <td>{{adduser.Date_of_birth | date: 'dd/MM/yyyy'}}</td>
+                    </tr>
+                    <tr>
+                        <td>Gender : (Male / Female / Transgender)</td>
+                        <td>{{adduser.gender}}</td>
+                    </tr>
+                    <tr>
+                        <td>Marital Status: (Married/Unmarried/Widow/Widower/Divorcee)</td>
+                        <td>{{adduser.material_status}}</td>
+                    </tr>
+                    <tr>
+                        <td>(A) Email ID : <br> (B) Mobile No :</td>
+                        <td>{{adduser.Email_ID}} <br>{{adduser.Mobile_No}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Whether Earlier a member of Employees' Provident Fund Scheme,</td>
+                        <td> Yes / No</td>
+                    </tr>
+                    <tr>
+                        <td>Whether Earlier a member of Employees' Pension Scheme,1995</td>
+                        <td> Yes / No</td>
+                    </tr>
+                    <tr>
+                        <td>Previous employement details: [if yes to 7 And / Or 8 above]</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>A) Universal Account Number:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>B)Pervious Pf Amount Number:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>C)Date of exit from Pervious employement: (DD/MM/YYYY)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>D)Scheme cerificate No. (if Issued)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>E)Pension Payment Order</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>a)International Worker :</td>
+                        <td> Yes / No </td>
+                    </tr>
+                    <tr>
+                        <td>b)If Yes, State Country of origin (India/ Name of the other Country):</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>c)Passport No :</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>c)Validity of passport [(DD/MM/YYYY) TO (DD/MM/YYYY)] :</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>KYC Details : (Attach self Attested Copies of following KYCs)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Bank Account No . & IFS Code</td>
+                        <td>{{adduser.a_c}} & {{adduser.ifsc}}</td>
+                    </tr>
+                    <tr>
+                        <td>AADHAR Number</td>
+                        <td>{{adduser.aadhar_card}}</td>
+                    </tr>
+                    <tr>
+                        <td>Permenaent Account number (PAN), if available</td>
+                        <td>{{adduser.pan}}</td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="font-size: 10px;color:black">
+                    <p style="text-align: center"><b>UNDERTAKING</b></p>
+                    <p>1) Certified that the particulars are true to the best of my Knowladge.</p>
+                    <p>2) I autharize EPFO to use my Aathar for verification/authentication/eKYC Purpose for service Delivery</p>
+                    <p>3) Kindly transfer the funds and service details, if applicable, from the previous PF acount as declared above to the present P.F.Account. <br> (The transfer would be possible only if the identified KYC detail approved by previous
+                        employer has been verified by present employer using his Digital Signature Certificate)</p>
+                    <p>4) In case of changes in above details, the same will be intimated to employer at the earliest.</p>
+
+                    <p>Date :</p>
+                    <p>Place : <span style="padding-left: 900px;">Signature of Member</span></p>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12" style="font-size: 10px;color:black">
+                    <p style="text-align: center"><b>DECLARATION BY PRESENT EMPLOYER</b></p>
+
+                    <p>A) The member Mr./Ms./Mrs. &nbsp;&nbsp;{{adduser.Name | uppercase}}&nbsp;&nbsp; has joined on &nbsp;&nbsp; {{adduser.date_joining | date: 'dd/MM/yyyy'}}&nbsp;&nbsp; and has been allotted PF Number &nbsp;&nbsp; {{adduser.pf1}}&nbsp;&nbsp;</p>
+                    <p>B) In case the person was earlier not a member of EPF Scheme,1952 and ESP, !995: </p>
+                    <p>(Post allotment of UAN) the UAN allotted for the member is &nbsp;&nbsp; {{adduser.uan}}&nbsp;&nbsp; </p>
+                    <p>Please Tick the Appropriate Option:</p>
+                    <p>The KYC details of the ablove meember in the UAN database</p>
+                    <p><i  style="font-size: 10px;" class="material-icons m-1 ng-star-inserted">check_box_outline_blank</i>Have not beeb uploaded</p>
+                    <p><i  style="font-size: 10px;" class="material-icons m-1 ng-star-inserted">check_box_outline_blank</i>Have Been uploaded but not approved</p>
+                    <p><i  style="font-size: 10px;" class="material-icons m-1 ng-star-inserted">check_box_outline_blank</i>Have been Uploaded and Approved with DSC </p>
+                    <p>C)In Case the person was earlier a member of EPF scheme, 1952 and EPS 1995: </p>
+                    <p>the above PF Account number / UAN of the member as mentioned in (A) above has been tagged with his/her UAN/previous member ID as declared by member.</p>
+                    <p>Please Tick the Appropriate Option:-</p>
+                    <p><i  style="font-size: 10px;" class="material-icons m-1 ng-star-inserted">check_box_outline_blank</i>The KYC Detaisl of the above member in the UAN database have been approved with Digital Signature Certicficate abd
+                        Transfer request has been grnerated on portal.</p>
+                    <p><i  style="font-size: 10px;" class="material-icons m-1 ng-star-inserted">check_box_outline_blank</i>As the DSC of Establishment are not registed with EPFO, the memeber has ben informed to file physical claim (Form-13)for
+                        transfer of funds from his Pervious establishment</p>
+
+                    <p>Date: <span style="padding-left: 545px;">Signature of Employer With Seak if Establisment</span></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row col-md-12">
+        <div class="container" id="component1">
+            <div class="row">
+                <div class="col-md-8" style="text-align:center;color:black">
+                </div>
+                <div class="col-md-4" style="font-size: 10px; text-align: center;color:black">
+                    <strong> (FORM 2 REVISED )</strong>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="text-align:center;color:black">
+                    NOMINATION AND DECLARATION FROM FOR UNEXEMPTED / EXEMPTED ESTABLISHMENTS
+                </div>
+                <div class="col-md-12" style=" text-align: center;color:black">
+                    Declaration and Nomination From Under the Employees provident Funds and Employees Pension Schemes<br> (Paragraph 33 and 61 (1) of the Employees Provident Funds Scheme 1952 and Paragraph 18 of the Employees Pension Scheme 1995)<br>
+                </div>
+
+                <div class="row" style="padding-top: 40px;color:black">
+                    <div class="col-md-12">
+                        1.Name (IN BLOCK LETTERS) : &nbsp;&nbsp;{{adduser.Name | uppercase}}
+                        <br>
+                    </div>
+                    <div class="col-md-12" style="padding-top: 15px;color:black">
+                        A)Father'S / Husband's Name (IN BLOCK LETTERS) : &nbsp;&nbsp;{{adduser.father_name | uppercase}} <br>
+                    </div>
+                    <div class="col-md-12" style="padding-top: 15px;color:black">
+                        B)Surname (IN BLOCK LETTERS) : ...............................................................................................................................................................<br>
+                    </div>
+                    <div class="col-md-12" style="padding-top: 15px;color:black">
+                        2.Date of Birth: &nbsp;&nbsp;{{adduser.Date_of_birth | date: 'dd/MM/yyyy'}} <br> 3. Account No : &nbsp;&nbsp;{{adduser.a_c}} <br>
+                    </div>
+                    <div class="col-md-12" style="padding-top: 15px;color:black">
+                        4.Sex (Male/Female) : &nbsp;&nbsp;{{adduser.gender}}<br> 5. Marital Status : &nbsp;&nbsp;{{adduser.material_status}}<br>
+                    </div>
+                    <div class="col-md-12" style="padding-top: 15px;color:black">
+                        6 . Address Permanent / Temporary : &nbsp;&nbsp;{{adduser.permentaddress}}<br>
+                    </div>
+                    <div class="col-md-12" style="padding-top: 120px;
+											text-align: center;color:black">
+                        PART _ A (EPF)
+                    </div>
+                    <div class="col-md-12" style="padding-top: 20px;
+											text-align: center;color:black">
+                        I hereby nominate the person (s)/Cancel the Nomination made by me perviously and nominate the person(s) meintioned below <br> to receive the amount standing to my credit in the Employee provident Fund, un the Event of my death.
+                    </div>
+                </div>
+
+                <table style="height: 100%; width:100% ; color:black">
+                    <tr>
+                        <td>Name of the <br>Nominess(s)</td>
+                        <td>Address</td>
+                        <td>Nominees's<br>relationship with<br>the member</td>
+                        <td>Date of Birth</td>
+                        <td>Total amount or Share <br> of Accumulations in provident<br> Funds of be paid <br>to each nominee</td>
+                        <td>If the nominee is minor<br> name and address of the <br>guardian who may receive <br>the amount during the <br>minority of the nominee</td>
+                    </tr>
+
+                    <tr>
+                        <td style="height: 45px;">{{adduser.nomiename1 | uppercase}}</td>
+                        <td style="height: 45px;">{{adduser.permentaddress}}</td>
+                        <td style="height: 45px;">{{adduser.nomierelation1}}</td>
+                        <td style="height: 45px;">{{adduser.nomiedate1 | date: 'dd/MM/yyyy'}}</td>
+                        <td style="height: 45px;">{{adduser.nomiefund1}}</td>
+                        <td style="height: 45px;">{{adduser.nomiemirror1}}</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 45px;">{{adduser.nomiename2 | uppercase}}</td>
+                        <td style="height: 45px;">{{adduser.permentaddress}}</td>
+                        <td style="height: 45px;">{{adduser.nomierelation2}}</td>
+                        <td style="height: 45px;">{{adduser.nomiedate2 | date: 'dd/MM/yyyy'}}</td>
+                        <td style="height: 45px;">{{adduser.nomiefund2}}</td>
+                        <td style="height: 45px;">{{adduser.nomiemirror2}}</td>
+
+                    </tr>
+                    <tr>
+                        <td style="height: 45px;">{{adduser.nomiename3 | uppercase}}</td>
+                        <td style="height: 45px;">{{adduser.permentaddress}}</td>
+                        <td style="height: 45px;">{{adduser.nomierelation3}}</td>
+                        <td style="height: 45px;">{{adduser.nomiedate3 | date: 'dd/MM/yyyy'}}</td>
+                        <td style="height: 45px;">{{adduser.nomiefund3}}</td>
+                        <td style="height: 45px;">{{adduser.nomiemirror3}}</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 45px;">{{adduser.nomiename4 | uppercase}}</td>
+                        <td style="height: 45px;">{{adduser.permentaddress}}</td>
+                        <td style="height: 45px;">{{adduser.nomierelation4}}</td>
+                        <td style="height: 45px;">{{adduser.nomiedate4 | date: 'dd/MM/yyyy'}}</td>
+                        <td style="height: 45px;">{{adduser.nomiefund4}}</td>
+                        <td style="height: 45px;">{{adduser.nomiemirror4}}</td>
+
+                    </tr>
+                    <tr>
+                        <td style="height: 45px;">{{adduser.nomiename5 | uppercase}}</td>
+                        <td style="height: 45px;">{{adduser.permentaddress}}</td>
+                        <td style="height: 45px;">{{adduser.nomierelation5}}</td>
+                        <td style="height: 45px;">{{adduser.nomiedate5 | date: 'dd/MM/yyyy'}}</td>
+                        <td style="height: 45px;">{{adduser.nomiefund5}}</td>
+                        <td style="height: 45px;">{{adduser.nomiemirror5}}</td>
+
+                    </tr>
+                    <tr>
+                        <td style="height: 45px;"></td>
+                        <td style="height: 45px;"></td>
+                        <td style="height: 45px;"></td>
+                        <td style="height: 45px;"></td>
+                        <td style="height: 45px;"></td>
+                        <td style="height: 45px;"></td>
+
+                    </tr>
+                    <tr>
+                        <td style="height: 45px;"></td>
+                        <td style="height: 45px;"></td>
+                        <td style="height: 45px;"></td>
+                        <td style="height: 45px;"></td>
+                        <td style="height: 45px;"></td>
+                        <td style="height: 45px;"></td>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="row" style="color:black;padding-top: 30px;">
+                <div class="col-md-12">
+
+                    <p>1. * Certified that I have no family as defined in para 2 (g) of the Employees Provident Fund Scheme 1952 and Should I acquire a family hereafter the above nomination should be deemed as cancelled. </p>
+                    <p>2) * Certified that my father/ mother is are dependent upon me.</p>
+
+                    <p>Strile out whichever is not applicable : <span style="padding-left: 900px;">Signature/ or Thumb impression of the Subscriber:</span></p>
+
+                </div>
+
+            </div>
+            <div class="row" style="color:black;padding-top: 250px;">
+                <div class="col-md-12">
+                    <p style="text-align: center"><b>PART - (EPS)</b></p>
+                    <p style="text-align: center"><b>Para-18</b></p>
+
+                    <p>I hereby furnish below particulars of the member of my family who would be eligible to recive Widow/Childern Pension in the event of my permature death in service</p>
+
+
+                </div>
+            </div>
+            <table style="width:100% ;">
+                <tr>
+                    <td>Sr. No</td>
+                    <td>Name & Address of the Family Member</td>
+                    <td>Age</td>
+                    <td>Relationship with the member</td>
+                </tr>
+
+                <tr>
+                    <td style="height: 45px;">1.</td>
+                    <td style="height: 45px;"> {{adduser.nname1 | uppercase}} & {{adduser.permentaddress}} </td>
+                    <td style="height: 45px;"> {{adduser.nage1}} </td>
+                    <td style="height: 45px;">{{adduser.nrelationship1}}</td>
+
+
+
+                </tr>
+                <tr>
+                    <td style="height: 45px;">2.</td>
+                    <td style="height: 45px;"> {{adduser.nname2 | uppercase}} & {{adduser.permentaddress}} </td>
+                    <td style="height: 45px;"> {{adduser.nage2}} </td>
+                    <td style="height: 45px;">{{adduser.nrelationship2}}</td>
+
+
+
+                </tr>
+                <tr>
+                    <td style="height: 45px;">3.</td>
+                    <td style="height: 45px;"> {{adduser.nname3 | uppercase}} & {{adduser.permentaddress}} </td>
+                    <td style="height: 45px;"> {{adduser.nage3}} </td>
+                    <td style="height: 45px;">{{adduser.nrelationship3}}</td>
+
+
+
+                </tr>
+                <tr>
+                    <td style="height: 45px;">4.</td>
+                    <td style="height: 45px;"> {{adduser.nname4 | uppercase}} & {{adduser.permentaddress}} </td>
+                    <td style="height: 45px;"> {{adduser.nage4}} </td>
+                    <td style="height: 45px;">{{adduser.nrelationship4}}</td>
+
+
+
+
+                </tr>
+                <tr>
+                    <td style="height: 45px;">5.</td>
+                    <td style="height: 45px;"> {{adduser.nname5 | uppercase}} & {{adduser.permentaddress}} </td>
+                    <td style="height: 45px;"> {{adduser.nage5}} </td>
+                    <td style="height: 45px;">{{adduser.nrelationship5}}</td>
+
+
+
+                </tr>
+                <tr>
+                    <td style="height: 45px;">6.</td>
+                    <td style="height: 45px;"></td>
+                    <td style="height: 45px;"></td>
+                    <td style="height: 45px;"></td>
+
+
+
+                </tr>
+                <tr>
+                    <td style="height: 45px;">7.</td>
+                    <td style="height: 45px;"></td>
+                    <td style="height: 45px;"></td>
+                    <td style="height: 45px;"></td>
+
+
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row col-md-12" style="padding-top:10px;color:black">
+        <div class="container" id="component1">
+            <div class="row">
+                <div class="col-md-12" style="text-align:left ;padding-top: 40px;">
+                    certified that I have no family as defined in para 2 (VII) of the Employee's Family Pesion Scheme 1995 and Should I acquire a family hereafter i shall furnish Particulars there on in the above form.
+                </div>
+                <div class="col-md-12" style="text-align:left; padding-top: 20px;padding-bottom: 40px;">
+                    I hereby nominate the following person for receiving tje monthly widow pension (admissible under para 16 2 (a) (i) & (ii) in the event of the my death without leaving any eligible family member for receiving pernsion.)
+                </div>
+
+
+
+                <table style="width:100%;">
+                    <tr>
+                        <td>Name and Address of the Nominee</td>
+                        <td>Date of birth</td>
+                        <td>Relationship with member</td>
+
+                    </tr>
+
+                    <tr>
+                        <td style="height: 45px;">{{adduser.nname1 | uppercase}} & {{adduser.permentaddress}}</td>
+                        <td style="height: 45px;">{{adduser.nomiedate1 | date: 'dd/MM/yyyy'}}</td>
+                        <td style="height: 45px;">{{adduser.nrelationship1}}</td>
+                    </tr>
+
+                    <tr>
+                        <td style="height: 45px;">{{adduser.nname2 | uppercase}} & {{adduser.permentaddress}}</td>
+                        <td style="height: 45px;">{{adduser.nomiedate2 | date: 'dd/MM/yyyy'}}</td>
+                        <td style="height: 45px;">{{adduser.nrelationship2}}</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 45px;">{{adduser.nname3 | uppercase}} & {{adduser.permentaddress}}</td>
+                        <td style="height: 45px;">{{adduser.nomiedate3 | date: 'dd/MM/yyyy'}}</td>
+                        <td style="height: 45px;">{{adduser.nrelationship3}}</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 45px;">{{adduser.nname4 | uppercase}} & {{adduser.permentaddress}}</td>
+                        <td style="height: 45px;">{{adduser.nomiedate4 | date: 'dd/MM/yyyy'}}</td>
+                        <td style="height: 45px;">{{adduser.nrelationship4}}</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 45px;">{{adduser.nname5 | uppercase}} & {{adduser.permentaddress}}</td>
+                        <td style="height: 45px;">{{adduser.nomiedate5 | date: 'dd/MM/yyyy'}}</td>
+                        <td style="height: 45px;">{{adduser.nrelationship5}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p><br>Date : {{currentdate | date: 'dd/MM/yyyy'}}</p>
+                    <p style="padding-top: 20px;float:right">Signature of thumb impression of the subscriber</p>
+                </div>
+
+            </div>
+            <hr>
+
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p style="text-align: center;padding-top: 10px;"><b>CERTIFICATE BY EMPLOYER</b></p>
+                    <p style="padding-top:20px">CERTIFIED THAT THE ABOVE DECLARTION AND NOMINATION HAS BEEN SIGNED / THUMB IMPRESSED BEFORE ME BY SHRO / SMT. / MISS<br> ...................................................................................................... employed
+                        in my establishment after he/ she has read the entries/ the entries have been read over to him/her by me and got confirmed by <br> him/her
+                    </p>
+                    <p style="padding-top:20px">Date : &nbsp;&nbsp;{{currentdate | date: 'dd/MM/yyyy'}} <span style="padding-left: 300px;">Signature of the employer or other authorised officer of the establishment</span></p>
+                    <p style="padding-top:20px">Name & Address of the FActory / Establishment</p>
+                    <p style="padding-top:20px">Place : </p>
+                    <p style="padding-top:20px">Date : &nbsp;&nbsp;{{currentdate | date: 'dd/MM/yyyy'}}</p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <ng-container *ngFor="let data of datasss">
+        <table style="width: 100%; height: 1200px">
+            <img src="{{data}}" style="height:650px;width:550px;">
+        </table>
+    </ng-container>
+
+
+
+
+
+
+
+</div>

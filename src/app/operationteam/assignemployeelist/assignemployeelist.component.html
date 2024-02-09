@@ -1,0 +1,61 @@
+
+<!-- Client Management -->
+<div class="service-form col-md-12">
+
+    <div class="row">
+      <div class="header">
+  
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-3">
+                        <h3 class="adsc"> <i class="fa fa-university"></i>  &nbsp;Assigned Employee List</h3></div>
+                        <div class="col-md-6">
+                            <input type="month" class=" pull-right" (change)="month($event.target.value)">
+                        </div>
+              </div>
+        <br></div><br>
+  
+        <div class="col">
+  
+          <div class="col-md-12">
+            <div class="row">
+              <div class="tabl" >
+                  <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                      <thead>
+                          <tr>
+                              <th>SL.NO</th>
+                              <th>Employee ID</th>
+                              <th>Employee Name</th>
+                              <th>Employee Type</th>
+                              <th>Mobile Number</th>
+                              <th>Email_id</th>
+                              <th>Address</th>
+                             
+                          </tr>
+                      </thead>
+                      <tbody>
+                                  <ng-container  *ngFor="let data of datas ;  let i = index">
+                                  <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                      <td>{{i + 1}}</td> 
+                                      <td>{{data.id}}</td>
+                                      <td id="l1">{{data.Name}}</td>
+                                      <td id="a1">{{data.employee_type}}</td>
+                                      <td id="pc1">{{data.Mobile_No}}</td>
+                                      <td id="pc1">{{data.Email_ID}}</td>
+                                  </ng-container>      
+                      </tbody>
+                  </table>
+                  <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                  <div class="card-footer p-0">
+                  <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                          </div>     
+            </div>
+            </div>
+          </div>
+          </div>
+  </div>
+  </div>  
+          <div *ngIf="deleteLoading" id="snackbar" class="show">Deleting... Pleaser Wait!</div>
+  
+  
+  
+  

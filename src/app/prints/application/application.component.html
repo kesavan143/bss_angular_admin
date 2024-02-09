@@ -1,0 +1,364 @@
+<div  class="row">
+    <div  class="header">
+        <h3  class="adsc">
+            <i class="material-icons ng-star-inserted">business</i> &nbsp;PAYSLIP</h3>
+    </div>
+</div>
+
+<div class="row" style="padding-bottom: 30px;">
+    <Br>
+
+    <div class=row>
+        <div class="col-md-4">
+            <div class="col-md-2">
+                <label style="font-weight: 700;">Month</label>
+            </div>
+            <div class="col-md-2" style="display: flex">
+                <input type="month" [(ngModel)]="date" name="month" #month>
+                <button class="btn-info btn-lg" style="margin-left: 22px;" (click)="dateChange()">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container col-lg-12" style="margin-bottom: 50px;">
+    <table style="border: none!important">
+
+        <tr style="border: none!important;text-align: center">
+            <td colspan="8"><strong>BHARATHEEYAM SECURITY SERVICES PVT LTD.</strong></td>
+        </tr>
+        <tr style="border: none!important;text-align: center">
+            <td colspan="8"><strong>Payslip for the month of {{item.date}}</strong></td>
+        </tr>
+
+        <tbody style="border: 1px solid #000;border-right: 1px solid #000">
+            <tr style="border: none!important;color: #000">
+                <td style="width: 10%">Ecode</td>
+                <td style="width: 30%"><strong>{{item.ecode}}</strong></td>
+                <td style="width: 10%"><strong>UName</strong></td>
+                <td style="width: 50%;border-right: 1px solid #000">{{item.unit_name}}</td>
+
+            </tr>
+
+            <tr style="border: none!important;">
+                <td>Name</td>
+                <td><strong>{{item.ename}}</strong></td>
+                <td></td>
+                <td style="border-right: 1px solid #000"></td>
+
+
+            </tr>
+            <tr style="border: none!important; ">
+                <td>Designation</td>
+                <td><strong>{{item.designation}}</strong></td>
+                <td></td>
+                <td style="border-right: 1px solid #000"></td>
+
+            </tr>
+
+            <tr>
+
+            </tr>
+
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+    <br>
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-3" style="padding-right: 0px;padding-left: 0px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Bank Details</th>
+                    </tr>
+                </thead>
+                <tbody class="bank">
+                    <tr>
+                        <td>Days Present :</td>
+                        <td>{{item.present}}</td>
+                    </tr>
+                    <tr>
+                        <td>Bank Name : </td>
+                        <td>{{item.ebankname}}</td>
+                    </tr>
+                    <tr>
+                        <td>A/C No :</td>
+                        <td>{{item.eifsc}}</td>
+                    </tr>
+                    <tr>
+                        <td>PFNo :</td>
+                        <td>6437</td>
+                    </tr>
+                    <tr>
+                        <td>UanNo :</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>ESINo :</td>
+                        <td>5117007312</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3" style="padding-right: 0px;padding-left: 0px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">EARNINGS</th>
+                    </tr>
+                </thead>
+                <tbody class="earning">
+                    <tr>
+                        <td>Basic</td>
+                        <td> {{item.basic}}</td>
+                    </tr>
+                    <tr>
+                        <td>D.A.</td>
+                        <td>{{item.da}}</td>
+                    </tr>
+                    <tr>
+                        <td>H.R.A</td>
+                        <td>{{item.hra}}</td>
+                    </tr>
+                    <tr>
+                        <td>Trv. Exp.</td>
+                        <td>{{item.trv_ex}}</td>
+                    </tr>
+                    <tr>
+                        <td>Others</td>
+                        <td>{{item.others}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3" style="padding-right: 0px;padding-left: 0px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="6">DEDUCTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PF :</td>
+                        <td>{{item.pf}}</td>
+                    </tr>
+                    <tr>
+                        <td>ESI :</td>
+                        <td>{{item.esi}}</td>
+                    </tr>
+                    <tr>
+                        <td>Ptax :</td>
+                        <td>{{item.pr_tax}}</td>
+                    </tr>
+                    <tr>
+                        <td>Advance:</td>
+                        <td>{{item.advance}}</td>
+                    </tr>
+                    <tr>
+                        <td>Loan:</td>
+                        <td>{{item.loan}}</td>
+                    </tr>
+                    <tr>
+                        <td>Uniform:</td>
+                        <td>{{item.uniform}}</td>
+                    </tr>
+                    <tr>
+                        <td>Mess:</td>
+                        <td>{{item.mess}}</td>
+                    </tr>
+                    <tr>
+                        <td>Rent:</td>
+                        <td>{{item.rent}}</td>
+                    </tr>
+                    <tr>
+                        <td>ATM Card:</td>
+                        <td>{{item.atm}}</td>
+                    </tr>
+                    <tr>
+                        <td>Others:</td>
+                        <td>{{item.others}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3" style="padding-right: 0px;padding-left: 0px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Pay</th>
+                    </tr>
+                </thead>
+                <tbody class="pay">
+                    <tr>
+                        <td>Gross:</td>
+                        <td> {{item.gross}}</td>
+                    </tr>
+                    <tr>
+                        <td>Deductions: </td>
+                        <td>{{item.total_dec}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <th>Netpay : </th>
+                        <th>{{item.net_pay}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+
+<br> <br>
+
+<!-- <div class="container col-lg-12" style="text-align: center">
+      
+        <table class="table table-striped" id="datTabl" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+          <thead>
+            <tr>
+              <th>
+                <mfDefaultSorter by="company_name">COMPANY NAME</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="unit_name">UNIT NAME</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="etype">DCODE</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="designation">DESIGNATION</mfDefaultSorter>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of mf.data; let i = index">
+              <td>{{item.company_name}}</td>
+              <td>{{item.unit_name}}</td>
+              <td>{{item.etype}}</td>
+              <td>{{item.designation}}</td>
+      
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4" style="text-align: center">
+                <mfBootstrapPaginator [rowsOnPageSet]="[10,25,100]"></mfBootstrapPaginator>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <div class="row app-header text-center">
+        <div class="col-md-3">
+        </div>
+
+        <div class="col-md-9 d-flex header-name">
+
+            <img src="/assets/images/Screen Shot 2019-02-15 at 12.21.07 PM.png" alt="" width="36px" height="36px">
+            <h3>BHARATHEEYAM SECURITY SERVICES PVT.LTD.</h3>
+
+
+
+
+        </div>
+    </div>
+    <div class="sub-header">
+
+        <p>Payslip for the month of May / 2019</p>
+
+    </div>
+
+
+    <div class="table-content">
+        <table class="pay-slip" style="width: 100%;">
+            <tr >
+                <td style="width: 5%;border: none;">ECode</td>
+                <td style="width: 20%"><strong>P21946</strong></td>
+                <td style="width: 10%"><strong>UName</strong></td>
+                <td style="width: 65%">ISPROUT GUINDY - ROP:11716/</td>
+            </tr>
+            <tr>
+                <td style="width: 5%">Name</td>
+                <td colspan="3"><strong>John William</strong></td>
+            </tr>
+            <tr style="border-collapse:collapse; border:1px solid #000!important;">
+                <td style="width: 5%">Designation</td>
+                <td colspan="3"><strong>SG - SECURITY GUARD</strong></td>
+            </tr>
+            <tr>
+                <td style="width: 5%">Name</td>
+                <td colspan="3"><strong>John William</strong></td>
+            </tr>
+        </table>
+
+    </div>
+
+</div> -->
+
+
+
+<!-- <div class="container">
+    <div class="row app-header text-center">
+        <div class="col-md-1">
+        </div>
+
+        <div class="col-md-11 d-flex header-name">
+            <img src="/assets/images/Screen Shot 2019-02-15 at 12.21.07 PM.png" alt="" width="50px" height="50px">
+            <h3>BHARATHEEYAM SECURITY SERVICES PVT.LTD.,</h3>
+
+        </div>
+    </div>
+    <div class="row  text-center">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 head-address">
+            <p class="text-center">No.29, VGP Rajesh Nagar, 1st Main Road, Narayanapuram,</p>
+            <p class="text-center">Pallikaranai, Chennai - 600 100.</p>
+
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class=" ">
+        <div class="bio-data">
+            <h4 class="text-center">BIO-DATA</h4>
+        </div>
+    </div>
+    <div class="d-flex">
+        <div class="emp-no">Emp.No :</div>
+        <div class="rank text-center">Rank :</div>
+        <div class="affix-photo text-center">AFFIX PHOTO</div>
+
+    </div>
+
+
+
+
+
+</div> -->

@@ -1,0 +1,96 @@
+<div style="text-align: center"><h4>BHARATHEEYAM SECURITY SERVICE PVT LTD</h4></div>
+<div style="text-align: center"><h4>TRAINING REPORT</h4></div>
+<table>
+  <tr>
+    <td>NAME OF THE UNIT</td>
+    <td>{{datas.unit}}</td>
+  </tr>
+  <tr>
+      <td>DATE</td>
+      <td>{{datas.date}}</td>
+      
+    </tr>
+    <tr>
+        <td>TRAINER</td>
+        <td>{{datas.trainer}}</td>
+      </tr>
+      <tr>
+          <td>SUBJECT</td>
+          <td>{{datas.subject}}</td>
+        </tr>
+        <tr>
+            <td>TIME DURATION FROM</td>
+            <td>{{datas.time_duration_form}}</td>
+          </tr>
+          <tr>
+              <td>TIME DURATIION TO</td>
+              <td>{{datas.time_duration_to}}</td>
+            </tr>
+</table>
+<br>
+
+
+<div class="col-md-12">
+    <div class="row">
+      <div class="tabl" >
+          <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+              <thead>
+                  <tr>
+                      <th>SL NO</th>
+                      <th>BSS NO</th>
+                      <th>RANK</th>
+                      <th>NAME</th>     
+                      <th>SIGNATURE</th>  
+                      <th>REMARKS BY TRAINER</th>   
+                  </tr>
+              </thead>
+              <tbody>
+                          <ng-container  *ngFor="let data of trainglist ;  let i = index">
+                          <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                              <td>{{i+1}}</td> 
+                              <td>{{data.bss_no}}</td>
+                              <td id="l1">{{data.rank}}</td>
+                              <td id="a1">{{data.name}}</td>
+                              <td id="pc1">{{data.signature}}</td>
+                              <td id="pc1">{{data.remarks_by_trainer}}</td>
+                             </tr>
+                          
+                          </ng-container>      
+              </tbody>
+          </table>    
+    </div>
+    </div>
+  </div>
+
+
+
+<table>
+        <tr>
+            <td>UNIT INCHARGE NAME</td>
+            <td>{{datas.uname}}</td>
+          </tr>
+          <tr>
+              <td>UNIT INCHARGE SIGNATURE</td>
+              <td>{{datas.usign}}</td>
+            </tr>
+            <tr>
+                <td>TRAINER NAME</td>
+                <td>{{datas.tname}}</td>
+              </tr>
+              <tr>
+                  <td>TRAINER SIGNATURE</td>
+                  <td>{{datas.tsign}}</td>
+                </tr>
+                <tr>
+                    <td>ASO IN SHIFT NAME</td>
+                    <td>{{datas.asoname}}</td>
+                  </tr>
+                <tr>
+                    <td>ASO IN SHIFT SIGNATURE</td>
+                    <td>{{datas.asosign}}</td>
+                  </tr>
+</table>
+
+
+
+

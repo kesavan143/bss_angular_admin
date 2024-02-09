@@ -1,0 +1,723 @@
+<!-- Adding Employee Page -->
+<form *ngIf="!viewStatus">
+    <!-- service-form -->
+    <div class="service-forms">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class=" multistep-form-section">
+                  <div class="container"  id="component1">
+                <form name="form"  novalidate>
+                    <div class="">
+                        <div class="">
+                        <h3 *ngIf="!editStatus"  style="    width: 100%;
+                        background: #d0d6db;padding: 10px;text-transform: uppercase;">Add Company Details</h3>
+                        <h3 *ngIf="editStatus"  style="    width: 100%;
+                        background: #d0d6db;padding: 10px;text-transform: uppercase;">Edit Company Details</h3>
+                        </div>
+                        <div class="col col-lg-2">                                        
+                        </div>
+                      </div>  
+                      <br>                          
+                <div class="row">
+                        <div class="col-12 col-sm-12 form-group">
+                            <form class="frms" name="form" novalidate>
+                                    <div class="col-md-12">
+                                            <div class="row">
+                                              <div class="form-group service-form-group col-md-6">
+                                                <div class="row">
+                                                  <div class="col-md-4">
+                                                    <label >Company Name</label>
+                                                  </div>
+                                                  <div class="col-md-8">
+                                                      <div class="form-group service-form-group">   
+                                                          <!-- <input type="" style="width: 100%" [(ngModel)]="additems.company_name" name="company_name" value="" #company_name>                           -->
+                                                            <input type="text" #company_name [(ngModel)]="additems.company_name" placeholder="Company Name" class="form-control col-md-12"     name="company_name" value="">
+                                                      </div>                                            
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="form-group service-form-group col-md-6">
+                                                <div class="row">
+                                                  <div class="col-md-4">
+                                                    <label >Company Address</label>
+                                                  </div>
+                                                  <div class="col-md-8">
+                                                        <!-- <input type="password" [(ngModel)]="adduser.Password" placeholder="Password" class="form-control col-md-12"     name="Password" value="" #Password> -->
+                                                        <input type="text" #company_address [(ngModel)]="additems.company_address" placeholder="Company Address" class="form-control col-md-12"     name="company_address" value="">
+                                                      </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-12">
+                                            <div class="row">
+                                              <div class="form-group service-form-group col-md-6">
+                                                <div class="row">
+                                                  <div class="col-md-4">
+                                                    <label >Area</label>
+                                                  </div>
+                                                  <div class="col-md-8">
+                                                      <input type="text" #area [(ngModel)]="additems.area" placeholder="Area" class="form-control col-md-12"     name="area" value="">
+                                                      <!-- <select class="form-control" (change)="fetchsite($event.target.value)" name="company_name" [(ngModel)]="adduser.company_name"  value="Company Name" #company_name id="exampleFormControlSelect1">
+                                                        
+                                                          <ng-container  *ngFor="let data of companylist">
+                                                          <option  value="{{data.company_name}}">{{data.company_name}}</option>
+                                                        </ng-container>
+                                                        </select>  -->
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="form-group service-form-group col-md-6">
+                                                <div class="row">
+                                                  <div class="col-md-4">
+                                                    <label >GST.TAX.REG NO</label>
+                                                  </div>
+                                                  <div class="col-md-8">
+                                                      <input type="text" #company_gst_tax_reg_no [(ngModel)]="additems.company_gst_tax_reg_no" placeholder="GST.TAX.REG NO" class="form-control col-md-12"     name="company_gst_tax_reg_no" value="">
+                                                      <!-- <select class="form-control"   name="site_name" [(ngModel)]="adduser.site_name"  value="" #site_name id="exampleFormControlSelect1">
+                                                      
+                                                        <ng-container  *ngFor="let data of site_names">
+                                                        <option  value="{{data.title}}">{{data.title}}</option>
+                                                      </ng-container>
+                                                      </select>  -->
+                                                </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-12">
+                                            <div class="row">
+                                              <div class="form-group service-form-group col-md-6">
+                                                <div class="row">
+                                                  <div class="col-md-4">
+                                                    <label >PAN NO</label>
+                                                  </div>
+                                                  <div class="col-md-8">
+                                                      <input type="text" #company_pan_no [(ngModel)]="additems.company_pan_no" placeholder="PAN NO" class="form-control col-md-12"     name="company_pan_no" value="">
+                                                      <!-- <select class="form-control"   name="employee_type" [(ngModel)]="adduser.employee_type"  value="" #employee_type id="exampleFormControlSelect1">
+                                                        
+                                                          <ng-container  *ngFor="let data of datass">
+                                                          <option  value="{{data.employee_type}}">{{data.employee_type}}</option>
+                                                        </ng-container>
+                                                        </select>  -->
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="form-group service-form-group col-md-6">
+                                                <div class="row">
+                                                  <div class="col-md-4">
+                                                    <label >CIN NO</label>
+                                                  </div>
+                                                  <div class="col-md-8">
+                                                      <input type="text" #company_cin_no [(ngModel)]="additems.company_cin_no" placeholder="CIN NO" class="form-control col-md-12"     name="company_cin_no" value="">
+                                                        <!-- <input disabled type="text" placeholder="ID Type" class="form-control" pattern="^[a-zA-Z ]*$" id="idtype"name="idtype"  [(ngModel)]=" ecodetext + ecodenumber" ngModel #idtype="ngModel">
+                                                        <div *ngIf="idtype.errors &&(idtype.touched || idtype.dirty)" class ="aler alert-danger">
+                                                        <div [hidden]="!idtype.errors?.pattern">
+                                                          ENTER ONLY TEXT
+                                                        </div> 
+                                                        </div>  -->
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      
+
+                                              <div class="col-md-12">
+                                                    <div class="row">
+                                                      <div class="form-group service-form-group col-md-6">
+                                                        <div class="row">
+                                                          <div class="col-md-4">
+                                                            <label >PF CODE NO</label>
+                                                          </div>
+                                                          <div class="col-md-8">
+                                                              <input type="text" #company_pf_code_no [(ngModel)]="additems.company_pf_code_no" placeholder="PF CODE NO" class="form-control col-md-12"     name="company_pf_code_no" value="">
+                                                                <!-- <input type="text" placeholder="Name" class="form-control" pattern="^[a-zA-Z ]*$" id="Name"name="Name"  [(ngModel)]="adduser.Name" ngModel #Name="ngModel">
+                                                                              <div *ngIf="Name.errors &&(Name.touched || Name.dirty)" class ="aler alert-danger">
+                                                                              <div [hidden]="!Name.errors?.pattern">
+                                                                                ENTER ONLY TEXT
+                                                                              </div> 
+                                                                              </div>                                       -->
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div class="form-group service-form-group col-md-6">
+                                                        <div class="row">
+                                                          <div class="col-md-4">
+                                                            <label >ESI CODE NO</label>
+                                                          </div>
+                                                          <div class="col-md-8">
+                                                              <input type="text" #company_esi_code_no [(ngModel)]="additems.company_esi_code_no" placeholder="ESI CODE NO" class="form-control col-md-12"     name="company_esi_code_no" value="">
+                                                                <!-- <input type="text" placeholder="Father Name" class="form-control" pattern="^[a-zA-Z ]*$" id="father_name"name="father_name"  [(ngModel)]="adduser.father_name" ngModel #father_name="ngModel">
+                                                                <div *ngIf="father_name.errors &&(father_name.touched || father_name.dirty)" class ="aler alert-danger">
+                                                                <div [hidden]="!father_name.errors?.pattern">
+                                                                  ENTER ONLY TEXT
+                                                                </div> 
+                                                                </div>  -->
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-md-12">
+                                                        <div class="row">
+                                                          <div class="form-group service-form-group col-md-6">
+                                                            <div class="row">
+                                                              <div class="col-md-4">
+                                                                <label >BANK NAME</label>
+                                                              </div>
+                                                              <div class="col-md-8">
+                                                                  <input type="text" #company_bank_name [(ngModel)]="additems.company_bank_name" placeholder="BANK NAME" class="form-control col-md-12"     name="company_bank_name" value="">
+                                                                <!-- <input placeholder="Date Of Birth" [max]="maxDate"  type="date" (change)="dateChange($event.target.value)" [(ngModel)]="adduser.Date_of_birth" class="form-control col-md-12"   name="Date_of_birth" value="" #Date_of_birth> -->
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="form-group service-form-group col-md-6">
+                                                            <div class="row">
+                                                              <div class="col-md-4">
+                                                                <label >A/C No</label>
+                                                              </div>
+                                                              <div class="col-md-8">
+                                                                  <input type="text" #company_bank_a_c_no [(ngModel)]="additems.company_bank_a_c_no" placeholder="A/C No" class="form-control col-md-12"     name="company_bank_a_c_no" value="">
+                                                                  <!-- <select class="form-control"  [(ngModel)]="adduser.gender" name="gender" value="" #gender id="exampleFormControlSelect1">
+                                                                      <option>Male</option>
+                                                                      <option>Female</option>
+                                                                      <option>Others</option>
+                                                                    </select>    -->
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div> 
+                                                      <div class="col-md-12">
+                                                            <div class="row">
+                                                              <div class="form-group service-form-group col-md-6">
+                                                                <div class="row">
+                                                                  <div class="col-md-4">
+                                                                    <label >IFSC</label>
+                                                                  </div>
+                                                                  <div class="col-md-8">
+                                                                      <input type="text" #company_bank_ifsc [(ngModel)]="additems.company_bank_ifsc" placeholder="IFSC" class="form-control col-md-12"     name="company_bank_ifsc" value="">
+                                                                      <!-- <select class="form-control"  [(ngModel)]="adduser.material_status" name="material_status" value="" #material_status id="exampleFormControlSelect1">
+                                                                          <option>Single</option>
+                                                                          <option>Married</option>
+                                                                          <option>Others</option>
+                                                                        </select>    -->
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                              <div class="form-group service-form-group col-md-6">
+                                                                <div class="row">
+                                                                  <div class="col-md-4">
+                                                                    <label >BRANCH</label>
+                                                                  </div>
+                                                                  <div class="col-md-8">
+                                                                      <input type="text" #company_bank_branch [(ngModel)]="additems.company_bank_branch" placeholder="BRANCH" class="form-control col-md-12"     name="company_bank_branch" value="">
+                                                                        <!-- <input type="text" placeholder="Education" [(ngModel)]="adduser.Edq"  class="form-control col-md-12"  name="Edq" value="" #Edq /> -->
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>                                                             
+                                                  </div>                                    
+                                 <br>
+  <div class="col-md-12 col-sm-5 form-group">
+  <button class="btn-info btn-lg" *ngIf="!editStatus"  (click)="additem()" >Add</button>
+  <button class="btn-info btn-lg" *ngIf="editStatus"  (click)="onUpdateItem()" >Update</button>
+  <button class="btn-info btn-lg" style="margin-left: 15px;" *ngIf="editStatus"  (click)="onCancelUpdateItem()" >Cancel</button>
+  </div>
+ <br>
+ <hr>
+ <br>
+ <div class="container" id="component1">
+
+    <div class="col-md-12">
+       <div class="row">
+           <div class="col-md-6">
+               <h3>Company  List</h3>
+             </div>
+             <div class="col-md-6">
+
+               </div>
+
+
+
+         
+       </div>
+       
+     </div>
+
+     <br>
+
+   <div class="col-md-12">
+     <div class="row">
+       <div class="tabl" >
+       <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+           <thead>
+               <tr>
+                   <th>SL.NO</th>
+                   <th>Company List</th>
+                   <th>Area</th>
+                   <th colspan="3">Action</th>
+                   </tr>
+           </thead>
+           <tbody>
+                       <ng-container  *ngFor="let data of datas ;  let i = index">
+
+                       <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                           <td style="text-align: center;">{{i + 1}}</td> 
+                           <td>{{data.company_name}}</td>
+                           <td id="l1">{{data.area}}</td>
+
+                           <td><button  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="onFetch(data)" ><i  class="m-1 icon-note"  ></i></button></td>
+                           <td><button  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="onView(data)" ><i  class="m-1 icon-eye"  ></i></button></td>
+                           <td><button  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="onDelete(data)" ><i  class="m-1 icon-trash"  ></i></button></td>
+
+
+                           <!-- <td style="text-align: center;"><button  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="fetch($event, data)" ><i  class="m-1 icon-note"  ></i></button></td> -->
+
+                       </tr>
+
+                       </ng-container>      
+
+           </tbody>
+       </table>
+       <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+       <div class="card-footer p-0">
+       <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+               </div>     
+ </div>
+     </div>
+   </div>       
+   <br>    
+    </div>
+  </form>
+ </div>
+</div>
+                  </form>
+                  </div>
+              </div>
+              </div>
+            </div>
+          </div>
+  
+    </div>
+  </form>
+  <form *ngIf="viewStatus">
+      <!-- service-form -->
+      <div class="service-forms">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class=" multistep-form-section">
+                    <div class="container"  id="component1">
+                  <form name="form"  novalidate>
+                      <div class="">
+                          <div class="">
+                          <h3  style="    width: 100%;
+                          background: #d0d6db;padding: 10px;text-transform: uppercase;">View Company Details</h3>
+                          </div>
+                          <div class="col col-lg-2">                                        
+                          </div>
+                        </div>  
+                        <br>                          
+                  <div class="row">
+                          <div class="col-12 col-sm-12 form-group">
+                              <form class="frms" name="form" novalidate>
+                                      <div class="col-md-12">
+                                              <div class="row">
+                                                <div class="form-group service-form-group col-md-6">
+                                                  <div class="row">
+                                                    <div class="col-md-4">
+                                                      <label >Company Name</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="form-group service-form-group">   
+                                                            <!-- <input type="" style="width: 100%" [(ngModel)]="additems.company_name" name="company_name" value="" #company_name>                           -->
+                                                              <input disabled type="text" #company_name [(ngModel)]="additems.company_name" placeholder="Company Name" class="form-control col-md-12"     name="company_name" value="">
+                                                        </div>                                            
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="form-group service-form-group col-md-6">
+                                                  <div class="row">
+                                                    <div class="col-md-4">
+                                                      <label >Company Address</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                          <!-- <input type="password" [(ngModel)]="adduser.Password" placeholder="Password" class="form-control col-md-12"     name="Password" value="" #Password> -->
+                                                          <input disabled type="text" #company_address [(ngModel)]="additems.company_address" placeholder="Company Address" class="form-control col-md-12"     name="company_address" value="">
+                                                        </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                              <div class="row">
+                                                <div class="form-group service-form-group col-md-6">
+                                                  <div class="row">
+                                                    <div class="col-md-4">
+                                                      <label >Area</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input disabled type="text" #area [(ngModel)]="additems.area" placeholder="Area" class="form-control col-md-12"     name="area" value="">
+                                                        <!-- <select class="form-control" (change)="fetchsite($event.target.value)" name="company_name" [(ngModel)]="adduser.company_name"  value="Company Name" #company_name id="exampleFormControlSelect1">
+                                                          
+                                                            <ng-container  *ngFor="let data of companylist">
+                                                            <option  value="{{data.company_name}}">{{data.company_name}}</option>
+                                                          </ng-container>
+                                                          </select>  -->
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="form-group service-form-group col-md-6">
+                                                  <div class="row">
+                                                    <div class="col-md-4">
+                                                      <label >GST.TAX.REG NO</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input disabled type="text" #company_gst_tax_reg_no [(ngModel)]="additems.company_gst_tax_reg_no" placeholder="GST.TAX.REG NO" class="form-control col-md-12"     name="company_gst_tax_reg_no" value="">
+                                                        <!-- <select class="form-control"   name="site_name" [(ngModel)]="adduser.site_name"  value="" #site_name id="exampleFormControlSelect1">
+                                                        
+                                                          <ng-container  *ngFor="let data of site_names">
+                                                          <option  value="{{data.title}}">{{data.title}}</option>
+                                                        </ng-container>
+                                                        </select>  -->
+                                                  </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                              <div class="row">
+                                                <div class="form-group service-form-group col-md-6">
+                                                  <div class="row">
+                                                    <div class="col-md-4">
+                                                      <label >PAN NO</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input disabled type="text" #company_pan_no [(ngModel)]="additems.company_pan_no" placeholder="PAN NO" class="form-control col-md-12"     name="company_pan_no" value="">
+                                                        <!-- <select class="form-control"   name="employee_type" [(ngModel)]="adduser.employee_type"  value="" #employee_type id="exampleFormControlSelect1">
+                                                          
+                                                            <ng-container  *ngFor="let data of datass">
+                                                            <option  value="{{data.employee_type}}">{{data.employee_type}}</option>
+                                                          </ng-container>
+                                                          </select>  -->
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="form-group service-form-group col-md-6">
+                                                  <div class="row">
+                                                    <div class="col-md-4">
+                                                      <label >CIN NO</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input disabled type="text" #company_cin_no [(ngModel)]="additems.company_cin_no" placeholder="CIN NO" class="form-control col-md-12"     name="company_cin_no" value="">
+                                                          <!-- <input disabled type="text" placeholder="ID Type" class="form-control" pattern="^[a-zA-Z ]*$" id="idtype"name="idtype"  [(ngModel)]=" ecodetext + ecodenumber" ngModel #idtype="ngModel">
+                                                          <div *ngIf="idtype.errors &&(idtype.touched || idtype.dirty)" class ="aler alert-danger">
+                                                          <div [hidden]="!idtype.errors?.pattern">
+                                                            ENTER ONLY TEXT
+                                                          </div> 
+                                                          </div>  -->
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        
+  
+                                                <div class="col-md-12">
+                                                      <div class="row">
+                                                        <div class="form-group service-form-group col-md-6">
+                                                          <div class="row">
+                                                            <div class="col-md-4">
+                                                              <label >PF CODE NO</label>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input disabled type="text" #company_pf_code_no [(ngModel)]="additems.company_pf_code_no" placeholder="PF CODE NO" class="form-control col-md-12"     name="company_pf_code_no" value="">
+                                                                  <!-- <input type="text" placeholder="Name" class="form-control" pattern="^[a-zA-Z ]*$" id="Name"name="Name"  [(ngModel)]="adduser.Name" ngModel #Name="ngModel">
+                                                                                <div *ngIf="Name.errors &&(Name.touched || Name.dirty)" class ="aler alert-danger">
+                                                                                <div [hidden]="!Name.errors?.pattern">
+                                                                                  ENTER ONLY TEXT
+                                                                                </div> 
+                                                                                </div>                                       -->
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="form-group service-form-group col-md-6">
+                                                          <div class="row">
+                                                            <div class="col-md-4">
+                                                              <label >ESI CODE NO</label>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input disabled type="text" #company_esi_code_no [(ngModel)]="additems.company_esi_code_no" placeholder="ESI CODE NO" class="form-control col-md-12"     name="company_esi_code_no" value="">
+                                                                  <!-- <input type="text" placeholder="Father Name" class="form-control" pattern="^[a-zA-Z ]*$" id="father_name"name="father_name"  [(ngModel)]="adduser.father_name" ngModel #father_name="ngModel">
+                                                                  <div *ngIf="father_name.errors &&(father_name.touched || father_name.dirty)" class ="aler alert-danger">
+                                                                  <div [hidden]="!father_name.errors?.pattern">
+                                                                    ENTER ONLY TEXT
+                                                                  </div> 
+                                                                  </div>  -->
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                          <div class="row">
+                                                            <div class="form-group service-form-group col-md-6">
+                                                              <div class="row">
+                                                                <div class="col-md-4">
+                                                                  <label >BANK NAME</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <input disabled type="text" #company_bank_name [(ngModel)]="additems.company_bank_name" placeholder="BANK NAME" class="form-control col-md-12"     name="company_bank_name" value="">
+                                                                  <!-- <input placeholder="Date Of Birth" [max]="maxDate"  type="date" (change)="dateChange($event.target.value)" [(ngModel)]="adduser.Date_of_birth" class="form-control col-md-12"   name="Date_of_birth" value="" #Date_of_birth> -->
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <div class="form-group service-form-group col-md-6">
+                                                              <div class="row">
+                                                                <div class="col-md-4">
+                                                                  <label >A/C No</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <input disabled type="text" #company_bank_a_c_no [(ngModel)]="additems.company_bank_a_c_no" placeholder="A/C No" class="form-control col-md-12"     name="company_bank_a_c_no" value="">
+                                                                    <!-- <select class="form-control"  [(ngModel)]="adduser.gender" name="gender" value="" #gender id="exampleFormControlSelect1">
+                                                                        <option>Male</option>
+                                                                        <option>Female</option>
+                                                                        <option>Others</option>
+                                                                      </select>    -->
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div> 
+                                                        <div class="col-md-12">
+                                                              <div class="row">
+                                                                <div class="form-group service-form-group col-md-6">
+                                                                  <div class="row">
+                                                                    <div class="col-md-4">
+                                                                      <label >IFSC</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        <input disabled type="text" #company_bank_ifsc [(ngModel)]="additems.company_bank_ifsc" placeholder="IFSC" class="form-control col-md-12"     name="company_bank_ifsc" value="">
+                                                                        <!-- <select class="form-control"  [(ngModel)]="adduser.material_status" name="material_status" value="" #material_status id="exampleFormControlSelect1">
+                                                                            <option>Single</option>
+                                                                            <option>Married</option>
+                                                                            <option>Others</option>
+                                                                          </select>    -->
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="form-group service-form-group col-md-6">
+                                                                  <div class="row">
+                                                                    <div class="col-md-4">
+                                                                      <label >BRANCH</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        <input disabled type="text" #company_bank_branch [(ngModel)]="additems.company_bank_branch" placeholder="BRANCH" class="form-control col-md-12"     name="company_bank_branch" value="">
+                                                                          <!-- <input type="text" placeholder="Education" [(ngModel)]="adduser.Edq"  class="form-control col-md-12"  name="Edq" value="" #Edq /> -->
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>                                                             
+                                                    </div>                                    
+                                   <br>
+    <div class="col-md-12 col-sm-5 form-group">
+    <!-- <button class="btn-info btn-lg" *ngIf="!editStatus"  (click)="additem()" >Add</button>
+    <button class="btn-info btn-lg" *ngIf="editStatus"  (click)="onUpdateItem()" >Update</button> -->
+    <button class="btn-info btn-lg" style="margin-left: 15px;" (click)="clearData()" >Back</button>
+    </div>
+   <br>
+   <hr>
+   <br>
+   <!-- <div class="container" id="component1">
+  
+      <div class="col-md-12">
+         <div class="row">
+             <div class="col-md-6">
+                 <h3>Company  List</h3>
+               </div>
+               <div class="col-md-6">
+  
+                 </div>
+  
+  
+  
+           
+         </div>
+         
+       </div>
+  
+       <br>
+  
+     <div class="col-md-12">
+       <div class="row">
+         <div class="tabl" >
+         <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+             <thead>
+                 <tr>
+                     <th>SL.NO</th>
+                     <th>Company List</th>
+                     <th>Area</th>
+                     <th colspan="3">Action</th>
+                     </tr>
+             </thead>
+             <tbody>
+                         <ng-container  *ngFor="let data of datas ;  let i = index">
+  
+                         <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                             <td style="text-align: center;">{{i + 1}}</td> 
+                             <td>{{data.company_name}}</td>
+                             <td id="l1">{{data.area}}</td>
+  
+                             <td><button  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="onFetch(data)" ><i  class="m-1 icon-note"  ></i></button></td>
+                             <td><button  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="onView(data)" ><i  class="m-1 icon-eye"  ></i></button></td>
+                             <td><button  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="onDelete(data)" ><i  class="m-1 icon-trash"  ></i></button></td>
+  
+  
+  
+                         </tr>
+  
+                         </ng-container>      
+  
+             </tbody>
+         </table>
+         <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+         <div class="card-footer p-0">
+         <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                 </div>     
+   </div>
+       </div>
+     </div>       
+     <br>    
+      </div> -->
+    </form>
+   </div>
+  </div>
+                    </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+            </div>
+    
+      </div>
+    </form>
+<!-- <form>
+  service-form
+  <div class="service-forms">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="row">
+            <div class="multistep-form-section">
+              <form name="form"  novalidate>
+                      <div class="">
+                              <div class="">
+                              <h3 style="    width: 100%;
+                              background: #d0d6db;padding: 10px;text-transform: uppercase;">Add Company Names</h3>
+                              </div>
+                              <div class="col col-lg-2">                                        
+                              </div>
+                            </div>  
+                            <br>    
+                                                
+              <div class="row">
+                      <div class="col-12 col-sm-12 form-group">
+
+                          <form class="frms" name="form" novalidate>
+                                                    <div class="col-md-12">
+                                                          <div class="row">
+                                                            <table style="width:100%;    height: 93px;">
+                                                              <tr>
+                                                                <th>Company Name</th>
+                                                                <th>Area</th>
+                                                                <th>Add</th>
+                                                              </tr>
+                                                              <tr>
+                                                                <td><input type="" style="width: 100%" [(ngModel)]="additems.company_name" name="company_name" value="" #company_name></td>
+                                                                <td><input type="" style="width: 100%"[(ngModel)]="additems.area" name="area" value="" #area></td>   
+                                                                <td><button style="padding: 0px 11px 6px 10px !important;" class="btn-info btn-lg" style="width: 100%" *ngIf="isactive === true"  (click)="additem(company_name.value,area.value)" >Add Company Name</button><button style="width: 100%" *ngIf="isactive === false" (click)="update()">Update Company Name</button></td>
+                                                            
+                                                              </tr>
+                                                            </table>
+                                                          </div>
+                                                        </div>       
+                                                         <br>
+                                                         <br>
+
+                                                         <div class="container" id="component1">
+
+                                                         <div class="col-md-12">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <h3>Company  List</h3>
+                                                                  </div>
+                                                                  <div class="col-md-6">
+
+                                                                    </div>
+
+
+
+                                                              
+                                                            </div>
+                                                            
+                                                          </div>
+
+                                                          <br>
+
+                                                        <div class="col-md-12">
+                                                          <div class="row">
+                                                            <div class="tabl" >
+                                                            <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>SL.NO</th>
+                                                                        <th>Company List</th>
+                                                                        <th>Area</th>
+                                                                        <th>Update</th>
+                                                                        <th>Delete</th>
+                                                                        </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                            <ng-container  *ngFor="let data of datas ;  let i = index">
+        
+                                                                            <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                                                                <td style="text-align: center;">{{i + 1}}</td> 
+                                                                                <td>{{data.company_name}}</td>
+                                                                                <td id="l1">{{data.area}}</td>
+
+                                                                                <td><button  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="fetch($event, data)" ><i  class="m-1 icon-note"  ></i></button></td>
+                                                                                <td><button  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="delete($event, data)" ><i  class="m-1 icon-trash"  ></i></button></td>
+
+
+                                                                                <td style="text-align: center;"><button  style="background: transparent" type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm"  style="background: transparent"  (click)="fetch($event, data)" ><i  class="m-1 icon-note"  ></i></button></td>
+
+                                                                            </tr>
+
+                                                                            </ng-container>      
+                                          
+                                                                </tbody>
+                                                            </table>
+                                                            <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                                                            <div class="card-footer p-0">
+                                                            <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                                                                    </div>     
+                                                      </div>
+                                                          </div>
+                                                        </div>       
+                                                        <br>    
+                                                         </div>
+
+                                                    </form>
+                                                    </div>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                                </div>
+                                              </div>
+                                            </div>
+
+  </div>
+</form> -->

@@ -1,0 +1,78 @@
+<div style="text-align: center"><h4>BHARATHEEYAM SECURITY SERVICE PVT LTD</h4></div>
+<div style="text-align: center"><h4>NIGHT CHECK REPORT</h4></div>
+<table>
+  <tr>
+    <td>NAME OF THE UNIT</td>
+    <td>{{datas.site_name}}</td>
+  </tr>
+  <tr>
+      <td>DATE</td>
+      <td>{{datas.date}}</td>
+    </tr>
+    <tr>
+        <td>CHECKING OFFICER NAME</td>
+        <td>{{datas.checking_officer}}</td>
+      </tr>
+      <tr>
+          <td>VISITING TIME FROM</td>
+          <td>{{datas.visit_tiem_from}}</td>
+        </tr>
+        <tr>
+            <td>VISITING TIME TO</td>
+            <td>{{datas.visit_time_to}}</td>
+          </tr>
+          <tr>
+              <td>SHIFT STRENGTH AUTH</td>
+              <td>{{datas.shift_auth}}</td>
+            </tr>
+            <tr>
+              <td>SHIFT STRENGTH RANK</td>
+              <td>{{datas.shift_rank}}</td>
+            </tr>
+            <tr>
+              <td>SHIFT STRENGTH PRESENT</td>
+              <td>{{datas.shift_present}}</td>
+            </tr>
+            <tr>
+              <td>DETAILS OF SECURITY ON DUTY</td>
+              <td></td>
+            </tr>
+
+</table>
+
+<div class="col-md-12">
+    <div class="row">
+      <div class="tabl" >
+          <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+              <thead>
+                  <tr>
+                      <th>SL NO</th>
+                      <th>BSS NO</th>
+                      <th>RANK</th>
+                      <th>NAME</th>     
+                      <th>POST</th>  
+                      <th>OBSERVATIONS / REMARKS</th>   
+                      <th>SIGNATURE OF SECURITY</th>  
+                  </tr>
+              </thead>
+              <tbody>
+                          <ng-container  *ngFor="let data of nightlist ;  let i = index">
+                          <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                              <td>{{i+1}}</td> 
+                              <td>{{data.bss_no}}</td>
+                              <td id="l1">{{data.rank}}</td>
+                              <td id="a1">{{data.name}}</td>
+                              <td id="pc1">{{data.post}}</td>
+                              <td id="pc1">{{data.observation}}</td>
+                              <td id="pc1">{{data.sign}}</td>
+                             </tr>
+                          
+                          </ng-container>      
+              </tbody>
+          </table>    
+    </div>
+    </div>
+  </div>
+
+
+

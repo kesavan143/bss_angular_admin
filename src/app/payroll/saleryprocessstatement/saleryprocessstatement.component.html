@@ -1,0 +1,146 @@
+<!-- Adding Employee Page -->
+<div class="row">
+        <div class="header">
+        <h3 class="adsc" style="width: 100%;
+        text-transform: uppercase;">Salary Process Statement  <span style="float: right;"><button class="btn btn-primary" style="height: 30px;font-size: 15px;" (click)="onCarryForward()">Advance Carry Forward</button></span></h3>
+        </div>
+        
+      </div>  
+<form>
+    <!-- service-form -->
+    <div class="service-forms">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class=" multistep-form-section">
+                  <div class="container"  id="component1">
+                <form name="form"  novalidate>
+                      
+                                 
+                <div class="">
+                        <div class="col-12 col-sm-12 form-group" style="border: 1px #6c757d solid;">
+                            <form class="frms" name="form" novalidate>
+                                    <div class="col-md-12">
+                                      <div class="row">
+                                      
+                                        <div class="col-md-5">
+                                          <div class="row">
+                                            <div class="col-md-4">
+                                                <p>Company</p> 
+                                            </div>
+                                            <div class="col-md-8">
+                                                <select class="form-control"  (change)="fetchsite($event.target.value)" name="company_name" [(ngModel)]="company_name"  value=""  id="exampleFormControlSelect1">
+                                                    <ng-container  *ngFor="let data of datass">
+                                                    <option  value="{{data.company_name}}">{{data.company_name}}</option>
+                                                  </ng-container>
+                                                  </select> 
+                                              
+                                              </div>
+
+                                          </div>
+                                          </div>
+                                          <div class="col-md-2">
+                                              <div class="row">
+                                                  <div class="col-md-4">
+                                                      <p>Month</p> 
+                                                  </div>
+                                                  <div class="col-md-8">
+                                                      <select class="form-control"   name="fmonth" [(ngModel)]="fmonth"  value=""  id="exampleFormControlSelect1">
+                                                          <option value="01">01</option>
+                                                          <option value="02">02</option>
+                                                          <option value="03">03</option>
+                                                          <option value="04">04</option>
+                                                          <option value="05">05</option>
+                                                          <option value="06">06</option>
+                                                          <option value="07">07</option>
+                                                          <option value="08">08</option>
+                                                          <option value="09">09</option>
+                                                          <option value="10">10</option>
+                                                          <option value="11">11</option>
+                                                          <option value="12">12</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <p>Years</p> 
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <select class="form-control"   name="fyear" [(ngModel)]="fyear"  value=""  id="exampleFormControlSelect1">
+                                                            <option  *ngFor="let y of years"  [selected]="yy === y" >{{y}}</option>    
+                                                          </select> 
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="col-md-1">
+                                                  <input type="radio"  value="All"   checked  [(ngModel)]="gender"   name="gender"> All
+                                          
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <input type="radio"  value="Bank"   checked  [(ngModel)]="gender"   name="gender"> Bank
+                                                  </div>
+                                                  <div class="col-md-1">
+                                                      <input type="radio"  value="Cash"   checked  [(ngModel)]="gender"   name="gender" > Cash
+                                                    </div>          
+                                      </div>
+                                          </div>
+                                                  <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="form-group service-form-group col-md-12">
+                                                            <ul class="list-group">
+                                                                <li class="list-group-item">
+                                                                 <b>Unit Name List</b>
+                                                                </li>
+                                                              </ul>
+                                                              <ul class="list-group">
+                                                                <li class="list-group-item" *ngFor="let item of checklist | orderBy : 'site_name'">
+                                                                  <input type="checkbox" [(ngModel)]="item.isSelected" name="site_id" value="{{item.site_id}}" (change)="isAllSelected()"/>
+                                                                  {{item.site_name}}
+                                                                </li>
+                                                              </ul>
+                                                  </div>
+                                                </div>
+                                          </div> 
+                                          <br>                                       
+                            <div class="row">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-2">
+        <input type="checkbox"  name ="unitwise"  [(ngModel)]="unitwise" (change)="toggleEditable($event)"> Unitwise Payment
+      </div>
+      <div class="col-md-3">
+          <input type="checkbox" [(ngModel)]="masterSelected" name="list_name" value="m1" (change)="checkUncheckAll()"/> <strong> Select/ Unselect All</strong>
+        </div>
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-1">
+          <button class="btn btn-primary" (click)="print()">Print</button>
+      </div>
+
+      <div class="col-md-1">
+          <button class="btn btn-primary">Cancel</button>
+      </div>
+      <div class="col-md-2">
+          <button class="btn btn-primary">Unit Total</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  </form>
+ </div>
+</div>
+                  </form>
+                  </div>
+              </div>
+              </div>
+            </div>
+          </div>
+  
+    </div>
+  </form>
+
+
+  

@@ -1,0 +1,260 @@
+<form>
+
+        <div class="service-forms">
+        <!-- service-form -->
+        <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
+                      
+                    <div class="col-sm-12 multistep-form-section">
+                        <form name="form"  novalidate>
+
+                                                <div class="col-md-12 justify-content-md-center">
+                                                       
+                                                        <h3 style="    width: 100%;
+                                                        background: #f1f4f7;padding: 10px;text-transform: uppercase;">Required Employee</h3>
+                                                        
+                                                        <div class="col col-lg-2">                                        
+                                                        </div>
+                                                      </div> 
+                                                      <br>
+
+
+
+                                                      <div class="col-md-12">
+                                                          <div class="row">
+                                                            <div class="form-group service-form-group col-md-6">
+                                                              <div class="row">
+                                                                <div class="col-md-3">
+                                                                  <label >No of Assistant Manager</label>
+                                                                </div><div class="col-md-9">
+                                                                
+                                                                    <input type="number" class="form-control" [(ngModel)]="addempreq.No_am" name="No_am" value="" #No_am  min="0">
+                                                                 
+                                                                  
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <div class="form-group service-form-group col-md-6">
+                                                              <div class="row">
+                                                                <div class="col-md-3">
+                                                                  <label >Amount for One AM</label>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <input type="number" class="form-control" [(ngModel)]="addempreq.salary_am" name="salary_am" value="" #salary_am min="0" >
+                                                                 
+                                                                  
+                                    
+                                                              
+                                    
+                                    
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+
+
+
+
+
+
+
+                                                        <div class="col-md-12">
+                                                            <div class="row">
+                                                              <div class="form-group service-form-group col-md-6">
+                                                                <div class="row">
+                                                                  <div class="col-md-3">
+                                                                    <label >No of Supervisor</label>
+                                                                  </div><div class="col-md-9">
+                                                                  
+                                                                      <input type="number" class="form-control" [(ngModel)]="addempreq.No_as" name="No_as" value="" #No_as min="0" >
+                                                                      
+                                                                    
+                                                                     
+                                                                    
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                              <div class="form-group service-form-group col-md-6">
+                                                                <div class="row">
+                                                                  <div class="col-md-3">
+                                                                    <label >Pay for one supervisor</label>
+                                                                  </div>
+                                                                  <div class="col-md-9">
+                                                                      <input type="number" class="form-control"  [(ngModel)]="addempreq.salary_as" name="salary_as" value="" #salary_as min="0" >
+                                                                 
+                                                                    
+                                      
+                                                               
+                                      
+                                      
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+
+
+
+
+                                                          <div class="col-md-12">
+                                                              <div class="row">
+                                                                <div class="form-group service-form-group col-md-6">
+                                                                  <div class="row">
+                                                                    <div class="col-md-3">
+                                                                      <label >No of Security</label>
+                                                                    </div><div class="col-md-9">
+                                                                    
+                                                                        <input type="number" class="form-control" [(ngModel)]="addempreq.No_s" name="No_s" value="" #No_s  min="0" >
+                                                                       
+                                                                      
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="form-group service-form-group col-md-6">
+                                                                  <div class="row">
+                                                                    <div class="col-md-3">
+                                                                      <label >Pay for one Security</label>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <input type="number" class="form-control" [(ngModel)]="addempreq.salary_s" name="salary_s" value="" #salary_s  min="0" >
+                                                                        
+                                                                      
+                                        
+                                                                      
+                                        
+                                        
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+
+
+
+
+
+
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                  <div class="form-group service-form-group col-md-6">
+                                                                    <div class="row">
+                                                                      <div class="col-md-3">
+                                                                        <label >Shift Type</label>
+                                                                      </div><div class="col-md-9">
+                                                                      
+                                                                          <select class="form-control" [(ngModel)]="addempreq.shift_type" name="shift_type" value="" #shift_type id="exampleFormControlSelect1">
+                                                                              <option>Day</option>
+                                                                              <option>Night</option>
+                                                                            </select>  
+                                                                     
+                                                                     
+                                                                        
+                                                                     
+          
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="form-group service-form-group col-md-6">
+                                                                    <div class="row">
+                                                                      <div class="col-md-3">
+                                                                        <label >Hours Type</label>
+                                                                      </div>
+                                                                      <div class="col-md-9">
+                                                                          <select class="form-control" [(ngModel)]="addempreq.hour_type" name="hour_type" value="" #shift_type id="exampleFormControlSelect1">
+                                                                              <option>8 hrs</option>
+                                                                              <option>12 hrs</option>
+                                                                            </select>  
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+
+
+
+
+
+
+
+                                                              <div class="col-md-12">
+                                                                  <div class="row">
+                                                                    <div class="form-group service-form-group col-md-6">
+                                                                      <div class="row">
+                                                                        <div class="col-md-3">
+                                                                          <label >Over Time pay For Assistant Manager</label>
+                                                                        </div><div class="col-md-9">
+                                                                        
+                                                                            <input type="number" class="form-control" [(ngModel)]="addempreq.over_time_am" name="over_time_am" value="" #over_time_am min="0">
+                                                                          
+                                                                          
+                                                                           
+                                                                          
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class="form-group service-form-group col-md-6">
+                                                                      <div class="row">
+                                                                        <div class="col-md-3">
+                                                                          <label >Over Time For supervisor</label>
+                                                                        </div>
+                                                                        <div class="col-md-9">
+                                                                            <input type="number" class="form-control" [(ngModel)]="addempreq.over_time_as" name="over_time_as" value="" #over_time_as min="0">
+
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+
+
+
+
+
+
+
+                                                                <div class="col-md-12">
+                                                                    <div class="row">
+                                                                      <div class="form-group service-form-group col-md-6">
+                                                                        <div class="row">
+                                                                          <div class="col-md-3">
+                                                                            <label >Over Time pay for Security</label>
+                                                                          </div><div class="col-md-9">
+                                                                          
+                                                                              <input type="number" class="form-control" [(ngModel)]="addempreq.over_time_s" name="over_time_s" value="" #over_time_s min="0" >
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class="form-group service-form-group col-md-6">
+                                                                        <div class="row">
+                                                                          <div class="col-md-3">
+                                                                            <label >Payment Type</label>
+                                                                          </div>
+                                                                          <div class="col-md-9">
+                                                                              <select class="form-control" [(ngModel)]="addempreq.payment_type" name="payment_type" value="" #payment_type id="exampleFormControlSelect1">
+                                                                                  <option>Cash</option>
+                                                                                  <option>Bank Transection</option>
+                                                                                  <option>cheque</option>
+                                                                                </select>  
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                <div class="row">
+                                        <div class="col-md-12 col-sm-5 form-group">
+                                        <button class="input1" (click) = "addapi()">Next Step</button>
+                                        </div>
+                                 </div>   
+                                </form>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </form>
+
+
+
+  

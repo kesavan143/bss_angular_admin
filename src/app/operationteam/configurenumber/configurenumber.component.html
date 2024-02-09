@@ -1,0 +1,174 @@
+<form>
+    <!-- service-form -->
+    <div class="service-forms">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="multistep-form-section">
+
+                    <div class="col-md-12">
+                        <h3 style="    width: 100%;
+                        background: #d0d6db;padding: 10px;text-transform: uppercase;">Configure Mobile Number</h3>
+                            
+                    </div> 
+  
+            <form novalidate [formGroup]="myform">
+
+
+                <div class="col-md-12">
+                    <div class="row">
+                      <div class="form-group service-form-group col-md-6">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label >Red Alert</label>
+                          </div><div class="col-md-9">
+                              <input type="text" class="form-control"  [(ngModel)]="addclient.Red_alert" name="Red_alert" value="" #Red_alert  formControlName="Red_alerts" required>
+                              <div class="form-control-feedback"
+                                 *ngIf="Red_alerts.errors && (Red_alerts.dirty || Red_alerts.touched)">
+                                <p *ngIf="Red_alerts.errors.required">Red Alert Number is required</p>
+                                <p *ngIf="Red_alerts.errors.minlength">Invalid data</p>
+                              </div>
+                            <div class="form-icon">
+                              
+                            </div><!----><!---->
+
+                            <div class="col-12 col-sm-5 form-group"[ngClass]="{
+                              'has-danger': Red_alerts.invalid && (Red_alerts.dirty || Red_alerts.touched),
+                              'has-success': Red_alerts.valid && (Red_alerts.dirty || Red_alerts.touched)
+                         }">                                                        
+                        </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group service-form-group col-md-6">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label >Fire Department</label>
+                          </div>
+                          <div class="col-md-9">
+                              <input type="text" class="form-control"   [(ngModel)]="addclient.Fire_alert" name="Fire_alert" value="" #Fire_alert  formControlName="Fire_alerts" required>
+                            <div class="form-control-feedback"
+                                *ngIf="Fire_alerts.errors && (Fire_alerts.dirty || Fire_alerts.touched)">
+                              <p *ngIf="Fire_alerts.errors.required">Fire Department Number is required</p>
+                              <p *ngIf="Fire_alerts.errors.minlength"> Data Invalid </p>
+                            </div>
+                            <div class="form-icon">
+
+                            </div><!----><!---->
+                            <div class="col-12 col-sm-5 form-group"
+                            [ngClass]="{
+                             'has-danger': Fire_alerts.invalid && (Fire_alerts.dirty || Fire_alerts.touched),
+                             'has-success': Fire_alerts.valid && (Fire_alerts.dirty || Fire_alerts.touched)
+                        }">
+                       </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="col-md-12">
+                    <div class="row">
+                      <div class="form-group service-form-group col-md-6">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label >Ambulance </label>
+                          </div><div class="col-md-9">
+                          
+                              <input type="text" class="form-control"  [(ngModel)]="addclient.Ambulance_alert" name="Ambulance_alert" value="" #Ambulance_alert  formControlName="Ambulance_alerts" required>
+                              <div class="form-control-feedback"
+                                 *ngIf="Ambulance_alerts.errors && (Ambulance_alerts.dirty || Ambulance_alerts.touched)">
+                                <p *ngIf="Ambulance_alerts.errors.required">Ambulanace Number is required</p>
+                                <p *ngIf="Ambulance_alerts.errors.minlength">Invalid data</p>
+                              </div>
+                            
+                            
+                            <div class="form-icon">
+                              
+                            </div><!----><!---->
+
+                            <div class="col-12 col-sm-5 form-group"[ngClass]="{
+                              'has-danger': Ambulance_alerts.invalid && (Ambulance_alerts.dirty || Ambulance_alerts.touched),
+                              'has-success': Ambulance_alerts.valid && (Ambulance_alerts.dirty || Ambulance_alerts.touched)
+                         }">                                                        
+                        </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group service-form-group col-md-6">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label >Police </label>
+                          </div>
+                          <div class="col-md-9">
+                              <input type="text" class="form-control"   [(ngModel)]="addclient.Police_alert" name="Police_alert" value="" #Police_alert  formControlName="Police_alerts" required>
+                            <div class="form-control-feedback"
+                                *ngIf="Police_alerts.errors && (Police_alerts.dirty || Police_alerts.touched)">
+                              <p *ngIf="Police_alerts.errors.required">Police Number is required</p>
+                              <p *ngIf="Police_alerts.errors.minlength"> Data Invalid </p>
+                            </div>
+                            <div class="form-icon">
+
+                            </div><!----><!---->
+                            <div class="col-12 col-sm-5 form-group"
+                            [ngClass]="{
+                             'has-danger': Police_alerts.invalid && (Police_alerts.dirty || Police_alerts.touched),
+                             'has-success': Police_alerts.valid && (Police_alerts.dirty || Police_alerts.touched)
+                        }">
+                       </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+                  
+                  
+
+                  <div class="col-md-12">
+                      <div class="row">
+                        <div class="form-group service-form-group col-md-6">
+                          <div class="row">
+                            <div class="col-md-3">
+                              <label >BSS control</label>
+                            </div><div class="col-md-9">
+                            
+                                <input type="text" class="form-control"  [(ngModel)]="addclient.bsscontrol" name="bsscontrol" value="" #bsscontrol  formControlName="bsscontrols" required>
+                                <div class="form-control-feedback"
+                                   *ngIf="bsscontrols.errors && (bsscontrols.dirty || bsscontrols.touched)">
+                                  <p *ngIf="bsscontrols.errors.required">BSS control is required</p>
+                                  <p *ngIf="bsscontrols.errors.minlength">Invalid data</p>
+                                </div>
+                              
+  
+                              <div class="form-icon">
+                                
+                              </div><!----><!---->
+  
+                              <div class="col-12 col-sm-5 form-group"[ngClass]="{
+                                'has-danger': bsscontrols.invalid && (bsscontrols.dirty || bsscontrols.touched),
+                                'has-success': bsscontrols.valid && (bsscontrols.dirty || bsscontrols.touched)
+                           }">                                                        
+                          </div>
+  
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>  
+
+
+                              <div class="col-md-12 form-group">
+                                      <div class="form-group service-form-group col-md-12">
+                              <button class="btn-info btn-lg " (click) = "addapi()">Submit</button>
+                              </div>
+                              </div><br>
+                  </form>
+              </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </form>
+  

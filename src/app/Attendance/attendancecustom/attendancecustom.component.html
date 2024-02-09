@@ -1,0 +1,94 @@
+<!-- BEGIN # BOOTSNIP INFO -->
+
+<div class="container">
+  <div class="row">
+      <div class="header">
+        <div class="row">
+          <div class="col-12 col-md-6 mb-3">
+            <div class="col-md-8">
+              <h3 class="adsc">
+                <i class="fa fa-university"></i> &nbsp;Custom Attendance</h3>
+              </div>
+            </div>
+            
+          </div>
+         
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+          <div class="col-md-3">
+            <input [max]="maxDate" (change)="dateChange1($event.target.value)" type="date"  data-date-format="DD MMMM YYYY" class="form-control col-md-12"   name="Date_of_birth" value="" #Date_of_birth>
+          </div>
+
+          <div class="col-md-3">
+            <input [max]="maxDate" (change)="dateChange2($event.target.value)" type="date"  data-date-format="DD MMMM YYYY" class="form-control col-md-12"   name="Date_of_birth" value="" #Date_of_birth>
+          </div>
+        </div></div>
+
+        
+
+
+        <div class="col-md-12 pull-left">
+        <button class="butns" (click) = "addapi1()" >All</button>
+        <button class="butns" (click) = "addapi2()">Daily</button>
+        <button class="butns" (click) = "addapi3()" >Weekly</button>
+        <button class="butns" (click) = "addapi4()">Monthly</button>
+        <button class="butns" (click) = "addapi5()" >Yearly</button>      
+        <button class="butns1" (click) = "addapi6()" >Custom</button>      
+    
+               </div>
+               
+               <br>
+               <br>
+      
+
+        <div class="col">
+    
+            <div class="col-md-12">
+              <div class="row">
+                <div class="tabl" >
+                    <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th>SL.NO</th>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Working Hours</th>
+                                <!-- <th>Late By</th>
+                                <th>Over-time</th> -->
+                                <th>Time-In</th>
+                                <th>Time-Out</th>
+                                <th>Check</th>
+                                <th>Status</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                              <ng-container  *ngFor="let data of datas ;  let i = index">
+                                      <tr>
+                                          <td>{{i+1}}</td> 
+                                          <td>{{data.employee_id}}</td>
+                                          <td>{{data.name}}</td>
+                                          <td id="l1">{{data.date}}</td>
+                                          <td id="a1">{{data.work_duration}}</td>
+                                          <!-- <td id="pc1">{{data.late_by}}</td>
+                                          <td id="pc1">{{data.overtime}}</td> -->
+                                          <td id="pc1">{{data.time_in}}</td>
+                                          <td id="pc1">{{data.time_out}}</td>
+                                          <td id="pc1">{{data.check}}</td>
+                                          <td id="pc1">{{data.status}}</td>
+                                    </tr>
+                                    </ng-container>      
+                        </tbody>
+                    </table>
+                    <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                    <div class="card-footer p-0">
+                    <ngb-pagination   [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                    </div>     
+              </div>
+              </div>
+            </div>
+            </div>
+  </div>
+</div>

@@ -1,0 +1,144 @@
+<div style="text-align: center"><h4>BHARAtdEEYAM SECURITY SERVICE PVT LTD</h4></div>
+<div style="text-align: center"><h4>No.29, VGP Rajesh Nager, 1st Main Road, Chennai - 600 100</h4></div>
+<div style="text-align: center"><h4>QUALITY CHECK FORM DETAILS</h4></div>
+<div>Date : {{datas.date}}</div><div>Time : {{datas.time}}</div>
+<table>
+  <tr>
+    <td>NAME OF THE UNIT</td>
+    <td>{{datas.unit_name}}</td>
+  </tr>
+  <tr>
+      <td>ID NO./ RANK AND NAME OF tdE UNIT IN-CHARGE</td>
+      <td>{{datas.unit_in_charge}}</td>
+    </tr>
+    <tr>
+        <td>CONTACT NO</td>
+        <td>{{datas.contact_no}}</td>
+      </tr>
+      <tr>
+          <td>UNIT STRENG :</td>
+          <td></td>
+        </tr>
+</table>
+
+<div class="col-md-12">
+    <div class="row">
+      <div class="tabl" >
+          <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+              <thead>
+                  <tr>
+                      <th></th>
+                      <th>AM</th>
+                      <th>AO</th>
+                      <th>SO</th>     
+                      <th>ASO</th>  
+                      <th>SG</th>   
+                      <th>LSG</th>
+                      <th>FG</th>
+                      <th>GM</th>
+                      <th>Total</th>
+                  </tr>
+              </thead>
+              <tbody>
+                          <ng-container  *ngFor="let data of qualitylist ;  let i = index">
+                          <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                              <td>{{data.type}}</td> 
+                              <td>{{data.as}}</td>
+                              <td id="l1">{{data.ao}}</td>
+                              <td id="a1">{{data.so}}</td>
+                              <td id="pc1">{{data.aso}}</td>
+                              <td id="pc1">{{data.sg}}</td>
+                              <td id="pc1">{{data.lsg}}</td>
+                              <td id="pc1">{{data.fg}}</td>
+                              <td id="pc1">{{data.gm}}</td>
+                              <td id="pc1">{{data.total}}</td>
+                             </tr>
+                          
+                          </ng-container>      
+              </tbody>
+          </table>    
+    </div>
+    </div>
+  </div>
+
+
+
+<table>
+        <tr>
+            <td>ROLL CALL CONDUCTED DAILY</td>
+            <td>{{datas.roll_call}}</td>
+          </tr>
+          <tr>
+              <td>TURN OUT/UNIFORM DEFICIENCY IF ANY</td>
+              <td>{{datas.uniform_deficiency}}</td>
+            </tr>
+            <tr>
+                <td>NO. OF DUTY POSTS</td>
+                <td>{{datas.no_of_duty}}</td>
+              </tr>
+              <tr>
+                  <td>AVALIABILITY OF POST INSTRUCTIONS</td>
+                  <td>{{datas.availability}}</td>
+                </tr>
+                <tr>
+                    <td>KNOWLEDGE ABOUT DUTY POSTS</td>
+                    <td>{{datas.kl_duty_post}}</td>
+                  </tr>
+                  <tr>
+                      <td>KNOWLEDGE ABOUT FIRE AND EMERGENCY DRILLS</td>
+                      <td>{{datas.kl_fire_emergency}}</td>
+                    </tr>
+                    <tr>
+                        <td>DETAILS OF BSSPL INVENTORY MAINTAINED</td>
+                        <td>{{datas.details_of_bsspl}}</td>
+                      </tr>
+                      <tr>
+                        <td>REGULARITY OF OPS TEAM VISTING/ WHETHER MET THE CLIENT</td>
+                        <td>{{datas.regularity_of_ops}}</td>
+                      </tr>
+                      
+                      <tr>
+                          <td>REGULARTITY OF NIGHT CHECK</td>
+                          <td>{{datas.regularity_of_night}}</td>
+                        </tr>
+                        <tr>
+                            <td>LAST NIGHT CHECK DETAILS</td>
+                            <td>{{datas.regularity_of_night}}</td>
+                          </tr>
+                          <tr>
+                              <td>LAST TRAINING DETAILS</td>
+                              <td>{{datas.last_training_details}}</td>
+                            </tr>
+                            <tr>
+                                <td>WEAK AREAS</td>
+                                <td>{{datas.weak_arears}}</td>
+                              </tr>
+                              <tr>
+                                  <td>REMARKS BY QUALITY OFFICER</td>
+                                  <td>{{datas.quality_remarks}}</td>
+                                </tr>
+                                <tr>
+                                    <td>REMARKS BY CLIENT</td>
+                                    <td>{{datas.client_remarks}}</td>
+                                  </tr>
+                                  <tr>
+                                      <td>NAME & SIGN</td>
+                                      <td>{{datas.client_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CONTACT NO</td>
+                                        <td>{{datas.client_contact}}</td>
+                                      </tr>
+                                      <tr>
+                                          <td>MAIL ID</td>
+                                          <td>{{datas.mail_id}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>REMARKS BY COO</td>
+                                            <td>{{datas.remarks_by_cod}}</td>
+                                          </tr>
+</table>
+
+
+
+

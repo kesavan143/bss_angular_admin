@@ -1,0 +1,127 @@
+<div  class="row">
+    <div  class="header">
+        <h3  class="adsc">
+            <i class="material-icons ng-star-inserted">business</i> &nbsp;Total Pay SUMMARY</h3>
+    </div>
+</div>
+
+<div class="row" style="padding-bottom: 30px;"><Br>
+    <div class=col-md-12>
+        <ng-container *ngFor="let data of companylist ">
+            <button class="btn-info btn-lg pull-left" (click)="find(data.company_name)">{{data.company_name}} </button>
+        </ng-container>
+    </div>
+    <div class=col-md-12>
+        <div class="col-md-4">
+            <div class="col-md-2">
+                <label style="font-weight: 700;">Month</label>
+            </div>
+            <div class="col-md-2" style="display: flex">
+                <input type="month" [(ngModel)]="date" name="month" #month>
+                <button class="btn-info btn-lg" style="margin-left: 22px;"
+                    (click)="dateChange(month.value)">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container col-lg-12" style="text-align: center">
+
+    <table class="table table-striped" id="datTabl" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+        <thead>
+            <tr>
+                <th>
+                    <mfDefaultSorter by="company_name">Company Name</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="ucode">Unit Code</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="unit_name">Unit Name</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="date">Date</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="gross">Gross Pay</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="pf">P.F.</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="esi">E.S.I.</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="pr_tax"> Pr.Tax </mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="advance">Advance</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="loan">Loan</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="uniform">Uniform</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="mess">Mess</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="rent">Rent</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="atm">ATM</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="others">Others</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="Insur"> Insur.</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="IT_Mess">DD. IT/Mess</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="total_dec">TOTALDeduction</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="net_pay">Net Pay</mfDefaultSorter>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of mf.data; let i = index">
+                <td>{{item.company_name}}</td>
+                <td>{{item.ucode}}</td>
+                <td>{{item.unit_name}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.gross}}</td>
+                <td>{{item.pf}}</td>
+                <td>{{item.esi}}</td>
+                <td>{{item.pr_tax}}</td>
+                <td>{{item.advance}}</td>
+                <td>{{item.loan}}</td>
+                <td>{{item.uniform}}</td>
+                <td>{{item.mess}}</td>
+                <td>{{item.rent}}</td>
+                <td>{{item.atm}}</td>
+                <td>{{item.others}}</td>
+                <td>{{item.Insur}}</td>
+                <td>{{item.IT_Mess}}</td>
+                <td>{{item.total_dec}}</td>
+                <td>{{item.net_pay}}</td>
+            </tr>
+            <!-- <tr>
+                <td>Total</td>
+                <td>{{total}}</td>
+            </tr> -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="19" style="text-align: center">
+                    <mfBootstrapPaginator [rowsOnPageSet]="[10,25,100]"></mfBootstrapPaginator>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

@@ -1,0 +1,33 @@
+<div class="loginss">
+  <div class="row">
+  <div class="card logincard mx-auto login">
+    <div class="card-body">
+
+      <h2 class="card-title text-center mb-5"> <img src="assets/images/23.jpg"></h2>
+
+      <form class="frms" name="form" novalidate>
+        <div class="form-group ">
+          <label style="float: left;" for="email">Login ID</label>
+          <input type="text" #Email_id [(ngModel)]="adduser.Email_id" placeholder="Login ID"
+            class="form-control col-md-12" pattern="^[a-zA-Z0-9_-\s]{2,150}$" name="Email_id" value="" #Email_id>
+        </div>
+        <div class="form-group">
+          <label style="float: left;" for="passwords">Password</label>
+          <input type="password" #password [(ngModel)]="adduser.password" placeholder="Password"
+            class="form-control col-md-12" pattern="^[a-zA-Z0-9_-\s]{2,150}$" name="password" value="" #password>
+        </div>
+        <div class="mt-5 text-center">
+          <button *ngIf='showbutton == true ' (click)="addapi(Email_id.value,password.value)"
+            class="btn form-control btn btn-primary px-gdn-btn mb-3 mr-3" style="color:#fff;">LOGIN</button>
+          <button *ngIf='showbutton == false ' disabled (click)="addapi(Email_id.value,password.value)"
+            class="btn form-control btn btn-primary px-gdn-btn mb-3 mr-3" style="color:#fff;">LOGIN</button>
+        </div>
+        <div class="mt-4 text-center" (click)="forgot()">Forgot password? <b>Click</b></div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<div class="text-nowrap footer">
+  <!-- 2019 <b routerLink="/">BSS</b> all rights reserved -->
+</div>

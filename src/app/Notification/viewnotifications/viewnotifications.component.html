@@ -1,0 +1,61 @@
+
+<div class="header">
+    <div  class="row">
+      <div  class="col-12 col-md-6 mb-3">
+        <div  class="col-md-8">
+          <h3  class="adsc">
+            <i  class="fa fa-file-text-o"></i> &nbsp;Contract Details</h3>
+          </div>
+        </div>
+        <div  class="col-md-6">           
+            <button type="button" class="aduser  btn-info btn-lg pull-right" data-toggle="collapse"  data-toggle="modal" data-target="#login-modal1" (click)="add()">Add User</button>             
+        </div>
+      </div>
+     
+    </div>
+<table style="width:100%">
+    <tr>
+        <td>Client ID</td>
+        <td>{{datas.client_id}}</td>
+    
+      </tr>
+  <tr>
+    <td>Client Name</td>
+    <td>{{datas.client_name}}</td>
+
+  </tr>
+  <tr>
+      <td>Site ID</td>
+      <td>{{datas.site_id}}</td>
+
+    </tr>
+  <tr>
+    <td>Site Name</td>
+    <td>{{datas.site_name}}</td>
+
+  </tr>
+  <tr>
+      <td>Contract No</td>
+      <td>{{datas.contract_id}}</td>
+     
+    </tr>
+  <tr>
+    <td>Contract Start Date</td>
+    <td>{{datas.contract_start_date}}</td>
+  </tr>
+  <tr>
+    <td>Contract End Date</td>
+    <td>{{datas.contract_type}}</td>
+    
+  </tr>
+  <tr>
+    <td>Invoice Cycle</td>
+    <td>{{datas.invoice_cycle}}</td>
+ 
+  </tr>
+  <tr>
+    <td>Contract Type</td>
+    <td>{{datas.contract_type}}</td>
+  </tr>
+
+</table>

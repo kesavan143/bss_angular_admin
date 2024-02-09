@@ -1,0 +1,104 @@
+<div  class="row">
+    <div  class="header">
+      <h3  class="adsc">
+          <i class="material-icons ng-star-inserted">business</i> &nbsp;Employee List</h3>
+      </div>
+		</div>
+		<div class="" style="padding-bottom: 30px;"><Br>
+			<!-- <div *ngIf="deleteLoading" id="snackbar" class="show"> {{loadingmsg}}</div> -->
+			<div class="headers">
+					<div class="">
+							<div class="row">
+									<input type="file" (change)="onfileselected($event)">
+									<button class="btn-info btn-lg " (click)="attach()">Upload</button>
+							</div>
+				<div class="row">		
+					<div class="col-md-3">
+						<div class="search input-group" style="border: 1px solid black;padding: 4px;">
+								<mat-form-field>
+										<input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="">
+									</mat-form-field>
+								<!-- <input class="form-control"  style="border:none;" type="text" placeholder="Search" name="search" [(ngModel)]="filter">       -->
+							<!-- <input type="text" class="form-control pr-2 py-0"  [(ngModel)]="filter" placeholder="Search"> -->
+							<div class="input-group-append">
+								<i class="material-icons searchs pr-2">search</i>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+					<!-- (click)='accbulup()' -->
+					</div>
+				</div>
+				</div>
+			</div>
+
+<div>
+	  <ng-container  *ngFor="let data of datasss ">
+	<button  class="btn-info btn-lg pull-left" (click)="find(data.company_name)">{{data.company_name}} </button>
+		</ng-container>	
+</div>
+  <table mat-table [dataSource]="dataSource" matSort class="table table-responsive table-bordered" style="font-size: 10px;font-weight: 600;" >
+
+		 <ng-container matColumnDef="ecode">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white; ">ECODE</th>
+			<td style="min-width: 100px;" mat-cell *matCellDef="let element"> {{element.ecode}} </td>
+		 </ng-container>
+		<ng-container matColumnDef="Company">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">Company</th>
+					<td mat-cell *matCellDef="let element"> {{element.company_name}} </td>
+				</ng-container>
+			<ng-container matColumnDef="employee_type">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">E.Type</th>
+				<td mat-cell *matCellDef="let element"> {{element.employee_type}} </td>
+			</ng-container>
+		
+			<ng-container matColumnDef="Name">
+				<th mat-header-cell *matHeaderCellDef mat-sort-heade  style="height: 10px;color:white;" >    Name  </th>
+				<td style="min-width: 200px;" mat-cell *matCellDef="let element"> {{element.Name}} </td>
+			</ng-container>
+		
+			<ng-container matColumnDef="gender">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">    Gender </th>
+					<td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+				</ng-container>
+			
+				<ng-container matColumnDef="Mobile_No">
+					<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white">  Contact No </th>
+					<td  style="min-width: 200px;" mat-cell *matCellDef="let element"> {{element.Mobile_No}} </td>
+				</ng-container>
+	
+				<ng-container matColumnDef="date_joining">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> Date of Joining </th>
+						<td mat-cell *matCellDef="let element"> {{element.date_joining | date: 'dd/MM/yyyy'}} </td>
+					</ng-container>
+				
+					<ng-container matColumnDef="site_name">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white;"> Unit Name </th>
+						<td  style="width: 301px;" mat-cell *matCellDef="let element"> {{element.site_name}} </td>
+					</ng-container>
+
+						<ng-container matColumnDef="report">
+								<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> Report </th>
+								<td mat-cell *matCellDef="let element"> <button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="qrcode($event, element)"><i  class="fa m-1 fa-file-text-o"></i></button> </td>
+							</ng-container>
+	
+							<ng-container matColumnDef="view">
+									<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> View </th>
+									<td mat-cell *matCellDef="let element"> <button style="background: transparent" class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="view($event, element)"><i  class="m-1 icon-screen-desktop"></i></button> </td>
+								</ng-container>
+								<ng-container matColumnDef="edit">
+										<th mat-header-cell *matHeaderCellDef mat-sort-header  style="height: 10px;color:white"> Edit </th>
+										<td mat-cell *matCellDef="let element"> <button style="background: transparent"type="button" data-toggle="modal"  data-uid="1" class=" btn  btn-sm"><i  class="m-1 icon-note" (click)="edit($event,element)"></i></button> </td>
+									</ng-container>
+								
+	
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+		</table>
+		
+		<mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 30]">
+		</mat-paginator>
+		</div>
+		
+
+

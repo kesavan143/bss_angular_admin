@@ -1,0 +1,203 @@
+<div  class="row">
+    <div  class="header">
+      <h3  class="adsc">
+          <i class="material-icons ng-star-inserted">business</i> &nbsp;PF ECR FORMAT</h3>
+      </div>
+		</div>
+    <div class=col-md-12>
+        <div class="col-md-4">
+            <div class="col-md-2">
+                <label style="font-weight: 700;">Month</label>
+             </div>
+         <div class="col-md-2" style="display: flex">
+           <input type="month"  [(ngModel)]="date" name="month" #month> 
+            <button class="btn-info btn-lg" style="margin-left: 22px;" (click)="dateChange(month.value)">Search</button>
+         </div>
+        </div>
+    </div>
+		
+
+    <div class="container col-lg-12" style="text-align: center">
+
+        <table class="table table-striped" id="datTabl" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+          <thead>
+          <tr>
+                <th>
+                    <mfDefaultSorter by="ecode">ID NO</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="company_name">COMPANY NAME</mfDefaultSorter>
+                </th>
+              <th>
+                  <mfDefaultSorter by="site_name">UNIT NAME</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="ename">EMPLOYEE NAME</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="panNo">PF NO </mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="uan">UAN</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="grosswages">GROSS WAGES </mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="gross">EPF WAGES</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="gross">EPS WAGES</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="gross">EDLI WAGES</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="EESHAREREMITTED">EE SHARE REMITTED (12%)</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="EPSCONTRIBUTIONREMITTED">EPS CONTRIBUTION REMITTED(8.33%)</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="ERSHAREREMITTEDs">ER SHARE REMITTED(3.67%)</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="dutyoff">NCP DAYS</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="refund">REFUND</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="dob">DOB</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="doj">DOJ</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="gender">GENDER</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="f_m_name">FATHER/HUSBAND NAME</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="relationship">RELATION</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="mobile_no">MOBILE NO</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="email_id">EMAIL ID</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="nationality">NATIONALITY</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="ewamount">WAGES</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="qualification">QUALIFICATION</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="marital_status">MARITAL STATUS</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="isInternationalWorker">IS INTERNATIONAL WORKER</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="countryOfOrigin">COUNTRY OF ORIGIN</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="passportNo">PASSPORT NO.</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="passportValidFrom">PASSPORT VALID FROM</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="passportValidTo">PASSPORT VALID TILL</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="isPhysicalHandicap">IS PHYSICAL HANDICAP</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="locomotive">LOCOMOTIVE</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="hearing">HEARING</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="visual">VISUAL</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="ifsc">IFSC</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="nameAsPerBank">NAME AS PER BANK</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="panNo">PAN</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="nameAsPerPan">NAME AS PER PAN</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="aadhaarNo">AADHAAR NO</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="nameAsPerAadhaar">NAME AS PER AADHAAR</mfDefaultSorter>
+              </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of mf.data; let i = index">
+              <td>{{item.ecode}}</td>
+              <td>{{item.company_name}}</td>
+              <td>{{item.site_name}}</td>
+              <td >{{item.ename}}</td>
+              <td>{{item.panNo}}</td>
+              <td >{{item.uan}}</td>
+              <td >{{item.grosswages}}</td>
+              <td >{{item.gross}}</td>
+              <td>{{item.gross}}</td>
+              <td>{{item.gross}}</td>
+              <td>{{item.EESHAREREMITTED}}</td>
+              <td >{{item.EPSCONTRIBUTIONREMITTED}}</td>
+              <td>{{item.ERSHAREREMITTEDs}}</td>
+              <td >{{item.dutyoff}}</td>
+              <td >{{item.refund}}</td>
+              <td >{{item.dob | date: 'dd/MM/yyyy'}}</td>
+              <td>{{item.doj | date: 'dd/MM/yyyy'}}</td>
+              <td>{{item.gender}}</td>
+              <td>{{item.f_m_name}}</td>
+              <td >{{item.relationship}}</td>
+              <td>{{item.mobile_no}}</td>
+              <td >{{item.email_id}}</td>
+              <td >{{item.nationality}}</td>
+              <td >{{item.ewamount}}</td>
+              <td>{{item.qualification}}</td>
+              <td>{{item.marital_status}}</td>
+              <td>{{item.isInternationalWorker}}</td>
+              <td >{{item.countryOfOrigin}}</td>
+              <td>{{item.passportNo}}</td>
+              <td >{{item.passportValidFrom}}</td>
+              <td >{{item.passportValidTo}}</td>
+              <td >{{item.isPhysicalHandicap}}</td>
+              <td >{{item.locomotive}}</td>
+              <td>{{item.hearing}}</td>
+              <td>{{item.visual}}</td>
+              <td>{{item.ifsc}}</td>
+              <td >{{item.nameAsPerBank}}</td>
+              <td>{{item.panNo}}</td>
+              <td >{{item.nameAsPerPan}}</td>
+              <td >{{item.aadhaarNo}}</td>
+              <td >{{item.nameAsPerAadhaar}}</td>
+          </tr>
+          </tbody>
+          <tfoot >
+              <tr>
+                  <td colspan="41" style="text-align: center">
+                      <mfBootstrapPaginator [rowsOnPageSet]="[10,25,100]"></mfBootstrapPaginator>
+                  </td>
+              </tr>
+              </tfoot>
+        </table>
+        </div>

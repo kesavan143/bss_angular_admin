@@ -1,0 +1,161 @@
+<div class="row">
+    <div class="col-12 col-sm-6">
+<div class="Emp" style="background: #ffffff; margin-left: -17px;
+margin-right: -17px; width: 100% ; height: 100%; border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: .5em .5em 0;">
+  <label class="comtitle">Complaint Open Status</label>
+  <table style="width:100%">
+    <tr>
+      <th>complaint_id</th>
+      <td>: {{datas0.complaint_id}}</td>
+    </tr>
+     <tr>
+      <th>complaint_from</th>
+      <td>: {{datas0.complaint_from}}</td>
+    </tr>
+     <tr>
+      <th>Posted By</th>
+      <td>: {{datas0.poster_id}}</td>
+    </tr>
+        <tr>
+      <th>Complaint type</th>
+      <td>: {{datas0.complaint_type}}</td>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <td>: {{datas0.title}}</td>
+    </tr>
+     <tr>
+      <th>Description</th>
+      <td>: {{datas0.description}}</td>
+    </tr>
+     <tr>
+      <th>Posted on</th>
+      <td>: {{datas0.posted_on}}</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <td>: {{datas0.status}}</td>
+    </tr>
+    <tr>
+    </tr>      
+    <tr>
+      <th> <img src="{{datas0.photo1}}"  style="height:130px; width:130px"> <img src="{{datas0.photo2}}"  style="height:130px; width:130px"> </th>
+      <td> <img src="{{datas0.photo3}}"  style="height:130px; width:130px"> <img src="{{datas0.photo4}}"  style="height:130px; width:130px"> </td>
+    </tr>       
+</table> 
+</div>
+</div>
+<div class="col-12 col-sm-6">
+    <div class="Emp" style="background: #ffffff; margin-left: -17px;
+    margin-right: -17px; width: 100% ; height: 100%; border: 1px solid #aaa;
+      border-radius: 4px;
+      padding: .5em .5em 0;">
+      <label class="comtitle">Complaint Moved Status</label>
+      <table style="width:100%">
+        <tr>
+          <th>complaint id</th>
+          <td>: {{datas1.complaint_id}}</td>
+        </tr>
+         <tr>
+          <th>complaint from</th>
+          <td>: {{datas1.complaint_from}}</td>
+        </tr>
+         <tr>
+          <th>Posted By</th>
+          <td>: {{datas1.poster_id}}</td>
+        </tr>
+            <tr>
+          <th>Complaint type</th>
+          <td>: {{datas1.complaint_type}}</td>
+        </tr>
+        <tr>
+          <th>Title</th>
+          <td>: {{datas1.title}}</td>
+        </tr>
+         <tr>
+          <th>Description</th>
+          <td>: {{datas1.description}}</td>
+        </tr>
+         <tr>
+          <th>Posted on</th>
+          <td>: {{datas1.posted_on}}</td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td>: {{datas1.status}}</td>
+        </tr>
+        <tr>
+            <th>Moved By</th>
+            <td>: {{datas1.moved_by}}</td>
+          </tr>
+          <tr>
+            <th>Moved To</th>
+            <td>: {{datas1.moved_to}}</td>
+          </tr>
+          <tr>
+            <th>Last Update</th>
+            <td>: {{datas1.updated_at}}</td>
+          </tr>
+        <tr>
+        </tr>      
+        <tr>
+          <th> <img src="{{datas1.photo1}}"  style="height:130px; width:130px"> <img src="{{datas1.photo2}}"  style="height:130px; width:130px"> </th>
+          <td> <img src="{{datas1.photo3}}"  style="height:130px; width:130px"> <img src="{{datas1.photo4}}"  style="height:130px; width:130px"> </td>
+        </tr>       
+</table> 
+    </div>
+    </div>
+
+        <div class="col-12 col-sm-6">
+            <div class="Emp" style="background: #ffffff; margin-left: -17px;
+            margin-right: -17px; width: 100% ; height: 100%; border: 1px solid #aaa;
+              border-radius: 4px;
+              padding: .5em .5em 0;">
+              <label class="comtitle">Complaint Report</label>
+              <table style="width:100%">
+                <tr>
+                  <th>complaint_id</th>
+                  <td>: {{datas2.complaint_id}}</td>
+                </tr>
+                 <tr>
+                  <th>Work Done by </th>
+                  <td>: {{datas2.taken_by}}</td>
+                </tr>
+                <tr>
+                  <th>Title</th>
+                  <td>: {{datas2.title}}</td>
+                </tr>
+                 <tr>
+                  <th>Description</th>
+                  <td>: {{datas2.description}}</td>
+                </tr>
+                 <tr>
+                  <th>Posted on</th>
+                  <td>: {{datas2.updated_at}}</td>
+                </tr>
+                <tr>
+                  <th>Status</th>
+                  <td>: {{datas2.status}}</td>
+                </tr>
+                <tr>
+                    <th>Last Update</th>
+                    <td>: {{datas2.updated_at}}</td>
+                  </tr>
+                <tr>
+                </tr>      
+                <tr>
+                   <th> <img src="{{datas2.photo1}}"  style="height:130px; width:130px"> </th>
+                </tr>  
+                <tr>
+                  <th><button class="btn-info" (click)="closed()">Close Complaint</button></th>
+                  <td><button class="btn-info" (click)="repone()">Re-Open</button></td>
+                </tr>  
+                     
+        </table> 
+            </div>
+            </div>
+                  </div> 
+          
+      

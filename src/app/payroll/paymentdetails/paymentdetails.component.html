@@ -1,0 +1,173 @@
+
+<h3>Employee Details</h3>
+<table>
+  <tr>
+    
+    <th>Emp ID</th>
+    <th>{{datas.id}}</th>
+  </tr>
+  <tr>
+    
+    <td>Emp Type</td>
+    <td>{{datas.employee_type}}</td>
+  </tr>
+  <tr>
+ 
+    <td>Name</td>
+    <td>{{datas.Name}}</td>
+  </tr>
+  <tr>
+
+    <td>Account Number</td>
+    <td>{{datas.a_c}}</td>
+  </tr>
+  <tr>
+      <td>IFSC No</td>
+      <td>{{datas.ifsc}}</td>
+    </tr>
+  <tr>
+
+    <td>Bank Details</td>
+    <td>{{datas.bankname}}</td>
+  </tr>
+  <tr>
+ 
+    <td>Mobile Number</td>
+    <td>{{datas.Mobile_No}}</td>
+  </tr>
+  <tr>
+  
+    <td>Email-ID</td>
+    <td>{{datas.Email_ID}}</td>
+  </tr>
+  <tr>
+
+  
+  </tr>
+</table>
+
+<h3>Payment Details</h3>
+<table>
+  <tr>
+    <th>Basic</th>
+    <th>{{tbasic | number}}</th>
+   
+  </tr>
+  <tr>
+    <td>DA</td>
+    <td>{{tda | number}}</td>
+   
+  </tr>
+  <tr>
+    <td>HRA</td>
+    <td>{{taddhousr | number}}</td>
+   
+  </tr>
+  <tr>
+    <td>Others</td>
+    <td>{{tothers | number}}</td>
+    
+  </tr>
+  <tr>
+    <td>Leave</td>
+    <td>{{tleave | number}}</td>
+   
+  </tr>
+  <tr>
+    <td>Bouns</td>
+    <td>{{tbouns | number}}</td>
+    
+  </tr>
+  <tr>
+    <td>Weekly Off</td>
+    <td>{{tweekly | number}}</td>
+    
+  </tr>
+        <tr>
+          <td>No of day worked</td>
+          <td>{{numberday | number}}</td>
+        </tr>
+        <tr>
+          <td>Gross</td>
+          <td>{{tgross | number}}</td>
+          
+        </tr>
+        <tr>
+          <td>PF</td>
+          <td>{{tepf | number}}</td>
+        </tr>
+        <tr>
+            <td>ESI</td>
+            <td>{{tesi | number}}</td>
+          </tr>
+        <tr>
+          <td>pr.Tax</td>
+          <td>{{protax | number}}</td>
+          
+        </tr>
+        <tr>
+          <td>Adv.</td>
+          <td>{{adv | number}}</td>
+          
+        </tr>
+        <tr>
+          <td>Uniform</td>
+          <td>{{uniform | number}}</td>
+          
+        </tr>
+        <tr>
+          <td>Mess</td>
+          <td>{{mess | number}}</td>
+          
+        </tr>
+
+        <tr>
+          <td>Rent</td>
+          <td>{{rent | number}}</td>
+          
+        </tr>
+
+        <tr>
+          <td>ATM</td>
+          <td>{{atm | number}}</td>
+          
+        </tr>
+        <tr>
+          <td>Loan</td>
+          <td>{{loan | number}}</td>
+          
+        </tr>
+        <tr>
+          <td>Others</td>
+          <td>{{other | number}}</td>
+          
+        </tr>
+        <tr>
+          <td>Total Dedcation</td>
+          <td>{{totaldection | number}}</td>
+          
+        </tr>
+        <tr>
+            <td>NET Amount</td>
+            <td>{{tnet | number}}</td>
+          </tr>
+
+          <tr>
+              <td>Additional Dutys</td>
+              <td>{{additonal_dutys | number}}</td>
+            </tr>
+
+            <tr>
+                <td>Additional Dutys Amount</td>
+                <td>{{tnet1 | number}}</td>
+              </tr>
+              <tr>
+                  <td>Total Amount</td>
+                  <td>{{total_amount | number}}</td>
+                </tr>
+</table>
+<div class="row" style="padding-top: 10px;">
+  <div class="col-md-12">
+    <button class="btn-info btn-lg pull-Right" style="width: 200px;float: right;" (click)="process()">Process</button>
+  </div>
+</div>

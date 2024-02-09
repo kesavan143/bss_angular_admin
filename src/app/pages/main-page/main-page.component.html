@@ -1,0 +1,47 @@
+<div class="application" [ngClass]="{'closed-nav': isMenuClosed, 'overlay-nav':isOverlayMenuMode,
+    'small-nav':isMenuCollapsed, 'small-nav-mode':isSmallMenuMode, 'fixed-header': isFixedHeader}">
+  <header class="d-flex justify-content-start align-items-center">
+    <div class="menu" (click)="isMenuClosed = !isMenuClosed; onSideNavModeChange()">
+      <i class="material-icons">menu</i>
+    </div>
+
+    <h2 class="text-center">{{type}}</h2>
+<div class="col-md-4">
+
+    <!-- <div class="notifications"  (click)="addapi1()">
+        <i class="fa fa-bell"></i>
+        <span class="num">4</span>
+       
+    </div> -->
+
+</div>
+    <div class="ml-auto d-flex justify-content-start align-items-center">
+        <a class="notif" (click)="notifi()"><span class="num">{{count}}</span></a>
+      <i class=" text-lighten-1  material-icons">account_circle</i>
+      <div class="user-name d-none d-md-block">{{name}}</div>
+      <i  class="fa m-1 fa-power-off ng-star-inserted" style="font-size: 20px;padding-left: 20px;" (click)="onclick()"></i>
+      <div class="user-name d-none d-md-block"  (click)="onclick()" style="padding-right: 10px;">Logout</div>
+    </div>
+  </header>
+  <div class="main-content" style="
+  background: white;">
+    <div [ngClass]="{'container-fluid': !isBoxedLayout, 'container': isBoxedLayout}"
+    [@routerTransition]="getState(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+  </div>
+  <div class="side-nav">
+    <div class="back-btn" (click)="isMenuClosed = !isMenuClosed; onSideNavModeChange()">
+      <i class="material-icons">navigate_before</i>
+    </div>
+    <div class="logo">
+      <a>BSS</a>
+    </div>
+    <div class="user-info">
+        <i class=" text-lighten-1 large1  material-icons">security</i>
+    </div>
+    <div class="divider"></div>
+    <px-gdn-multimenu class="menu" [menuModel]="menuModel" [smallMenu]="isSmallMenuMode"
+                      (collapse)="isMenuCollapsed = $event"></px-gdn-multimenu>
+  </div>
+</div>

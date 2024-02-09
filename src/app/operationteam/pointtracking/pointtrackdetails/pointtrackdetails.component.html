@@ -1,0 +1,71 @@
+<!-- BEGIN # BOOTSNIP INFO -->
+<div class="container">
+  <div class="row">
+      <div class="header">
+        <div class="row">
+          <div class="col-12 col-md-6 mb-3">
+            <div class="col-md-8">
+              <h3 class="adsc">
+                <i class="fa fa-university"></i> &nbsp;{{Client_Place}}</h3>
+              </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+          </div>
+        </div>
+   
+        
+          <div class="cols"style="width: 100%;float: left; margin-bottom:10px ;">
+              <select class="form-control col-md-3 pull-left"   name="professional_type" value="" #employees id="exampleFormControlSelect1">
+                  <option>Select Employee</option>
+                  <ng-container  *ngFor="let data of Employee_data">
+                  <option  value="{{data.id}}">{{data.Name}}</option>
+                </ng-container>
+                </select> 
+            <button type="button" class="btn addpoints btn-info pull-right" data-toggle="collapse"  (click)="assign(employees.value)">Add Map Points</button>
+          </div>
+        <div class="col" style="width: 100%;float: left;">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="tabl" >
+                    <table class="table table-bordered " style="border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th style="text-align: left">SL.NO</th>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Contact No</th>
+                                <th>Client Place</th>
+                                <th>Email ID</th>
+                                <th>Address</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <ng-container  *ngFor="let data of datas;  let i = index">
+                                        <tr>
+                                        <td>{{i+1}}</td>  
+                                        <td>{{data.Emp_id}}</td>
+                                        <td>{{data.Employee_name}}</td>
+                                        <td id="l1">{{data.gender}}</td>
+                                        <td id="a1">{{data.contact_no}}</td>
+                                        <td id="pc1">{{data.Client_place}}</td>
+                                        <td id="pc1">{{data.Email_id}}</td>
+                                        <td id="pc1">{{data.Address}}</td>
+                                        
+                                        <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class=" btn  btn-sm" style="background: transparent;"><i  class=" m-1 icon-close" (click)="delete($event,data)"></i></button></td>
+                                    </tr>
+                                    </ng-container>      
+                        </tbody>
+                    </table>
+                    <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                    <div class="card-footer p-0">
+                    <ngb-pagination   [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                    </div>     
+              </div>
+              </div>
+            </div>
+            </div>
+  </div>
+</div>

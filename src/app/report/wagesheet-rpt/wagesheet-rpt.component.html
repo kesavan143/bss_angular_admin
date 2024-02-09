@@ -1,0 +1,170 @@
+<div  class="row">
+    <div  class="header">
+      <h3  class="adsc">
+          <i class="material-icons ng-star-inserted">business</i> &nbsp;Wage Sheet</h3>
+      </div>
+		</div>
+    <div class="container col-lg-12" style="text-align: center">
+
+        <table class="table table-striped" id="datTabl" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+          <thead>
+          <tr>
+              <th>
+                  <mfDefaultSorter by="company_name">COMPANY</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="unit_name">UNIT</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="ecode">ECODE</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="ename">ENAME</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="designation">DCODE</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="">DP</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="">  DPA </mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="dutyoff">WEKKLY OFF</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="ewdays">Sub-Duty</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="total_duties">T.Duties</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="basic">BASIC</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="da">D.A.</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="hra">H.R.A.</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="ewamount">W.A</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by=""> B.P.</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="">A</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="ewdays">OT</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="gross">PF GROSS</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="waesi">ESI1</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="total_dec">DIFF</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="gross">Gross</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="pf">PF</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="esi">ESI</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="">Insu.</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="advance">Adv.</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="loan">Loan</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="">Fine</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="uniform">Uniform</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="mess">Mess</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="atm">ATM</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="id">ID</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="others">Others</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="total_dec">T. Ded</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="net_pay">Netpay</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="">Sign</mfDefaultSorter>
+              </th>
+              <th>
+                  <mfDefaultSorter by="paymode">status</mfDefaultSorter>
+              </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of mf.data; let i = index">
+              <td>{{item.company_name}}</td>
+              <td>{{item.unit_name}}</td>
+              <td >{{item.ecode}}</td>
+              <td>{{item.ename}}</td>
+              <td >{{item.designation}}</td>
+              <td></td>
+              <td ></td>
+              <td>{{item.dutyoff}}</td>
+              <td >{{item.ewdays}}</td>
+              <td>{{item.total_duties}}</td>
+              <td >{{item.basic}}</td>
+              <td>{{item.da}}</td>
+              <td >{{item.hra}}</td>
+              <td>{{item.ewamount}}</td>
+              <td ></td>
+              <td></td>
+              <td >{{item.ewdays}}</td>
+              <td>{{item.gross}}</td>
+              <td >{{item.waesi}}</td>
+              <td>{{item.total_dec}}</td>
+              <td >{{item.gross}}</td>
+              <td>{{item.pf}}</td>
+              <td >{{item.esi}}</td>
+              <td></td>
+              <td >{{item.advance}}</td>
+              <td>{{item.loan}}</td>
+              <td ></td>
+              <td>{{item.uniform}}</td>
+              <td >{{item.mess}}</td>
+              <td>{{item.atm}}</td>
+              <td>{{item.id}}</td>
+              <td >{{item.others}}</td>
+              <td>{{item.total_dec}}</td>
+              <td>{{item.net_pay}}</td>
+              <td ></td>
+              <td>{{item.paymode}}</td>
+          </tr>
+          </tbody>
+          <tfoot >
+          <tr>
+              <td colspan="36" style="text-align: center">
+                  <mfBootstrapPaginator [rowsOnPageSet]="[10,25,100]"></mfBootstrapPaginator>
+              </td>
+          </tr>
+          </tfoot>
+        </table>
+        </div>

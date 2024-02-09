@@ -1,0 +1,255 @@
+<!-- Adding Employee Page -->
+<form>
+<!-- service-form -->
+<div class="service-forms">
+<div class="row">
+<div class="col-md-12">
+<div class="row">
+<div class="multistep-form-section">
+<form name="form"  novalidate>
+<div class="">
+<div class="">
+<h3 style="    width: 100%;
+background: #d0d6db;padding: 10px;text-transform: uppercase;">Add Payment</h3>
+</div>
+<div class="col col-lg-2">                                        
+</div>
+</div>  
+<br>                        
+                <div class="row">
+                <div class="col-12 col-sm-12 form-group">
+                <form class="frms" name="form" novalidate>
+                <div class="col-md-12">
+                <div class="row">
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Employee Type</label>
+                </div>
+                <div class="col-md-9">
+                <div class="form-group service-form-group">                             
+                <input type="text" #employee_type [(ngModel)]="Addpayment.employee_type" placeholder="Employee type" class="form-control col-md-12"    name="employee_type" value="" #employee_type>
+                </div>                                            
+                </div>
+                </div>
+                </div>
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Basic</label>
+                </div>
+                <div class="col-md-9">
+                <input type="number" [(ngModel)]="Addpayment.basic" placeholder="Basic" (change)="add1()"  class="form-control col-md-12"     name="basic" value="" #basic>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                <div class="col-md-12">
+                <div class="row">
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >DA</label>
+                </div>
+                <div class="col-md-9">
+                <input type="number" placeholder="DA" [(ngModel)]="Addpayment.da" (change)="add1()" class="form-control col-md-12"   name="da" value="" #da>                                         
+                </div>
+                </div>
+                </div>
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Additional hours</label>
+                </div>
+                <div class="col-md-9">
+                <input type="number" placeholder="Additional hours" (change)="add1()" [(ngModel)]="Addpayment.additional_hours" class="form-control col-md-12"   name="additional_hours" value="" #additional_hours>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                <div class="col-md-12">
+                <div class="row">
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Others</label>
+                </div>
+                <div class="col-md-9">
+                <input type="number" placeholder="Others" [(ngModel)]="Addpayment.others" (change)="add1()" class="form-control col-md-12"   name="others" value="" #others >
+                </div>
+                </div>
+                </div>
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Sub Total A</label>
+                </div>
+                <div class="col-md-9">
+                <input type="number" placeholder="Sub Total A" disabled [(ngModel)]="Addpayment.subtotala" class="form-control col-md-12"   name="subtotala" value="" #subtotala>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div> 
+                <div class="col-md-12">
+                <div class="row">
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Leave 6%</label>
+                </div>
+                <div class="col-md-9">
+                <input type="number" placeholder="Leave" [(ngModel)]="Addpayment.leave" (change)="add2()" class="form-control col-md-12"    name="leave" value="" #leave >
+                </div>
+                </div>
+                </div>
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Sub Total B</label>
+                </div>
+                <div class="col-md-9">
+                <input type="number" placeholder="Sub Total B"  disabled [(ngModel)]="Addpayment.subtotalb"  class="form-control col-md-12"  name="subtotalb" value="" #subtotalb >
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>  
+                <div class="col-md-12">
+                <div class="row">
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >PF + Admin Charges @ 13.3</label>
+                </div>
+                <div class="col-md-9">
+                <input type="number" placeholder="PF + Admin Charges @ 13.3" (change)="add3()"  [(ngModel)]="Addpayment.pf" class="form-control col-md-12"  name="pf" value="" #pf />
+                </div>
+                </div>
+                </div>
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >ESI @4.75%</label>
+                </div>
+                <div class="col-md-9">
+                <input type="number" placeholder="ESI @4.75%" (change)="add3()"  [(ngModel)]="Addpayment.esi" class="form-control col-md-12"  name="esi" value="" #esi />
+                </div>
+                </div>
+                </div>
+                </div>
+                </div> 
+                <div class="col-md-12">
+                <div class="row">
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Gratutity @4.81%</label>
+                </div>
+                <div class="col-md-9">
+                <input type="number"  placeholder="Gratutity @4.81%"  (change)="add3()" [(ngModel)]="Addpayment.gratuity" class="form-control col-md-12"  name="gratuity" value="" #gratuity />
+                </div>
+                </div>
+                </div>
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Bouns @8.33%</label>
+                </div>
+                <div class="col-md-9">
+                <input type="number" placeholder="Bouns @8.33%" (change)="add3()" [(ngModel)]="Addpayment.bouns" class="form-control col-md-12"  name="bouns" value="" #bouns />
+                </div>
+                </div>
+                </div>
+                </div>
+                </div> 
+                <div class="col-md-12">
+                <div class="row">
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Sub Total C</label>
+                </div>
+                <div class="col-md-9">
+                <input type="number" placeholder="Sub Total C" [(ngModel)]="Addpayment.subtotalc"  disabled class="form-control col-md-12"     name="subtotalc" value="" #subtotalc />
+                </div>
+                </div>
+                </div>
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Total</label>
+                </div>
+                <div class="col-md-9">
+                <input  type="number" placeholder="Total" disabled [(ngModel)]="Addpayment.total" class="form-control col-md-12"     name="total" value="" #total >   
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                <div class="col-md-12">
+                <div class="row">
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Weekly off</label>
+                </div>
+                <div class="col-md-9">
+                <input  type="number" placeholder="Weekly off" (change)="add4()" [(ngModel)]="Addpayment.weekly_off" class="form-control col-md-12"     name="weekly_off" value="" #weekly_off >   
+                </div>
+                </div>
+                </div>
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Agency charges @ 10%</label>
+                </div>
+                <div class="col-md-9">
+                <input  type="number" placeholder="Agency charges @ 10%"  (change)="add4()" [(ngModel)]="Addpayment.agency_charges" class="form-control col-md-12"     name="agency_charges" value="" #agency_charges >   
+                </div>
+                </div>
+                </div>
+                </div>
+                </div> 
+                <div class="col-md-12">
+                <div class="row">
+                <div class="form-group service-form-group col-md-6">
+                <div class="row">
+                <div class="col-md-3">
+                <label >Sub Total</label>
+                </div>
+                <div class="col-md-9">
+                <input  type="number" disabled placeholder="Sub Total"  [(ngModel)]="Addpayment.subtotal" class="form-control col-md-12"      name="subtotal" value="" #subtotal > 
+                </div>
+                </div>
+                </div>
+                 <div class="form-group service-form-group col-md-6">
+                  <div class="row">
+                  <div class="col-md-3">
+                  <label >Rounded off</label>
+                  </div>
+                  <div class="col-md-9">
+                  <input  type="number" disabled placeholder="Rounded off" [(ngModel)]="Addpayment.rounded_off" class="form-control col-md-12"      name="rounded_off" value="" #rounded_off > 
+                  </div>
+                  </div>
+                  </div>
+                </div>
+                </div> 
+                <div class="row">
+                <div class="col-md-12 col-sm-5 form-group">
+                <button class="input1" (click) = "addapi()">Add Payment</button>
+                </div>
+                </div>
+                </form>
+                </div>
+                </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</form>

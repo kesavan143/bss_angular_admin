@@ -1,0 +1,154 @@
+
+  // body {
+  //   height: 100%;
+  //   background-color: #06346d !important;
+  // }
+
+  body {
+    margin: 0;
+    font-family: OpenSans;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.59);
+    text-align: left;
+    background-color: #0030f1;
+    background: rgba(0, 38, 141, 0.918)!important;
+}
+.app-login-page {
+    height: auto;
+    padding: 16px 16px 70px;
+}
+    .card {
+      max-width: 630px;
+      margin-top: 100px;
+    }
+    .card img {
+      position: static!important;
+      left: 0;
+      bottom: 0;
+  }
+    footer {
+      position: absolute;
+      left: 50%;
+      bottom: 25px;
+      transform: translateX(-50%);
+    }
+   
+    @media screen and (max-width: 768px) {
+  
+      .card {
+        margin-top: 50px;
+        .card-body {
+         padding-left: 80px;
+          padding-right: 80px;
+        
+      }
+      footer {
+        bottom: 235px;
+      }
+    }
+}
+    @media screen and (max-width: 425px) {
+      .card {
+        margin-top: 0;
+      }
+        .card-body {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+      
+    }
+
+  .forgot {
+    max-width: 630px;
+    margin-top: 100px !important;
+}
+.px-gdn-btm {
+  background: linear-gradient(to bottom, #0070fb 0%, #004252ad 100%);
+}
+
+.app-login-page {
+    padding: 50px 130px 80px 130px;
+}
+
+.text-nowrap {
+    white-space: nowrap !important;
+}
+
+
+ .footer {
+    position: absolute;
+    left: 50%;
+    bottom: 25px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.footer {
+    width: 100%;
+    float: left;
+    background: #222;
+    padding: 10px;
+    text-align: center;
+    bottom: 0;
+    position: fixed;
+    color: #fff;
+  }
+
+  .btn-primary {
+    color: #ffff !important;
+}
+.card {
+  max-width: 400px!important;
+}
+.mb-5, .my-5 {
+  margin-bottom: 1rem !important;
+}
+.card .card-body {
+  box-shadow: 0 4px 0px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0px solid transparent;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+.forgots {
+  margin: 0px 0px;
+  padding: 20px;
+  height: 620px;
+  background-image: url('/assets/images/security.jpg');
+  background-size: cover;
+
+   }
+   .mt-5, .my-5 {
+    margin-top: 1rem !important;
+}
+.mb-5, .my-5 {
+  margin-bottom: 10px!important;
+}
+.text-center {
+  text-align: center !important;
+  color: #222;
+  cursor: pointer;
+}
+.frms {
+  padding: 10px;
+  margin-top: 0px;
+}
+.forgots img {
+  position: static!important;
+  left: 0;
+  top: 20!important;
+  width: 20%;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 100px;
+  border: 1px #fff solid;
+}

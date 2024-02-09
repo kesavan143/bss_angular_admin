@@ -1,0 +1,126 @@
+<!-- Client Management -->
+<div class="service-form col-md-12">
+    <div class="row">
+      <div class="header">
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-3">
+                        <h3 class="adsc"> <i class="fa fa-university"></i>  &nbsp;Payment Details</h3></div>
+                        <div class="col-md-6">
+                            <input type="month" class=" pull-right" (change)="month($event.target.value)">
+                        </div>
+              </div>  
+              <!-- <div class="row">
+                  <div class="col-md-12">
+                  <div class="col-md-2">
+                    Emp ID:
+                  </div>
+                  <div class="col-md-2">
+                   P-102
+                    </div>
+                    <div class="col-md-2">
+                        Emp Name :
+                      </div>
+                      <div class="col-md-2">
+                        Mohammed Imthiyas
+                        </div>
+                        <div class="col-md-2">
+                        Employee Type :
+                          </div>
+                  <div class="col-md-2">
+                           SG
+                    </div>
+                  </div>
+                </div> -->
+  
+        <br></div><br>
+     
+  
+        <div class="col">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="tabl" >
+                  <table class="table table-bordered table-responsive" style="border-collapse:collapse;">
+                      <thead>
+                          <tr>
+                              <th>SL.NO</th>
+                              <th>Date</th>
+                              <th>Employee ID</th>
+                              <th>Employee Name</th>
+                              <th>Type</th>
+                              <th>Site Name</th>
+                              <th>Bank Name</th>
+                              <th>IFSC</th>
+                              <th>A_C</th>
+                              <th>Basic</th>
+                              <th>DA</th>
+                              <th>HRA</th>
+                              <th>Others</th>
+                              <th>DP</th>
+                              <th>Gross</th>
+                              <th>Epf 12</th>
+                              <th>Esi 1.75</th>
+                              <th>PRO.Tax</th>
+                              <th>Advance</th>
+                             
+                              <th>UNIFORM</th>
+                              <th>RENT</th>
+                              <th>ATM</th>
+                              <th>LOANS</th>
+                              <th>OTHERS</th>
+                              <th>TOTAL DEC</th>
+                              <th>NET AMOUNT</th>
+                              <th>AD DUTY</th>
+                              <th>AD AMOUNT</th>
+                              <th>TOTAL AMOUNT</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                                  <ng-container  *ngFor="let data of datas ;  let i = index">
+                                  <tr colspan="6" data-toggle="collapse" [attr.data-target]="10"  class="accordion-toggle">
+                                      <td>{{i + 1}}</td> 
+                                      <td style="min-width: 92px;">{{data.date}}</td>
+                                      <td style="min-width: 92px;">{{data.employee_id}}</td>
+                                      <td style="min-width: 150px;" id="l1">{{data.employee_name}}</td>
+                                      <td style="min-width: 92px;text-align: center;" id="a1">{{data.employee_type}}</td>
+                                      <td style="min-width: 150px;" id="pc1">{{data.site_name}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.bank_name}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.ifscnumber}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.account_number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.basic | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.da | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.hra | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.others | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.noofdays | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.gross | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.esi | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.pf | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.prtax | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.adv | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.uniform | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.rent | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.atm | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.loan | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.otherss | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.totaldedcation | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.netamount | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.additional_duty | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.duty_amount | number}}</td>
+                                      <td style="min-width: 92px;" id="pc1">{{data.total_amount | number}}</td>                              
+                                  </ng-container>      
+                      </tbody>
+                  </table>
+                  <div *ngIf="loading" ><div class="loader text-center"></div></div>     
+                  <div class="card-footer p-0">
+                  <ngb-pagination [collectionSize]="collsize" [(page)]="advancedPage" (pageChange)="newsync()" [boundaryLinks]="true" ></ngb-pagination>
+                          </div>     
+            </div>
+            </div>
+          </div>
+          </div>
+  </div>
+  </div>  
+          <div *ngIf="deleteLoading" id="snackbar" class="show">Deleting... Pleaser Wait!</div> 
+  
+  
+  
+  

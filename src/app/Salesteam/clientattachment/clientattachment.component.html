@@ -1,0 +1,81 @@
+<div class="col-md-12">
+  <div class="row">
+    
+<div  class="header">
+    <div  class="row">
+      <div  class="col-12 col-md-6 mb-3">
+        <div  class="col-md-8">
+          <h3  class="adsc">
+            <i  class="fa fa-university"></i> &nbsp;Attachment List</h3>
+          </div>
+        </div>
+        <div class="col-md-6">               
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- BEGIN # BOOTSNIP INFO -->
+<div  class="col-md-12">
+  <div  class="row">
+    <div  class="form-group service-form-group col-md-6">
+      <div  class="row">
+        <div class="col-md-1">
+          <label>Title</label>
+        </div>
+        <div  class="col-md-4">
+        <input id="title" type="text" placeholder="Title" [(ngModel)]="attachment.title" class="form-control col-md-12" required=""     name="title" value="" #title > 
+        </div>
+      </div>
+    </div>
+    <div  class="form-group service-form-group col-md-6">
+      <div  class="row">
+        <div  class="col-md-3">
+          <label>Attachment </label>
+        </div>
+        <div class="col-md-5">
+          <input type="file" (change)="onfileselected($event)"/>
+        </div>
+        <div  class="col-md-4">
+         <button class="btn-info btn-lg" (click)="attach()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      
+        <div class="col">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="tabl" >
+                    <table class="table table-bordered table-responsive " style="border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%;">SL.NO</th>
+                                <th>Document Name</th>
+                                <th>Download</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size: 11px;">
+                                   <ng-container  *ngFor="let data of datas;  let i = index">
+                                        <tr>
+                                        <td>{{i+1}}</td>  
+                                        <td>{{data.title}}</td>
+                                        <td style="text-align:center;"><button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="downloads($event, data)"><i class="fa m-1 fa-download ng-star-inserted"></i></button></td>
+                                        <td style="text-align:center;"><button class="accordion-toggle  btn mat-button-wrapper btn-sm" (click)="delete($event, data)"><i  class="m-1 icon-close ng-star-inserted"></i></button></td>
+                                       </tr>
+                                    </ng-container>      
+                        </tbody>
+                    </table>
+                    <div class="card-footer p-0">
+                        <p>After Attached All Click the  Done Button Here</p><button class="btn-info btn-lg"  (click)="done()">Done</button>
+                      </div>     
+              </div>
+              </div>
+            </div>
+            </div>
+  </div>
+</div>

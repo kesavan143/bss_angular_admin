@@ -1,0 +1,123 @@
+
+<!-- Adding Employee Page -->
+
+<form>
+  <!-- service-form -->
+  <div class="service-forms">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="row">
+            <div class="multistep-form-section">
+              <form name="form"  novalidate>
+                      <div class="">
+                              <div class="">
+                              <h3 style="    width: 100%;
+                              background: #d0d6db;padding: 10px;text-transform: uppercase;">View Contract</h3>
+                              </div>
+                              <div class="col col-lg-2">                                        
+                              </div>
+                            </div>  
+                            <br>                        
+              <div class="row">
+                      <div class="col-12 col-sm-12 form-group">
+                          <form class="frms" name="form" novalidate>
+                                  <div class="col-md-12">
+                                          <div class="row">
+                                            <div class="form-group service-form-group col-md-6">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label >Contract Start Date</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                
+                                                    <div class="form-group service-form-group">                             
+                                                          <input  disabled type="date" #contract_start_date [(ngModel)]="addclient.contract_start_date" placeholder="Login ID" class="form-control col-md-12"    name="contract_start_date" value="" #contract_start_date>
+                                                    </div>                                            
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="form-group service-form-group col-md-6">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label >Contract End Date</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                      <input  disabled type="date" [(ngModel)]="addclient.contract_end_date" placeholder="password" class="form-control col-md-12"     name="contract_end_date" value="" #contract_end_date>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                            <div class="col-md-12">
+                                                  <div class="row">
+                                                    <div class="form-group service-form-group col-md-6">
+                                                      <div class="row">
+                                                        <div class="col-md-3">
+                                                          <label >Contract Type</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+
+                                                            <select  disabled [(ngModel)]="addclient.contract_type" class="form-control col-md-12"   name="contract_type" value="" #contract_type>
+                                                                <option value="Agreement">Agreement </option>
+                                                                <option value="PO or Work order">PO or Work order</option>
+                                                              </select>
+                                                        
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="form-group service-form-group col-md-6">
+                                                      <div class="row">
+                                                        <div class="col-md-3">
+                                                          <label >Invoice Type</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <select disabled [(ngModel)]="addclient.invoice_cycle" class="form-control col-md-12"   name="invoice_cycle" value="" #invoice_cycle>
+                                                                <option value="21 to 20">21 to 20</option>
+                                                                <option value="26 to 25">26 to 25</option>
+                                                                <option value="Monthly billing">Monthly billing</option>
+                                                                
+                                                              </select>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+
+
+
+
+
+                                                <div class="col-md-12">
+                                                      <div class="row">
+                                                        <div class="form-group service-form-group col-md-6">
+                                                          <div class="row">
+                                                            <div class="col-md-3">
+                                                              <label >Last Revision Date</label>
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <input disabledtype="date" placeholder="last_revision_date" [(ngModel)]="addclient.last_revision_date" class="form-control col-md-12"   name="last_revision_date" value="" #last_revision_date>
+                                                              </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="form-group service-form-group col-md-6">
+                                                            
+                                                        </div>
+                                                      </div>
+                                                    </div> 
+<div class="row">
+<div class="col-md-12 col-sm-5 form-group">
+</div>
+</div>
+</form>
+</div>
+</div>
+            </form>
+            </div>
+            </div>
+          </div>
+        </div>
+
+  </div>
+</form>

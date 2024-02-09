@@ -1,0 +1,97 @@
+<div  class="row">
+    <div  class="header">
+        <h3  class="adsc">
+            <i class="material-icons ng-star-inserted">business</i> &nbsp;PROF TAX Form - 6</h3>
+    </div>
+</div>
+
+<div class="row" style="padding-bottom: 30px;"><Br>
+    <div class=col-md-12>
+        <ng-container *ngFor="let data of companylist ">
+            <button class="btn-info btn-lg pull-left" (click)="find(data.company_name)">{{data.company_name}} </button>
+        </ng-container>
+    </div>
+
+    <div class=row>
+        <div class="col-md-4">
+            <div class="col-md-2">
+                <label style="font-weight: 700;">Method</label>
+            </div>
+            <div class=col-md-2>
+                <select class="selects" name="lock" value="" [(ngModel)]="cycle" id="exampleFormControlSelect1"
+                    style="display: flex">
+                    <ng-container>
+                        <option value="first">First Half</option>
+                        <option value="second">Second Half</option>
+                        <option value="full">Complete</option>
+                    </ng-container>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="col-md-2">
+                <label style="font-weight: 700;">Start Year</label>
+            </div>
+            <div class="col-md-2" style="display: flex">
+                <input type="year" [(ngModel)]="startYear" name="month" #month>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="col-md-2">
+                <label style="font-weight: 700;">End Year</label>
+            </div>
+            <div class="col-md-2" style="display: flex">
+                <input type="year" [(ngModel)]="endYear" name="month" #month>
+                <button class="btn-info btn-lg" style="margin-left: 22px;" (click)="dateChange()">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container col-lg-12" style="text-align: center">
+
+    <table class="table table-striped" id="datTabl" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+        <thead>
+            <tr>
+                <th>
+                    <mfDefaultSorter by="company_name">Company Name</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="unit_name">Unit Name</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="ecode">Employee Code</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="ename">Name</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="total_duties">Days</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="gross">GROSS WAGES</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="pr_tax">Pt.Tax Amt.</mfDefaultSorter>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of mf.data; let i = index">
+                <td>{{item.company_name}}</td>
+                <td>{{item.unit_name}}</td>
+                <td>{{item.ecode}}</td>
+                <td>{{item.ename}}</td>
+                <td>{{item.total_duties}}</td>
+                <td>{{item.gross}}</td>
+                <td>{{item.pr_tax}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7" style="text-align: center">
+                    <mfBootstrapPaginator [rowsOnPageSet]="[10,25,100]"></mfBootstrapPaginator>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
