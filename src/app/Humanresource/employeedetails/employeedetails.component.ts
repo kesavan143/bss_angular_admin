@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientModule ,HttpClient} from '@angular/common/http';
-import { ActivatedRoute, Router} from '@angular/router';
-import { e } from '@angular/core/src/render3';
-import { send } from 'q';
-import {formatDate } from '@angular/common';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-employeedetails',
@@ -11,116 +9,116 @@ import {formatDate } from '@angular/common';
   styleUrls: ['./employeedetails.component.scss']
 })
 export class EmployeedetailsComponent implements OnInit {
- 
-  employee_id: string;
-  datas: any; 
-  public adduser: Adduser;
-  resigned:string;
-  lefted:boolean;
-  companylist:any;
-  site_names:any;
-  datass:any[]=[];
-  ecodetext:string;
-  ecodenumber:number;
 
-    constructor( private httpClient:HttpClient, private route: ActivatedRoute, private router: Router ) {
+  employee_id: string;
+  datas: any;
+  public adduser: Adduser;
+  resigned: string;
+  lefted: boolean;
+  companylist: any;
+  site_names: any;
+  datass: any[] = [];
+  ecodetext: string;
+  ecodenumber: number;
+
+  constructor(private httpClient: HttpClient, private route: ActivatedRoute, private router: Router) {
     this.adduser = new Adduser();
     this.lefted = true;
     this.route.params.subscribe(params => {
-     this.employee_id = params['id']; // (+) converts string 'id' to a number
-     console.log('this id: ' + this.employee_id);
-     this.adduser.id = +this.employee_id;
-     this.httpClient.post('https://bssservice.herokuapp.com/authentication/employee_id',{employee_id:this.employee_id}).subscribe((data:any)  => {
-      this.adduser = data.data;
-      console.log(this.adduser);
-      this.adduser.Date_of_birth = formatDate(this.adduser.Date_of_birth, 'dd-MM-yyyy', 'en-US', '+0530');
-      this.adduser.date_joining = formatDate(this.adduser.date_joining, 'dd-MM-yyyy', 'en-US', '+0530');
-      if(this.adduser.resigned === 'left'){
-        this.lefted = false;
-      }
+      this.employee_id = params['id']; // (+) converts string 'id' to a number
+      console.log('this id: ' + this.employee_id);
+      this.adduser.id = +this.employee_id;
+      this.httpClient.post('https://bssservice.herokuapp.com/authentication/employee_id', { employee_id: this.employee_id }).subscribe((data: any) => {
+        this.adduser = data.data;
+        console.log(this.adduser);
+        this.adduser.Date_of_birth = formatDate(this.adduser.Date_of_birth, 'dd-MM-yyyy', 'en-US', '+0530');
+        this.adduser.date_joining = formatDate(this.adduser.date_joining, 'dd-MM-yyyy', 'en-US', '+0530');
+        if (this.adduser.resigned === 'left') {
+          this.lefted = false;
+        }
       });
-  });
-  this.httpClient.post('https://bssservice.herokuapp.com/company/companylists', {"id":0}).subscribe((data:any) => {
-    this.companylist = data.data;
-  console.log(this.companylist);
-});
-this.httpClient.post('https://bssservice.herokuapp.com/employee/emptypelist', {"id":0}).subscribe((data:any) => {
+    });
+    this.httpClient.post('https://bssservice.herokuapp.com/company/companylists', { "id": 0 }).subscribe((data: any) => {
+      this.companylist = data.data;
+      console.log(this.companylist);
+    });
+    this.httpClient.post('https://bssservice.herokuapp.com/employee/emptypelist', { "id": 0 }).subscribe((data: any) => {
       this.datass = data.data;
       console.log(this.datass);
     });
-    this.httpClient.post('https://bssservice.herokuapp.com/advance/fetchloan_number1', {"id":0}).subscribe((data:any) => {
-      this.ecodenumber =  +data.data[0].max;
+    this.httpClient.post('https://bssservice.herokuapp.com/advance/fetchloan_number1', { "id": 0 }).subscribe((data: any) => {
+      this.ecodenumber = +data.data[0].max;
       this.ecodenumber = this.ecodenumber + 1;
       this.ecodetext = "B"
     });
-   }
+  }
 
-   fetchsite(data){
+  fetchsite(data) {
     console.log(data);
-    this.httpClient.post('https://bssservice.herokuapp.com/company/fetchcompanysite', {"company_name":data}).subscribe((data:any) => {
+    this.httpClient.post('https://bssservice.herokuapp.com/company/fetchcompanysite', { "company_name": data }).subscribe((data: any) => {
       this.site_names = data.data;
-    console.log(this.site_names);
-  });
+      console.log(this.site_names);
+    });
 
   }
   ngOnInit() {
 
 
-  
-  }
-
-  
-  syncdata(){
-
-
 
   }
 
 
+  syncdata() {
+
+
+
+  }
 
 
 
 
-  resign(){
+
+
+  resign() {
     console.log(this.adduser.resigned)
-    if(this.adduser.resigned =='unresigned'){
-      this.resigned= 'resigned';
+    if (this.adduser.resigned == 'unresigned') {
+      this.resigned = 'resigned';
       this.send()
     }
   }
-  unresign(){
+  unresign() {
     console.log(this.adduser.resigned)
-    if(this.adduser.resigned =='resigned'){
-      this.resigned= 'unresigned';
+    if (this.adduser.resigned == 'resigned') {
+      this.resigned = 'unresigned';
       this.send()
     }
   }
 
 
-  send(){
-    this.httpClient.post('https://bssservice.herokuapp.com/authentication/resigned',{Empid:this.adduser.Empid,resigned:this.resigned}).subscribe((data:any)  => {
-        alert("Process Successfulls");
-        console.log(data)
-        this.router.navigate(['main/viewemployees'])
-        });
-  }
-  
-   left(){
-    
-    this.resigned= 'left';
-    this.httpClient.post('https://bssservice.herokuapp.com/authentication/resigned',{Empid:""+this.adduser.Empid,resigned:this.resigned}).subscribe((data:any)  => {
+  send() {
+    this.httpClient.post('https://bssservice.herokuapp.com/authentication/resigned', { Empid: this.adduser.Empid, resigned: this.resigned }).subscribe((data: any) => {
       alert("Process Successfulls");
       console.log(data)
       this.router.navigate(['main/viewemployees'])
-      });
+    });
+  }
 
-   }
+  left() {
+
+    this.resigned = 'left';
+    this.httpClient.post('https://bssservice.herokuapp.com/authentication/resigned', { Empid: "" + this.adduser.Empid, resigned: this.resigned }).subscribe((data: any) => {
+      alert("Process Successfulls");
+      console.log(data)
+      this.router.navigate(['main/viewemployees'])
+    });
+
+  }
 
 
 }
 class Adduser {
-  Empid:string;
-  id:number;
+  Empid: string;
+  id: number;
   employee_type: string;
   father_name: string;
   gender: string;
@@ -225,9 +223,9 @@ class Adduser {
   nage5: string;
   noccupation5: string;
   naadharcard5: string;
-  pf_action:boolean;
-  esi_action:boolean;
-  prof_action:boolean;
+  pf_action: boolean;
+  esi_action: boolean;
+  prof_action: boolean;
   work_status_action: boolean;
   work_exp: string;
   site_name: string;
@@ -236,8 +234,8 @@ class Adduser {
   pf2: string;
   pf3: string;
   uan: string;
-  ecode:string;
-  Emp_id:string;
+  ecode: string;
+  Emp_id: string;
   personmark: string;
   nameorg: string;
   position: string;
@@ -292,5 +290,5 @@ class Adduser {
   lanstate3: string;
   lanstate4: string;
   lanstate5: string;
-  age:string;
+  age: string;
 }
